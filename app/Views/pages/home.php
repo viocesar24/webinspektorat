@@ -1,25 +1,25 @@
-<div id="carouselExampleCaptions" class="carousel slide carousel-fade bg-dark" data-bs-ride="carousel" style="max-height: 500px;">
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade bg-dark" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner" style="max-height: 500px;">
-        <div class="carousel-item active" style="max-height: 500px;">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
             <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Pemandangan 1</h5>
                 <p>Penjelasan singkat mengenai pemandangan pertama.</p>
             </div>
         </div>
-        <div class="carousel-item" style="max-height: 500px;">
+        <div class="carousel-item">
             <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="img-fluid d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Pemandangan 2</h5>
                 <p>Penjelasan singkat mengenai pemandangan kedua.</p>
             </div>
         </div>
-        <div class="carousel-item" style="max-height: 500px;">
+        <div class="carousel-item">
             <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="img-fluid d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Pemandangan 3</h5>
@@ -42,7 +42,7 @@
         <h1 class="text-light">BERITA HARI INI</h1>
         <hr class="bg-light">
     </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-3">
         <div class="col">
             <div class="card h-100 shadow">
                 <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid card-img-top" alt="...">
@@ -140,37 +140,68 @@
     </div>
 </div>
 <div class="container-fluid bg-secondary p-5 text-light">
-    <div class="row">
-        <div class="col-4 container-fluid">
-            <h1>AGENDA <strong>KEGIATAN</strong></h1>
-            <div class="container-fluid p-0 mb-3">
-                <div class="row row-cols-1">
-                    <div class="col fw-lighter">
-                        <i class="bi bi-calendar"></i>
-                        31 Desember 2021 09:00 WIB
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="container-fluid">
+                <h1>AGENDA <strong>KEGIATAN</strong></h1>
+                <div class="container-fluid p-0 mb-3">
+                    <div class="row row-cols-1">
+                        <div class="col fw-lighter">
+                            <i class="bi bi-calendar"></i>
+                            31 Desember 2021 09:00 WIB
+                        </div>
+                        <div class="col">
+                            <a href="#" class="link-light">Syukuran Tahun Baru</a>
+                        </div>
                     </div>
-                    <div class="col">
-                        <a href="#" class="link-light">Syukuran Tahun Baru</a>
+                </div>
+                <div class="container-fluid p-0 mb-3">
+                    <div class="row row-cols-1">
+                        <div class="col fw-light">
+                            <i class="bi bi-calendar"></i>
+                            03 Januari 2022 07:15 WIB
+                        </div>
+                        <div class="col">
+                            <a href="#" class="link-light">Apel Pagi Tahun Baru</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid p-0 mb-3">
-                <div class="row row-cols-1">
-                    <div class="col fw-light">
-                        <i class="bi bi-calendar"></i>
-                        03 Januari 2022 07:15 WIB
-                    </div>
-                    <div class="col">
-                        <a href="#" class="link-light">Apel Pagi Tahun Baru</a>
-                    </div>
-                </div>
-            </div>
+            <hr>
         </div>
-        <div class="col-1 text-center p-0 m-0">
+        <div class="col-md-1 text-center p-0 m-0 d-none d-md-block">
             <div class="vr" style="height: 500px;"></div>
         </div>
-        <div class="col-7 container-fluid">
-            <h1>PROGRAM</h1>
+        <div class="col-md-7">
+            <div class="container-fluid">
+                <h1>PROGRAM</h1>
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

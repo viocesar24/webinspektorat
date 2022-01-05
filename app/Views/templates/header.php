@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <div class="container-fluid p-0 m-0 sticky-top">
+    <div id="navigasi" class="container-fluid p-0 m-0 sticky-top">
         <nav class="navbar navbar-dark navbar-expand-xl bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="<?php echo base_url(); ?>/home/">
                     <img src="<?php echo base_url(); ?>/img/logo_pemkab.svg" height="50">
                 </a>
-                <a class="navbar-brand d-none d-sm-block" href="<?php echo base_url(); ?>/home/">
+                <a class="navbar-brand" href="<?php echo base_url(); ?>/home/">
                     INSPEKTORAT KABUPATEN KEDIRI
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -29,26 +29,22 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<?php echo base_url(); ?>/home/">BERANDA</a>
+                                <a class="nav-link text-light" href="<?php echo base_url(); ?>/home/">BERANDA</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     PROFIL
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
-                                    <li><a class="dropdown-item" href="#">Tugas Pokok dan Fungsi</a></li>
-                                    <li><a class="dropdown-item" href="#">Visi & Misi</a></li>
-                                    <li><a class="dropdown-item" href="#">Pedoman</a></li>
-                                    <li><a class="dropdown-item" href="#">Aturan</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Tambah halaman lain di sini</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/tentang/">Tentang</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/pejabat/">Pejabat Struktural</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/struktur/">Struktur Organisasi</a></li>
+                                    <li><a class="dropdown-item" href="#">Kebijakan</a></li>
+                                    <li><a class="dropdown-item" href="#">Penghargaan</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     LAYANAN
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
@@ -56,8 +52,8 @@
                                     <li><a class="dropdown-item" href="#">PROGRAM</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li class="nav-item dropdown text-light">
+                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     INFORMASI
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
@@ -67,7 +63,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">KONTAK</a>
+                                <a class="nav-link text-light" href="#">KONTAK</a>
                             </li>
                         </ul>
                         <form class="d-flex">
