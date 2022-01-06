@@ -17,25 +17,32 @@
         <div class="col-md-3">
             <div class="card shadow">
                 <div class="card-header">
-                    <h5 class="fw-bold p-0 m-0">Kategori</h5>
+                    <h5 class="fw-bold p-0 m-0">KATEGORI</h5>
                 </div>
                 <div class="list-group list-group-flush">
-                    <a href="<?php echo base_url(); ?>/tentang/" class="list-group-item list-group-item-action" aria-current="page">
+                    <a href="<?php echo base_url(); ?>/tentang/" class="list-group-item list-group-item-action">
                         Tentang
                     </a>
                     <a href="<?php echo base_url(); ?>/pejabat/" class="list-group-item list-group-item-action">
                         Pejabat Struktural
                     </a>
-                    <a href="<?php echo base_url(); ?>/struktur/" class="list-group-item list-group-item-action active">
+                    <a href="<?php echo base_url(); ?>/struktur/" class="list-group-item list-group-item-action active" aria-current="page">
                         Struktur Organisasi
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">Kebijakan</a>
-                    <a href="#" class="list-group-item list-group-item-action">Penghargaan</a>
+                    <a href="<?php echo base_url(); ?>/kebijakan/" class="list-group-item list-group-item-action">
+                        Kebijakan
+                    </a>
+                    <a href="<?php echo base_url(); ?>/penghargaan/" class="list-group-item list-group-item-action">
+                        Penghargaan
+                    </a>
                 </div>
             </div>
         </div>
         <div class="col-md-9">
             <div class="card shadow">
+                <div class="card-header text-center">
+                    <h5 class="fw-bold p-0 m-0">STRUKTUR ORGANISASI</h5>
+                </div>
                 <div class="card-body">
                     <img src="<?php echo base_url(); ?>/img/struktur.png" class="img-fluid" alt="...">
                 </div>

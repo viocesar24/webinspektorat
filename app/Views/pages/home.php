@@ -1,45 +1,45 @@
-<div id="carouselExampleCaptions" class="carousel slide carousel-fade bg-dark" data-bs-ride="carousel">
+<div id="carouselHomeAtas" class="carousel slide carousel-fade bg-dark bg-gradient" data-bs-ride="carousel">
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid d-block w-100" alt="...">
+            <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid d-block w-100" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Pemandangan 1</h5>
-                <p>Penjelasan singkat mengenai pemandangan pertama.</p>
+                <h5>Highlight Inspektorat 1</h5>
+                <p>Penjelasan singkat mengenai highlight 1.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="img-fluid d-block w-100" alt="...">
+            <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="img-fluid d-block w-100" alt="Highlight Kedua">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Pemandangan 2</h5>
-                <p>Penjelasan singkat mengenai pemandangan kedua.</p>
+                <h5>Highlight Inspektorat 2</h5>
+                <p>Penjelasan singkat mengenai highlight 2.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="img-fluid d-block w-100" alt="...">
+            <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="img-fluid d-block w-100" alt="Highlight Ketiga">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Pemandangan 3</h5>
-                <p>Penjelasan singkat mengenai pemandangan ketiga.</p>
+                <h5>Highlight Inspektorat 3</h5>
+                <p>Penjelasan singkat mengenai highlight 3.</p>
             </div>
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomeAtas" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Sebelumnya</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselHomeAtas" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Berikutnya</span>
     </button>
 </div>
-<div class="container-fluid bg-secondary p-5">
+<div class="container-fluid bg-secondary bg-gradient p-5">
     <div class="container-fluid text-center mb-5">
         <hr class="bg-light">
-        <h1 class="text-light">BERITA HARI INI</h1>
+        <h1 class="text-light">BERITA TERKINI</h1>
         <hr class="bg-light">
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-3">
@@ -84,7 +84,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid bg-dark p-5 text-center">
+<div class="container-fluid bg-dark bg-gradient p-5 text-center">
     <div class="container-fluid mb-5">
         <hr class="bg-light">
         <h1 class="text-light">PARA PIMPINAN</h1>
@@ -139,7 +139,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid bg-secondary p-5 text-light">
+<div class="container-fluid bg-secondary bg-gradient p-5 text-light">
     <div class="row g-3">
         <div class="col-md-4">
             <div class="container-fluid">
@@ -175,11 +175,11 @@
         <div class="col-md-7">
             <div class="container-fluid">
                 <h1>PROGRAM</h1>
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselHomeBawah" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselHomeBawah" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselHomeBawah" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselHomeBawah" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -192,11 +192,11 @@
                             <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="d-block w-100" alt="...">
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomeBawah" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselHomeBawah" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>

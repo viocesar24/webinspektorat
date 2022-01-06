@@ -32,34 +32,35 @@
                                 <a class="nav-link text-light" href="<?php echo base_url(); ?>/home/">BERANDA</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasProfil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     PROFIL
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasProfil">
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/tentang/">Tentang</a></li>
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/pejabat/">Pejabat Struktural</a></li>
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/struktur/">Struktur Organisasi</a></li>
-                                    <li><a class="dropdown-item" href="#">Kebijakan</a></li>
-                                    <li><a class="dropdown-item" href="#">Penghargaan</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/kebijakan/">Kebijakan</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/penghargaan/">Penghargaan</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasLayanan" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     LAYANAN
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasLayanan">
                                     <li><a class="dropdown-item" href="#">LAYANAN</a></li>
                                     <li><a class="dropdown-item" href="#">PROGRAM</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown text-light">
-                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasInformasi" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     INFORMASI
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                    <li><a class="dropdown-item" href="#">BERITA</a></li>
-                                    <li><a class="dropdown-item" href="#">BERKAS</a></li>
-                                    <li><a class="dropdown-item" href="#">GALERI</a></li>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasInformasi">
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/berita/">BERITA</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/berkas/">BERKAS</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/galeri/">GALERI</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/kegiatan/">KEGIATAN</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
