@@ -64,7 +64,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="#">KONTAK</a>
+                                <a class="nav-link text-light" href="<?php echo base_url(); ?>/kontak/">KONTAK</a>
                             </li>
                         </ul>
                         <form class="d-flex">
