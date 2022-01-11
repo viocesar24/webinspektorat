@@ -4,7 +4,7 @@
         <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner ratio ratio-21x9">
         <div class="carousel-item active">
             <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid d-block w-100" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
@@ -181,7 +181,7 @@
                         <button type="button" data-bs-target="#carouselHomeBawah" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselHomeBawah" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
-                    <div class="carousel-inner">
+                    <div class="carousel-inner ratio ratio-16x9">
                         <div class="carousel-item active">
                             <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="d-block w-100" alt="...">
                         </div>

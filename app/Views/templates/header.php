@@ -48,8 +48,8 @@
                                     LAYANAN
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasLayanan">
-                                    <li><a class="dropdown-item" href="#">LAYANAN</a></li>
-                                    <li><a class="dropdown-item" href="#">PROGRAM</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/layanan/">LAYANAN</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/program/">PROGRAM</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown text-light">
