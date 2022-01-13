@@ -24,7 +24,7 @@
                         Berita
                     </a>
                     <a href="<?php echo base_url(); ?>/berkas/" class="list-group-item list-group-item-action">
-                        Berkas
+                        Informasi Publik
                     </a>
                     <a href="<?php echo base_url(); ?>/galeri/" class="list-group-item list-group-item-action active" aria-current="page">
                         Galeri

@@ -1,13 +1,13 @@
 <div class="d-flex bd-highlight bg-dark bg-gradient px-3">
     <div class="p-2 bd-highlight">
-        <h2 class="text-light p-0 m-0">BERKAS</h2>
+        <h2 class="text-light p-0 m-0">INFORMASI PUBLIK</h2>
     </div>
     <div class="ms-auto p-2 bd-highlight align-self-center d-none d-md-block">
         <nav class="text-decoration-none pull" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb p-0 m-0">
                 <li class="breadcrumb-item"><a class="text-light text-decoration-none" href="<?php echo base_url(); ?>/home/">Beranda</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Informasi</li>
-                <li class="breadcrumb-item active" aria-current="page">Berkas</li>
+                <li class="breadcrumb-item active" aria-current="page">Informasi Publik</li>
             </ol>
         </nav>
     </div>
@@ -24,7 +24,7 @@
                         Berita
                     </a>
                     <a href="<?php echo base_url(); ?>/berkas/" class="list-group-item list-group-item-action active" aria-current="page">
-                        Berkas
+                        Informasi Publik
                     </a>
                     <a href="<?php echo base_url(); ?>/galeri/" class="list-group-item list-group-item-action">
                         Galeri
@@ -38,7 +38,7 @@
         <div class="col-md-9">
             <div class="card bg-light bg-gradient shadow">
                 <div class="card-header text-center">
-                    <h5 class="fw-bold p-0 m-0">BERKAS UNTUK PUBLIK</h5>
+                    <h5 class="fw-bold p-0 m-0">INFORMASI UNTUK PUBLIK</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
