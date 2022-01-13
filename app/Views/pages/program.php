@@ -1,18 +1,18 @@
-<div class="d-flex bd-highlight bg-dark bg-gradient px-3">
+<div class="d-flex bd-highlight bg-secondary bg-gradient bg-opacity-10 px-3">
     <div class="p-2 bd-highlight">
-        <h2 class="text-light p-0 m-0">PROGRAM</h2>
+        <h2 class="text-dark p-0 m-0">PROGRAM</h2>
     </div>
     <div class="ms-auto p-2 bd-highlight align-self-center d-none d-md-block">
         <nav class="text-decoration-none pull" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb p-0 m-0">
-                <li class="breadcrumb-item"><a class="text-light text-decoration-none" href="<?php echo base_url(); ?>/home/">Beranda</a></li>
+                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/home/">Beranda</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Layanan</li>
                 <li class="breadcrumb-item active" aria-current="page">Program</li>
             </ol>
         </nav>
     </div>
 </div>
-<div class="bg-secondary bg-gradient p-5">
+<div class="bg-light bg-gradient p-5">
     <div class="row g-3">
         <div class="col-md-3">
             <div class="card shadow">

@@ -10,29 +10,29 @@
 
 <body>
     <div id="navigasi" class="container-fluid p-0 m-0 sticky-top">
-        <nav class="navbar navbar-dark navbar-expand-xl bg-dark">
+        <nav class="navbar navbar-light navbar-expand-xl bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="<?php echo base_url(); ?>/home/">
-                    <img src="<?php echo base_url(); ?>/img/logo_pemkab.svg" height="50">
+                    <img src="<?php echo base_url(); ?>/img/logo_pemkab.svg" height="50" alt="Logo Pemkab Kediri">
                 </a>
-                <a class="navbar-brand" href="<?php echo base_url(); ?>/home/">
-                    INSPEKTORAT KABUPATEN KEDIRI
+                <a class="navbar-brand fw-bold" href="<?php echo base_url(); ?>/home/">
+                    <img src="<?php echo base_url(); ?>/img/INSPEKTORAT.svg" height="50" alt="Inspektorat Kabupaten Kediri">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas offcanvas-end bg-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">INSPEKTORAT KABUPATEN KEDIRI</h5>
-                        <button type="button" class="btn-close text-reset btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <img src="<?php echo base_url(); ?>/img/INSPEKTORAT.svg" height="75" alt="Inspektorat Kabupaten Kediri">
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="<?php echo base_url(); ?>/home/">BERANDA</a>
+                                <a class="nav-link text-dark" href="<?php echo base_url(); ?>/home/">BERANDA</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasProfil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="offcanvasProfil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     PROFIL
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasProfil">
@@ -44,7 +44,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasLayanan" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="offcanvasLayanan" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     LAYANAN
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasLayanan">
@@ -52,8 +52,8 @@
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/program/">PROGRAM</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown text-light">
-                                <a class="nav-link dropdown-toggle text-light" href="#" id="offcanvasInformasi" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li class="nav-item dropdown text-dark">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="offcanvasInformasi" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     INFORMASI
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasInformasi">
@@ -64,7 +64,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="<?php echo base_url(); ?>/kontak/">KONTAK</a>
+                                <a class="nav-link text-dark" href="<?php echo base_url(); ?>/kontak/">KONTAK</a>
                             </li>
                         </ul>
                         <form class="d-flex">

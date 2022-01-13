@@ -1,4 +1,4 @@
-<div id="carouselHomeAtas" class="carousel slide carousel-fade bg-dark bg-gradient" data-bs-ride="carousel">
+<div id="carouselHomeAtas" class="carousel slide carousel-fade bg-secondary bg-gradient bg-opacity-10" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -36,11 +36,11 @@
         <span class="visually-hidden">Berikutnya</span>
     </button>
 </div>
-<div class="container-fluid bg-secondary bg-gradient p-5">
+<div class="container-fluid bg-light bg-gradient p-5">
     <div class="container-fluid text-center mb-5">
-        <hr class="bg-light">
-        <h1 class="text-light">BERITA TERKINI</h1>
-        <hr class="bg-light">
+        <hr>
+        <h1 class="text-dark">BERITA TERKINI</h1>
+        <hr>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-3">
         <div class="col">
@@ -84,11 +84,11 @@
         </div>
     </div>
 </div>
-<div class="container-fluid bg-dark bg-gradient p-5 text-center">
+<div class="container-fluid bg-secondary bg-gradient bg-opacity-10 p-5 text-center">
     <div class="container-fluid mb-5">
-        <hr class="bg-light">
-        <h1 class="text-light">PARA PIMPINAN</h1>
-        <hr class="bg-light">
+        <hr>
+        <h1 class="text-dark">PARA PIMPINAN</h1>
+        <hr>
     </div>
     <div class="row row-cols-2 row-cols-md-4 g-3 justify-content-center">
         <div class="col">
@@ -139,7 +139,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid bg-secondary bg-gradient p-5 text-light">
+<div class="container-fluid bg-light bg-gradient p-5 text-dark">
     <div class="row g-3">
         <div class="col-md-4">
             <div class="container-fluid">
@@ -151,7 +151,7 @@
                             31 Desember 2021 09:00 WIB
                         </div>
                         <div class="col">
-                            <a href="#" class="link-light">Syukuran Tahun Baru</a>
+                            <a href="#" class="link-dark">Syukuran Tahun Baru</a>
                         </div>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                             03 Januari 2022 07:15 WIB
                         </div>
                         <div class="col">
-                            <a href="#" class="link-light">Apel Pagi Tahun Baru</a>
+                            <a href="#" class="link-dark">Apel Pagi Tahun Baru</a>
                         </div>
                     </div>
                 </div>
