@@ -36,54 +36,83 @@
         <span class="visually-hidden">Berikutnya</span>
     </button>
 </div>
-<div class="container-fluid bg-light bg-gradient p-5">
-    <div class="container-fluid text-center mb-5">
-        <hr>
-        <h1 class="text-dark">BERITA TERKINI</h1>
-        <hr>
-    </div>
-    <div class="row row-cols-1 row-cols-md-3 g-3">
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Berita Pertama</h5>
-                    <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-dark">Selengkapnya...</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
+<?php if (!empty($berita) && is_array($berita)) : ?>
+    <div class="container-fluid bg-light bg-gradient p-5">
+        <div class="container-fluid text-center mb-5">
+            <hr>
+            <h1 class="text-dark">BERITA TERKINI</h1>
+            <hr>
         </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="img-fluid card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Berita Kedua</h5>
-                    <p class="card-text text-truncate">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-dark">Selengkapnya...</a>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <?php foreach (array_slice($berita, 0, 3) as $news_item) : ?>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <div class="ratio ratio-16x9">
+                            <img src="<?= esc($news_item['gambar']) ?>" class="img-fluid card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><?= esc($news_item['judul']) ?></h5>
+                            <p class="card-text text-truncate"><?= esc($news_item['badan']) ?></p>
+                            <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><?= esc($news_item['waktu']) ?></small>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="img-fluid card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Berita Ketiga</h5>
-                    <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-dark">Selengkapnya...</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
+            <?php endforeach ?>
         </div>
     </div>
-</div>
+<?php else : ?>
+    <div class="container-fluid bg-light bg-gradient p-5">
+        <div class="container-fluid text-center mb-5">
+            <hr>
+            <h1 class="text-dark">BERITA TERKINI</h1>
+            <hr>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Berita Pertama</h5>
+                        <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Berita Kedua</h5>
+                        <p class="card-text text-truncate">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Berita Ketiga</h5>
+                        <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
 <div class="container-fluid bg-secondary bg-gradient bg-opacity-10 p-5 text-center">
     <div class="container-fluid mb-5">
         <hr>
