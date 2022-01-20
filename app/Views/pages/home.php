@@ -44,6 +44,7 @@
             <hr>
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-3">
+            <!-- BAGIAN BERIKUT DIGUNAKAN UNTUK MENAMPILKAN DATA BERITA YANG DIBATASI HANYA 3 BERITA TERBARU -->
             <?php foreach (array_slice($berita, 0, 3) as $news_item) : ?>
                 <div class="col">
                     <div class="card h-100 shadow">
@@ -64,6 +65,7 @@
         </div>
     </div>
 <?php else : ?>
+    <!-- APABILA BERITA GAGAL DIAMBIL OLEH MODEL, ATAU TIDAK ADA BERITA DI DALAM DATABASE, MAKA DITAMPILKAN CARD BERITA DEFAULT -->
     <div class="container-fluid bg-light bg-gradient p-5">
         <div class="container-fluid text-center mb-5">
             <hr>

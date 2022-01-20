@@ -35,6 +35,8 @@
                 </div>
             </div>
         </div>
+        <!-- KODE DI BAWAH DIGUNAKAN UNTUK MENAMPILKAN DATA BERITA YANG TELAH DIAMBIL DARI DATABASE -->
+        <!-- JIKA DATA BERITA KOSONG, ATAU DATA BUKAN ARRAY, MAKA PROSES DILANJUTKAN PADA BAGIAN else -->
         <?php if (!empty($beritaHalaman) && is_array($beritaHalaman)) : ?>
             <div class="col-md-9">
                 <div class="card bg-light bg-gradient shadow">
@@ -43,6 +45,8 @@
                     </div>
                     <div class="card-body">
                         <div class="row row-cols-1 row-cols-md-3 g-3 p-3">
+                            <!-- KODE DI BAWAH DIGUNAKAN UNTUK MENAMPILKAN ARRAY SETIAP DATA BERITA -->
+                            <!-- UNTUK MEMANGGIL SETIAP BAGIAN DARI SETIAP DATA BERITA, DIGUNAKAN OBJEK $news_item['NAMA_KOLOM'] -->
                             <?php foreach ($beritaHalaman as $news_item) : ?>
                                 <div class="col">
                                     <div class="card h-100 shadow">
@@ -61,10 +65,11 @@
                                 </div>
                             <?php endforeach ?>
                         </div>
-                        <?= $pager->links('group1','kustom_paginasi') ?>
+                        <?= $pager->links('group1', 'kustom_paginasi') ?>
                     </div>
                 </div>
             </div>
+            <!-- APABILA DATA BERITA KOSONG, MAKA PADA HALAMAN, DITAMPILKAN CARD BERITA DEFAULT SEBANYAK 3 BUAH -->
         <?php else : ?>
             <div class="col-md-9">
                 <div class="card bg-light bg-gradient shadow">

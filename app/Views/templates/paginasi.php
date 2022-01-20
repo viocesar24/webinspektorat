@@ -1,3 +1,4 @@
+<!-- PASTIKAN GUNAKAN CSS UNTUK TAMPILKAN YANG LEBIH BAGUS -->
 <nav aria-label="<?= lang('Pager.pageNavigation') ?>">
     <ul class="pagination justify-content-center">
         <?php if ($pager->hasPreviousPage()) : ?>
