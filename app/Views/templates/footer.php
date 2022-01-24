@@ -3,11 +3,11 @@
         <div class="col-md-4 mb-3">
             <h6 class="fw-bold">LINK TERKAIT</h6>
             <div class="list-group list-group-flush text-dark">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-dark">Link Pertama</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-dark">Link Kedua</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-dark">Link Ketiga</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-dark">Link Keempat</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-dark">Link Kelima</a>
+                <a href="https://kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">PEMERINTAHAN KABUPATEN KEDIRI</a>
+                <a href="https://dukcapil.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">DINAS KEPENDUDUKAN DAN CATATAN SIPIL</a>
+                <a href="https://diskominfo.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">DINAS KOMUNIKASI DAN INFORMATIKA</a>
+                <a href="https://disdik.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">DINAS PENDIDIKAN</a>
+                <a href="https://halomasbup.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">HALOMASBUP</a>
             </div>
         </div>
         <div class="col-md-4 mb-3">

@@ -121,83 +121,121 @@
         <h1 class="text-dark">PARA PIMPINAN</h1>
         <hr>
     </div>
-    <div class="row row-cols-2 row-cols-md-4 g-3 justify-content-center">
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">MR. 1</h5>
-                    <p class="card-text">INSPEKTUR</p>
+    <?php if (!empty($pejabat) && is_array($pejabat)) : ?>
+        <div class="row row-cols-2 row-cols-md-4 g-3 justify-content-center">
+            <?php foreach (array_slice($pejabat, 0, 1) as $pejabat_item) : ?>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-title"><?= esc($pejabat_item['nama']) ?></p>
+                            <h5 class="card-text"><?= esc($pejabat_item['jabatan']) ?></h5>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+            <div class="w-100 p-0 m-0"></div>
+            <?php foreach (array_slice($pejabat, 1, 3) as $pejabat_item) : ?>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text"><?= esc($pejabat_item['nama']) ?></p>
+                            <h5 class="card-title"><?= esc($pejabat_item['jabatan']) ?></h5>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+    <?php else : ?>
+        <div class="row row-cols-2 row-cols-md-4 g-3 justify-content-center">
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">WIRAWAN, S.E., M.M., Ak.</h5>
+                        <p class="card-text">Plt. INSPEKTUR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 p-0 m-0"></div>
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">SUGIYONO, S.Sos, M.M.</h5>
+                        <p class="card-text">INSPEKTUR PEMBANTU II</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">HERU SANTOSO, S.E., M.M.</h5>
+                        <p class="card-text">INSPEKTUR PEMBANTU III</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">NONO SOEKARDI, S.H., M.M.</h5>
+                        <p class="card-text">INSPEKTUR PEMBANTU IV</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="w-100 p-0 m-0"></div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">MR. 2</h5>
-                    <p class="card-text">IRBAN 1</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">MR. 3</h5>
-                    <p class="card-text">IRBAN 2</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">MR. 4</h5>
-                    <p class="card-text">IRBAN 3</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">MR. 5</h5>
-                    <p class="card-text">IRBAN 4</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php endif ?>
 </div>
 <div class="container-fluid bg-light bg-gradient p-5 text-dark">
     <div class="row g-3">
         <div class="col-md-4">
-            <div class="container-fluid">
-                <h1>AGENDA <strong>KEGIATAN</strong></h1>
-                <div class="container-fluid p-0 mb-3">
-                    <div class="row row-cols-1">
-                        <div class="col fw-lighter">
-                            <i class="bi bi-calendar"></i>
-                            31 Desember 2021 09:00 WIB
+            <?php if (!empty($kegiatan) && is_array($kegiatan)) : ?>
+                <div class="container-fluid">
+                    <h1>AGENDA <strong>KEGIATAN</strong></h1>
+                    <?php foreach (array_slice($kegiatan, 0, 5) as $kegiatan_item) : ?>
+                        <div class="container-fluid p-0 mb-3">
+                            <div class="row row-cols-1">
+                                <div class="col fw-lighter">
+                                    <i class="bi bi-calendar"></i>
+                                    <?= esc($kegiatan_item['waktu']) ?>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="link-dark"><?= esc($kegiatan_item['judul']) ?></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <a href="#" class="link-dark">Syukuran Tahun Baru</a>
+                    <?php endforeach ?>
+                </div>
+            <?php else : ?>
+                <div class="container-fluid">
+                    <h1>AGENDA <strong>KEGIATAN</strong></h1>
+                    <div class="container-fluid p-0 mb-3">
+                        <div class="row row-cols-1">
+                            <div class="col fw-lighter">
+                                <i class="bi bi-calendar"></i>
+                                31 Desember 2021 09:00 WIB
+                            </div>
+                            <div class="col">
+                                <a href="#" class="link-dark">Syukuran Tahun Baru</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid p-0 mb-3">
+                        <div class="row row-cols-1">
+                            <div class="col fw-light">
+                                <i class="bi bi-calendar"></i>
+                                03 Januari 2022 07:15 WIB
+                            </div>
+                            <div class="col">
+                                <a href="#" class="link-dark">Apel Pagi Tahun Baru</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid p-0 mb-3">
-                    <div class="row row-cols-1">
-                        <div class="col fw-light">
-                            <i class="bi bi-calendar"></i>
-                            03 Januari 2022 07:15 WIB
-                        </div>
-                        <div class="col">
-                            <a href="#" class="link-dark">Apel Pagi Tahun Baru</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endif ?>
             <hr>
         </div>
         <div class="col-md-1 text-center p-0 m-0 d-none d-md-block">

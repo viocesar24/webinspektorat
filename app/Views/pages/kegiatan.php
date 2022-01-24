@@ -35,68 +35,103 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
-            <div class="card bg-light bg-gradient shadow">
-                <div class="card-header text-center">
-                    <h5 class="fw-bold p-0 m-0">AGENDA KEGIATAN TERKINI</h5>
-                </div>
-                <div class="card-body">
-                    <div class="row row-cols-1 row-cols-md-3 g-3 p-3">
-                        <div class="col">
-                            <div class="card h-100 shadow">
-                                <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kegiatan Pertama</h5>
-                                    <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <a href="#" class="btn btn-dark">Selengkapnya...</a>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 shadow">
-                                <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kegiatan Kedua</h5>
-                                    <p class="card-text text-truncate">This card has supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn-dark">Selengkapnya...</a>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 shadow">
-                                <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kegiatan Ketiga</h5>
-                                    <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                    <a href="#" class="btn btn-dark">Selengkapnya...</a>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </div>
-                            </div>
-                        </div>
+        <!-- KODE DI BAWAH DIGUNAKAN UNTUK MENAMPILKAN DATA KEGIATAN YANG TELAH DIAMBIL DARI DATABASE -->
+        <!-- JIKA DATA KEGIATAN KOSONG, ATAU DATA BUKAN ARRAY, MAKA PROSES DILANJUTKAN PADA BAGIAN else -->
+        <?php if (!empty($kegiatanHalaman) && is_array($kegiatanHalaman)) : ?>
+            <div class="col-md-9">
+                <div class="card bg-light bg-gradient shadow">
+                    <div class="card-header text-center">
+                        <h5 class="fw-bold p-0 m-0">AGENDA KEGIATAN TERKINI</h5>
                     </div>
-                    <nav aria-label="Hasil Navigasi Halaman">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link link-dark">Previous</a>
-                            </li>
-                            <li class="page-item"><a class="page-link link-dark active" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link link-dark" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link link-dark" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link link-dark" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <div class="card-body">
+                        <div class="row row-cols-1 row-cols-md-3 g-3 p-3">
+                            <!-- KODE DI BAWAH DIGUNAKAN UNTUK MENAMPILKAN ARRAY SETIAP DATA KEGIATAN -->
+                            <!-- UNTUK MEMANGGIL SETIAP BAGIAN DARI SETIAP DATA KEGIATAN, DIGUNAKAN OBJEK $kegiatan_item['NAMA_KOLOM'] -->
+                            <?php foreach ($kegiatanHalaman as $kegiatan_item) : ?>
+                                <div class="col">
+                                    <div class="card h-100 shadow">
+                                        <img src="<?= esc($kegiatan_item['gambar']) ?>" class="img-fluid card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= esc($kegiatan_item['judul']) ?></h5>
+                                            <p class="card-text text-truncate"><?= esc($kegiatan_item['badan']) ?></p>
+                                            <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted"><?= esc($kegiatan_item['waktu']) ?></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
+                        <?= $pagerKegiatan->links('group1', 'kustom_paginasi') ?>
+                    </div>
                 </div>
             </div>
-        </div>
+            <!-- APABILA DATA BERITA KOSONG, MAKA PADA HALAMAN, DITAMPILKAN CARD BERITA DEFAULT SEBANYAK 3 BUAH -->
+        <?php else : ?>
+            <div class="col-md-9">
+                <div class="card bg-light bg-gradient shadow">
+                    <div class="card-header text-center">
+                        <h5 class="fw-bold p-0 m-0">AGENDA KEGIATAN TERKINI</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-cols-1 row-cols-md-3 g-3 p-3">
+                            <div class="col">
+                                <div class="card h-100 shadow">
+                                    <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Kegiatan Pertama</h5>
+                                        <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow">
+                                    <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="img-fluid card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Kegiatan Kedua</h5>
+                                        <p class="card-text text-truncate">This card has supporting text below as a natural lead-in to additional content.</p>
+                                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow">
+                                    <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="img-fluid card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Kegiatan Ketiga</h5>
+                                        <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <nav aria-label="Hasil Navigasi Halaman">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link link-dark">Previous</a>
+                                </li>
+                                <li class="page-item"><a class="page-link link-dark active" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link link-dark" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link link-dark" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link link-dark" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        <?php endif ?>
     </div>
 </div>

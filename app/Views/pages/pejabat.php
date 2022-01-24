@@ -38,24 +38,51 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
-            <div class="card shadow">
-                <div class="card-body">
-                    <div class="card mb-3" style="max-width: 50%;">
+        <?php if (!empty($pejabatHalaman) && is_array($pejabatHalaman)) : ?>
+            <div class="col-md-9">
+                <div class="card shadow">
+                    <div class="card-body">
                         <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">INSPEKTUR</h5>
-                                    <p class="card-text">Nama Inspektur</p>
+                            <?php foreach ($pejabatHalaman as $pejabat_item) : ?>
+                                <div class="col-md-5 card mb-3 mx-1">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><?= esc($pejabat_item['jabatan']) ?></h5>
+                                                <p class="card-text"><?= esc($pejabat_item['nama']) ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
+                        <?= $pagerPejabat->links('group1', 'kustom_paginasi') ?>
+                    </div>
+                </div>
+            </div>
+        <?php else : ?>
+            <div class="col-md-9">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="card mb-3" style="max-width: 50%;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Plt. INSPEKTUR</h5>
+                                        <p class="card-text">WIRAWAN, S.E., M.M., Ak.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php endif ?>
     </div>
 </div>
