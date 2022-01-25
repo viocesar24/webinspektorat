@@ -53,8 +53,7 @@
                                         <img src="<?= esc($kegiatan_item['gambar']) ?>" class="img-fluid card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title"><?= esc($kegiatan_item['judul']) ?></h5>
-                                            <p class="card-text text-truncate"><?= esc($kegiatan_item['badan']) ?></p>
-                                            <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                                            <p class="card-text"><?= esc($kegiatan_item['badan']) ?></p>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted"><?= esc($kegiatan_item['waktu']) ?></small>
@@ -82,7 +81,6 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Kegiatan Pertama</h5>
                                         <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
                                     </div>
                                     <div class="card-footer">
                                         <small class="text-muted">Last updated 3 mins ago</small>
@@ -95,7 +93,6 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Kegiatan Kedua</h5>
                                         <p class="card-text text-truncate">This card has supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
                                     </div>
                                     <div class="card-footer">
                                         <small class="text-muted">Last updated 3 mins ago</small>
@@ -108,7 +105,6 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Kegiatan Ketiga</h5>
                                         <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
                                     </div>
                                     <div class="card-footer">
                                         <small class="text-muted">Last updated 3 mins ago</small>

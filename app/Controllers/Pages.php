@@ -8,16 +8,9 @@ class Pages extends Controller
 {
     public function index()
     {
-        $model = model(NewsModel::class);
-        $modelKegiatan = model(KegiatanModel::class);
-        $modelPejabat = model(PejabatModel::class);
-
-        $data['berita'] = $model->getNews();
-        $data['kegiatan'] = $modelKegiatan->getNews();
-        $data['pejabat'] = $modelPejabat->getNews();
     }
 
-    public function view($page = 'home')
+    public function view($page = 'home', $slug = null)
     {
         $model = model(NewsModel::class);
         $modelKegiatan = model(KegiatanModel::class);
@@ -36,12 +29,13 @@ class Pages extends Controller
         // UNTUK MEMAKAI pager, SEBELUMNYA BUAT KUSTOM LINK UNTUK PAGINASI SESUAI TEMA WEBSITE, CONTOHNYA ADA PADA FOLDER TEMPLATES paginasi.php
         $data = [
             'berita' => $model->getNews(),
+            'beritaDetail' => $model->getNews($slug),
             'kegiatan' => $modelKegiatan->getKegiatan(),
             'pejabat' => $modelPejabat->getPejabat(),
             'title' => ucfirst($page),
             'beritaHalaman' => $model->orderBy('waktu', 'DESC')->paginate(3, 'group1'),
             'kegiatanHalaman' => $modelKegiatan->orderBy('waktu', 'DESC')->paginate(3, 'group1'),
-            'pejabatHalaman' => $modelPejabat->paginate(4, 'group1'),
+            'pejabatHalaman' => $modelPejabat->paginate(10, 'group1'),
             'pager' => $model->pager,
             'pagerKegiatan' => $modelKegiatan->pager,
             'pagerPejabat' => $modelPejabat->pager,

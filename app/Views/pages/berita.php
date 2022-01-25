@@ -56,7 +56,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title"><?= esc($news_item['judul']) ?></h5>
                                             <p class="card-text text-truncate"><?= esc($news_item['badan']) ?></p>
-                                            <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                                            <a href="/detail/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-dark">Selengkapnya...</a>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted"><?= esc($news_item['waktu']) ?></small>

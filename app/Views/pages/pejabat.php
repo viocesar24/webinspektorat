@@ -47,7 +47,7 @@
                                 <div class="col-md-5 card mb-3 mx-1">
                                     <div class="row g-0">
                                         <div class="col-md-4">
-                                            <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid rounded-start" alt="...">
+                                            <img src="<?php echo base_url(); ?>/img/person.svg" class="img-fluid card-img-top" alt="...">
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">
@@ -70,7 +70,7 @@
                         <div class="card mb-3" style="max-width: 50%;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid rounded-start" alt="...">
+                                    <img src="<?php echo base_url(); ?>/img/person.svg" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">

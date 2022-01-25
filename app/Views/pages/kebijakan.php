@@ -42,24 +42,34 @@
             <div class="card shadow">
                 <div class="card-body">
                     <h5 class="card-title fw-bold">KEBIJAKAN INSPEKTORAT</h5>
-                    <p class="card-text text-start" style="text-indent: 5%;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <h6 class="card-subtitle text-muted fw-bold mt-3">KEBIJAKAN PUBLIK</h6>
-                    <ol class="list-group list-group-numbered">
-                        <li class="list-group-item border-0">A list item</li>
-                        <li class="list-group-item border-0">A list item</li>
-                        <li class="list-group-item border-0">A list item</li>
+                    <ol class="list-group list-group-flush">
+                        <li class="list-group-item">Meningkatkan pengawasan reguler terhadap kegiatan pelayanan masyarakat, pengelolaan dan pemanfaatan keuangan dan aset daerah, pembinaan dan pemberdayaan sumber daya manusia serta pengelolaan pendapatan Daerah.</li>
+                        <li class="list-group-item">Meningkatkan percepatan penanganan kasus KKN berdasarkan Instruksi Presiden Republik Indonesia Nomor 5 Tahun 2004.</li>
+                        <li class="list-group-item">Meningkatkan kualitas aparat pengawas melalui berbagai pendidikan dan pelatihan yang dibutuhkan.</li>
+                        <li class="list-group-item">Meningkatkan pemenuhan kebutuhan sarana dan prasarana pengawasan.</li>
+                        <li class="list-group-item">Menerapkan sistem dan prosedur pengawasan sesuai dengan peraturan perundang-undangan yang berlaku.</li>
+                        <li class="list-group-item">Memberikan asistensi dan konsultansi pengawasan kepada satuan kerja perangkat daerah dalam melaksanakan tugas pokok dan fungsi organisasi.</li>
+                    </ol>
+                    <h6 class="card-subtitle text-muted fw-bold mt-3">KEBIJAKAN TEKNIS</h6>
+                    <ol class="list-group list-group-flush">
+                        <li class="list-group-item">Menyusun program kerja pengawasan tahunan berdasarkan skala prioritas pengawasan.</li>
+                        <li class="list-group-item">Melakukan pengawasan reguler berdasarkan program kerja pengawasan tahunan.</li>
+                        <li class="list-group-item">Melakukan pengawasan dan penanganan kasus KKN dengan memprioritaskan sumber pengaduan masyarakat.</li>
+                        <li class="list-group-item">Memantau penyelesaian tindak lanjut hasil pengawasan oleh pimpinan satuan kerja perangkat daerah.</li>
+                        <li class="list-group-item">Memberikan konsultansi/asistensi pengawasan kepada satuan kerja perangkat daerah.</li>
                     </ol>
                     <h6 class="card-subtitle text-muted fw-bold mt-3">KEBIJAKAN PENGADAAN DAN PEMANFAATAN SARANA DAN PRASARANA PENGAWASAN</h6>
-                    <ol class="list-group list-group-numbered">
-                        <li class="list-group-item border-0">A list item</li>
-                        <li class="list-group-item border-0">A list item</li>
-                        <li class="list-group-item border-0">A list item</li>
+                    <ol class="list-group list-group-flush">
+                        <li class="list-group-item">Mengadakan sarana dan prasarana pengawasan berdasarkan kebutuhan organisasi.</li>
+                        <li class="list-group-item">Memanfaatkan sarana dan prasarana pengawasan secara efisien dan efektif.</li>
                     </ol>
                     <h6 class="card-subtitle text-muted fw-bold mt-3">KEBIJAKAN PEMBINAAN SUMBER DAYA MANUSIA</h6>
-                    <ol class="list-group list-group-numbered">
-                        <li class="list-group-item border-0">A list item</li>
-                        <li class="list-group-item border-0">A list item</li>
-                        <li class="list-group-item border-0">A list item</li>
+                    <ol class="list-group list-group-flush">
+                        <li class="list-group-item">Mengembangkan sumber daya manusia pengawasan.</li>
+                        <li class="list-group-item">Menciptakan kesejahteraan sumber daya manusia pengawasan.</li>
+                        <li class="list-group-item">Menerapkan penilaian kinerja sumber daya manusia pengawasan.</li>
+                        <li class="list-group-item">Menerapkan sistem pemberian penghargaan dan pengenaan sanksi (reward and punishment).</li>
                     </ol>
                 </div>
             </div>

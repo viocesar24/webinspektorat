@@ -54,7 +54,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><?= esc($news_item['judul']) ?></h5>
                             <p class="card-text text-truncate"><?= esc($news_item['badan']) ?></p>
-                            <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                            <a href="/detail/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-dark">Selengkapnya...</a>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted"><?= esc($news_item['waktu']) ?></small>
@@ -126,7 +126,7 @@
             <?php foreach (array_slice($pejabat, 0, 1) as $pejabat_item) : ?>
                 <div class="col">
                     <div class="card h-100 shadow">
-                        <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                        <img src="<?php echo base_url(); ?>/img/person.svg" class="img-fluid card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-title"><?= esc($pejabat_item['nama']) ?></p>
                             <h5 class="card-text"><?= esc($pejabat_item['jabatan']) ?></h5>
@@ -138,7 +138,7 @@
             <?php foreach (array_slice($pejabat, 1, 3) as $pejabat_item) : ?>
                 <div class="col">
                     <div class="card h-100 shadow">
-                        <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                        <img src="<?php echo base_url(); ?>/img/person.svg" class="img-fluid card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text"><?= esc($pejabat_item['nama']) ?></p>
                             <h5 class="card-title"><?= esc($pejabat_item['jabatan']) ?></h5>
@@ -151,7 +151,7 @@
         <div class="row row-cols-2 row-cols-md-4 g-3 justify-content-center">
             <div class="col">
                 <div class="card h-100 shadow">
-                    <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                    <img src="<?php echo base_url(); ?>/img/person.svg" class="img-fluid card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">WIRAWAN, S.E., M.M., Ak.</h5>
                         <p class="card-text">Plt. INSPEKTUR</p>
@@ -161,7 +161,7 @@
             <div class="w-100 p-0 m-0"></div>
             <div class="col">
                 <div class="card h-100 shadow">
-                    <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                    <img src="<?php echo base_url(); ?>/img/person.svg" class="img-fluid card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">SUGIYONO, S.Sos, M.M.</h5>
                         <p class="card-text">INSPEKTUR PEMBANTU II</p>
@@ -170,7 +170,7 @@
             </div>
             <div class="col">
                 <div class="card h-100 shadow">
-                    <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                    <img src="<?php echo base_url(); ?>/img/person.svg" class="img-fluid card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">HERU SANTOSO, S.E., M.M.</h5>
                         <p class="card-text">INSPEKTUR PEMBANTU III</p>
@@ -179,7 +179,7 @@
             </div>
             <div class="col">
                 <div class="card h-100 shadow">
-                    <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                    <img src="<?php echo base_url(); ?>/img/person.svg" class="img-fluid card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">NONO SOEKARDI, S.H., M.M.</h5>
                         <p class="card-text">INSPEKTUR PEMBANTU IV</p>
@@ -203,7 +203,7 @@
                                     <?= esc($kegiatan_item['waktu']) ?>
                                 </div>
                                 <div class="col">
-                                    <a href="#" class="link-dark"><?= esc($kegiatan_item['judul']) ?></a>
+                                    <a href="<?php echo base_url(); ?>/kegiatan/" class="link-dark"><?= esc($kegiatan_item['judul']) ?></a>
                                 </div>
                             </div>
                         </div>
