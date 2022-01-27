@@ -8,6 +8,7 @@ class Pages extends Controller
 {
     public function index()
     {
+        return $this->view();
     }
 
     public function view($page = 'home', $slug = null)
