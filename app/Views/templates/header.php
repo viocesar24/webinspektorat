@@ -67,10 +67,10 @@
                                 <a class="nav-link text-dark" href="<?php echo base_url(); ?>/kontak/">KONTAK</a>
                             </li>
                         </ul>
-                        <form class="d-flex">
+                        <!-- <form class="d-flex">
                             <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Cari</button>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
             </div>

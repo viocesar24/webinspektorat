@@ -6,10 +6,10 @@
     </div>
     <div class="carousel-inner ratio ratio-21x9">
         <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid d-block w-100" alt="Highlight Pertama">
+            <img src="https://www.pinhome.id/blog/wp-content/uploads/2017/10/peta-kabupaten-kediri-lengkap-1.jpg" class="img-fluid d-block w-100" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Highlight Inspektorat 1</h5>
-                <p>Penjelasan singkat mengenai highlight 1.</p>
+                <h5 class="text-dark">PETA KABUPATEN KEDIRI</h5>
+                <!-- <p>Penjelasan singkat mengenai highlight 1.</p> -->
             </div>
         </div>
         <div class="carousel-item">
