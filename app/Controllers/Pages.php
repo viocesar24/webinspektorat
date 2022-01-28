@@ -6,20 +6,29 @@ use CodeIgniter\Controller;
 
 class Pages extends Controller
 {
+
     public function index()
     {
         return $this->view();
     }
 
-    public function view($page = 'home', $slug = null)
+    public function view($page = 'home', $slug = false)
     {
         $model = model(NewsModel::class);
         $modelKegiatan = model(KegiatanModel::class);
         $modelPejabat = model(PejabatModel::class);
+        $request = \Config\Services::request();
+        $kunci = $request->getGet();
 
         if (!is_file(APPPATH . 'Views/pages/' . $page . '.php')) {
             //Oh..., tidak ada halaman yang dimaksud
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
+
+        if ($kunci) {
+            $kunciBool = true;
+        } else {
+            $kunciBool = false;
         }
 
         // MENGUMPULKAN OBJEK-OBJEK YANG DIBUTUHKAN KE DALAM OBJEK $data
@@ -29,8 +38,11 @@ class Pages extends Controller
         // 'pager' MERUPAKAN OBJEK YANG DIGUNAKAN UNTUK MENAMPILKAN FUNGSI PAGINASI
         // UNTUK MEMAKAI pager, SEBELUMNYA BUAT KUSTOM LINK UNTUK PAGINASI SESUAI TEMA WEBSITE, CONTOHNYA ADA PADA FOLDER TEMPLATES paginasi.php
         $data = [
+            'kunci' => $kunciBool,
             'berita' => $model->getNews(),
             'beritaDetail' => $model->getNews($slug),
+            'cariBerita' => $model->cariBerita($kunci),
+            'cariBerita' => $model->orderBy('waktu', 'DESC')->paginate(100, 'group1'),
             'kegiatan' => $modelKegiatan->getKegiatan(),
             'pejabat' => $modelPejabat->getPejabat(),
             'title' => ucfirst($page),

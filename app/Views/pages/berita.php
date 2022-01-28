@@ -37,7 +37,38 @@
         </div>
         <!-- KODE DI BAWAH DIGUNAKAN UNTUK MENAMPILKAN DATA BERITA YANG TELAH DIAMBIL DARI DATABASE -->
         <!-- JIKA DATA BERITA KOSONG, ATAU DATA BUKAN ARRAY, MAKA PROSES DILANJUTKAN PADA BAGIAN else -->
-        <?php if (!empty($beritaHalaman) && is_array($beritaHalaman)) : ?>
+        <?php if (!empty($cariBerita) && is_array($cariBerita) && $kunci) : ?>
+            <div class="col-md-9">
+                <div class="card bg-light bg-gradient shadow">
+                    <div class="card-header text-center">
+                        <h5 class="fw-bold p-0 m-0">BERITA TERKINI</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-cols-1 row-cols-md-3 g-3 p-3">
+                            <!-- KODE DI BAWAH DIGUNAKAN UNTUK MENAMPILKAN ARRAY SETIAP DATA BERITA -->
+                            <!-- UNTUK MEMANGGIL SETIAP BAGIAN DARI SETIAP DATA BERITA, DIGUNAKAN OBJEK $news_item['NAMA_KOLOM'] -->
+                            <?php foreach ($cariBerita as $news_item) : ?>
+                                <div class="col">
+                                    <div class="card h-100 shadow">
+                                        <div class="ratio ratio-16x9">
+                                            <img src="<?= esc($news_item['gambar']) ?>" class="img-fluid card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= esc($news_item['judul']) ?></h5>
+                                            <p class="card-text text-truncate"><?= esc($news_item['badan']) ?></p>
+                                            <a href="/detail/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-dark">Selengkapnya...</a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted"><?= esc($news_item['waktu']) ?></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php elseif (!empty($beritaHalaman) && is_array($beritaHalaman)) : ?>
             <div class="col-md-9">
                 <div class="card bg-light bg-gradient shadow">
                     <div class="card-header text-center">

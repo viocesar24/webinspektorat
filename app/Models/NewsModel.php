@@ -21,4 +21,14 @@ class NewsModel extends Model
         // KODE DI BAWAH DIGUNAKAN UNTUK MENGAMBIL DATA BERITA DENGAN SLUG TERTENTU
         return $this->where(['slug' => $slug])->first();
     }
+
+    public function cariBerita($kunci = [])
+    {
+        if ($kunci === [] || $kunci === '') {
+            $this->orderBy('waktu', 'DESC');
+            return $this->findAll();
+        }
+
+        return $this->orderBy('waktu', 'DESC')->like('judul', implode(" ",$kunci));
+    }
 }
