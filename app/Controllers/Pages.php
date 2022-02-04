@@ -31,6 +31,12 @@ class Pages extends Controller
             $kunciBool = false;
         }
 
+        if ($slug != '') {
+            $slugBool = true;
+        } else {
+            $slugBool = false;
+        }
+
         // MENGUMPULKAN OBJEK-OBJEK YANG DIBUTUHKAN KE DALAM OBJEK $data
         // 'berita' MERUPAKAN OBJEK YANG DIGUNAKAN UNTUK MENGAMBIL DATA BERITA DARI METHOD getNews() CLASS NewsModel
         // 'title' MERUPAKAN OBJEK YANG DIGUNAKAN UNTUK MEMUAT HURUF PERTAMA DARI OBJEK $page
@@ -39,6 +45,7 @@ class Pages extends Controller
         // UNTUK MEMAKAI pager, SEBELUMNYA BUAT KUSTOM LINK UNTUK PAGINASI SESUAI TEMA WEBSITE, CONTOHNYA ADA PADA FOLDER TEMPLATES paginasi.php
         $data = [
             'kunci' => $kunciBool,
+            'slug' => $slugBool,
             'berita' => $model->getNews(),
             'beritaDetail' => $model->getNews($slug),
             'cariBerita' => $model->cariBerita($kunci),

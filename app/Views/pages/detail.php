@@ -12,15 +12,25 @@
         </nav>
     </div>
 </div>
-<div class="bg-light bg-gradient p-5">
-    <div class="card shadow">
-        <div class="ratio ratio-21x9">
-            <img src="<?= esc($beritaDetail['gambar']) ?>" class="img-fluid card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-            <h2 class="text-center fw-bold"><?= esc($beritaDetail['judul']) ?></h2>
-            <p class="fw-light"><i class="bi bi-clock"></i> <?= esc($beritaDetail['waktu']) ?></p>
-            <p><?= esc($beritaDetail['badan']) ?></p>
+<?php if (!empty($beritaDetail) && is_array($beritaDetail) && $slug) : ?>
+    <div class="bg-light bg-gradient p-5">
+        <div class="card shadow">
+            <div class="ratio ratio-21x9">
+                <img src="<?= esc($beritaDetail['gambar']) ?>" class="img-fluid card-img-top" alt="...">
+            </div>
+            <div class="card-body">
+                <h2 class="text-center fw-bold"><?= esc($beritaDetail['judul']) ?></h2>
+                <p class="fw-light"><i class="bi bi-clock"></i> <?= esc($beritaDetail['waktu']) ?></p>
+                <p><?= esc($beritaDetail['badan']) ?></p>
+            </div>
         </div>
     </div>
-</div>
+<?php else : ?>
+    <div class="bg-light bg-gradient p-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h1 class="text-center fw-bold">BERITA TAK DITEMUKAN</h1>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
