@@ -54,11 +54,10 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>Dokumen Pertama</td>
-                                    <td>Kategori A</td>
+                                    <td>SURAT PERINTAH TUGAS 25 AGUSTUS 2021</td>
+                                    <td>SURAT PERINTAH</td>
                                     <td>
-                                        <a class="btn btn-secondary btn-sm" href="#">Lihat</a>
-                                        <a class="btn btn-secondary btn-sm" href="#">Unduh</a>
+                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/SURAT PERINTAH TUGAS 25 AGUSTUS 2021.pdf" target="_blank">Lihat</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -67,7 +66,6 @@
                                     <td>Kategori A</td>
                                     <td>
                                         <a class="btn btn-secondary btn-sm" href="#">Lihat</a>
-                                        <a class="btn btn-secondary btn-sm" href="#">Unduh</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -76,7 +74,6 @@
                                     <td>Kategori B</td>
                                     <td>
                                         <a class="btn btn-secondary btn-sm" href="#">Lihat</a>
-                                        <a class="btn btn-secondary btn-sm" href="#">Unduh</a>
                                     </td>
                                 </tr>
                             </tbody>
