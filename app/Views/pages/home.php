@@ -4,26 +4,32 @@
         <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner ratio ratio-21x9">
+    <div class="carousel-inner ratio ratio-16x9">
         <div class="carousel-item active">
             <img src="https://www.pinhome.id/blog/wp-content/uploads/2017/10/peta-kabupaten-kediri-lengkap-1.jpg" class="img-fluid d-block w-100" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-dark">PETA KABUPATEN KEDIRI</h5>
-                <!-- <p>Penjelasan singkat mengenai highlight 1.</p> -->
+                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
+                    <h4>PETA KABUPATEN KEDIRI</h4>
+                    <p>Peta daerah dan perbatasan Kabupaten Kediri</p>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="img-fluid d-block w-100" alt="Highlight Kedua">
+            <img src="https://drive.google.com/uc?export=view&id=1esb4RMAjsNv6rhDgot9_sL5p6z7gTd5M" class="img-fluid d-block w-100" alt="ACARA 3 FEBRUARI 2022 AUDITORIAL">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Highlight Inspektorat 2</h5>
-                <p>Penjelasan singkat mengenai highlight 2.</p>
+                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
+                    <h4>ACARA 3 FEBRUARI 2022 AUDITORIAL</h4>
+                    <p>Acara pembinaan Bapak Inspektur</p>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="img-fluid d-block w-100" alt="Highlight Ketiga">
+            <img src="https://drive.google.com/uc?export=view&id=1ejoyJUJjJ1Qga1a6h9rJONcnkdKiKycO" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Highlight Inspektorat 3</h5>
-                <p>Penjelasan singkat mengenai highlight 3.</p>
+                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
+                    <h4>APEL PAGI 31 JANUARI 2022</h4>
+                    <p>Memulai kegiatan rutin apel pagi hari Senin</p>
+                </div>
             </div>
         </div>
     </div>
