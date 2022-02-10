@@ -44,14 +44,33 @@
                         <h5 class="fw-bold p-0 m-0">BERITA TERKINI</h5>
                     </div>
                     <div class="card-body">
-                        <div class="row row-cols-1 row-cols-md-3 g-3 p-3">
+                        <div class="row row-cols-1 row-cols-md-1 g-3 p-3">
                             <!-- KODE DI BAWAH DIGUNAKAN UNTUK MENAMPILKAN ARRAY SETIAP DATA BERITA -->
                             <!-- UNTUK MEMANGGIL SETIAP BAGIAN DARI SETIAP DATA BERITA, DIGUNAKAN OBJEK $news_item['NAMA_KOLOM'] -->
                             <?php foreach ($cariBerita as $news_item) : ?>
                                 <div class="col">
                                     <div class="card h-100 shadow">
-                                        <div class="ratio ratio-16x9">
-                                            <img src="<?= esc($news_item['gambar']) ?>" class="img-fluid card-img-top" alt="...">
+                                        <div id="<?= esc($news_item['slug']) ?>" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-indicators">
+                                                <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            </div>
+                                            <div class="carousel-inner ratio ratio-16x9">
+                                                <div class="carousel-item active">
+                                                    <img src="<?= esc($news_item['gambar_1']) ?>" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="<?= esc($news_item['gambar_2']) ?>" class="d-block w-100" alt="...">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title"><?= esc($news_item['judul']) ?></h5>
@@ -75,14 +94,33 @@
                         <h5 class="fw-bold p-0 m-0">BERITA TERKINI</h5>
                     </div>
                     <div class="card-body">
-                        <div class="row row-cols-1 row-cols-md-3 g-3 p-3">
+                        <div class="row row-cols-1 row-cols-md-1 g-3 p-3">
                             <!-- KODE DI BAWAH DIGUNAKAN UNTUK MENAMPILKAN ARRAY SETIAP DATA BERITA -->
                             <!-- UNTUK MEMANGGIL SETIAP BAGIAN DARI SETIAP DATA BERITA, DIGUNAKAN OBJEK $news_item['NAMA_KOLOM'] -->
                             <?php foreach ($beritaHalaman as $news_item) : ?>
                                 <div class="col">
                                     <div class="card h-100 shadow">
-                                        <div class="ratio ratio-16x9">
-                                            <img src="<?= esc($news_item['gambar']) ?>" class="img-fluid card-img-top" alt="...">
+                                        <div id="<?= esc($news_item['slug']) ?>" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-indicators">
+                                                <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            </div>
+                                            <div class="carousel-inner ratio ratio-16x9">
+                                                <div class="carousel-item active">
+                                                    <img src="<?= esc($news_item['gambar_1']) ?>" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="<?= esc($news_item['gambar_2']) ?>" class="d-block w-100" alt="...">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title"><?= esc($news_item['judul']) ?></h5>
@@ -108,7 +146,7 @@
                         <h5 class="fw-bold p-0 m-0">BERITA TERKINI</h5>
                     </div>
                     <div class="card-body">
-                        <div class="row row-cols-1 row-cols-md-3 g-3 p-3">
+                        <div class="row row-cols-1 row-cols-md-1 g-3 p-3">
                             <div class="col">
                                 <div class="card h-100 shadow">
                                     <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid card-img-top" alt="...">

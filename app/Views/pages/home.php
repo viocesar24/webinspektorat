@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://drive.google.com/uc?export=view&id=1esb4RMAjsNv6rhDgot9_sL5p6z7gTd5M" class="img-fluid d-block w-100" alt="ACARA 3 FEBRUARI 2022 AUDITORIAL">
+            <img src="https://drive.google.com/uc?export=view&id=1BRqb8oLMh9xFgg1EOPKD0q65uK2uzD3I" class="img-fluid d-block w-100" alt="ACARA 3 FEBRUARI 2022 AUDITORIAL">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>ACARA 3 FEBRUARI 2022 AUDITORIAL</h4>
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://drive.google.com/uc?export=view&id=1ejoyJUJjJ1Qga1a6h9rJONcnkdKiKycO" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
+            <img src="https://drive.google.com/uc?export=view&id=10Cw1qsgoOGpo8_Sccr6T63JS1Gt4dwGT" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>APEL PAGI 31 JANUARI 2022</h4>
@@ -54,8 +54,27 @@
             <?php foreach (array_slice($berita, 0, 3) as $news_item) : ?>
                 <div class="col">
                     <div class="card h-100 shadow">
-                        <div class="ratio ratio-16x9">
-                            <img src="<?= esc($news_item['gambar']) ?>" class="img-fluid card-img-top" alt="...">
+                        <div id="<?= esc($news_item['slug']) ?>" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            </div>
+                            <div class="carousel-inner ratio ratio-16x9">
+                                <div class="carousel-item active">
+                                    <img src="<?= esc($news_item['gambar_1']) ?>" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?= esc($news_item['gambar_2']) ?>" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><?= esc($news_item['judul']) ?></h5>
