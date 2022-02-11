@@ -54,15 +54,15 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>SURAT PERINTAH TUGAS 25 AGUSTUS 2021</td>
-                                    <td>SURAT PERINTAH</td>
+                                    <td>PERBUP NO 19 TAHUN 2021 (SOTK Inspektorat)</td>
+                                    <td>PERATURAN BUPATI</td>
                                     <td>
-                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/SURAT PERINTAH TUGAS 25 AGUSTUS 2021.pdf" target="_blank">Lihat</a>
+                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/PERBUP NO 19 TAHUN 2021 (SOTK Inspektorat).pdf" target="_blank">Lihat</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
-                                    <td>Dokumen Kedua</td>
+                                    <td>Dokumen Pertama</td>
                                     <td>Kategori A</td>
                                     <td>
                                         <a class="btn btn-secondary btn-sm" href="#">Lihat</a>
