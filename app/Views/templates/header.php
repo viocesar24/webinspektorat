@@ -38,8 +38,8 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasProfil">
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/tentang/">TENTANG</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/pejabat/">PEJABAT STRUKTURAL</a></li>
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/struktur/">STRUKTUR ORGANISASI</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/pejabat/">PEJABAT STRUKTURAL</a></li>
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/kebijakan/">KEBIJAKAN</a></li>
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/penghargaan/">PENGHARGAAN</a></li>
                                 </ul>

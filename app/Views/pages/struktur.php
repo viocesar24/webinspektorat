@@ -23,11 +23,11 @@
                     <a href="<?php echo base_url(); ?>/tentang/" class="list-group-item list-group-item-action">
                         Tentang
                     </a>
-                    <a href="<?php echo base_url(); ?>/pejabat/" class="list-group-item list-group-item-action">
-                        Pejabat Struktural
-                    </a>
                     <a href="<?php echo base_url(); ?>/struktur/" class="list-group-item list-group-item-action active" aria-current="page">
                         Struktur Organisasi
+                    </a>
+                    <a href="<?php echo base_url(); ?>/pejabat/" class="list-group-item list-group-item-action">
+                        Pejabat Struktural
                     </a>
                     <a href="<?php echo base_url(); ?>/kebijakan/" class="list-group-item list-group-item-action">
                         Kebijakan
