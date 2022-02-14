@@ -6,6 +6,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <script>
+        var onSubmit = function(token) {
+            console.log('success!');
+        };
+
+        var onloadCallback = function() {
+            grecaptcha.render('submit', {
+                'sitekey': '6Lc5bngeAAAAAGD4F5YX42DXSB31qvDyfX4TcK1_',
+                'callback': onSubmit
+            });
+        };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>INSPEKTORAT KABUPATEN KEDIRI</title>
 </head>
 
@@ -78,3 +91,4 @@
         </nav>
         <div class="container-fluid bg-secondary p-1"></div>
     </div>
+    <div id='recaptcha' class="g-recaptcha" data-sitekey="6Lc5bngeAAAAAGD4F5YX42DXSB31qvDyfX4TcK1_" data-callback="onSubmit" data-size="invisible"></div>
