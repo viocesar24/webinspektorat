@@ -6,11 +6,11 @@
     </div>
     <div class="carousel-inner ratio ratio-16x9">
         <div class="carousel-item active">
-            <img src="https://www.pinhome.id/blog/wp-content/uploads/2017/10/peta-kabupaten-kediri-lengkap-1.jpg" class="img-fluid d-block w-100" alt="Highlight Pertama">
+            <img src="<?php echo base_url(); ?>/img/PETA.svg" class="img-fluid d-block w-100" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <h4>PETA KABUPATEN KEDIRI</h4>
-                    <p>Peta daerah dan perbatasan Kabupaten Kediri</p>
+                    <!-- <h4>PETA KABUPATEN KEDIRI</h4>
+                    <p>Peta daerah dan perbatasan Kabupaten Kediri</p> -->
                 </div>
             </div>
         </div>
