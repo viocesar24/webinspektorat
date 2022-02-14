@@ -12,11 +12,22 @@
         };
 
         var onloadCallback = function() {
-            grecaptcha.render('submit', {
+            grecaptcha.render('field', {
                 'sitekey': '6Lc5bngeAAAAAGD4F5YX42DXSB31qvDyfX4TcK1_',
                 'callback': onSubmit
             });
         };
+    </script>
+    <script>
+        function validate(event) {
+            event.preventDefault();
+            grecaptcha.execute();
+        }
+
+        function onload() {
+            var element = document.getElementById('field');
+            element.onload = validate;
+        }
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>INSPEKTORAT KABUPATEN KEDIRI</title>
@@ -82,7 +93,8 @@
                             </li>
                         </ul>
                         <form method="GET" action="<?php echo base_url(); ?>/berita/" class="d-flex">
-                            <input name="cari" class="form-control me-2" type="search" placeholder="Cari Berita" aria-label="Search">
+                            <input id="field" name="cari" class="form-control me-2" type="search" placeholder="Cari Berita" aria-label="Search">
+                            <div id='recaptcha' class="g-recaptcha" data-sitekey="6Lc5bngeAAAAAGD4F5YX42DXSB31qvDyfX4TcK1_" data-callback="onSubmit" data-size="invisible"></div>
                             <button class="btn btn-outline-success" type="submit">Cari</button>
                         </form>
                     </div>
@@ -91,4 +103,3 @@
         </nav>
         <div class="container-fluid bg-secondary p-1"></div>
     </div>
-    <div id='recaptcha' class="g-recaptcha" data-sitekey="6Lc5bngeAAAAAGD4F5YX42DXSB31qvDyfX4TcK1_" data-callback="onSubmit" data-size="invisible"></div>
