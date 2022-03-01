@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://drive.google.com/uc?export=view&id=17Y4aZzPl18TMIuMBL1hdp8fXXD0AaOte" class="img-fluid d-block w-100" alt="ACARA 3 FEBRUARI 2022 AUDITORIAL">
+            <img src="https://drive.google.com/uc?export=view&id=17Y4aZzPl18TMIuMBL1hdp8fXXD0AaOte" class="img-fluid d-block w-100" alt="BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI</h4>
