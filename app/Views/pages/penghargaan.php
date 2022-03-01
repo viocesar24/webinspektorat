@@ -52,14 +52,14 @@
                         </div>
                         <div class="carousel-inner ratio ratio-16x9">
                             <div class="carousel-item active">
-                                <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="d-block w-100" alt="...">
+                                <img src="<?php echo base_url(); ?>/img/penghargaan/BPKP_APIP_LEVEL_3.png" class="d-block w-100" alt="...">
+                            </div>
+                            <!-- <div class="carousel-item">
+                                <img src="" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="d-block w-100" alt="...">
-                            </div>
+                                <img src="" class="d-block w-100" alt="...">
+                            </div> -->
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselPenghargaan" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
