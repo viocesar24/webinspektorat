@@ -24,11 +24,11 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://drive.google.com/uc?export=view&id=10Cw1qsgoOGpo8_Sccr6T63JS1Gt4dwGT" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
+            <img src="https://drive.google.com/uc?export=view&id=1phTAwX-I6wEW0Po-471RhyraZ7jLAK6m" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <h4>APEL PAGI 31 JANUARI 2022</h4>
-                    <p>Memulai kegiatan rutin apel pagi hari Senin</p>
+                    <h4>APEL PAGI HARI SELASA 01 MARET 2022</h4>
+                    <!-- <p>Apel pagi hari Senin, diganti pada hari Selasa</p> -->
                 </div>
             </div>
         </div>
@@ -277,13 +277,13 @@
                     </div>
                     <div class="carousel-inner ratio ratio-16x9">
                         <div class="carousel-item active">
-                            <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="d-block w-100" alt="...">
+                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="d-block w-100" alt="...">
+                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="d-block w-100" alt="...">
+                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomeBawah" data-bs-slide="prev">

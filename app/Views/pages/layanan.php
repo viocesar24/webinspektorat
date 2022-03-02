@@ -34,10 +34,11 @@
                     <h5 class="fw-bold p-0 m-0">LAYANAN</h5>
                 </div>
                 <div class="card-body">
-                    <div class="row g-3">
+                    <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="d-block w-100" alt="...">
+                    <!-- <div class="row g-3">
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                                <img src="<?php //echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <a class="card-text link-dark text-decoration-none" href="#">Layanan 1</a>
                                 </div>
@@ -45,7 +46,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                                <img src="<?php //echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <a class="card-text link-dark text-decoration-none" href="#">Layanan 2</a>
                                 </div>
@@ -53,7 +54,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                                <img src="<?php //echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <a class="card-text link-dark text-decoration-none" href="#">Layanan 3</a>
                                 </div>
@@ -61,13 +62,13 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="<?php echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
+                                <img src="<?php //echo base_url(); ?>/img/male.png" class="img-fluid card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <a class="card-text link-dark text-decoration-none" href="#">Layanan 4</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

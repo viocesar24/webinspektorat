@@ -84,7 +84,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasInformasi">
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/berita/">BERITA</a></li>
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/berkas/">INFORMASI PUBLIK</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/galeri/">GALERI</a></li>
+                                    <!-- <li><a class="dropdown-item" href="<?php //echo base_url(); ?>/galeri/">GALERI</a></li> -->
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/kegiatan/">KEGIATAN</a></li>
                                 </ul>
                             </li>
