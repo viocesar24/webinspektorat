@@ -37,10 +37,10 @@
     <div id="navigasi" class="container-fluid p-0 m-0 sticky-top">
         <nav class="navbar navbar-light navbar-expand-xl bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="<?php echo base_url(); ?>/home/">
+                <a class="navbar-brand" href="<?php echo base_url(); ?>/home">
                     <img src="<?php echo base_url(); ?>/img/logo_pemkab.svg" height="50" alt="Logo Pemkab Kediri">
                 </a>
-                <a class="navbar-brand fw-bold" href="<?php echo base_url(); ?>/home/">
+                <a class="navbar-brand fw-bold" href="<?php echo base_url(); ?>/home">
                     <img src="<?php echo base_url(); ?>/img/INSPEKTORAT.svg" height="50" alt="Inspektorat Kabupaten Kediri">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -54,18 +54,18 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="<?php echo base_url(); ?>/home/">BERANDA</a>
+                                <a class="nav-link text-dark" href="<?php echo base_url(); ?>/home">BERANDA</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-dark" href="#" id="offcanvasProfil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     PROFIL
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasProfil">
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/tentang/">TENTANG</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/struktur/">STRUKTUR ORGANISASI</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/pejabat/">PEJABAT STRUKTURAL</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/kebijakan/">KEBIJAKAN</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/penghargaan/">PENGHARGAAN</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/tentang">TENTANG</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/struktur">STRUKTUR ORGANISASI</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/pejabat">PEJABAT STRUKTURAL</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/kebijakan">KEBIJAKAN</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/penghargaan">PENGHARGAAN</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -73,8 +73,8 @@
                                     LAYANAN
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasLayanan">
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/layanan/">LAYANAN</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/program/">PROGRAM</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/layanan">LAYANAN</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/program">PROGRAM</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown text-dark">
@@ -82,14 +82,14 @@
                                     INFORMASI
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasInformasi">
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/berita/">BERITA</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/berkas/">INFORMASI PUBLIK</a></li>
-                                    <!-- <li><a class="dropdown-item" href="<?php //echo base_url(); ?>/galeri/">GALERI</a></li> -->
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/kegiatan/">KEGIATAN</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/berita">BERITA</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/berkas">INFORMASI PUBLIK</a></li>
+                                    <!-- <li><a class="dropdown-item" href="<?php //echo base_url(); ?>/galeri">GALERI</a></li> -->
+                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/kegiatan">KEGIATAN</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="<?php echo base_url(); ?>/kontak/">KONTAK</a>
+                                <a class="nav-link text-dark" href="<?php echo base_url(); ?>/kontak">KONTAK</a>
                             </li>
                         </ul>
                         <form method="GET" action="<?php echo base_url(); ?>/berita/" class="d-flex">

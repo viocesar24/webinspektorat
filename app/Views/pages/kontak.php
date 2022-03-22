@@ -5,7 +5,7 @@
     <div class="ms-auto p-2 bd-highlight align-self-center d-none d-md-block">
         <nav class="text-decoration-none pull" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb p-0 m-0">
-                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/home/">Beranda</a></li>
+                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/home">Beranda</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Kontak</li>
             </ol>
         </nav>

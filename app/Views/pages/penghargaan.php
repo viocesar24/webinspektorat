@@ -5,7 +5,7 @@
     <div class="ms-auto p-2 bd-highlight align-self-center d-none d-md-block">
         <nav class="text-decoration-none pull" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb p-0 m-0">
-                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/home/">Beranda</a></li>
+                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/home">Beranda</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Profil</li>
                 <li class="breadcrumb-item active" aria-current="page">Penghargaan</li>
             </ol>
@@ -20,19 +20,19 @@
                     <h5 class="fw-bold p-0 m-0">KATEGORI</h5>
                 </div>
                 <div class="list-group list-group-flush">
-                    <a href="<?php echo base_url(); ?>/tentang/" class="list-group-item list-group-item-action">
+                    <a href="<?php echo base_url(); ?>/tentang" class="list-group-item list-group-item-action">
                         Tentang
                     </a>
-                    <a href="<?php echo base_url(); ?>/struktur/" class="list-group-item list-group-item-action">
+                    <a href="<?php echo base_url(); ?>/struktur" class="list-group-item list-group-item-action">
                         Struktur Organisasi
                     </a>
-                    <a href="<?php echo base_url(); ?>/pejabat/" class="list-group-item list-group-item-action">
+                    <a href="<?php echo base_url(); ?>/pejabat" class="list-group-item list-group-item-action">
                         Pejabat Struktural
                     </a>
-                    <a href="<?php echo base_url(); ?>/kebijakan/" class="list-group-item list-group-item-action">
+                    <a href="<?php echo base_url(); ?>/kebijakan" class="list-group-item list-group-item-action">
                         Kebijakan
                     </a>
-                    <a href="<?php echo base_url(); ?>/penghargaan/" class="list-group-item list-group-item-action active" aria-current="page">
+                    <a href="<?php echo base_url(); ?>/penghargaan" class="list-group-item list-group-item-action active" aria-current="page">
                         Penghargaan
                     </a>
                 </div>

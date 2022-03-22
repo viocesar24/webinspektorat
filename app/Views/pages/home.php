@@ -228,7 +228,7 @@
                                     <?= esc($kegiatan_item['waktu']) ?>
                                 </div>
                                 <div class="col">
-                                    <a href="<?php echo base_url(); ?>/kegiatan/" class="link-dark"><?= esc($kegiatan_item['judul']) ?></a>
+                                    <a href="<?php echo base_url(); ?>/kegiatan" class="link-dark"><?= esc($kegiatan_item['judul']) ?></a>
                                 </div>
                             </div>
                         </div>
