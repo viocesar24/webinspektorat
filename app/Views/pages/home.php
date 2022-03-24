@@ -79,7 +79,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><?= esc($news_item['judul']) ?></h5>
                             <p class="card-text text-truncate"><?= esc($news_item['badan']) ?></p>
-                            <a href="/detail/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-dark">Selengkapnya...</a>
+                            <a href="/home/view/detail/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-dark">Selengkapnya...</a>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted"><?= esc($news_item['waktu']) ?></small>
@@ -228,7 +228,7 @@
                                     <?= esc($kegiatan_item['waktu']) ?>
                                 </div>
                                 <div class="col">
-                                    <a href="<?php echo base_url(); ?>/kegiatan" class="link-dark"><?= esc($kegiatan_item['judul']) ?></a>
+                                    <a href="<?php echo base_url(); ?>/home/view/kegiatan" class="link-dark"><?= esc($kegiatan_item['judul']) ?></a>
                                 </div>
                             </div>
                         </div>

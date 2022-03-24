@@ -5,7 +5,7 @@
     <div class="ms-auto p-2 bd-highlight align-self-center d-none d-md-block">
         <nav class="text-decoration-none pull" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb p-0 m-0">
-                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/home">Beranda</a></li>
+                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>">Beranda</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Informasi</li>
                 <li class="breadcrumb-item active" aria-current="page">Informasi Publik</li>
             </ol>
@@ -20,14 +20,13 @@
                     <h5 class="fw-bold p-0 m-0">KATEGORI</h5>
                 </div>
                 <div class="list-group list-group-flush">
-                    <a href="<?php echo base_url(); ?>/berita" class="list-group-item list-group-item-action">
+                    <a href="<?php echo base_url(); ?>/home/view/berita" class="list-group-item list-group-item-action">
                         Berita
                     </a>
-                    <a href="<?php echo base_url(); ?>/berkas" class="list-group-item list-group-item-action active" aria-current="page">
+                    <a href="<?php echo base_url(); ?>/home/view/berkas" class="list-group-item list-group-item-action active" aria-current="page">
                         Informasi Publik
                     </a>
-                    <!-- <a href="" class="list-group-item list-group-item-action">Galeri</a> -->
-                    <a href="<?php echo base_url(); ?>/kegiatan" class="list-group-item list-group-item-action">
+                    <a href="<?php echo base_url(); ?>/home/view/kegiatan" class="list-group-item list-group-item-action">
                         Kegiatan
                     </a>
                 </div>

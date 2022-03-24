@@ -6,9 +6,8 @@
     <div class="ms-auto p-2 bd-highlight align-self-center d-none d-md-block">
         <nav class="text-decoration-none pull" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb p-0 m-0">
-                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/home">Beranda</a></li>
-                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/d2DYs3">Admin</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Berita</li>
+                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>">Beranda</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Admin Berita</li>
             </ol>
         </nav>
     </div>
@@ -23,7 +22,7 @@
                 </div>
                 <div class="card-body">
                     <main class="form-signin">
-                        <form method="GET" action="<?php echo base_url(); ?>/d2DYs3Berita">
+                        <form method="GET" action="<?php echo base_url(); ?>/home/view/d2DYs3Berita">
                             <img class="mb-1" src="http://localhost:8080/img/logo_pemkab.svg" alt="" width="150" height="150">
                             <div class="form-floating my-3">
                                 <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Kata Sandi">
@@ -77,7 +76,7 @@
                             <tr>
                                 <?= session()->getFlashdata('error') ?>
                                 <?= service('validation')->listErrors() ?>
-                                <form action="<?php echo base_url(); ?>/insertBerita" method="post">
+                                <form action="<?php echo base_url(); ?>/home/insertBerita" method="post">
                                     <?= csrf_field() ?>
                                     <th><input name="id_number" type="text" class="form-control" placeholder="ID" disabled></th>
                                     <td><input name="judul_berita" type="text" class="form-control" placeholder="JUDUL"></td>
