@@ -30,7 +30,7 @@ class Filters extends BaseConfig
     public $globals = [
         'before' => [
             // 'honeypot',
-            // 'csrf',
+            'csrf',
         ],
         'after' => [
             'toolbar',
@@ -47,7 +47,10 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $methods = [];
+    public $methods = [
+        'get'  => ['csrf'],
+        'post' => ['csrf'],
+    ];
 
     /**
      * List of filter aliases that should run on any

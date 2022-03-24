@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://drive.google.com/uc?export=view&id=17Y4aZzPl18TMIuMBL1hdp8fXXD0AaOte" class="img-fluid d-block w-100" alt="BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI">
+            <img src="http://localhost:8080/img/dokumentasi/berita/16-2-2022/16-2-22-TES-SWAB-ANTIGEN-(01).png" class="img-fluid d-block w-100" alt="BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI</h4>
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://drive.google.com/uc?export=view&id=1zUfOK9EaTqtnFFSEPnHBwg-cWg88AbYT" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
+            <img src="http://localhost:8080/img/dokumentasi/apel/APEL_SENIN_220314_1.jpeg" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>APEL PAGI HARI SENIN 14 MARET 2022</h4>

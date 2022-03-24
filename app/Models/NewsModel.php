@@ -31,4 +31,9 @@ class NewsModel extends Model
 
         return $this->orderBy('waktu', 'DESC')->like('judul', implode(" ",$kunci));
     }
+
+    public function tambahBerita()
+    {
+        
+    }
 }

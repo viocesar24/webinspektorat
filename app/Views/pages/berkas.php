@@ -26,9 +26,7 @@
                     <a href="<?php echo base_url(); ?>/berkas" class="list-group-item list-group-item-action active" aria-current="page">
                         Informasi Publik
                     </a>
-                    <!-- <a href="<?php //echo base_url(); ?>/galeri" class="list-group-item list-group-item-action">
-                        Galeri
-                    </a> -->
+                    <!-- <a href="" class="list-group-item list-group-item-action">Galeri</a> -->
                     <a href="<?php echo base_url(); ?>/kegiatan" class="list-group-item list-group-item-action">
                         Kegiatan
                     </a>
@@ -60,22 +58,6 @@
                                         <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/PERBUP NO 19 TAHUN 2021 (SOTK Inspektorat).pdf" target="_blank">Lihat</a>
                                     </td>
                                 </tr>
-                                <!-- <tr>
-                                    <th scope="row">2</th>
-                                    <td>Dokumen Pertama</td>
-                                    <td>Kategori A</td>
-                                    <td>
-                                        <a class="btn btn-secondary btn-sm" href="#">Lihat</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Dokumen Pertama</td>
-                                    <td>Kategori B</td>
-                                    <td>
-                                        <a class="btn btn-secondary btn-sm" href="#">Lihat</a>
-                                    </td>
-                                </tr> -->
                             </tbody>
                         </table>
                     </div>

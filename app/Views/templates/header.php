@@ -92,7 +92,7 @@
                                 <a class="nav-link text-dark" href="<?php echo base_url(); ?>/kontak">KONTAK</a>
                             </li>
                         </ul>
-                        <form method="GET" action="<?php echo base_url(); ?>/berita/" class="d-flex">
+                        <form method="GET" action="<?php echo base_url(); ?>/berita" class="d-flex">
                             <input id="field" name="cari" class="form-control me-2" type="search" placeholder="Cari Berita" aria-label="Search">
                             <div id='recaptcha' class="g-recaptcha" data-sitekey="6Lc5bngeAAAAAGD4F5YX42DXSB31qvDyfX4TcK1_" data-callback="onSubmit" data-size="invisible"></div>
                             <button class="btn btn-outline-success" type="submit">Cari</button>
