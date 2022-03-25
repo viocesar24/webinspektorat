@@ -21,7 +21,7 @@ class Home extends BaseController
         $modelPejabat = model(PejabatModel::class);
         $request = \Config\Services::request();
         $kunci = $request->getGet();
-        $admin = $request->getGet();
+        $admin = $request->getPost();
         $stringAdmin = implode("", $admin);
 
         if (!is_file(APPPATH . 'Views/pages/' . $page . '.php')) {
@@ -81,7 +81,7 @@ class Home extends BaseController
     {
         $modelBerita = model(NewsModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
-            'id_number' => '',
+            'id_number' => 'min_length[0]',
             'judul_berita' => 'required|min_length[3]|max_length[255]',
             'slug_berita' => 'required',
             'badan_berita'  => 'required',
@@ -103,6 +103,16 @@ class Home extends BaseController
         } else {
             return $this->view('d2Dys3Berita');
         }
+    }
+
+    public function updateBerita()
+    {
+        
+    }
+
+    public function deleteBerita()
+    {
+        
     }
 
     public function insertKegiatan()
@@ -131,5 +141,15 @@ class Home extends BaseController
         } else {
             return $this->view('d2Dys3Kegiatan');
         }
+    }
+
+    public function updateKegiatan()
+    {
+        
+    }
+
+    public function deleteKegiatan()
+    {
+        
     }
 }

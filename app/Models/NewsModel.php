@@ -8,6 +8,8 @@ class NewsModel extends Model
 {
     protected $table = 'berita';
 
+    protected $allowedFields = ['id', 'judul', 'slug', 'badan', 'waktu', 'gambar_1', 'gambar_2'];
+
     public function getNews($slug = false)
     {
         // KODE DI BAWAH DIGUNAKAN UNTUK MENGAMBIL SEMUA DATA BERITA DARI DATABASE
@@ -29,11 +31,10 @@ class NewsModel extends Model
             return $this->findAll();
         }
 
-        return $this->orderBy('waktu', 'DESC')->like('judul', implode(" ",$kunci));
+        return $this->orderBy('waktu', 'DESC')->like('judul', implode(" ", $kunci));
     }
 
     public function tambahBerita()
     {
-        
     }
 }

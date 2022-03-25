@@ -22,7 +22,10 @@
                 </div>
                 <div class="card-body">
                     <main class="form-signin">
-                        <form method="GET" action="<?php echo base_url(); ?>/home/view/d2DYs3Kegiatan">
+                        <?= session()->getFlashdata('error') ?>
+                        <?= service('validation')->listErrors() ?>
+                        <form method="POST" action="<?php echo base_url(); ?>/home/view/d2DYs3Kegiatan">
+                            <?= csrf_field() ?>
                             <img class="mb-1" src="http://localhost:8080/img/logo_pemkab.svg" alt="" width="150" height="150">
                             <div class="form-floating my-3">
                                 <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Kata Sandi">
@@ -43,8 +46,8 @@
                 <h5 class="fw-bold p-0 m-0">KEGIATAN</h5>
             </div>
             <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table align-middle table-xxl table-light table-bordered border-dark table-hover">
+                <div class="table-responsive-xxl">
+                    <table class="table table-xxl align-middle table-light table-bordered border-dark table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
@@ -60,17 +63,76 @@
                         <tbody>
                             <?php foreach ($kegiatan as $news_item) : ?>
                                 <tr>
-                                    <th scope="row"><?= esc($news_item['id']) ?></th>
-                                    <td><?= esc($news_item['judul']) ?></td>
-                                    <td><?= esc($news_item['slug']) ?></td>
-                                    <td><?= esc($news_item['badan']) ?></td>
-                                    <td><?= esc($news_item['waktu']) ?></td>
-                                    <td><img src="<?= esc($news_item['gambar_1']) ?>" class="d-block w-100" alt="..."></td>
-                                    <td><img src="<?= esc($news_item['gambar_2']) ?>" class="d-block w-100" alt="..."></td>
-                                    <td class="text-center">
-                                        <a class="btn btn-warning btn-sm my-1" href="#" target="_blank">UBAH</a>
-                                        <a class="btn btn-danger btn-sm my-1" href="#" target="_blank">HAPUS</a>
-                                    </td>
+                                    <?= session()->getFlashdata('error') ?>
+                                    <?= service('validation')->listErrors() ?>
+                                    <form action="<?php echo base_url(); ?>/home/insertKegiatan" method="post">
+                                        <?= csrf_field() ?>
+                                        <th scope="row">
+                                            <input name="id_number" type="text" class="form-control" placeholder="ID" value="<?= esc($news_item['id']) ?>" disabled>
+                                        </th>
+                                        <td>
+                                            <textarea name="judul_kegiatan" class="form-control" placeholder="JUDUL" cols="100" rows="2"><?= esc($news_item['judul']) ?></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea name="slug_kegiatan" class="form-control" placeholder="SLUG" cols="100" rows="2"><?= esc($news_item['slug']) ?></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea name="badan_kegiatan" class="form-control" placeholder="BADAN" cols="1000" rows="5"><?= esc($news_item['badan']) ?></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea name="waktu_kegiatan" class="form-control" placeholder="WAKTU" cols="1" rows="1"><?= esc($news_item['waktu']) ?></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea name="gambar1_kegiatan" class="form-control" placeholder="LINK GAMBAR 1" cols="100" rows="2"><?= esc($news_item['gambar_1']) ?></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea name="gambar2_kegiatan" class="form-control" placeholder="LINK GAMBAR 2" cols="100" rows="2"><?= esc($news_item['gambar_2']) ?></textarea>
+                                        </td>
+                                        <td class="text-center">
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-warning btn-sm my-1" data-bs-toggle="modal" data-bs-target="#ubahModal">
+                                                UBAH
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm my-1" data-bs-toggle="modal" data-bs-target="#hapusModal">
+                                                HAPUS
+                                            </button>
+                                        </td>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="ubahModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ...
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Understood</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="hapusModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ...
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Understood</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </tr>
                             <?php endforeach ?>
                             <tr>
@@ -78,14 +140,37 @@
                                 <?= service('validation')->listErrors() ?>
                                 <form action="<?php echo base_url(); ?>/home/insertKegiatan" method="post">
                                     <?= csrf_field() ?>
-                                    <th><input name="id_number" type="text" class="form-control" placeholder="ID" disabled></th>
+                                    <th><input name="id_number" type="text" class="form-control" placeholder="ID"></th>
                                     <td><input name="judul_kegiatan" type="text" class="form-control" placeholder="JUDUL"></td>
                                     <td><input name="slug_kegiatan" type="text" class="form-control" placeholder="SLUG"></td>
                                     <td><input name="badan_kegiatan" type="text" class="form-control" placeholder="BADAN"></td>
                                     <td><input name="waktu_kegiatan" type="datetime-local" class="form-control" placeholder="WAKTU"></td>
                                     <td><input name="gambar1_kegiatan" type="url" class="form-control" placeholder="LINK GAMBAR 1"></td>
                                     <td><input name="gambar2_kegiatan" type="url" class="form-control" placeholder="LINK GAMBAR 2"></td>
-                                    <td class="text-center"><button type="submit" class="btn btn-primary btn-sm my-1">TAMBAH</button></td>
+                                    <td class="text-center">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahModal">
+                                            TAMBAH
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="tambahModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Apakah Anda yakin untuk menambah kegiatan tersebut?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                                                        <button type="submit" class="btn btn-primary">Iya</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </form>
                             </tr>
                         </tbody>
