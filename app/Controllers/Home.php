@@ -70,6 +70,9 @@ class Home extends BaseController
             'pager' => $model->pager,
             'pagerKegiatan' => $modelKegiatan->pager,
             'pagerPejabat' => $modelPejabat->pager,
+            'beritaAdmin' => $model->getNewsAdmin(),
+            'beritaHalamanAdmin' => $model->orderBy('waktu', 'ASC')->paginate(2, 'group1'),
+            'kegiatanHalamanAdmin' => $modelKegiatan->orderBy('waktu', 'ASC')->paginate(2, 'group1'),
         ];
 
         echo view('templates/header', $data);
@@ -99,9 +102,9 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_berita'),
             ]);
 
-            return $this->view('d2Dys3Berita');
+            return $this->view('KJ6PwefdEdYBam54Berita');
         } else {
-            return $this->view('d2Dys3Berita');
+            return $this->view('KJ6PwefdEdYBam54Berita');
         }
     }
 
@@ -137,9 +140,9 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_kegiatan'),
             ]);
 
-            return $this->view('d2Dys3Kegiatan');
+            return $this->view('KJ6PwefdEdYBam54Kegiatan');
         } else {
-            return $this->view('d2Dys3Kegiatan');
+            return $this->view('KJ6PwefdEdYBam54Kegiatan');
         }
     }
 

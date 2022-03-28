@@ -24,6 +24,18 @@ class NewsModel extends Model
         return $this->where(['slug' => $slug])->first();
     }
 
+    public function getNewsAdmin($slug = false)
+    {
+        // KODE DI BAWAH DIGUNAKAN UNTUK MENGAMBIL SEMUA DATA BERITA DARI DATABASE
+        if ($slug === false) {
+            // RETURN SEMUA DATA BERITA YANG SUDAH DIURUTKAN DENGAN METHOD CODEIGNITER findAll()
+            return $this->findAll();
+        }
+
+        // KODE DI BAWAH DIGUNAKAN UNTUK MENGAMBIL DATA BERITA DENGAN SLUG TERTENTU
+        return $this->where(['slug' => $slug])->first();
+    }
+
     public function cariBerita($kunci = [])
     {
         if ($kunci === [] || $kunci === '') {
