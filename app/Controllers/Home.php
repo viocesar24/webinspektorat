@@ -16,6 +16,14 @@ class Home extends BaseController
 
     public function view($page = 'home', $slug = false)
     {
+        helper("cookie");
+
+        // // get cookie value
+        // get_cookie("username");
+
+        // // remove cookie value
+        // delete_cookie("username");
+
         $model = model(NewsModel::class);
         $modelKegiatan = model(KegiatanModel::class);
         $modelPejabat = model(PejabatModel::class);
@@ -43,6 +51,8 @@ class Home extends BaseController
 
         if ($stringAdmin == 'admin') {
             $adminBool = true;
+            // store a cookie value
+            set_cookie("username", "admin", 3600);
         } else {
             $adminBool = false;
         }
@@ -70,14 +80,31 @@ class Home extends BaseController
             'pager' => $model->pager,
             'pagerKegiatan' => $modelKegiatan->pager,
             'pagerPejabat' => $modelPejabat->pager,
-            'beritaAdmin' => $model->getNewsAdmin(),
-            'beritaHalamanAdmin' => $model->orderBy('waktu', 'ASC')->paginate(2, 'group1'),
-            'kegiatanHalamanAdmin' => $modelKegiatan->orderBy('waktu', 'ASC')->paginate(2, 'group1'),
+            'beritaHalamanAdmin' => $model->orderBy('waktu', 'ASC')->paginate(1, 'group1'),
+            'kegiatanHalamanAdmin' => $modelKegiatan->orderBy('waktu', 'ASC')->paginate(1, 'group1'),
+            'pagerBeritaAdmin' => $model->pager,
+            'pagerKegiatanAdmin' => $modelKegiatan->pager,
         ];
 
-        echo view('templates/header', $data);
-        echo view('pages/' . $page, $data);
-        echo view('templates/footer', $data);
+        if ($page == 'konfirmasi' || $page == 'adminInspektorat' || $page == 'sgBzTnjgeWNKb4ysCtea7J3u9SHBEgE3BmvwkVRJcU9zzqTsVXTPEk45qkxxG3aMBdTFVWCxRsDkSuA2u7J7T7EhZPBsGg8He4e8U6bx5cgkXhb5Zcj9eKQkgTPac3KQ' || $page == 'XEmCfrN4ngBqAk2ZGRJ6qkJYF9en9hyea5y3hrnv8EmuUFgBxDSPk5Tu63a7wbcZqsWULbw3tgjfCmA4LLJVEe7sMKeDbcTGzXtTHLxwyB868BMcdfBTH8B48aqtBbP7') {
+            if (get_cookie("username") == "admin") {
+                # code...
+                echo view('templates/header', $data);
+                echo view('pages/' . $page, $data);
+                echo view('templates/footer', $data);
+            } else {
+                # code...
+                echo view('templates/header', $data);
+                echo view('pages/' . 'admininspektorat', $data);
+                echo view('templates/footer', $data);
+            }
+        } else {
+            # code...
+            delete_cookie("username");
+            echo view('templates/header', $data);
+            echo view('pages/' . $page, $data);
+            echo view('templates/footer', $data);
+        }
     }
 
     public function insertBerita()
@@ -102,27 +129,61 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_berita'),
             ]);
 
-            return $this->view('KJ6PwefdEdYBam54Berita');
+            return $this->view('konfirmasi');
         } else {
-            return $this->view('KJ6PwefdEdYBam54Berita');
+            return $this->view('adminInspektorat');
         }
     }
 
     public function updateBerita()
     {
-        
+        $modelBerita = model(NewsModel::class);
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'id_number' => 'min_length[0]',
+            'judul_berita' => 'required|min_length[3]|max_length[255]',
+            'slug_berita' => 'required',
+            'badan_berita'  => 'required',
+            'waktu_berita'  => 'required',
+            'gambar1_berita'  => 'required',
+            'gambar2_berita'  => 'required',
+        ])) {
+            $modelBerita->replace([
+                'id' => $this->request->getPost('id_number'),
+                'judul'  => $this->request->getPost('judul_berita'),
+                'slug'  => $this->request->getPost('slug_berita'),
+                'badan'  => $this->request->getPost('badan_berita'),
+                'waktu'  => $this->request->getPost('waktu_berita'),
+                'gambar_1'  => $this->request->getPost('gambar1_berita'),
+                'gambar_2'  => $this->request->getPost('gambar2_berita'),
+            ]);
+
+            return $this->view('konfirmasi');
+        } else {
+            return $this->view('adminInspektorat');
+        }
     }
 
     public function deleteBerita()
     {
-        
+        $modelBerita = model(NewsModel::class);
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'id_number' => 'min_length[0]',
+        ])) {
+            $modelBerita->delete([
+                'id' => $this->request->getPost('id_number'),
+            ]);
+
+            return $this->view('konfirmasi');
+        } else {
+            return $this->view('adminInspektorat');
+        }
     }
 
     public function insertKegiatan()
     {
         $modelKegiatan = model(KegiatanModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
-            'id_number' => '',
+            'id_number' => 'min_length[0]',
             'judul_kegiatan' => 'required|min_length[3]|max_length[255]',
             'slug_kegiatan' => 'required',
             'badan_kegiatan'  => 'required',
@@ -140,19 +201,53 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_kegiatan'),
             ]);
 
-            return $this->view('KJ6PwefdEdYBam54Kegiatan');
+            return $this->view('konfirmasi');
         } else {
-            return $this->view('KJ6PwefdEdYBam54Kegiatan');
+            return $this->view('adminInspektorat');
         }
     }
 
     public function updateKegiatan()
     {
-        
+        $modelKegiatan = model(KegiatanModel::class);
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'id_number' => 'min_length[0]',
+            'judul_kegiatan' => 'required|min_length[3]|max_length[255]',
+            'slug_kegiatan' => 'required',
+            'badan_kegiatan'  => 'required',
+            'waktu_kegiatan'  => 'required',
+            'gambar1_kegiatan'  => 'required',
+            'gambar2_kegiatan'  => 'required',
+        ])) {
+            $modelKegiatan->replace([
+                'id' => $this->request->getPost('id_number'),
+                'judul'  => $this->request->getPost('judul_kegiatan'),
+                'slug'  => $this->request->getPost('slug_kegiatan'),
+                'badan'  => $this->request->getPost('badan_kegiatan'),
+                'waktu'  => $this->request->getPost('waktu_kegiatan'),
+                'gambar_1'  => $this->request->getPost('gambar1_kegiatan'),
+                'gambar_2'  => $this->request->getPost('gambar2_kegiatan'),
+            ]);
+
+            return $this->view('konfirmasi');
+        } else {
+            return $this->view('adminInspektorat');
+        }
     }
 
     public function deleteKegiatan()
     {
-        
+        $modelKegiatan = model(KegiatanModel::class);
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'id_number' => 'min_length[0]',
+        ])) {
+            $modelKegiatan->delete([
+                'id' => $this->request->getPost('id_number'),
+            ]);
+
+            return $this->view('konfirmasi');
+        } else {
+            return $this->view('adminInspektorat');
+        }
     }
 }
