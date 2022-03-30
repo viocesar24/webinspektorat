@@ -12,22 +12,7 @@
         </nav>
     </div>
 </div>
-<?php helper("cookie");
-if ($admin == false && get_cookie("username") == "admin") { ?>
-    <div class="bg-light bg-gradient p-1">
-        <div class="d-flex justify-content-center text-center my-3">
-            <div class="card shadow">
-                <div class="card-header">
-                    <h5 class="fw-bold p-0 m-0">PERUBAHAN ITEM SELESAI, SILAHKAN PILIH HALAMAN</h5>
-                </div>
-                <div class="card-body">
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>/home/view/sgBzTnjgeWNKb4ysCtea7J3u9SHBEgE3BmvwkVRJcU9zzqTsVXTPEk45qkxxG3aMBdTFVWCxRsDkSuA2u7J7T7EhZPBsGg8He4e8U6bx5cgkXhb5Zcj9eKQkgTPac3KQ" role="button">BERITA</a>
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>/home/view/XEmCfrN4ngBqAk2ZGRJ6qkJYF9en9hyea5y3hrnv8EmuUFgBxDSPk5Tu63a7wbcZqsWULbw3tgjfCmA4LLJVEe7sMKeDbcTGzXtTHLxwyB868BMcdfBTH8B48aqtBbP7" role="button">KEGIATAN</a>
-                </div>
-            </div>
-        </div>
-    </div>
-<?php } else { ?>
+<?php if ($admin == false) { ?>
     <!-- BAGIAN LOGIN ADMIN -->
     <div class="bg-light bg-gradient p-1">
         <div class="d-flex justify-content-center text-center my-3">
@@ -39,7 +24,7 @@ if ($admin == false && get_cookie("username") == "admin") { ?>
                     <main class="form-signin">
                         <?= session()->getFlashdata('error') ?>
                         <?= service('validation')->listErrors() ?>
-                        <form method="POST" action="<?php echo base_url(); ?>/home/view/adminInspektorat">
+                        <form method="POST" action="<?php echo base_url(); ?>/home/view/admin">
                             <?= csrf_field() ?>
                             <img class="mb-1" src="http://localhost:8080/img/logo_pemkab.svg" alt="" width="150" height="150">
                             <div class="form-floating my-3">
@@ -49,6 +34,20 @@ if ($admin == false && get_cookie("username") == "admin") { ?>
                             <button class="w-100 btn btn-lg btn-primary" type="submit">Masuk</button>
                         </form>
                     </main>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else { ?>
+    <div class="bg-light bg-gradient p-1">
+        <div class="d-flex justify-content-center text-center my-3">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h5 class="fw-bold p-0 m-0">PILIH HALAMAN</h5>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-primary" href="<?php echo base_url(); ?>/home/view/adminberita" role="button">BERITA</a>
+                    <a class="btn btn-primary" href="<?php echo base_url(); ?>/home/view/adminkegiatan" role="button">KEGIATAN</a>
                 </div>
             </div>
         </div>

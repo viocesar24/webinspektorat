@@ -86,7 +86,7 @@ class Home extends BaseController
             'pagerKegiatanAdmin' => $modelKegiatan->pager,
         ];
 
-        if ($page == 'konfirmasi' || $page == 'adminInspektorat' || $page == 'sgBzTnjgeWNKb4ysCtea7J3u9SHBEgE3BmvwkVRJcU9zzqTsVXTPEk45qkxxG3aMBdTFVWCxRsDkSuA2u7J7T7EhZPBsGg8He4e8U6bx5cgkXhb5Zcj9eKQkgTPac3KQ' || $page == 'XEmCfrN4ngBqAk2ZGRJ6qkJYF9en9hyea5y3hrnv8EmuUFgBxDSPk5Tu63a7wbcZqsWULbw3tgjfCmA4LLJVEe7sMKeDbcTGzXtTHLxwyB868BMcdfBTH8B48aqtBbP7') {
+        if ($page == 'adminkonfirmasi' || $page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {
             if (get_cookie("username") == "admin") {
                 # code...
                 echo view('templates/header', $data);
@@ -95,7 +95,7 @@ class Home extends BaseController
             } else {
                 # code...
                 echo view('templates/header', $data);
-                echo view('pages/' . 'admininspektorat', $data);
+                echo view('pages/' . 'admin', $data);
                 echo view('templates/footer', $data);
             }
         } else {
@@ -107,7 +107,7 @@ class Home extends BaseController
         }
     }
 
-    public function insertBerita()
+    public function tambahberita()
     {
         $modelBerita = model(NewsModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
@@ -129,13 +129,13 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_berita'),
             ]);
 
-            return $this->view('konfirmasi');
+            return $this->view('adminkonfirmasi');
         } else {
-            return $this->view('adminInspektorat');
+            return $this->view('admin');
         }
     }
 
-    public function updateBerita()
+    public function pembaruanberita()
     {
         $modelBerita = model(NewsModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
@@ -157,13 +157,13 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_berita'),
             ]);
 
-            return $this->view('konfirmasi');
+            return $this->view('adminkonfirmasi');
         } else {
-            return $this->view('adminInspektorat');
+            return $this->view('admin');
         }
     }
 
-    public function deleteBerita()
+    public function hapusberita()
     {
         $modelBerita = model(NewsModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
@@ -173,13 +173,13 @@ class Home extends BaseController
                 'id' => $this->request->getPost('id_number'),
             ]);
 
-            return $this->view('konfirmasi');
+            return $this->view('adminkonfirmasi');
         } else {
-            return $this->view('adminInspektorat');
+            return $this->view('admin');
         }
     }
 
-    public function insertKegiatan()
+    public function tambahkegiatan()
     {
         $modelKegiatan = model(KegiatanModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
@@ -201,13 +201,13 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_kegiatan'),
             ]);
 
-            return $this->view('konfirmasi');
+            return $this->view('adminkonfirmasi');
         } else {
-            return $this->view('adminInspektorat');
+            return $this->view('admin');
         }
     }
 
-    public function updateKegiatan()
+    public function pembaruankegiatan()
     {
         $modelKegiatan = model(KegiatanModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
@@ -229,13 +229,13 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_kegiatan'),
             ]);
 
-            return $this->view('konfirmasi');
+            return $this->view('adminkonfirmasi');
         } else {
-            return $this->view('adminInspektorat');
+            return $this->view('admin');
         }
     }
 
-    public function deleteKegiatan()
+    public function hapuskegiatan()
     {
         $modelKegiatan = model(KegiatanModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
@@ -245,9 +245,9 @@ class Home extends BaseController
                 'id' => $this->request->getPost('id_number'),
             ]);
 
-            return $this->view('konfirmasi');
+            return $this->view('adminkonfirmasi');
         } else {
-            return $this->view('adminInspektorat');
+            return $this->view('admin');
         }
     }
 }
