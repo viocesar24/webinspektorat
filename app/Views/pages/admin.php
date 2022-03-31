@@ -12,7 +12,7 @@
         </nav>
     </div>
 </div>
-<?php if ($admin == false) { ?>
+<?php if ($admin == false) { delete_cookie("username");?>
     <!-- BAGIAN LOGIN ADMIN -->
     <div class="bg-light bg-gradient p-1">
         <div class="d-flex justify-content-center text-center my-3">

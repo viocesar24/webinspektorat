@@ -35,7 +35,8 @@
 
 <body>
     <div id="navigasi" class="container-fluid p-0 m-0 sticky-top">
-        <nav class="navbar navbar-light navbar-expand-xl bg-light">
+        <div id='recaptcha' class="g-recaptcha" data-sitekey="6Lc5bngeAAAAAGD4F5YX42DXSB31qvDyfX4TcK1_" data-callback="onSubmit" data-size="invisible"></div>
+        <nav id="field" class="navbar navbar-light navbar-expand-xl bg-light justify-content-center">
             <div class="container-fluid">
                 <a class="navbar-brand" href="<?php echo base_url(); ?>">
                     <img src="<?php echo base_url(); ?>/img/logo_pemkab.svg" height="50" alt="Logo Pemkab Kediri">
@@ -92,8 +93,7 @@
                             </li>
                         </ul>
                         <form method="GET" action="<?php echo base_url(); ?>/home/view/berita" class="d-flex">
-                            <input id="field" name="cari" class="form-control me-2" type="search" placeholder="Cari Berita" aria-label="Search">
-                            <div id='recaptcha' class="g-recaptcha" data-sitekey="6Lc5bngeAAAAAGD4F5YX42DXSB31qvDyfX4TcK1_" data-callback="onSubmit" data-size="invisible"></div>
+                            <input name="cari" class="form-control me-2" type="search" placeholder="Cari Berita" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Cari</button>
                         </form>
                     </div>

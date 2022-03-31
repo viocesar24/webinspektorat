@@ -89,14 +89,14 @@ class Home extends BaseController
         if ($page == 'adminkonfirmasi' || $page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {
             if (get_cookie("username") == "admin") {
                 # code...
-                echo view('templates/header', $data);
+                echo view('templates/headeradmin', $data);
                 echo view('pages/' . $page, $data);
-                echo view('templates/footer', $data);
+                echo view('templates/footeradmin', $data);
             } else {
                 # code...
-                echo view('templates/header', $data);
+                echo view('templates/headeradminlogin', $data);
                 echo view('pages/' . 'admin', $data);
-                echo view('templates/footer', $data);
+                echo view('templates/footeradmin', $data);
             }
         } else {
             # code...
