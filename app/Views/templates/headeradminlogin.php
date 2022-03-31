@@ -37,7 +37,7 @@
     <div class="container-fluid p-0 m-0 sticky-top">
         <div id='recaptcha' class="g-recaptcha" data-sitekey="6Lc5bngeAAAAAGD4F5YX42DXSB31qvDyfX4TcK1_" data-callback="onSubmit" data-size="invisible"></div>
         <nav id="field" class="navbar navbar-light bg-light justify-content-center">
-            <h1>LOGIN ADMIN</h1>
+            <img src="<?php echo base_url(); ?>/img/INSPEKTORAT.svg" height="50" alt="Inspektorat Kabupaten Kediri">
         </nav>
         <div class="container-fluid bg-secondary p-1"></div>
     </div>
