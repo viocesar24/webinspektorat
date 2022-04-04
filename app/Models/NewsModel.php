@@ -24,13 +24,13 @@ class NewsModel extends Model
         return $this->where(['slug' => $slug])->first();
     }
 
-    public function cariBerita($kunci = [])
+    public function cariBerita($kunci)
     {
-        if ($kunci === [] || $kunci === '') {
+        if ($kunci == '') {
             $this->orderBy('waktu', 'DESC');
             return $this->findAll();
         }
 
-        return $this->orderBy('waktu', 'DESC')->like('judul', implode(" ", $kunci));
+        return $this->orderBy('waktu', 'DESC')->like('judul', $kunci);
     }
 }

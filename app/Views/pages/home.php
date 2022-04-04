@@ -15,19 +15,19 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="http://localhost:8080/img/dokumentasi/berita/16-2-2022/16-2-22-TES-SWAB-ANTIGEN-(01).png" class="img-fluid d-block w-100" alt="BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/25-3-2022/apel-hari-jadi-kab-kediri-1218-2.jpeg" class="img-fluid d-block w-100" alt="BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <h4>BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI</h4>
-                    <p>Tes Swab Antigen</p>
+                    <h4>BERITA 25 MARET 2022 LAPANGAN SELATAN PEMERINTAHAN KABUPATEN KEDIRI</h4>
+                    <p>APEL PAGI MEMPERINGATI HARI JADI KABUPATEN KEDIRI KE 1218</p>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="http://localhost:8080/img/dokumentasi/apel/APEL_SENIN_220314_1.jpeg" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/apel/apel-senin-220404-2.jpeg" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <h4>APEL PAGI HARI SENIN 14 MARET 2022</h4>
+                    <h4>APEL PAGI HARI SENIN 04 APRIL 2022</h4>
                     <!-- <p>Apel pagi hari Senin, diganti pada hari Selasa</p> -->
                 </div>
             </div>

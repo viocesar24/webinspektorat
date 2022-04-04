@@ -28,7 +28,7 @@ class Home extends BaseController
         $modelKegiatan = model(KegiatanModel::class);
         $modelPejabat = model(PejabatModel::class);
         $request = \Config\Services::request();
-        $kunci = $request->getGet();
+        $kunci = $request->getVar('cari');
         $admin = $request->getPost();
         $stringAdmin = implode("", $admin);
 
