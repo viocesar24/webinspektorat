@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="icon" type="image/png" href="/favicon.png" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K6TBJKCZXV"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-K6TBJKCZXV"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -16,9 +16,9 @@
         }
         gtag('js', new Date());
         gtag('config', 'G-K6TBJKCZXV');
-    </script>
+    </script> -->
     <!-- Google Tag Manager -->
-    <script>
+    <!-- <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
@@ -33,7 +33,7 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-NQDCQNG');
-    </script>
+    </script> -->
     <!-- End Google Tag Manager -->
     <script>
         var onSubmit = function(token) {
