@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/25-3-2022/apel-hari-jadi-kab-kediri-1218-2.jpeg" class="img-fluid d-block w-100" alt="BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-3-25/apel-hari-jadi-kab-kediri-1218-2.jpeg" class="img-fluid d-block w-100" alt="BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>BERITA 25 MARET 2022 LAPANGAN SELATAN PEMERINTAHAN KABUPATEN KEDIRI</h4>
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/apel/apel-senin-220404-2.jpeg" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/apel/22-4-4/apel-senin-220404-2.jpeg" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>APEL PAGI HARI SENIN 04 APRIL 2022</h4>
