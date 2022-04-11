@@ -26,7 +26,7 @@
                         <?= service('validation')->listErrors() ?>
                         <form method="POST" action="<?php echo base_url(); ?>/home/view/admin">
                             <?= csrf_field() ?>
-                            <img class="mb-1" src="http://localhost:8080/img/logo_pemkab.svg" alt="" width="150" height="150">
+                            <img class="mb-1" src="<?php echo base_url(); ?>/img/logo_pemkab.svg" alt="" width="150" height="150">
                             <div class="form-floating my-3">
                                 <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Kata Sandi">
                                 <label for="floatingPassword">Kata Sandi</label>
