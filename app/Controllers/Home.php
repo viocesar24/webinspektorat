@@ -129,9 +129,9 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_berita'),
             ]);
 
-            return $this->view('adminkonfirmasi');
+            return redirect()->to(base_url() . '/home/view/adminberita');
         } else {
-            return $this->view('admin');
+            return redirect()->to(base_url() . '/home/view/admin');
         }
     }
 
@@ -157,9 +157,9 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_berita'),
             ]);
 
-            return $this->view('adminkonfirmasi');
+            return redirect()->to(base_url() . '/home/view/adminberita');
         } else {
-            return $this->view('admin');
+            return redirect()->to(base_url() . '/home/view/admin');
         }
     }
 
@@ -173,9 +173,9 @@ class Home extends BaseController
                 'id' => $this->request->getPost('id_number'),
             ]);
 
-            return $this->view('adminkonfirmasi');
+            return redirect()->to(base_url() . '/home/view/adminberita');
         } else {
-            return $this->view('admin');
+            return redirect()->to(base_url() . '/home/view/admin');
         }
     }
 
@@ -201,9 +201,9 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_kegiatan'),
             ]);
 
-            return $this->view('adminkonfirmasi');
+            return redirect()->to(base_url() . '/home/view/adminkegiatan');
         } else {
-            return $this->view('admin');
+            return redirect()->to(base_url() . '/home/view/admin');
         }
     }
 
@@ -229,9 +229,9 @@ class Home extends BaseController
                 'gambar_2'  => $this->request->getPost('gambar2_kegiatan'),
             ]);
 
-            return $this->view('adminkonfirmasi');
+            return redirect()->to(base_url() . '/home/view/adminkegiatan');
         } else {
-            return $this->view('admin');
+            return redirect()->to(base_url() . '/home/view/admin');
         }
     }
 
@@ -245,9 +245,9 @@ class Home extends BaseController
                 'id' => $this->request->getPost('id_number'),
             ]);
 
-            return $this->view('adminkonfirmasi');
+            return redirect()->to(base_url() . '/home/view/adminkegiatan');
         } else {
-            return $this->view('admin');
+            return redirect()->to(base_url() . '/home/view/admin');
         }
     }
 }
