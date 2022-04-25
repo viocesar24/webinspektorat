@@ -24,10 +24,10 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/apel/22-4-4/apel-senin-220404-2.jpeg" class="img-fluid d-block w-100" alt="APEL PAGI 31 JANUARI 2022">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/apel/22-4-25/apel-2.jpg" class="img-fluid d-block w-100" alt="APEL PAGI 25 APRIL 2022">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <h4>APEL PAGI HARI SENIN 04 APRIL 2022</h4>
+                    <h4>APEL PAGI HARI SENIN 25 APRIL 2022</h4>
                     <!-- <p>Apel pagi hari Senin, diganti pada hari Selasa</p> -->
                 </div>
             </div>
