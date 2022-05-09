@@ -6,11 +6,20 @@
     </div>
     <div class="carousel-inner ratio ratio-16x9">
         <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/PETA.svg" class="img-fluid d-block w-100" alt="Highlight Pertama">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-5-2/1.png" class="img-fluid d-block w-100" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <!-- <h4>PETA KABUPATEN KEDIRI</h4>
-                    <p>Peta daerah dan perbatasan Kabupaten Kediri</p> -->
+                    <!-- <h4>SELAMAT HARI RAYA IDUL FITRI 1443 H / 2022 M</h4> -->
+                    <!-- <p></p> -->
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-5-1/1.png" class="img-fluid d-block w-100" alt="APEL PAGI 25 APRIL 2022">
+            <div class="carousel-caption d-none d-md-block">
+                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
+                    <!-- <h4>SELAMAT HARI BURUH INTERNASIONAL 01 MEI 2022</h4> -->
+                    <!-- <p></p> -->
                 </div>
             </div>
         </div>
@@ -18,17 +27,8 @@
             <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-3-25/apel-hari-jadi-kab-kediri-1218-2.jpeg" class="img-fluid d-block w-100" alt="BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <h4>BERITA 25 MARET 2022 LAPANGAN SELATAN PEMERINTAHAN KABUPATEN KEDIRI</h4>
-                    <p>APEL PAGI MEMPERINGATI HARI JADI KABUPATEN KEDIRI KE 1218</p>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/apel/22-4-25/apel-2.jpg" class="img-fluid d-block w-100" alt="APEL PAGI 25 APRIL 2022">
-            <div class="carousel-caption d-none d-md-block">
-                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <h4>APEL PAGI HARI SENIN 25 APRIL 2022</h4>
-                    <!-- <p>Apel pagi hari Senin, diganti pada hari Selasa</p> -->
+                    <!-- <h4>BERITA 25 MARET 2022 LAPANGAN SELATAN PEMERINTAHAN KABUPATEN KEDIRI</h4> -->
+                    <!-- <p>APEL PAGI MEMPERINGATI HARI JADI KABUPATEN KEDIRI KE 1218</p> -->
                 </div>
             </div>
         </div>
