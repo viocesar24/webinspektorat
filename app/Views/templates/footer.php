@@ -1,4 +1,4 @@
-<div class="container-fluid bg-secondary bg-gradient bg-opacity-10 p-5 text-dark">
+<div class="container-fluid bg-dark bg-gradient bg-opacity-25 p-5 text-dark">
     <div class="row">
         <div class="col-md-4 mb-3">
             <h6 class="fw-bold">LINK TERKAIT</h6>

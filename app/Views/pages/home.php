@@ -6,7 +6,7 @@
     </div>
     <div class="carousel-inner ratio ratio-16x9">
         <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-5-2/1.png" class="img-fluid d-block w-100" alt="Highlight Pertama">
+            <img src="<?php echo base_url(); ?>/img/PETA.svg" class="img-fluid d-block w-100" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <!-- <h4>SELAMAT HARI RAYA IDUL FITRI 1443 H / 2022 M</h4> -->
@@ -15,20 +15,20 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-5-1/1.png" class="img-fluid d-block w-100" alt="APEL PAGI 25 APRIL 2022">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-3-25/apel-hari-jadi-kab-kediri-1218-2.jpeg" class="img-fluid d-block w-100" alt="Highlight Kedua">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <!-- <h4>SELAMAT HARI BURUH INTERNASIONAL 01 MEI 2022</h4> -->
+                    <!-- <h4>SELAMAT HARI RAYA IDUL FITRI 1443 H / 2022 M</h4> -->
                     <!-- <p></p> -->
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-3-25/apel-hari-jadi-kab-kediri-1218-2.jpeg" class="img-fluid d-block w-100" alt="BERITA 16 FEBRUARI 2022 JOGLO PEMERINTAHAN KABUPATEN KEDIRI">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-5-2/1.png" class="img-fluid d-block w-100" alt="Highlight Ketiga">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <!-- <h4>BERITA 25 MARET 2022 LAPANGAN SELATAN PEMERINTAHAN KABUPATEN KEDIRI</h4> -->
-                    <!-- <p>APEL PAGI MEMPERINGATI HARI JADI KABUPATEN KEDIRI KE 1218</p> -->
+                    <!-- <h4>SELAMAT HARI BURUH INTERNASIONAL 01 MEI 2022</h4> -->
+                    <!-- <p></p> -->
                 </div>
             </div>
         </div>
@@ -140,7 +140,105 @@
         </div>
     </div>
 <?php endif ?>
-<div class="container-fluid bg-secondary bg-gradient bg-opacity-10 p-5 text-center">
+<?php if (!empty($kegiatan) && is_array($kegiatan)) : ?>
+    <div class="container-fluid bg-secondary bg-gradient bg-opacity-10 p-5">
+        <div class="container-fluid text-center mb-5">
+            <hr>
+            <h1 class="text-dark">KEGIATAN TERKINI</h1>
+            <hr>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <!-- BAGIAN BERIKUT DIGUNAKAN UNTUK MENAMPILKAN DATA BERITA YANG DIBATASI HANYA 3 BERITA TERBARU -->
+            <?php foreach (array_slice($kegiatan, 0, 3) as $kegiatan_item) : ?>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <div id="<?= esc($kegiatan_item['slug']) ?>" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#<?= esc($kegiatan_item['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#<?= esc($kegiatan_item['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            </div>
+                            <div class="carousel-inner ratio ratio-16x9">
+                                <div class="carousel-item active">
+                                    <img src="<?= esc($kegiatan_item['gambar_1']) ?>" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?= esc($kegiatan_item['gambar_2']) ?>" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#<?= esc($kegiatan_item['slug']) ?>" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#<?= esc($kegiatan_item['slug']) ?>" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><?= esc($kegiatan_item['judul']) ?></h5>
+                            <p class="card-text"><?= esc($kegiatan_item['badan']) ?></p>
+                            <a href="/home/view/kegiatan" class="btn btn-dark">Kegiatan Inspektorat</a>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><?= esc($kegiatan_item['waktu']) ?></small>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
+<?php else : ?>
+    <!-- APABILA BERITA GAGAL DIAMBIL OLEH MODEL, ATAU TIDAK ADA BERITA DI DALAM DATABASE, MAKA DITAMPILKAN CARD BERITA DEFAULT -->
+    <div class="container-fluid bg-secondary bg-gradient bg-opacity-10 p-5">
+        <div class="container-fluid text-center mb-5">
+            <hr>
+            <h1 class="text-dark">KEGIATAN TERKINI</h1>
+            <hr>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="<?php echo base_url(); ?>/img/pem1.jpeg" class="img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kegiatan Pertama</h5>
+                        <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="<?php echo base_url(); ?>/img/pem2.jpeg" class="img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kegiatan Kedua</h5>
+                        <p class="card-text text-truncate">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="<?php echo base_url(); ?>/img/pem3.jpeg" class="img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kegiatan Ketiga</h5>
+                        <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <a href="#" class="btn btn-dark">Selengkapnya...</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
+<div class="container-fluid bg-light bg-gradient p-5 text-center">
     <div class="container-fluid mb-5">
         <hr>
         <h1 class="text-dark">PARA PIMPINAN</h1>
@@ -214,7 +312,7 @@
         </div>
     <?php endif ?>
 </div>
-<div class="container-fluid bg-light bg-gradient p-5 text-dark">
+<div class="container-fluid bg-secondary bg-gradient bg-opacity-10 p-5 text-dark">
     <div class="row g-3">
         <div class="col-md-4">
             <?php if (!empty($kegiatan) && is_array($kegiatan)) : ?>
