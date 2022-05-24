@@ -41,12 +41,62 @@
                                     <div class="modal-body">
                                         <?= csrf_field() ?>
                                         <input name="id_number" type="text" class="form-control my-1" placeholder="AUTO-INCREMENT ID" readonly>
-                                        <input name="judul_berita" type="text" class="form-control my-1" placeholder="JUDUL">
-                                        <input name="slug_berita" type="text" class="form-control my-1" placeholder="SLUG">
-                                        <textarea name="badan_berita" class="form-control my-1" cols="10" rows="10" placeholder="BADAN"></textarea>
-                                        <input name="waktu_berita" type="datetime-local" class="form-control my-1" placeholder="WAKTU">
-                                        <input name="gambar1_berita" type="url" class="form-control my-1" placeholder="LINK GAMBAR 1">
-                                        <input name="gambar2_berita" type="url" class="form-control my-1" placeholder="LINK GAMBAR 2">
+                                        <div class="form-floating">
+                                            <input name="judul_berita" type="text" class="form-control my-1" id="floatingJudul" placeholder="JUDUL" required>
+                                            <label for="floatingJudul">JUDUL</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="slug_berita" type="text" class="form-control my-1" id="floatingSlug" placeholder="SLUG" required>
+                                            <label for="floatingSlug">SLUG</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <textarea name="badan_berita" class="form-control my-1" id="floatingBadanBerita" placeholder="BADAN BERITA" required></textarea>
+                                            <label for="floatingBadanBerita">BADAN BERITA</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="waktu_berita" type="datetime-local" class="form-control my-1" id="floatingWaktu" placeholder="WAKTU" required>
+                                            <label for="floatingWaktu">WAKTU</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar1_berita" type="url" class="form-control my-1" id="floatingGambar1" placeholder="LINK FOTO 1" required>
+                                            <label for="floatingGambar1">LINK FOTO 1</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar2_berita" type="url" class="form-control my-1" id="floatingGambar2" placeholder="LINK FOTO 2" required>
+                                            <label for="floatingGambar2">LINK FOTO 2</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar3_berita" type="url" class="form-control my-1" id="floatingGambar3" placeholder="LINK FOTO 3">
+                                            <label for="floatingGambar3">LINK FOTO 3</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar4_berita" type="url" class="form-control my-1" id="floatingGambar4" placeholder="LINK FOTO 4">
+                                            <label for="floatingGambar4">LINK FOTO 4</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar5_berita" type="url" class="form-control my-1" id="floatingGambar5" placeholder="LINK FOTO 5">
+                                            <label for="floatingGambar5">LINK FOTO 5</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar6_berita" type="url" class="form-control my-1" id="floatingGambar6" placeholder="LINK FOTO 6">
+                                            <label for="floatingGambar6">LINK FOTO 6</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar7_berita" type="url" class="form-control my-1" id="floatingGambar7" placeholder="LINK FOTO 7">
+                                            <label for="floatingGambar7">LINK FOTO 7</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar8_berita" type="url" class="form-control my-1" id="floatingGambar8" placeholder="LINK FOTO 8">
+                                            <label for="floatingGambar8">LINK FOTO 8</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar9_berita" type="url" class="form-control my-1" id="floatingGambar9" placeholder="LINK FOTO 9">
+                                            <label for="floatingGambar9">LINK FOTO 9</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar10_berita" type="url" class="form-control my-1" id="floatingGambar10" placeholder="LINK FOTO 10">
+                                            <label for="floatingGambar10">LINK FOTO 10</label>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -88,10 +138,34 @@
                                                 <td><?= esc($news_item['waktu']) ?></td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">GAMBAR 1 & 2</th>
+                                                <th scope="row">GAMBAR</th>
                                                 <td>
                                                     <img src="<?= esc($news_item['gambar_1']) ?>" alt="GAMBAR 1" width="160" height="90">
                                                     <img src="<?= esc($news_item['gambar_2']) ?>" alt="GAMBAR 2" width="160" height="90">
+                                                    <?php if ($news_item['gambar_3'] != '' || $news_item['gambar_3'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_3']) ?>" alt="GAMBAR 3" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_4'] != '' || $news_item['gambar_4'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_4']) ?>" alt="GAMBAR 4" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_5'] != '' || $news_item['gambar_5'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_5']) ?>" alt="GAMBAR 5" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_6'] != '' || $news_item['gambar_6'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_6']) ?>" alt="GAMBAR 6" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_7'] != '' || $news_item['gambar_7'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_7']) ?>" alt="GAMBAR 7" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_8'] != '' || $news_item['gambar_8'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_8']) ?>" alt="GAMBAR 8" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_9'] != '' || $news_item['gambar_9'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_9']) ?>" alt="GAMBAR 9" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_10'] != '' || $news_item['gambar_10'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_10']) ?>" alt="GAMBAR 10" width="160" height="90">
+                                                    <?php } ?>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -122,12 +196,62 @@
                                                 <div class="modal-body">
                                                     <?= csrf_field() ?>
                                                     <input name="id_number" type="text" class="form-control my-1" placeholder="ID" value="<?= esc($news_item['id']) ?>" readonly>
-                                                    <input name="judul_berita" type="text" class="form-control my-1" placeholder="JUDUL" value="<?= esc($news_item['judul']) ?>">
-                                                    <input name="slug_berita" type="text" class="form-control my-1" placeholder="SLUG" value="<?= esc($news_item['slug']) ?>">
-                                                    <textarea name="badan_berita" class="form-control my-1" cols="10" rows="10" placeholder="BADAN"><?= esc($news_item['badan']) ?></textarea>
-                                                    <input name="waktu_berita" type="datetime-local" class="form-control my-1" placeholder="WAKTU" value="<?= esc($news_item['waktu']) ?>">
-                                                    <input name="gambar1_berita" type="url" class="form-control my-1" placeholder="LINK GAMBAR 1" value="<?= esc($news_item['gambar_1']) ?>">
-                                                    <input name="gambar2_berita" type="url" class="form-control my-1" placeholder="LINK GAMBAR 2" value="<?= esc($news_item['gambar_2']) ?>">
+                                                    <div class="form-floating">
+                                                        <input name="judul_berita" type="text" class="form-control my-1" id="floatingJudul" placeholder="JUDUL" value="<?= esc($news_item['judul']) ?>" required>
+                                                        <label for="floatingJudul">JUDUL</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="slug_berita" type="text" class="form-control my-1" id="floatingSlug" placeholder="SLUG" value="<?= esc($news_item['slug']) ?>" required>
+                                                        <label for="floatingSlug">SLUG</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <textarea name="badan_berita" class="form-control my-1" id="floatingBadanBerita" placeholder="BADAN BERITA" required><?= esc($news_item['badan']) ?></textarea>
+                                                        <label for="floatingBadanBerita">BADAN BERITA</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="waktu_berita" type="datetime-local" class="form-control my-1" id="floatingWaktu" placeholder="WAKTU" value="<?= esc($news_item['waktu']) ?>" required>
+                                                        <label for="floatingWaktu">WAKTU</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar1_berita" type="url" class="form-control my-1" id="floatingGambar1" placeholder="LINK FOTO 1" value="<?= esc($news_item['gambar_1']) ?>" required>
+                                                        <label for="floatingGambar1">LINK FOTO 1</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar2_berita" type="url" class="form-control my-1" id="floatingGambar2" placeholder="LINK FOTO 2" value="<?= esc($news_item['gambar_2']) ?>" required>
+                                                        <label for="floatingGambar2">LINK FOTO 2</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar3_berita" type="url" class="form-control my-1" id="floatingGambar3" placeholder="LINK FOTO 3" value="<?= esc($news_item['gambar_3']) ?>">
+                                                        <label for="floatingGambar3">LINK FOTO 3</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar4_berita" type="url" class="form-control my-1" id="floatingGambar4" placeholder="LINK FOTO 4" value="<?= esc($news_item['gambar_4']) ?>">
+                                                        <label for="floatingGambar4">LINK FOTO 4</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar5_berita" type="url" class="form-control my-1" id="floatingGambar5" placeholder="LINK FOTO 5" value="<?= esc($news_item['gambar_5']) ?>">
+                                                        <label for="floatingGambar5">LINK FOTO 5</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar6_berita" type="url" class="form-control my-1" id="floatingGambar6" placeholder="LINK FOTO 6" value="<?= esc($news_item['gambar_6']) ?>">
+                                                        <label for="floatingGambar6">LINK FOTO 6</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar7_berita" type="url" class="form-control my-1" id="floatingGambar7" placeholder="LINK FOTO 7" value="<?= esc($news_item['gambar_7']) ?>">
+                                                        <label for="floatingGambar7">LINK FOTO 7</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar8_berita" type="url" class="form-control my-1" id="floatingGambar8" placeholder="LINK FOTO 8" value="<?= esc($news_item['gambar_8']) ?>">
+                                                        <label for="floatingGambar8">LINK FOTO 8</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar9_berita" type="url" class="form-control my-1" id="floatingGambar9" placeholder="LINK FOTO 9" value="<?= esc($news_item['gambar_9']) ?>">
+                                                        <label for="floatingGambar9">LINK FOTO 9</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar10_berita" type="url" class="form-control my-1" id="floatingGambar10" placeholder="LINK FOTO 10" value="<?= esc($news_item['gambar_10']) ?>">
+                                                        <label for="floatingGambar10">LINK FOTO 10</label>
+                                                    </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
