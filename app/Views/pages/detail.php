@@ -104,7 +104,9 @@
             <div class="card-body">
                 <h2 class="text-center fw-bold"><?= esc($beritaDetail['judul']) ?></h2>
                 <p class="fw-light"><i class="bi bi-clock"></i> <?= esc($beritaDetail['waktu']) ?></p>
-                <p><?= str_replace('\n', '<br>', esc($beritaDetail['badan'])) ?></p>
+                <div contenteditable="true">
+                    <?= $beritaDetail['badan'] ?>
+                </div>
             </div>
         </div>
     </div>
