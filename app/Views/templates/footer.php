@@ -4,10 +4,11 @@
             <h6 class="fw-bold">LINK TERKAIT</h6>
             <div class="list-group list-group-flush text-dark">
                 <a href="https://kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">PEMERINTAHAN KABUPATEN KEDIRI</a>
+                <a href="https://halomasbup.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">HALOMASBUP</a>
+                <a href="https://e-survei.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">E-SURVEI KABUPATEN KEDIRI</a>
                 <a href="https://dukcapil.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">DINAS KEPENDUDUKAN DAN CATATAN SIPIL</a>
                 <a href="https://diskominfo.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">DINAS KOMUNIKASI DAN INFORMATIKA</a>
                 <a href="https://disdik.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">DINAS PENDIDIKAN</a>
-                <a href="https://halomasbup.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">HALOMASBUP</a>
             </div>
         </div>
         <div class="col-md-4 mb-3">
