@@ -49,7 +49,7 @@ class Home extends BaseController
             $slugBool = false;
         }
 
-        if ($stringAdmin == 't@!T`,7u2W-+[/`d') {
+        if ($stringAdmin == 'viocesar24') {
             $adminBool = true;
             // store a cookie value
             set_cookie("username", "admin", 3600);
@@ -86,7 +86,7 @@ class Home extends BaseController
             'pagerKegiatanAdmin' => $modelKegiatan->pager,
         ];
 
-        if ($page == 'adminkonfirmasi' || $page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {
+        if ($page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {
             if (get_cookie("username") == "admin") {
                 # code...
                 echo view('templates/headeradmin', $data);
