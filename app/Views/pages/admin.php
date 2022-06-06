@@ -24,7 +24,7 @@
                     <main class="form-signin">
                         <?= session()->getFlashdata('error') ?>
                         <?= service('validation')->listErrors() ?>
-                        <form method="post" action="<?php echo base_url(); ?>/home/view/admin">
+                        <form method="POST" action="<?php echo base_url(); ?>/home/view/admin">
                             <?= csrf_field() ?>
                             <img class="mb-1" src="<?php echo base_url(); ?>/img/logo_pemkab.svg" alt="" width="150" height="150">
                             <div class="form-floating my-3">
