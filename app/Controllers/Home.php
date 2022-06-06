@@ -49,7 +49,7 @@ class Home extends BaseController
             $slugBool = false;
         }
 
-        if ($admin == 't@!T`,7u2W-+[/`d') {
+        if ($stringAdmin == 't@!T`,7u2W-+[/`d') {
             $adminBool = true;
             // store a cookie value
             set_cookie("username", "admin", 3600);
