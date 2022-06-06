@@ -94,7 +94,7 @@ class Home extends BaseController
                 echo view('templates/footeradmin', $data);
             } else {
                 # code...
-                echo view('templates/headeradminlogin', $data);
+                echo view('templates/headeradmin', $data);
                 echo view('pages/' . 'admin', $data);
                 echo view('templates/footeradmin', $data);
             }

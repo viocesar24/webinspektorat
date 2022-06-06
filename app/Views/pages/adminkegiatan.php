@@ -7,9 +7,9 @@
         <nav class="text-decoration-none pull" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb p-0 m-0">
                 <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>">Beranda</a></li>
-                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/home/view/admin">Admin</a></li>
-                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/home/view/adminberita">Admin Berita</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Admin</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Admin Kegiatan</li>
+                <li class="breadcrumb-item"><a class="text-dark text-decoration-none" href="<?php echo base_url(); ?>/home/view/adminberita">Admin Berita</a></li>
             </ol>
         </nav>
     </div>
