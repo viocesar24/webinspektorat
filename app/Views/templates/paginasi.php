@@ -1,5 +1,5 @@
 <!-- PASTIKAN GUNAKAN CSS UNTUK TAMPILKAN YANG LEBIH BAGUS -->
-<?php $pager->setSurroundCount(2) ?>
+<?php $pager->setSurroundCount(5) ?>
 
 <nav aria-label="<?= lang('Pager.pageNavigation') ?>">
     <ul class="pagination justify-content-center">
