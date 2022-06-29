@@ -126,6 +126,11 @@ class Home extends BaseController
             'gambar8_berita'  => 'permit_empty',
             'gambar9_berita'  => 'permit_empty',
             'gambar10_berita'  => 'permit_empty',
+            'gambar11_berita'  => 'permit_empty',
+            'gambar12_berita'  => 'permit_empty',
+            'gambar13_berita'  => 'permit_empty',
+            'gambar14_berita'  => 'permit_empty',
+            'gambar15_berita'  => 'permit_empty',
         ])) {
             $modelBerita->save([
                 'id' => $this->request->getPost('id_number'),
@@ -143,6 +148,11 @@ class Home extends BaseController
                 'gambar_8'  => $this->request->getPost('gambar8_berita'),
                 'gambar_9'  => $this->request->getPost('gambar9_berita'),
                 'gambar_10'  => $this->request->getPost('gambar10_berita'),
+                'gambar_11'  => $this->request->getPost('gambar11_berita'),
+                'gambar_12'  => $this->request->getPost('gambar12_berita'),
+                'gambar_13'  => $this->request->getPost('gambar13_berita'),
+                'gambar_14'  => $this->request->getPost('gambar14_berita'),
+                'gambar_15'  => $this->request->getPost('gambar15_berita'),
             ]);
 
             return redirect()->to(base_url() . '/home/view/adminberita');
@@ -170,6 +180,11 @@ class Home extends BaseController
             'gambar8_berita'  => 'permit_empty',
             'gambar9_berita'  => 'permit_empty',
             'gambar10_berita'  => 'permit_empty',
+            'gambar11_berita'  => 'permit_empty',
+            'gambar12_berita'  => 'permit_empty',
+            'gambar13_berita'  => 'permit_empty',
+            'gambar14_berita'  => 'permit_empty',
+            'gambar15_berita'  => 'permit_empty',
         ])) {
             $modelBerita->replace([
                 'id' => $this->request->getPost('id_number'),
@@ -187,6 +202,11 @@ class Home extends BaseController
                 'gambar_8'  => $this->request->getPost('gambar8_berita'),
                 'gambar_9'  => $this->request->getPost('gambar9_berita'),
                 'gambar_10'  => $this->request->getPost('gambar10_berita'),
+                'gambar_11'  => $this->request->getPost('gambar11_berita'),
+                'gambar_12'  => $this->request->getPost('gambar12_berita'),
+                'gambar_13'  => $this->request->getPost('gambar13_berita'),
+                'gambar_14'  => $this->request->getPost('gambar14_berita'),
+                'gambar_15'  => $this->request->getPost('gambar15_berita'),
             ]);
 
             return redirect()->to(base_url() . '/home/view/adminberita');
@@ -230,6 +250,11 @@ class Home extends BaseController
             'gambar8_kegiatan'  => 'permit_empty',
             'gambar9_kegiatan'  => 'permit_empty',
             'gambar10_kegiatan'  => 'permit_empty',
+            'gambar11_kegiatan'  => 'permit_empty',
+            'gambar12_kegiatan'  => 'permit_empty',
+            'gambar13_kegiatan'  => 'permit_empty',
+            'gambar14_kegiatan'  => 'permit_empty',
+            'gambar15_kegiatan'  => 'permit_empty',
         ])) {
             $modelKegiatan->save([
                 'id' => $this->request->getPost('id_number'),
@@ -247,6 +272,11 @@ class Home extends BaseController
                 'gambar_8'  => $this->request->getPost('gambar8_kegiatan'),
                 'gambar_9'  => $this->request->getPost('gambar9_kegiatan'),
                 'gambar_10'  => $this->request->getPost('gambar10_kegiatan'),
+                'gambar_11'  => $this->request->getPost('gambar11_kegiatan'),
+                'gambar_12'  => $this->request->getPost('gambar12_kegiatan'),
+                'gambar_13'  => $this->request->getPost('gambar13_kegiatan'),
+                'gambar_14'  => $this->request->getPost('gambar14_kegiatan'),
+                'gambar_15'  => $this->request->getPost('gambar15_kegiatan'),
             ]);
 
             return redirect()->to(base_url() . '/home/view/adminkegiatan');
@@ -274,6 +304,11 @@ class Home extends BaseController
             'gambar8_kegiatan'  => 'permit_empty',
             'gambar9_kegiatan'  => 'permit_empty',
             'gambar10_kegiatan'  => 'permit_empty',
+            'gambar11_kegiatan'  => 'permit_empty',
+            'gambar12_kegiatan'  => 'permit_empty',
+            'gambar13_kegiatan'  => 'permit_empty',
+            'gambar14_kegiatan'  => 'permit_empty',
+            'gambar15_kegiatan'  => 'permit_empty',
         ])) {
             $modelKegiatan->replace([
                 'id' => $this->request->getPost('id_number'),
@@ -291,6 +326,11 @@ class Home extends BaseController
                 'gambar_8'  => $this->request->getPost('gambar8_kegiatan'),
                 'gambar_9'  => $this->request->getPost('gambar9_kegiatan'),
                 'gambar_10'  => $this->request->getPost('gambar10_kegiatan'),
+                'gambar_11'  => $this->request->getPost('gambar11_kegiatan'),
+                'gambar_12'  => $this->request->getPost('gambar12_kegiatan'),
+                'gambar_13'  => $this->request->getPost('gambar13_kegiatan'),
+                'gambar_14'  => $this->request->getPost('gambar14_kegiatan'),
+                'gambar_15'  => $this->request->getPost('gambar15_kegiatan'),
             ]);
 
             return redirect()->to(base_url() . '/home/view/adminkegiatan');

@@ -97,6 +97,26 @@
                                             <input name="gambar10_berita" type="url" class="form-control my-1" id="floatingGambar10" placeholder="LINK FOTO 10">
                                             <label for="floatingGambar10">LINK FOTO 10</label>
                                         </div>
+                                        <div class="form-floating">
+                                            <input name="gambar11_berita" type="url" class="form-control my-1" id="floatingGambar11" placeholder="LINK FOTO 11">
+                                            <label for="floatingGambar11">LINK FOTO 11</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar12_berita" type="url" class="form-control my-1" id="floatingGambar12" placeholder="LINK FOTO 12">
+                                            <label for="floatingGambar12">LINK FOTO 12</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar13_berita" type="url" class="form-control my-1" id="floatingGambar13" placeholder="LINK FOTO 13">
+                                            <label for="floatingGambar13">LINK FOTO 13</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar14_berita" type="url" class="form-control my-1" id="floatingGambar14" placeholder="LINK FOTO 14">
+                                            <label for="floatingGambar14">LINK FOTO 14</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input name="gambar15_berita" type="url" class="form-control my-1" id="floatingGambar15" placeholder="LINK FOTO 15">
+                                            <label for="floatingGambar15">LINK FOTO 15</label>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -165,6 +185,21 @@
                                                     <?php } ?>
                                                     <?php if ($news_item['gambar_10'] != '' || $news_item['gambar_10'] != null) { ?>
                                                         <img src="<?= esc($news_item['gambar_10']) ?>" alt="GAMBAR 10" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_11'] != '' || $news_item['gambar_11'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_11']) ?>" alt="GAMBAR 11" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_12'] != '' || $news_item['gambar_12'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_12']) ?>" alt="GAMBAR 12" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_13'] != '' || $news_item['gambar_13'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_13']) ?>" alt="GAMBAR 13" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_14'] != '' || $news_item['gambar_14'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_14']) ?>" alt="GAMBAR 14" width="160" height="90">
+                                                    <?php } ?>
+                                                    <?php if ($news_item['gambar_15'] != '' || $news_item['gambar_15'] != null) { ?>
+                                                        <img src="<?= esc($news_item['gambar_15']) ?>" alt="GAMBAR 15" width="160" height="90">
                                                     <?php } ?>
                                                 </td>
                                             </tr>
@@ -251,6 +286,26 @@
                                                     <div class="form-floating">
                                                         <input name="gambar10_berita" type="url" class="form-control my-1" id="floatingGambar10" placeholder="LINK FOTO 10" value="<?= esc($news_item['gambar_10']) ?>">
                                                         <label for="floatingGambar10">LINK FOTO 10</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar11_berita" type="url" class="form-control my-1" id="floatingGambar11" placeholder="LINK FOTO 11" value="<?= esc($news_item['gambar_11']) ?>">
+                                                        <label for="floatingGambar11">LINK FOTO 11</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar12_berita" type="url" class="form-control my-1" id="floatingGambar12" placeholder="LINK FOTO 12" value="<?= esc($news_item['gambar_12']) ?>">
+                                                        <label for="floatingGambar12">LINK FOTO 12</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar13_berita" type="url" class="form-control my-1" id="floatingGambar13" placeholder="LINK FOTO 13" value="<?= esc($news_item['gambar_13']) ?>">
+                                                        <label for="floatingGambar13">LINK FOTO 13</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar14_berita" type="url" class="form-control my-1" id="floatingGambar14" placeholder="LINK FOTO 14" value="<?= esc($news_item['gambar_14']) ?>">
+                                                        <label for="floatingGambar14">LINK FOTO 14</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input name="gambar15_berita" type="url" class="form-control my-1" id="floatingGambar15" placeholder="LINK FOTO 15" value="<?= esc($news_item['gambar_15']) ?>">
+                                                        <label for="floatingGambar15">LINK FOTO 15</label>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">

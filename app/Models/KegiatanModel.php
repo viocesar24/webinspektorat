@@ -8,7 +8,7 @@ class KegiatanModel extends Model
 {
     protected $table = 'kegiatan';
 
-    protected $allowedFields = ['id', 'judul', 'slug', 'badan', 'waktu', 'gambar_1', 'gambar_2', 'gambar_3', 'gambar_4', 'gambar_5', 'gambar_6', 'gambar_7', 'gambar_8', 'gambar_9', 'gambar_10'];
+    protected $allowedFields = ['id', 'judul', 'slug', 'badan', 'waktu', 'gambar_1', 'gambar_2', 'gambar_3', 'gambar_4', 'gambar_5', 'gambar_6', 'gambar_7', 'gambar_8', 'gambar_9', 'gambar_10', 'gambar_11', 'gambar_12', 'gambar_13', 'gambar_14', 'gambar_15'];
 
     public function getKegiatan($slug = false)
     {

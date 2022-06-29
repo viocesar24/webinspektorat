@@ -43,6 +43,21 @@
                     <?php if ($beritaDetail['gambar_10'] != '' || $beritaDetail['gambar_10'] != null) { ?>
                         <button type="button" data-bs-target="#<?= esc($beritaDetail['slug']) ?>" data-bs-slide-to="9" aria-label="Slide 10"></button>
                     <?php } ?>
+                    <?php if ($beritaDetail['gambar_11'] != '' || $beritaDetail['gambar_11'] != null) { ?>
+                        <button type="button" data-bs-target="#<?= esc($beritaDetail['slug']) ?>" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                    <?php } ?>
+                    <?php if ($beritaDetail['gambar_12'] != '' || $beritaDetail['gambar_12'] != null) { ?>
+                        <button type="button" data-bs-target="#<?= esc($beritaDetail['slug']) ?>" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                    <?php } ?>
+                    <?php if ($beritaDetail['gambar_13'] != '' || $beritaDetail['gambar_13'] != null) { ?>
+                        <button type="button" data-bs-target="#<?= esc($beritaDetail['slug']) ?>" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                    <?php } ?>
+                    <?php if ($beritaDetail['gambar_14'] != '' || $beritaDetail['gambar_14'] != null) { ?>
+                        <button type="button" data-bs-target="#<?= esc($beritaDetail['slug']) ?>" data-bs-slide-to="13" aria-label="Slide 14"></button>
+                    <?php } ?>
+                    <?php if ($beritaDetail['gambar_15'] != '' || $beritaDetail['gambar_15'] != null) { ?>
+                        <button type="button" data-bs-target="#<?= esc($beritaDetail['slug']) ?>" data-bs-slide-to="14" aria-label="Slide 15"></button>
+                    <?php } ?>
                 </div>
                 <div class="carousel-inner ratio ratio-16x9">
                     <div class="carousel-item active">
@@ -89,6 +104,31 @@
                     <?php if ($beritaDetail['gambar_10'] != '' || $beritaDetail['gambar_10'] != null) { ?>
                         <div class="carousel-item">
                             <img src="<?= esc($beritaDetail['gambar_10']) ?>" class="d-block w-100" alt="...">
+                        </div>
+                    <?php } ?>
+                    <?php if ($beritaDetail['gambar_11'] != '' || $beritaDetail['gambar_11'] != null) { ?>
+                        <div class="carousel-item">
+                            <img src="<?= esc($beritaDetail['gambar_11']) ?>" class="d-block w-100" alt="...">
+                        </div>
+                    <?php } ?>
+                    <?php if ($beritaDetail['gambar_12'] != '' || $beritaDetail['gambar_12'] != null) { ?>
+                        <div class="carousel-item">
+                            <img src="<?= esc($beritaDetail['gambar_12']) ?>" class="d-block w-100" alt="...">
+                        </div>
+                    <?php } ?>
+                    <?php if ($beritaDetail['gambar_13'] != '' || $beritaDetail['gambar_13'] != null) { ?>
+                        <div class="carousel-item">
+                            <img src="<?= esc($beritaDetail['gambar_13']) ?>" class="d-block w-100" alt="...">
+                        </div>
+                    <?php } ?>
+                    <?php if ($beritaDetail['gambar_14'] != '' || $beritaDetail['gambar_14'] != null) { ?>
+                        <div class="carousel-item">
+                            <img src="<?= esc($beritaDetail['gambar_14']) ?>" class="d-block w-100" alt="...">
+                        </div>
+                    <?php } ?>
+                    <?php if ($beritaDetail['gambar_15'] != '' || $beritaDetail['gambar_15'] != null) { ?>
+                        <div class="carousel-item">
+                            <img src="<?= esc($beritaDetail['gambar_15']) ?>" class="d-block w-100" alt="...">
                         </div>
                     <?php } ?>
                 </div>
