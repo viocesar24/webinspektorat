@@ -112,7 +112,7 @@ class Home extends BaseController
         $modelBerita = model(NewsModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
             'id_number' => 'min_length[0]',
-            'judul_berita' => 'required|min_length[3]|max_length[255]',
+            'judul_berita' => 'required|min_length[3]|max_length[500]',
             'slug_berita' => 'required',
             'badan_berita'  => 'required',
             'waktu_berita'  => 'required',
@@ -166,7 +166,7 @@ class Home extends BaseController
         $modelBerita = model(NewsModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
             'id_number' => 'min_length[0]',
-            'judul_berita' => 'required|min_length[3]|max_length[255]',
+            'judul_berita' => 'required|min_length[3]|max_length[500]',
             'slug_berita' => 'required',
             'badan_berita'  => 'required',
             'waktu_berita'  => 'required',
@@ -236,7 +236,7 @@ class Home extends BaseController
         $modelKegiatan = model(KegiatanModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
             'id_number' => 'min_length[0]',
-            'judul_kegiatan' => 'required|min_length[3]|max_length[255]',
+            'judul_kegiatan' => 'required|min_length[3]|max_length[500]',
             'slug_kegiatan' => 'required',
             'badan_kegiatan'  => 'required',
             'waktu_kegiatan'  => 'required',
@@ -290,7 +290,7 @@ class Home extends BaseController
         $modelKegiatan = model(KegiatanModel::class);
         if ($this->request->getMethod() === 'post' && $this->validate([
             'id_number' => 'min_length[0]',
-            'judul_kegiatan' => 'required|min_length[3]|max_length[255]',
+            'judul_kegiatan' => 'required|min_length[3]|max_length[500]',
             'slug_kegiatan' => 'required',
             'badan_kegiatan'  => 'required',
             'waktu_kegiatan'  => 'required',
