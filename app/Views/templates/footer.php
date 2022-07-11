@@ -22,12 +22,13 @@
                 <hr>
                 <li>Telepon</li>
                 <ul class="list-unstyled">
-                    <li>(0354) 689901-05 Pswt. 253 (0354) 687038</li>
+                    <li>(0354)687038</li>
                 </ul>
                 <hr>
                 <li>Email</li>
                 <ul class="list-unstyled">
                     <li>inspektorat@kedirikab.go.id</li>
+                    <li>inspektoratkedirikab@gmail.com</li>
                 </ul>
                 <hr>
                 <li>
@@ -37,10 +38,10 @@
                     <a href="#" class="text-dark text-decoration-none me-1">
                         <i class="bi bi-twitter"></i>
                     </a>
-                    <a href="#" class="text-dark text-decoration-none me-1">
+                    <a href="https://www.instagram.com/inspektoratkabkediri/" class="text-dark text-decoration-none me-1">
                         <i class="bi bi-instagram"></i>
                     </a>
-                    <a href="#" class="text-dark text-decoration-none">
+                    <a href="https://www.youtube.com/channel/UCJzYXZeX1vCoFSOzNgIQ8OA" class="text-dark text-decoration-none">
                         <i class="bi bi-youtube"></i>
                     </a>
                 </li>
