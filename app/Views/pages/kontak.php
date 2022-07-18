@@ -37,7 +37,7 @@
                         TELEPON
                         <i class="bi bi-telephone-fill"></i>
                     </h5>
-                    <p>(0354) 689901-05 Pswt. 253 (0354) 687038</p>
+                    <p>(0354) 687038</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <h5>

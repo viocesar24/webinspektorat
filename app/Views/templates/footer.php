@@ -22,7 +22,7 @@
                 <hr>
                 <li>Telepon</li>
                 <ul class="list-unstyled">
-                    <li>(0354)687038</li>
+                    <li>(0354) 687038</li>
                 </ul>
                 <hr>
                 <li>Email</li>

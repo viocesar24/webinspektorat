@@ -51,10 +51,26 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>PERBUP NO 19 TAHUN 2021 (SOTK Inspektorat)</td>
+                                    <td>PERBUP NOMOR 19 TAHUN 2021 (SOTK Inspektorat)</td>
                                     <td>PERATURAN BUPATI</td>
                                     <td>
                                         <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/PERBUP NO 19 TAHUN 2021 (SOTK Inspektorat).pdf" target="_blank">Lihat</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>PERBUP NOMOR 23 TAHUN 2018 PEDOMAN PENILAIAN RESIKO DI LINGKUNGAN PEMERINTAH KABUPATEN KEDIRI</td>
+                                    <td>PERATURAN BUPATI</td>
+                                    <td>
+                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/PERBUP 23-2018 Pedum penilaian resiko di Lingk pem kab kediri.pdf" target="_blank">Lihat</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>PERPRES NOMOR 12 TAHUN 2021 PERUBAHAN ATAS PERATURAN PRESIDEN NOMOR 16 TAHUN 2018 TENTANG PENGADAAN BARANG/JASA PEMERINTAH</td>
+                                    <td>PERATURAN PRESIDEN</td>
+                                    <td>
+                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/Perpres Nomor 12 Tahun 2021 PBJ mengubah 16 tahun18.pdf" target="_blank">Lihat</a>
                                     </td>
                                 </tr>
                             </tbody>
