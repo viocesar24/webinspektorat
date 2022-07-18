@@ -6,11 +6,12 @@
     </div>
     <div class="carousel-inner ratio ratio-16x9">
         <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/PETA.svg" class="img-fluid d-block w-100" alt="Highlight Pertama">
+            <img src="<?php echo base_url(); ?>/img/1.png" class="img-fluid d-block w-100" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <!-- <h4>SELAMAT HARI RAYA IDUL FITRI 1443 H / 2022 M</h4> -->
-                    <!-- <p></p> -->
+                    <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4>
+                    <a href="https://he1.me/oFfL" target="_blank">Klik Saya</a>
+                    <!-- <p>https://he1.me/oFfL</p> -->
                 </div>
             </div>
         </div>
