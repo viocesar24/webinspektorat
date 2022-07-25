@@ -151,7 +151,11 @@
                                             </tr>
                                             <tr>
                                                 <th scope="row">BADAN</th>
-                                                <td><?= esc($news_item['badan']) ?></td>
+                                                <td>
+                                                    <div contenteditable="false">
+                                                        <?= $news_item['badan'] ?>
+                                                    </div>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">WAKTU</th>
