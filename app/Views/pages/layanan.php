@@ -34,45 +34,10 @@
                     <h5 class="fw-bold p-0 m-0">LAYANAN</h5>
                 </div>
                 <div class="card-body">
-                    <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="d-block w-100" alt="...">
-                    <!-- <div class="row g-3">
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="<?php //echo base_url(); 
-                                            ?>/img/male.png" class="img-fluid card-img-top" alt="...">
-                                <div class="card-body text-center">
-                                    <a class="card-text link-dark text-decoration-none" href="#">Layanan 1</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="<?php //echo base_url(); 
-                                            ?>/img/male.png" class="img-fluid card-img-top" alt="...">
-                                <div class="card-body text-center">
-                                    <a class="card-text link-dark text-decoration-none" href="#">Layanan 2</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="<?php //echo base_url(); 
-                                            ?>/img/male.png" class="img-fluid card-img-top" alt="...">
-                                <div class="card-body text-center">
-                                    <a class="card-text link-dark text-decoration-none" href="#">Layanan 3</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="<?php //echo base_url(); 
-                                            ?>/img/male.png" class="img-fluid card-img-top" alt="...">
-                                <div class="card-body text-center">
-                                    <a class="card-text link-dark text-decoration-none" href="#">Layanan 4</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                    <!-- <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="d-block w-100" alt="..."> -->
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUKhcQ6-QrOjCcb-IUIarBWkqny8yeaaCLt2TxnXOBUgS6Ug/viewform?embedded=true" width="750" height="500" frameborder="0" marginheight="0" marginwidth="0">
+                        Memuat…
+                    </iframe>
                 </div>
             </div>
         </div>
