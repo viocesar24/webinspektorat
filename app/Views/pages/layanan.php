@@ -35,9 +35,11 @@
                 </div>
                 <div class="card-body">
                     <!-- <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="d-block w-100" alt="..."> -->
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUKhcQ6-QrOjCcb-IUIarBWkqny8yeaaCLt2TxnXOBUgS6Ug/viewform?embedded=true" width="750" height="500" frameborder="0" marginheight="0" marginwidth="0">
-                        Memuat…
-                    </iframe>
+                    <div class="container text-center">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUKhcQ6-QrOjCcb-IUIarBWkqny8yeaaCLt2TxnXOBUgS6Ug/viewform?embedded=true" width="750" height="3250" frameborder="0" marginheight="0" marginwidth="0">
+                            Memuat…
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
