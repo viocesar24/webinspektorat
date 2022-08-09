@@ -73,6 +73,14 @@
                                         <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/Perpres Nomor 12 Tahun 2021 PBJ mengubah 16 tahun18.pdf" target="_blank">Lihat</a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>PERPRES NOMOR 100 TAHUN 2022 TENTANG TUNJANGAN JABATAN FUNGSIONAL PEMERIKSA</td>
+                                    <td>PERATURAN PRESIDEN</td>
+                                    <td>
+                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/Perpres Nomor 100 Tahun 2022.pdf" target="_blank">Lihat</a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
