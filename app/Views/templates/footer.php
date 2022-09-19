@@ -32,7 +32,7 @@
                 </ul>
                 <hr>
                 <li>
-                    <a href="#" class="text-dark text-decoration-none me-1">
+                    <a href="https://www.facebook.com/inspektoratkabkediri" class="text-dark text-decoration-none me-1">
                         <i class="bi bi-facebook"></i>
                     </a>
                     <a href="#" class="text-dark text-decoration-none me-1">
