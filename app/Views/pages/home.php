@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-10-12/1.png" class="img-fluid d-block w-100" alt="Highlight Ketiga">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-10-28/1.png" class="img-fluid d-block w-100" alt="Highlight Ketiga">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <!-- <h4>SELAMAT HARI BURUH INTERNASIONAL 01 MEI 2022</h4> -->
@@ -183,7 +183,6 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><?= esc($news_item['judul']) ?></h5>
-                            <p class="card-text text-truncate"><?= esc($news_item['badan']) ?></p>
                             <a href="/home/view/detail/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-dark">Selengkapnya...</a>
                         </div>
                         <div class="card-footer">
