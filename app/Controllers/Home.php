@@ -80,8 +80,8 @@ class Home extends BaseController
             'pager' => $model->pager,
             'pagerKegiatan' => $modelKegiatan->pager,
             'pagerPejabat' => $modelPejabat->pager,
-            'beritaHalamanAdmin' => $model->orderBy('waktu', 'ASC')->paginate(1, 'group1'),
-            'kegiatanHalamanAdmin' => $modelKegiatan->orderBy('waktu', 'ASC')->paginate(1, 'group1'),
+            'beritaHalamanAdmin' => $model->orderBy('waktu', 'DESC')->paginate(1, 'group1'),
+            'kegiatanHalamanAdmin' => $modelKegiatan->orderBy('waktu', 'DESC')->paginate(1, 'group1'),
             'pagerBeritaAdmin' => $model->pager,
             'pagerKegiatanAdmin' => $modelKegiatan->pager,
         ];
