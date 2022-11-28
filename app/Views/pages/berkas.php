@@ -67,6 +67,22 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
+                                    <td>PERBUP NOMOR 38 TAHUN 2017 TENTANG PIAGAM AUDIT INTERN DI LINGKUNGAN PEMERINTAH KABUPATEN KEDIRI</td>
+                                    <td>PERATURAN BUPATI</td>
+                                    <td>
+                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/PERBUP NOMOR 38 TAHUN 2017.pdf" target="_blank">Lihat</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>PERBUP NOMOR 49 TAHUN 2018 TENTANG PERUBAHAN ATAS PERATURAN BUPATI KEDIRI NOMOR 38 TAHUN 2OI7 TENTANG PIAGAM AUDIT INTERN DI LINGKUNGAN PEMERINTAH KABUPATEN KEDIRI</td>
+                                    <td>PERATURAN BUPATI</td>
+                                    <td>
+                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/PERBUP 49 TAHUN 2018.pdf" target="_blank">Lihat</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
                                     <td>PERPRES NOMOR 12 TAHUN 2021 PERUBAHAN ATAS PERATURAN PRESIDEN NOMOR 16 TAHUN 2018 TENTANG PENGADAAN BARANG/JASA PEMERINTAH</td>
                                     <td>PERATURAN PRESIDEN</td>
                                     <td>
@@ -74,7 +90,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">4</th>
+                                    <th scope="row">6</th>
                                     <td>PERPRES NOMOR 100 TAHUN 2022 TENTANG TUNJANGAN JABATAN FUNGSIONAL PEMERIKSA</td>
                                     <td>PERATURAN PRESIDEN</td>
                                     <td>
