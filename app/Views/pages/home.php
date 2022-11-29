@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-11-25/1.png" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Ketiga">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-11-29/2.png" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Ketiga">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <!-- <h4>SELAMAT HARI BURUH INTERNASIONAL 01 MEI 2022</h4> -->
