@@ -6,7 +6,7 @@
     </div>
     <div class="carousel-inner ratio ratio-21x9">
         <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/1.png" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Pertama">
+            <img src="<?php echo base_url(); ?>/img/1.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4>
