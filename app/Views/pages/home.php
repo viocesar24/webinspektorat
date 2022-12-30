@@ -10,7 +10,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4>
-                    <a href="https://he1.me/oFfL" target="_blank">Klik Saya</a>
+                    <a href="https://heylink.me/InspektoratKediriKab" target="_blank">Klik Saya</a>
                 </div>
             </div>
         </div>

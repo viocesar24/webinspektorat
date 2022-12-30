@@ -1,0 +1,18 @@
+ERROR - 2022-12-26 22:39:44 --> Error connecting to the database: Unknown database 'inspektoratkabkediri'
+CRITICAL - 2022-12-26 22:39:44 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'inspektoratkabkediri'
+in SYSTEMPATH\Database\BaseConnection.php on line 415.
+ 1 SYSTEMPATH\Database\BaseConnection.php(585): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `berita`
+ORDER BY `waktu` DESC', [], false)
+ 3 SYSTEMPATH\Model.php(222): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\NewsModel.php(20): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Home.php(70): App\Models\NewsModel->getNews()
+ 7 APPPATH\Controllers\Home.php(14): App\Controllers\Home->view()
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
