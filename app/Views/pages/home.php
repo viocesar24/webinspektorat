@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/22-3-25/apel-hari-jadi-kab-kediri-1218-2.jpeg" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Kedua">
+            <img src="<?php echo base_url(); ?>/img/2.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Kedua">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <!-- <h4>SELAMAT HARI RAYA IDUL FITRI 1443 H / 2022 M</h4> -->
