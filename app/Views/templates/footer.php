@@ -4,7 +4,7 @@
             <h6 class="fw-bold">LINK TERKAIT</h6>
             <div class="list-group list-group-flush text-dark">
                 <a href="https://kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">PEMERINTAHAN KABUPATEN KEDIRI</a>
-                <a href="https://halomasbup.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">HALOMASBUP</a>
+                <a href="https://halomasbup.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">HALO MASBUP</a>
                 <a href="https://e-survei.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">E-SURVEI KABUPATEN KEDIRI</a>
                 <a href="https://wbs.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">WHISTLE BLOWING SYSTEM</a>
                 <a href="https://dukcapil.kedirikab.go.id/" class="list-group-item list-group-item-action bg-transparent text-dark">DINAS KEPENDUDUKAN DAN CATATAN SIPIL</a>

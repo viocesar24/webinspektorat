@@ -102,14 +102,8 @@
                                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>/home/view/penghargaan">PENGHARGAAN</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="offcanvasLayanan" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    LAYANAN
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasLayanan">
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/home/view/layanan">LAYANAN</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>/home/view/program">PROGRAM</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="<?php echo base_url(); ?>/home/view/layanan">LAYANAN</a>
                             </li>
                             <li class="nav-item dropdown text-dark">
                                 <a class="nav-link dropdown-toggle text-dark" href="#" id="offcanvasInformasi" role="button" data-bs-toggle="dropdown" aria-expanded="false">
