@@ -6,7 +6,16 @@
     </div>
     <div class="carousel-inner ratio ratio-21x9">
         <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/1.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Pertama">
+            <img src="<?php echo base_url(); ?>/img/23-3-25.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Pertama">
+            <div class="carousel-caption d-none d-md-block">
+                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
+                    <!-- <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4> -->
+                    <!-- <a href="https://heylink.me/InspektoratKediriKab" target="_blank">Klik Saya</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="<?php echo base_url(); ?>/img/1.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Kedua">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4>
@@ -15,16 +24,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/2.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Kedua">
-            <div class="carousel-caption d-none d-md-block">
-                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <!-- <h4>SELAMAT HARI RAYA IDUL FITRI 1443 H / 2022 M</h4> -->
-                    <!-- <p></p> -->
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/PETA.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Ketiga">
+            <img src="<?php echo base_url(); ?>/img/2.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Ketiga">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <!-- <h4>SELAMAT HARI BURUH INTERNASIONAL 01 MEI 2022</h4> -->
