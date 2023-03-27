@@ -97,6 +97,14 @@
                                         <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/Perpres Nomor 100 Tahun 2022.pdf" target="_blank">Lihat</a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>SE MENTERI PANRB NO 02 TAHUN 2023 - TENTANG LHKAN</td>
+                                    <td>SURAT EDARAN</td>
+                                    <td>
+                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/SE Menteri PANRB No 02 Tahun 2023 - Tentang LHKAN.pdf" target="_blank">Lihat</a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
