@@ -3,6 +3,7 @@
         <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
     <div class="carousel-inner ratio ratio-21x9">
         <div class="carousel-item active">
@@ -15,7 +16,16 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/1.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Kedua">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/23-4-21/2.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Kedua">
+            <div class="carousel-caption d-none d-md-block">
+                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
+                    <!-- <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4> -->
+                    <!-- <a href="https://heylink.me/InspektoratKediriKab" target="_blank">Klik Saya</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="<?php echo base_url(); ?>/img/1.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Ketiga">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4>
@@ -24,7 +34,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/2.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Ketiga">
+            <img src="<?php echo base_url(); ?>/img/2.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Keempat">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <!-- <h4>SELAMAT HARI BURUH INTERNASIONAL 01 MEI 2022</h4> -->
