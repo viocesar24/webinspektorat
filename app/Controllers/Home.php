@@ -49,6 +49,7 @@ class Home extends BaseController
             $slugBool = false;
         }
 
+        // Password masuk ke dalam Halaman Admin
         if ($stringAdmin == 'inspektoratkabupatenkediri') {
             $adminBool = true;
             // store a cookie value
@@ -107,6 +108,7 @@ class Home extends BaseController
         }
     }
 
+    // Ketika tambah berita, diperlukan mengisi gambar 1 dan gambar 2, gambar tersebut diisi dengan link gambar dari server, untuk upload gambar sementara manual, lewat server.
     public function tambahberita()
     {
         $modelBerita = model(NewsModel::class);
