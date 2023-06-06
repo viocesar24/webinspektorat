@@ -7,16 +7,7 @@
     </div>
     <div class="carousel-inner ratio ratio-21x9">
         <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/23-3-25.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Pertama">
-            <div class="carousel-caption d-none d-md-block">
-                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <!-- <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4> -->
-                    <!-- <a href="https://heylink.me/InspektoratKediriKab" target="_blank">Klik Saya</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/berita/23-4-21/2.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Kedua">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/materi/23-6-6/1.webp" class="img-fluid mx-auto d-block w-100 h-100" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <!-- <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4> -->
