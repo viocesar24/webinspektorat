@@ -6,7 +6,7 @@
     </div>
     <div class="carousel-inner ratio ratio-21x9">
         <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/materi/23-6-6/1.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Pertama">
+            <img src="<?php echo base_url(); ?>/img/dokumentasi/materi/23-6-8/1.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Pertama">
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <!-- <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4> -->
@@ -100,74 +100,74 @@
                             </div>
                             <div class="carousel-inner ratio ratio-16x9">
                                 <div class="carousel-item active">
-                                    <img src="<?= esc($news_item['gambar_1']) ?>" class="d-block w-100" alt="...">
+                                    <img src="<?= esc($news_item['gambar_1']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="<?= esc($news_item['gambar_2']) ?>" class="d-block w-100" alt="...">
+                                    <img src="<?= esc($news_item['gambar_2']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                 </div>
                                 <?php if ($news_item['gambar_3'] != '' || $news_item['gambar_3'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_3']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_3']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_4'] != '' || $news_item['gambar_4'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_4']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_4']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_5'] != '' || $news_item['gambar_5'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_5']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_5']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_6'] != '' || $news_item['gambar_6'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_6']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_6']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_7'] != '' || $news_item['gambar_7'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_7']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_7']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_8'] != '' || $news_item['gambar_8'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_8']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_8']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_9'] != '' || $news_item['gambar_9'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_9']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_9']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_10'] != '' || $news_item['gambar_10'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_10']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_10']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_11'] != '' || $news_item['gambar_11'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_11']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_11']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_12'] != '' || $news_item['gambar_12'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_12']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_12']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_13'] != '' || $news_item['gambar_13'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_13']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_13']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_14'] != '' || $news_item['gambar_14'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_14']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_14']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($news_item['gambar_15'] != '' || $news_item['gambar_15'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($news_item['gambar_15']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($news_item['gambar_15']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                             </div>
@@ -301,74 +301,74 @@
                             </div>
                             <div class="carousel-inner ratio ratio-16x9">
                                 <div class="carousel-item active">
-                                    <img src="<?= esc($kegiatan_item['gambar_1']) ?>" class="d-block w-100" alt="...">
+                                    <img src="<?= esc($kegiatan_item['gambar_1']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="<?= esc($kegiatan_item['gambar_2']) ?>" class="d-block w-100" alt="...">
+                                    <img src="<?= esc($kegiatan_item['gambar_2']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                 </div>
                                 <?php if ($kegiatan_item['gambar_3'] != '' || $kegiatan_item['gambar_3'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_3']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_3']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_4'] != '' || $kegiatan_item['gambar_4'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_4']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_4']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_5'] != '' || $kegiatan_item['gambar_5'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_5']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_5']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_6'] != '' || $kegiatan_item['gambar_6'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_6']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_6']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_7'] != '' || $kegiatan_item['gambar_7'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_7']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_7']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_8'] != '' || $kegiatan_item['gambar_8'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_8']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_8']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_9'] != '' || $kegiatan_item['gambar_9'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_9']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_9']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_10'] != '' || $kegiatan_item['gambar_10'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_10']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_10']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_11'] != '' || $kegiatan_item['gambar_11'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_11']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_11']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_12'] != '' || $kegiatan_item['gambar_12'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_12']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_12']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_13'] != '' || $kegiatan_item['gambar_13'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_13']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_13']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_14'] != '' || $kegiatan_item['gambar_14'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_14']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_14']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                                 <?php if ($kegiatan_item['gambar_15'] != '' || $kegiatan_item['gambar_15'] != null) { ?>
                                     <div class="carousel-item">
-                                        <img src="<?= esc($kegiatan_item['gambar_15']) ?>" class="d-block w-100" alt="...">
+                                        <img src="<?= esc($kegiatan_item['gambar_15']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                                     </div>
                                 <?php } ?>
                             </div>
@@ -508,13 +508,13 @@
                     </div>
                     <div class="carousel-inner ratio ratio-16x9">
                         <div class="carousel-item active">
-                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="d-block w-100" alt="...">
+                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="d-block w-100" alt="...">
+                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="d-block w-100" alt="...">
+                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomeBawah" data-bs-slide="prev">

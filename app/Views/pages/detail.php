@@ -61,74 +61,74 @@
                 </div>
                 <div class="carousel-inner ratio ratio-16x9">
                     <div class="carousel-item active">
-                        <img src="<?= esc($beritaDetail['gambar_1']) ?>" class="d-block w-100" alt="...">
+                        <img src="<?= esc($beritaDetail['gambar_1']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= esc($beritaDetail['gambar_2']) ?>" class="d-block w-100" alt="...">
+                        <img src="<?= esc($beritaDetail['gambar_2']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                     </div>
                     <?php if ($beritaDetail['gambar_3'] != '' || $beritaDetail['gambar_3'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_3']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_3']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_4'] != '' || $beritaDetail['gambar_4'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_4']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_4']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_5'] != '' || $beritaDetail['gambar_5'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_5']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_5']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_6'] != '' || $beritaDetail['gambar_6'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_6']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_6']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_7'] != '' || $beritaDetail['gambar_7'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_7']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_7']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_8'] != '' || $beritaDetail['gambar_8'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_8']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_8']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_9'] != '' || $beritaDetail['gambar_9'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_9']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_9']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_10'] != '' || $beritaDetail['gambar_10'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_10']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_10']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_11'] != '' || $beritaDetail['gambar_11'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_11']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_11']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_12'] != '' || $beritaDetail['gambar_12'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_12']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_12']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_13'] != '' || $beritaDetail['gambar_13'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_13']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_13']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_14'] != '' || $beritaDetail['gambar_14'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_14']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_14']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                     <?php if ($beritaDetail['gambar_15'] != '' || $beritaDetail['gambar_15'] != null) { ?>
                         <div class="carousel-item">
-                            <img src="<?= esc($beritaDetail['gambar_15']) ?>" class="d-block w-100" alt="...">
+                            <img src="<?= esc($beritaDetail['gambar_15']) ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="...">
                         </div>
                     <?php } ?>
                 </div>
