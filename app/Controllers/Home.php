@@ -50,7 +50,7 @@ class Home extends BaseController
         }
 
         // Password masuk ke dalam Halaman Admin
-        if ($stringAdmin == 'inspektoratkabupatenkediri') {
+        if ($stringAdmin == 't@!T`,7u2W-+[/`d') {
             $adminBool = true;
             // store a cookie value
             set_cookie("username", "admin", 3600);
@@ -87,7 +87,7 @@ class Home extends BaseController
             'pagerKegiatanAdmin' => $modelKegiatan->pager,
         ];
 
-        if ($page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {
+        if ($page == 'adminkonfirmasi' || $page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {
             if (get_cookie("username") == "admin") {
                 # code...
                 echo view('templates/headeradmin', $data);
