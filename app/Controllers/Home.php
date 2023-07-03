@@ -50,7 +50,7 @@ class Home extends BaseController
         }
 
         // Password masuk ke dalam Halaman Admin
-        if ($stringAdmin == 't@!T`,7u2W-+[/`d') {
+        if ($stringAdmin == 'inspektoratkabupatenkediri') {
             $adminBool = true;
             // store a cookie value
             set_cookie("username", "admin", 3600);
