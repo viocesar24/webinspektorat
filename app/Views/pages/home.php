@@ -6,7 +6,7 @@
     </div>
     <div class="carousel-inner ratio ratio-21x9">
         <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/dokumentasi/materi/23-7-4/1.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Pertama" />
+            <img src="<?php echo base_url(); ?>/img/2.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Pertama" />
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <!-- <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4> -->
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/2.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Keempat" />
+            <img src="<?php echo base_url(); ?>/img/PETA.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Keempat" />
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
                     <!-- <h4>SELAMAT HARI BURUH INTERNASIONAL 01 MEI 2022</h4> -->
