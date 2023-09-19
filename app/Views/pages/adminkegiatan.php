@@ -28,7 +28,7 @@
                         TAMBAH
                     </button>
                     <!-- Modal Tambah -->
-                    <div class="modal fade" id="tambahModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal fade modal-xl" id="tambahModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <?= session()->getFlashdata('error') ?>
@@ -129,12 +129,14 @@
                         </div>
                     </div>
                 </div>
-                <?php foreach ($kegiatanHalamanAdmin as $news_item) : ?>
+                <?php foreach ($kegiatanHalamanAdmin as $news_item): ?>
                     <div>
                         <div class="card bg-light bg-gradient shadow my-3">
                             <div class="card-header text-center">
                                 <h5 class="fw-bold p-0 m-0">
-                                    <p>ID: <?= esc($news_item['id']) ?></p>
+                                    <p>ID:
+                                        <?= esc($news_item['id']) ?>
+                                    </p>
                                 </h5>
                             </div>
                             <div class="card-body">
@@ -143,19 +145,27 @@
                                         <tbody>
                                             <tr>
                                                 <th scope="row">JUDUL</th>
-                                                <td><?= esc($news_item['judul']) ?></td>
+                                                <td>
+                                                    <?= esc($news_item['judul']) ?>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">SLUG</th>
-                                                <td><?= esc($news_item['slug']) ?></td>
+                                                <td>
+                                                    <?= esc($news_item['slug']) ?>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">BADAN</th>
-                                                <td><?= esc($news_item['badan']) ?></td>
+                                                <td>
+                                                    <?= esc($news_item['badan']) ?>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">WAKTU</th>
-                                                <td><?= esc($news_item['waktu']) ?></td>
+                                                <td>
+                                                    <?= esc($news_item['waktu']) ?>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">GAMBAR</th>
@@ -218,7 +228,7 @@
                                     </button>
                                 </div>
                                 <!-- Modal Ubah -->
-                                <div class="modal fade" id="ubahModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal fade modal-xl" id="ubahModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <?= session()->getFlashdata('error') ?>
@@ -319,7 +329,7 @@
                                     </div>
                                 </div>
                                 <!-- Modal Hapus -->
-                                <div class="modal fade" id="hapusModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal fade modal-xl" id="hapusModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <?= session()->getFlashdata('error') ?>
