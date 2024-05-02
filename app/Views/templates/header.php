@@ -4,62 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K6TBJKCZXV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-K6TBJKCZXV');
-    </script>
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NQDCQNG');
-    </script>
-    <!-- End Google Tag Manager -->
-    <script>
-        var onSubmit = function(token) {
-            console.log('success!');
-        };
-
-        var onloadCallback = function() {
-            grecaptcha.render('field', {
-                'sitekey': '6Lc5bngeAAAAAGD4F5YX42DXSB31qvDyfX4TcK1_',
-                'callback': onSubmit
-            });
-        };
-    </script>
-    <script>
-        function validate(event) {
-            event.preventDefault();
-            grecaptcha.execute();
-        }
-
-        function onload() {
-            var element = document.getElementById('field');
-            element.onload = validate;
-        }
-    </script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>INSPEKTORAT KABUPATEN KEDIRI</title>
 </head>
 
