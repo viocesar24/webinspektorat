@@ -18,8 +18,8 @@
             <img src="<?php echo base_url(); ?>/img/2.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Ketiga" />
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4>
-                    <a href="https://heylink.me/InspektoratKediriKab" target="_blank">Klik Saya</a>
+                    <!-- <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4>
+                    <a href="https://heylink.me/InspektoratKediriKab" target="_blank">Klik Saya</a> -->
                 </div>
             </div>
         </div>
@@ -27,8 +27,8 @@
             <img src="<?php echo base_url(); ?>/img/1.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Keempat" />
             <div class="carousel-caption d-none d-md-block">
                 <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <!-- <h4>SELAMAT HARI BURUH INTERNASIONAL 01 MEI 2022</h4> -->
-                    <!-- <p></p> -->
+                    <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4>
+                    <a href="https://heylink.me/InspektoratKediriKab" target="_blank">Klik Saya</a>
                 </div>
             </div>
         </div>
