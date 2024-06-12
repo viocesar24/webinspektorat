@@ -1,63 +1,48 @@
-# CodeIgniter 4 Application Starter
+# Inspektorat Kabupaten Kediri
 
-## What is CodeIgniter?
+## Situs Web Resmi Inspektorat Kabupaten Kediri
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+Selamat datang di repositori resmi untuk situs web Inspektorat Kabupaten Kediri. Situs ini dirancang sebagai platform publik yang transparan, menyediakan informasi komprehensif dan layanan terkait Inspektorat Kabupaten Kediri.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Fitur Utama
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+- Informasi Institusi: Gambaran menyeluruh mengenai visi, misi, tugas, fungsi, dan struktur organisasi Inspektorat Kabupaten Kediri.
+- Berita Terkini: Pembaruan rutin seputar kegiatan, pencapaian, dan program kerja terbaru Inspektorat Kabupaten Kediri.
+- Kegiatan Inspektorat: Dokumentasi kegiatan inspeksi, audit, investigasi, serta sosialisasi dan pelatihan yang dilakukan oleh Inspektorat Kabupaten Kediri.
+- Profil Pimpinan: Pengenalan profil pejabat pimpinan Inspektorat Kabupaten Kediri, meliputi riwayat hidup, pengalaman kerja, dan kompetensi.
+- Kontak: Informasi kontak lengkap Inspektorat Kabupaten Kediri, termasuk alamat kantor, nomor telepon, alamat surel, dan tautan ke media sosial resmi.
+- Layanan Pendaftaran Konsultasi: Fitur pendaftaran daring bagi masyarakat dan instansi untuk berkonsultasi terkait pengawasan, pengaduan, dan layanan publik.
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+## Teknologi yang Digunakan
 
-## Installation & updates
+- Backend: PHP (CodeIgniter 4)
+- Frontend: HTML, CSS (Bootstrap 5), JavaScript
+- Basis Data: MySQL (XAMPP versi 7.4.33)
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Instalasi dan Pengaturan (Opsional)
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+1. Untuk pemakaian Lokal, install XAMPP versi 7.4.33, dan setelah install, buka file php.ini kemudian hapus tanda ";" pada baris extension=intl untuk mengaktifkan intl.
+2. Kloning Repositori: git clone https://gitkominfo.kedirikab.go.id/pusintek_inspektorat/CMS-OPD
+3. Instalasi Dependensi: composer install
+4. Konfigurasi Basis Data: Ubah pengaturan koneksi basis data pada file app/Config/Database.php.
+5. Bisa juga menggunakan env dengan mengubah nama file env menjadi .env, kemudian isi informasi database pada file tersebut.
+5. Migrasi Basis Data: php spark migrate
+6. Jalankan Server Lokal: php spark serve
 
-## Setup
+## Disclaimer (Sanggahan)
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Informasi yang disajikan pada situs ini bersifat umum dan dapat berubah sewaktu-waktu. Inspektorat Kabupaten Kediri tidak bertanggung jawab atas kerugian yang mungkin timbul akibat penggunaan informasi tersebut.
 
-## Important Change with index.php
+## Persyaratan Server
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.3 or higher is required, with the following extensions installed:
+PHP versi 7.3, dengan ekstensi yang perlu diinstall:
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- [libcurl](http://php.net/manual/en/curl.requirements.php) jika Anda berencana memakai HTTP\CURLRequest library
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+Sebagai tambahan, pastikan ekstensi berikut aktif di dalam PHP Anda:
 
-- json (enabled by default - don't turn it off)
+- json (Aktif secara default - jangan dimatikan)
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+- xml (Aktif secara default - jangan dimatikan)
