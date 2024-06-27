@@ -129,6 +129,8 @@ class CreateExistingTables extends Migration
 
     public function down()
     {
-        //
+        $this->forge->dropTable('pejabat', true);
+        $this->forge->dropTable('kegiatan', true);
+        $this->forge->dropTable('berita', true);
     }
 }

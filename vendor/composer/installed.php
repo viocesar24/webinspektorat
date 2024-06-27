@@ -3,7 +3,7 @@
         'name' => 'codeigniter4/appstarter',
         'pretty_version' => 'dev-webinspektorat',
         'version' => 'dev-webinspektorat',
-        'reference' => 'a56b57bcb6267a75147b1bc2baba5083ebf009d0',
+        'reference' => 'afbf87d0403c123795c0fed417f85f617082a421',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'codeigniter4/appstarter' => array(
             'pretty_version' => 'dev-webinspektorat',
             'version' => 'dev-webinspektorat',
-            'reference' => 'a56b57bcb6267a75147b1bc2baba5083ebf009d0',
+            'reference' => 'afbf87d0403c123795c0fed417f85f617082a421',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
