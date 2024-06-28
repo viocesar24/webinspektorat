@@ -41,7 +41,8 @@
         <div class="col-md-9">
             <div class="card shadow">
                 <div class="card-body">
-                    <h5 class="card-title fw-bold">INSPEKTORAT KABUPATEN KEDIRI</h5>
+                    <div><?= $tentang['teks'] ?></div>
+                    <!-- <h5 class="card-title fw-bold">INSPEKTORAT KABUPATEN KEDIRI</h5>
                     <p class="card-text text-start" style="text-indent: 5%;">
                         Inspektorat merupakan unsur pelaksana urusan pemerintahan daerah dibidang Pengawasan.
                         Inspektorat dipimpin oleh Inspektur yang berkedudukan dibawah dan bertanggung jawab kepada Bupati melalui Sekretaris Daerah.
@@ -75,7 +76,7 @@
                         <li class="list-group-item">Pengujian terhadap laporan berkala dan/atau sewaktu-waktu dari unit/satuan kerja.</li>
                         <li class="list-group-item">Pengusutan atas kebenaran laporan mengenai adanya indikasi terjadinya penyimpangan, korupsi, kolusi dan nepotisme.</li>
                         <li class="list-group-item">Penilaian atas manfaat dan keberhasilan kebijakan, pelaksanaan program dan kegiatan.</li>
-                    </ol>
+                    </ol> -->
                 </div>
             </div>
         </div>
