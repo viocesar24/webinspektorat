@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Dashboard Tentang</title>
+    <title>Dashboard Struktur Organisasi</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
@@ -109,9 +109,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
-
-    <!-- Quill JS / Rich Text Editor -->
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -349,13 +346,26 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard Tentang</h1>
+                    <h1 class="h2">Dashboard Struktur Organisasi</h1>
                 </div>
+
+                <?php if (session()->getFlashdata('success')) : ?>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (session()->getFlashdata('error')) : ?>
+                    <div class="alert alert-danger">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
+
                 <!-- BAGIAN TABEL ADMIN -->
                 <div class="bg-body bg-gradient">
                     <div class="card bg-body bg-gradient shadow">
                         <div class="card-header text-center">
-                            <h5 class="fw-bold p-0 m-0 text-primary">TENTANG</h5>
+                            <h5 class="fw-bold p-0 m-0 text-primary">STRUKTUR ORGANISASI</h5>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -363,19 +373,54 @@
                                     <table class="table table-bordered table-striped table-hover">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Teks</th>
+                                                <th>ID</th>
+                                                <th>Gambar</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if ($tentang['teks']) : ?>
-                                                <tr>
-                                                    <td>
-                                                        <div><?= $tentang['teks'] ?></div>
-                                                    </td>
-                                                </tr>
+                                            <?php if (!empty($struktur)) : ?>
+                                                <?php foreach ($struktur as $item) : ?>
+                                                    <tr>
+                                                        <td><?= $item['id'] ?></td>
+                                                        <td><img src="/<?= $item['gambar'] ?>" alt="Gambar" width="100"></td>
+                                                        <td>
+                                                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal<?= $item['id'] ?>">Edit</button>
+                                                            <form action="/profil/struktur/delete/<?= $item['id'] ?>" method="post" class="d-inline">
+                                                                <?= csrf_field() ?>
+                                                                <button class="btn btn-danger">Hapus</button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+
+                                                    <!-- Edit Modal -->
+                                                    <div class="modal fade" id="editModal<?= $item['id'] ?>" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="editModalLabel">Edit Struktur Organisasi</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <form action="/profil/struktur/edit/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
+                                                                    <?= csrf_field() ?>
+                                                                    <div class="modal-body">
+                                                                        <div class="mb-3">
+                                                                            <label for="gambar" class="form-label">Gambar</label>
+                                                                            <input type="file" class="form-control" id="gambar" name="gambar">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <?php endforeach; ?>
                                             <?php else : ?>
                                                 <tr>
-                                                    <td colspan="2" class="text-center">Tidak ada data tentang.</td>
+                                                    <td colspan="3" class="text-center">Tidak ada data</td>
                                                 </tr>
                                             <?php endif; ?>
                                         </tbody>
@@ -386,63 +431,28 @@
                         <div class="card-footer">
                             <div class="d-grid gap-2">
                                 <!-- Button trigger modal -->
-                                <?php if (!$tentang['teks']) : ?>
-                                    <button type="button" class="btn btn-primary btn-sm my-1" data-bs-toggle="modal" data-bs-target="#tambahModal">
-                                        TAMBAH
-                                    </button>
-                                <?php endif; ?>
-                                <button type="button" class="btn btn-warning btn-sm my-1" data-bs-toggle="modal" data-bs-target="#ubahModal">
-                                    UBAH
+                                <button type="button" class="btn btn-primary btn-sm my-1" data-bs-toggle="modal" data-bs-target="#tambahModal">
+                                    TAMBAH
                                 </button>
                             </div>
                             <!-- Modal Tambah -->
-                            <div class="modal fade modal-xl" id="tambahModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticbackdropLabel" aria-hidden="true">
+                            <div class="modal fade modal-xl" id="tambahModal" tabindex="-1" aria-labelledby="staticbackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <?= session()->getFlashdata('error') ?>
-                                        <?= service('validation')->listErrors() ?>
-                                        <form id="tambahForm" action="<?= base_url('adminTentang/store'); ?>" method="post">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM TAMBAH TENTANG</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-primary" id="staticbackdropLabel">FORM TAMBAH STRUKTUR ORGANISASI</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <form action="/profil/struktur/create" method="post" enctype="multipart/form-data">
+                                            <?= csrf_field() ?>
                                             <div class="modal-body">
-                                                <?= csrf_field() ?>
-                                                <input type="hidden" id="inputTambahTersembunyi" name="teks">
-                                                <div class="form-floating">
-                                                    <div id="editorTambah"></div>
+                                                <div class="mb-3">
+                                                    <label for="gambar" class="form-label">Gambar</label>
+                                                    <input type="file" class="form-control" id="gambar" name="gambar">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                                <div class="d-grid gap-2">
-                                                    <button type="submit" class="btn btn-primary">Simpan</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Modal Ubah -->
-                            <div class="modal fade modal-xl" id="ubahModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <?= session()->getFlashdata('error') ?>
-                                        <?= service('validation')->listErrors() ?>
-                                        <form id="ubahForm" action="<?= base_url('adminTentang/update'); ?>" method="post">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM UBAH TENTANG</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <?= csrf_field() ?>
-                                                <input type="hidden" id="inputUbahTersembunyi" name="teks">
-                                                <div class="form-floating">
-                                                    <div id="editorUbah"><?= $tentang['teks'] ?></div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                                                 <div class="d-grid gap-2">
                                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                                 </div>
@@ -461,36 +471,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script>
     <script src="<?= base_url('assets/js/color-modes.js'); ?>"></script>
-
-    <!-- Quill JS / Rich Text Editor -->
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Quill JS untuk Modal Ubah
-            const formUbah = document.getElementById('ubahForm');
-            const quillUbah = new Quill('#editorUbah', {
-                theme: 'snow'
-            });
-            const inputUbahTersembunyi = document.getElementById('inputUbahTersembunyi'); // Tambahkan elemen ini
-
-            formUbah.addEventListener('submit', function(event) {
-                const html = quillUbah.root.innerHTML;
-                inputUbahTersembunyi.value = html;
-            });
-
-            // Quill JS untuk Modal Tambah
-            const formTambah = document.getElementById('tambahForm');
-            const quillTambah = new Quill('#editorTambah', {
-                theme: 'snow'
-            });
-            const inputTambahTersembunyi = document.getElementById('inputTambahTersembunyi'); // Tambahkan elemen ini
-
-            formTambah.addEventListener('submit', function(event) {
-                const html = quillTambah.root.innerHTML;
-                inputTambahTersembunyi.value = html;
-            });
-        });
-    </script>
 </body>
 
 </html>

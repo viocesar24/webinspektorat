@@ -6,6 +6,7 @@ use App\Models\NewsModel;
 use App\Models\KegiatanModel;
 use App\Models\PejabatModel;
 use App\Models\Profil\TentangModel;
+use App\Models\Profil\StrukturModel;
 
 class Home extends BaseController
 {
@@ -13,12 +14,14 @@ class Home extends BaseController
     // Properti $tentangModel:
     // Properti ini digunakan untuk menyimpan instance dari model TentangModel, yang akan digunakan di dalam fungsi-fungsi controller.
     protected $tentangModel;
+    protected $strukturModel;
 
     // Konstruktor __construct():
     // Konstruktor ini dipanggil saat controller dibuat. Di dalamnya, Anda membuat instance baru dari model TentangModel dan menyimpannya ke dalam properti $tentangModel.
     public function __construct()
     {
-        $this->tentangModel = new \App\Models\Profil\TentangModel();
+        $this->tentangModel = new TentangModel();
+        $this->strukturModel = new StrukturModel();
     }
 
     public function index()
@@ -98,6 +101,7 @@ class Home extends BaseController
             'pagerBeritaAdmin' => $model->pager,
             'pagerKegiatanAdmin' => $modelKegiatan->pager,
             'tentang' => $this->tentangModel->first(),
+            'struktur' => $this->strukturModel->first(),
         ];
 
         if ($page == 'adminkonfirmasi' || $page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {

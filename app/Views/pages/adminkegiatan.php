@@ -304,7 +304,7 @@
                                             <a class="nav-link" href="<?php echo base_url(); ?>/adminTentang">Tentang</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Struktur Organisasi</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Pejabat Struktural</a>

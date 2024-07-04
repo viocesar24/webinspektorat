@@ -21,7 +21,7 @@ class Tentang extends BaseController
     // Konstruktor ini dipanggil saat controller dibuat. Di dalamnya, Anda membuat instance baru dari model TentangModel dan menyimpannya ke dalam properti $tentangModel.
     public function __construct()
     {
-        $this->tentangModel = new \App\Models\Profil\TentangModel();
+        $this->tentangModel = new TentangModel();
     }
 
     // Fungsi index():

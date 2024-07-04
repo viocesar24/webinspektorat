@@ -35,6 +35,13 @@ $routes->get('/', 'Home::index');
 $routes->get('/adminTentang', 'Profil\Tentang::index');
 $routes->post('/adminTentang/update', 'Profil\Tentang::update');
 $routes->post('/adminTentang/store', 'Profil\Tentang::store');
+$routes->group('profil', ['namespace' => 'App\Controllers\Profil'], function ($routes) {
+    $routes->get('struktur', 'Struktur::index');
+    $routes->post('struktur/create', 'Struktur::create');
+    $routes->post('struktur/edit/(:num)', 'Struktur::edit/$1');
+    $routes->post('struktur/delete/(:num)', 'Struktur::delete/$1');
+    $routes->get('struktur/getImage/(:num)', 'Struktur::getImage/$1');
+});
 
 /*
  * --------------------------------------------------------------------

@@ -44,7 +44,7 @@
                     <h5 class="fw-bold p-0 m-0">STRUKTUR ORGANISASI</h5>
                 </div>
                 <div class="card-body">
-                    <img src="<?php echo base_url(); ?>/img/struktur.png" class="img-fluid" alt="...">
+                    <img src="/<?= $struktur['gambar'] ?>" class="img-fluid" alt="...">
                 </div>
             </div>
         </div>
