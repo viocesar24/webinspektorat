@@ -304,7 +304,7 @@
                                 <div class="collapse" id="profilSubMenu">
                                     <ul class="nav flex-column ms-3">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="<?php echo base_url(); ?>/adminTentang">Tentang</a>
+                                            <a class="nav-link active" href="<?php echo base_url(); ?>/profil/tentang">Tentang</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
@@ -396,12 +396,12 @@
                                 </button>
                             </div>
                             <!-- Modal Tambah -->
-                            <div class="modal fade modal-xl" id="tambahModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticbackdropLabel" aria-hidden="true">
+                            <div class="modal fade modal-xl" id="tambahModal" tabindex="-1" aria-labelledby="staticbackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <?= session()->getFlashdata('error') ?>
                                         <?= service('validation')->listErrors() ?>
-                                        <form id="tambahForm" action="<?= base_url('adminTentang/store'); ?>" method="post">
+                                        <form id="tambahForm" action="<?= base_url('profil/tentang/store'); ?>" method="post">
                                             <div class="modal-header">
                                                 <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM TAMBAH TENTANG</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -424,12 +424,12 @@
                                 </div>
                             </div>
                             <!-- Modal Ubah -->
-                            <div class="modal fade modal-xl" id="ubahModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal fade modal-xl" id="ubahModal" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <?= session()->getFlashdata('error') ?>
                                         <?= service('validation')->listErrors() ?>
-                                        <form id="ubahForm" action="<?= base_url('adminTentang/update'); ?>" method="post">
+                                        <form id="ubahForm" action="<?= base_url('profil/tentang/update'); ?>" method="post">
                                             <div class="modal-header">
                                                 <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM UBAH TENTANG</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

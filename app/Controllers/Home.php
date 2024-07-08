@@ -100,8 +100,8 @@ class Home extends BaseController
             'kegiatanHalamanAdmin' => $modelKegiatan->orderBy('waktu', 'DESC')->paginate(1, 'group1'),
             'pagerBeritaAdmin' => $model->pager,
             'pagerKegiatanAdmin' => $modelKegiatan->pager,
-            'tentang' => $this->tentangModel->first(),
-            'struktur' => $this->strukturModel->first(),
+            'tentang' => $this->tentangModel->orderBy('id', 'DESC')->first(),
+            'struktur' => $this->strukturModel->orderBy('id', 'DESC')->first(),
         ];
 
         if ($page == 'adminkonfirmasi' || $page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {

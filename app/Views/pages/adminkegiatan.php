@@ -301,7 +301,7 @@
                                 <div class="collapse" id="profilSubMenu">
                                     <ul class="nav flex-column ms-3">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/adminTentang">Tentang</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/tentang">Tentang</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
