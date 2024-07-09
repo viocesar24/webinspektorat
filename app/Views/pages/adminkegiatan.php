@@ -307,7 +307,7 @@
                                             <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Pejabat Struktural</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Kebijakan</a>

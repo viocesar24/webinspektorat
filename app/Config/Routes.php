@@ -41,6 +41,10 @@ $routes->group('profil', ['namespace' => 'App\Controllers\Profil'], function ($r
     $routes->get('tentang', 'Tentang::index');
     $routes->post('tentang/store', 'Tentang::store');
     $routes->post('tentang/update', 'Tentang::update');
+    $routes->get('pejabat', 'Pejabat::index');
+    $routes->post('pejabat/create', 'Pejabat::create');
+    $routes->post('pejabat/update/(:num)', 'Pejabat::update/$1');
+    $routes->post('pejabat/delete/(:num)', 'Pejabat::delete/$1');
 });
 
 /*

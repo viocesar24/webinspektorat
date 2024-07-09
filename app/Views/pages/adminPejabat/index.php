@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Dashboard Struktur Organisasi</title>
+    <title>Dashboard Pejabat Struktural</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
@@ -304,10 +304,10 @@
                                             <a class="nav-link" href="<?php echo base_url(); ?>/profil/tentang">Tentang</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
+                                            <a class="nav-link active" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Kebijakan</a>
@@ -346,7 +346,7 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard Struktur Organisasi</h1>
+                    <h1 class="h2">Dashboard Pejabat Struktural</h1>
                 </div>
 
                 <?php if (session()->getFlashdata('success')) : ?>
@@ -365,7 +365,7 @@
                 <div class="bg-body bg-gradient">
                     <div class="card bg-body bg-gradient shadow">
                         <div class="card-header text-center">
-                            <h5 class="fw-bold p-0 m-0 text-primary">STRUKTUR ORGANISASI</h5>
+                            <h5 class="fw-bold p-0 m-0 text-primary">PEJABAT STRUKTURAL</h5>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -374,19 +374,22 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Gambar</th>
-                                                <th>Aksi</th>
+                                                <th>NIP</th>
+                                                <th>NAMA</th>
+                                                <th>AKSI</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if (!empty($struktur)) : ?>
-                                                <?php foreach ($struktur as $item) : ?>
+                                            <?php if (!empty($pejabat)) : ?>
+                                                <?php foreach ($pejabat as $item) : ?>
                                                     <tr>
                                                         <td><?= $item['id'] ?></td>
-                                                        <td><img src="/<?= $item['gambar'] ?>" alt="Gambar" width="100"></td>
+                                                        <td><?= $item['nip'] ?></td>
+                                                        <td><?= $item['nama'] ?></td>
+                                                        <td><?= $item['jabatan'] ?></td>
                                                         <td>
                                                             <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal<?= $item['id'] ?>">Edit</button>
-                                                            <form action="/profil/struktur/delete/<?= $item['id'] ?>" method="post" class="d-inline">
+                                                            <form action="/profil/pejabat/delete/<?= $item['id'] ?>" method="post" class="d-inline">
                                                                 <?= csrf_field() ?>
                                                                 <button class="btn btn-danger">Hapus</button>
                                                             </form>
@@ -398,15 +401,25 @@
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="editModalLabel">Edit Struktur Organisasi</h5>
+                                                                    <h5 class="modal-title" id="editModalLabel">Edit Pejabat Struktural</h5>
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
-                                                                <form action="/profil/struktur/edit/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
+                                                                <form action="/profil/pejabat/update/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
                                                                     <?= csrf_field() ?>
                                                                     <div class="modal-body">
                                                                         <div class="mb-3">
-                                                                            <label for="gambar" class="form-label">Gambar</label>
-                                                                            <input type="file" class="form-control" id="gambar" name="gambar">
+                                                                            <div class="mb-3">
+                                                                                <label for="nip" class="form-label">NIP</label>
+                                                                                <input type="text" class="form-control" id="nip" name="nip" value="<?= $item['nip'] ?>">
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="nama" class="form-label">NAMA</label>
+                                                                                <input type="text" class="form-control" id="nama" name="nama" value="<?= $item['nama'] ?>">
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="jabatan" class="form-label">JABATAN</label>
+                                                                                <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?= $item['jabatan'] ?>">
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
@@ -440,15 +453,25 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title text-primary" id="staticbackdropLabel">FORM TAMBAH STRUKTUR ORGANISASI</h5>
+                                            <h5 class="modal-title text-primary" id="staticbackdropLabel">FORM TAMBAH PEJABAT STRUKTURAL</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <form action="/profil/struktur/create" method="post" enctype="multipart/form-data">
+                                        <form action="/profil/pejabat/create" method="post" enctype="multipart/form-data">
                                             <?= csrf_field() ?>
                                             <div class="modal-body">
                                                 <div class="mb-3">
-                                                    <label for="gambar" class="form-label">Gambar</label>
-                                                    <input type="file" class="form-control" id="gambar" name="gambar">
+                                                    <div class="mb-3">
+                                                        <label for="nip" class="form-label">NIP</label>
+                                                        <input type="text" class="form-control" id="nip" name="nip">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="nama" class="form-label">NAMA</label>
+                                                        <input type="text" class="form-control" id="nama" name="nama">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="jabatan" class="form-label">JABATAN</label>
+                                                        <input type="text" class="form-control" id="jabatan" name="jabatan">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
