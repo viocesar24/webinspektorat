@@ -17,8 +17,13 @@ class Struktur extends BaseController
 
     public function index()
     {
-        $data['struktur'] = $this->strukturModel->findAll() ?: [];
-        return view('pages/adminStruktur/index', $data);
+        helper("cookie");
+        if (get_cookie("username") == "admin") {
+            $data['struktur'] = $this->strukturModel->findAll() ?: [];
+            return view('pages/adminStruktur/index', $data);
+        } else {
+            return redirect()->to('/home/view/admin');
+        }
     }
 
     public function create()

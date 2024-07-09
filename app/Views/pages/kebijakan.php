@@ -41,7 +41,8 @@
         <div class="col-md-9">
             <div class="card shadow">
                 <div class="card-body">
-                    <h5 class="card-title fw-bold">KEBIJAKAN INSPEKTORAT</h5>
+                    <div><?= $kebijakan['kebijakan'] ?></div>
+                    <!-- <h5 class="card-title fw-bold">KEBIJAKAN INSPEKTORAT</h5>
                     <h6 class="card-subtitle text-muted fw-bold mt-3">KEBIJAKAN PUBLIK</h6>
                     <ol class="list-group list-group-flush">
                         <li class="list-group-item">Meningkatkan pengawasan reguler terhadap kegiatan pelayanan masyarakat, pengelolaan dan pemanfaatan keuangan dan aset daerah, pembinaan dan pemberdayaan sumber daya manusia serta pengelolaan pendapatan Daerah.</li>
@@ -70,7 +71,7 @@
                         <li class="list-group-item">Menciptakan kesejahteraan sumber daya manusia pengawasan.</li>
                         <li class="list-group-item">Menerapkan penilaian kinerja sumber daya manusia pengawasan.</li>
                         <li class="list-group-item">Menerapkan sistem pemberian penghargaan dan pengenaan sanksi (reward and punishment).</li>
-                    </ol>
+                    </ol> -->
                 </div>
             </div>
         </div>

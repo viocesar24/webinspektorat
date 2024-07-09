@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Dashboard Pejabat Struktural</title>
+    <title>Dashboard Kebijakan</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
@@ -109,6 +109,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
+
+    <!-- Quill JS / Rich Text Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -307,10 +310,10 @@
                                             <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
+                                            <a class="nav-link active" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Penghargaan</a>
@@ -346,7 +349,7 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard Pejabat Struktural</h1>
+                    <h1 class="h2">Dashboard Kebijakan</h1>
                 </div>
 
                 <?php if (session()->getFlashdata('success')) : ?>
@@ -365,7 +368,7 @@
                 <div class="bg-body bg-gradient">
                     <div class="card bg-body bg-gradient shadow">
                         <div class="card-header text-center">
-                            <h5 class="fw-bold p-0 m-0 text-primary">PEJABAT STRUKTURAL</h5>
+                            <h5 class="fw-bold p-0 m-0 text-primary">KEBIJAKAN</h5>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -373,67 +376,19 @@
                                     <table class="table table-bordered table-striped table-hover">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
-                                                <th>NIP</th>
-                                                <th>NAMA</th>
-                                                <th>AKSI</th>
+                                                <th scope="col">Teks</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if (!empty($pejabat)) : ?>
-                                                <?php foreach ($pejabat as $item) : ?>
-                                                    <tr>
-                                                        <td><?= $item['id'] ?></td>
-                                                        <td><?= $item['nip'] ?></td>
-                                                        <td><?= $item['nama'] ?></td>
-                                                        <td><?= $item['jabatan'] ?></td>
-                                                        <td>
-                                                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal<?= $item['id'] ?>">Edit</button>
-                                                            <form action="/profil/pejabat/delete/<?= $item['id'] ?>" method="post" class="d-inline">
-                                                                <?= csrf_field() ?>
-                                                                <button class="btn btn-danger">Hapus</button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- Edit Modal -->
-                                                    <div class="modal fade" id="editModal<?= $item['id'] ?>" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="editModalLabel">Edit Pejabat Struktural</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <form action="/profil/pejabat/update/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
-                                                                    <?= csrf_field() ?>
-                                                                    <div class="modal-body">
-                                                                        <div class="mb-3">
-                                                                            <div class="mb-3">
-                                                                                <label for="nip" class="form-label">NIP</label>
-                                                                                <input type="text" class="form-control" id="nip" name="nip" value="<?= $item['nip'] ?>">
-                                                                            </div>
-                                                                            <div class="mb-3">
-                                                                                <label for="nama" class="form-label">NAMA</label>
-                                                                                <input type="text" class="form-control" id="nama" name="nama" value="<?= $item['nama'] ?>">
-                                                                            </div>
-                                                                            <div class="mb-3">
-                                                                                <label for="jabatan" class="form-label">JABATAN</label>
-                                                                                <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?= $item['jabatan'] ?>">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                                        <button type="submit" class="btn btn-primary">Simpan</button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <?php endforeach; ?>
+                                            <?php if ($kebijakan['kebijakan']) : ?>
+                                                <tr>
+                                                    <td>
+                                                        <div><?= $kebijakan['kebijakan'] ?></div>
+                                                    </td>
+                                                </tr>
                                             <?php else : ?>
                                                 <tr>
-                                                    <td colspan="3" class="text-center">Tidak ada data</td>
+                                                    <td colspan="2" class="text-center">Tidak ada data kebijakan.</td>
                                                 </tr>
                                             <?php endif; ?>
                                         </tbody>
@@ -444,38 +399,63 @@
                         <div class="card-footer">
                             <div class="d-grid gap-2">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary btn-sm my-1" data-bs-toggle="modal" data-bs-target="#tambahModal">
-                                    TAMBAH
+                                <?php if (!$kebijakan['kebijakan']) : ?>
+                                    <button type="button" class="btn btn-primary btn-sm my-1" data-bs-toggle="modal" data-bs-target="#tambahModal">
+                                        TAMBAH
+                                    </button>
+                                <?php endif; ?>
+                                <button type="button" class="btn btn-warning btn-sm my-1" data-bs-toggle="modal" data-bs-target="#ubahModal">
+                                    UBAH
                                 </button>
                             </div>
                             <!-- Modal Tambah -->
                             <div class="modal fade modal-xl" id="tambahModal" tabindex="-1" aria-labelledby="staticbackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-primary" id="staticbackdropLabel">FORM TAMBAH PEJABAT STRUKTURAL</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <form action="/profil/pejabat/create" method="post" enctype="multipart/form-data">
-                                            <?= csrf_field() ?>
+                                        <?= session()->getFlashdata('error') ?>
+                                        <?= service('validation')->listErrors() ?>
+                                        <form id="tambahForm" action="<?= base_url('profil/kebijakan/create'); ?>" method="post">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM TAMBAH KEBIJAKAN</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
                                             <div class="modal-body">
-                                                <div class="mb-3">
-                                                    <div class="mb-3">
-                                                        <label for="nip" class="form-label">NIP</label>
-                                                        <input type="text" class="form-control" id="nip" name="nip">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="nama" class="form-label">NAMA</label>
-                                                        <input type="text" class="form-control" id="nama" name="nama">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="jabatan" class="form-label">JABATAN</label>
-                                                        <input type="text" class="form-control" id="jabatan" name="jabatan">
-                                                    </div>
+                                                <?= csrf_field() ?>
+                                                <input type="hidden" id="inputTambahTersembunyi" name="teks">
+                                                <div class="form-floating">
+                                                    <div id="editorTambah"></div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                                <div class="d-grid gap-2">
+                                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal Ubah -->
+                            <div class="modal fade modal-xl" id="ubahModal" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <?= session()->getFlashdata('error') ?>
+                                        <?= service('validation')->listErrors() ?>
+                                        <form id="ubahForm" action="<?= base_url('profil/kebijakan/update'); ?>" method="post">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM UBAH KEBIJAKAN</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <?= csrf_field() ?>
+                                                <input type="hidden" id="inputUbahTersembunyi" name="teks">
+                                                <div class="form-floating">
+                                                    <div id="editorUbah"><?= $kebijakan['kebijakan'] ?></div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                                                 <div class="d-grid gap-2">
                                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                                 </div>
@@ -494,6 +474,36 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script>
     <script src="<?= base_url('assets/js/color-modes.js'); ?>"></script>
+
+    <!-- Quill JS / Rich Text Editor -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Quill JS untuk Modal Ubah
+            const formUbah = document.getElementById('ubahForm');
+            const quillUbah = new Quill('#editorUbah', {
+                theme: 'snow'
+            });
+            const inputUbahTersembunyi = document.getElementById('inputUbahTersembunyi'); // Tambahkan elemen ini
+
+            formUbah.addEventListener('submit', function(event) {
+                const html = quillUbah.root.innerHTML;
+                inputUbahTersembunyi.value = html;
+            });
+
+            // Quill JS untuk Modal Tambah
+            const formTambah = document.getElementById('tambahForm');
+            const quillTambah = new Quill('#editorTambah', {
+                theme: 'snow'
+            });
+            const inputTambahTersembunyi = document.getElementById('inputTambahTersembunyi'); // Tambahkan elemen ini
+
+            formTambah.addEventListener('submit', function(event) {
+                const html = quillTambah.root.innerHTML;
+                inputTambahTersembunyi.value = html;
+            });
+        });
+    </script>
 </body>
 
 </html>

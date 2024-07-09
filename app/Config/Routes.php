@@ -45,6 +45,9 @@ $routes->group('profil', ['namespace' => 'App\Controllers\Profil'], function ($r
     $routes->post('pejabat/create', 'Pejabat::create');
     $routes->post('pejabat/update/(:num)', 'Pejabat::update/$1');
     $routes->post('pejabat/delete/(:num)', 'Pejabat::delete/$1');
+    $routes->get('kebijakan', 'Kebijakan::index');
+    $routes->post('kebijakan/create', 'Kebijakan::create');
+    $routes->post('kebijakan/update', 'Kebijakan::update');
 });
 
 /*

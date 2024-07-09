@@ -313,7 +313,7 @@
                                             <a class="nav-link" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Kebijakan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Penghargaan</a>
