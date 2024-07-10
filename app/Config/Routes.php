@@ -48,6 +48,11 @@ $routes->group('profil', ['namespace' => 'App\Controllers\Profil'], function ($r
     $routes->get('kebijakan', 'Kebijakan::index');
     $routes->post('kebijakan/create', 'Kebijakan::create');
     $routes->post('kebijakan/update', 'Kebijakan::update');
+    $routes->get('penghargaan', 'Penghargaan::index');
+    $routes->post('penghargaan/create', 'Penghargaan::create');
+    $routes->post('penghargaan/edit/(:num)', 'Penghargaan::edit/$1');
+    $routes->post('penghargaan/delete/(:num)', 'Penghargaan::delete/$1');
+    $routes->get('penghargaan/getImage/(:num)', 'Penghargaan::getImage/$1');
 });
 
 /*

@@ -45,21 +45,19 @@
                 </div>
                 <div class="card-body">
                     <div id="carouselPenghargaan" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselPenghargaan" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselPenghargaan" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselPenghargaan" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <div class="carousel-indicators" style="background-color: rgba(100, 100, 100, 0.5); border-radius: 10px; padding: 5px;">
+                            <?php $i = 0;
+                            foreach ($penghargaan as $item) : $i++; ?>
+                                <button type="button" data-bs-target="#carouselPenghargaan" data-bs-slide-to="<?= $i - 1 ?>" <?php if ($i == 1) echo 'class="active" aria-current="true"'; ?> aria-label="Slide <?= $i ?>"></button>
+                            <?php endforeach ?>
                         </div>
                         <div class="carousel-inner ratio ratio-16x9">
-                            <div class="carousel-item active">
-                                <img src="<?php echo base_url(); ?>/img/penghargaan/BPKP_APIP_LEVEL_3.png" class="d-block w-100" alt="...">
-                            </div>
-                            <!-- <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div> -->
+                            <?php $i = 0;
+                            foreach ($penghargaan as $item) : $i++; ?>
+                                <div class="carousel-item <?php if ($i == 1) echo 'active'; ?>">
+                                    <img src="/<?= $item['gambar'] ?>" class="d-block w-100" alt="...">
+                                </div>
+                            <?php endforeach ?>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselPenghargaan" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -316,7 +316,7 @@
                                             <a class="nav-link active" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Penghargaan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/penghargaan">Penghargaan</a>
                                         </li>
                                     </ul>
                                 </div>

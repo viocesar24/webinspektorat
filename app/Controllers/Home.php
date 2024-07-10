@@ -8,6 +8,7 @@ use App\Models\PejabatModel;
 use App\Models\Profil\TentangModel;
 use App\Models\Profil\StrukturModel;
 use App\Models\Profil\KebijakanModel;
+use App\Models\Profil\PenghargaanModel;
 
 class Home extends BaseController
 {
@@ -17,6 +18,7 @@ class Home extends BaseController
     protected $tentangModel;
     protected $strukturModel;
     protected $kebijakanModel;
+    protected $penghargaanModel;
 
     // Konstruktor __construct():
     // Konstruktor ini dipanggil saat controller dibuat. Di dalamnya, Anda membuat instance baru dari model TentangModel dan menyimpannya ke dalam properti $tentangModel.
@@ -25,6 +27,7 @@ class Home extends BaseController
         $this->tentangModel = new TentangModel();
         $this->strukturModel = new StrukturModel();
         $this->kebijakanModel = new KebijakanModel();
+        $this->penghargaanModel = new PenghargaanModel();
     }
 
     public function index()
@@ -106,6 +109,7 @@ class Home extends BaseController
             'tentang' => $this->tentangModel->orderBy('id', 'DESC')->first(),
             'struktur' => $this->strukturModel->orderBy('id', 'DESC')->first(),
             'kebijakan' => $this->kebijakanModel->orderBy('id', 'DESC')->first(),
+            'penghargaan' => $this->penghargaanModel->orderBy('id', 'DESC')->findAll(),
         ];
 
         if ($page == 'adminkonfirmasi' || $page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {
