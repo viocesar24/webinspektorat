@@ -43,68 +43,28 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Nama Dokumen</th>
+                                    <th scope="col">Judul</th>
                                     <th scope="col">Kategori</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>PERBUP NOMOR 19 TAHUN 2021 (SOTK Inspektorat)</td>
-                                    <td>PERATURAN BUPATI</td>
-                                    <td>
-                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/PERBUP NO 19 TAHUN 2021 (SOTK Inspektorat).pdf" target="_blank">Lihat</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>PERBUP NOMOR 23 TAHUN 2018 PEDOMAN PENILAIAN RESIKO DI LINGKUNGAN PEMERINTAH KABUPATEN KEDIRI</td>
-                                    <td>PERATURAN BUPATI</td>
-                                    <td>
-                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/PERBUP 23-2018 Pedum penilaian resiko di Lingk pem kab kediri.pdf" target="_blank">Lihat</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>PERBUP NOMOR 38 TAHUN 2017 TENTANG PIAGAM AUDIT INTERN DI LINGKUNGAN PEMERINTAH KABUPATEN KEDIRI</td>
-                                    <td>PERATURAN BUPATI</td>
-                                    <td>
-                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/PERBUP NOMOR 38 TAHUN 2017.pdf" target="_blank">Lihat</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>PERBUP NOMOR 49 TAHUN 2018 TENTANG PERUBAHAN ATAS PERATURAN BUPATI KEDIRI NOMOR 38 TAHUN 2OI7 TENTANG PIAGAM AUDIT INTERN DI LINGKUNGAN PEMERINTAH KABUPATEN KEDIRI</td>
-                                    <td>PERATURAN BUPATI</td>
-                                    <td>
-                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/PERBUP 49 TAHUN 2018.pdf" target="_blank">Lihat</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>PERPRES NOMOR 12 TAHUN 2021 PERUBAHAN ATAS PERATURAN PRESIDEN NOMOR 16 TAHUN 2018 TENTANG PENGADAAN BARANG/JASA PEMERINTAH</td>
-                                    <td>PERATURAN PRESIDEN</td>
-                                    <td>
-                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/Perpres Nomor 12 Tahun 2021 PBJ mengubah 16 tahun18.pdf" target="_blank">Lihat</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>PERPRES NOMOR 100 TAHUN 2022 TENTANG TUNJANGAN JABATAN FUNGSIONAL PEMERIKSA</td>
-                                    <td>PERATURAN PRESIDEN</td>
-                                    <td>
-                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/Perpres Nomor 100 Tahun 2022.pdf" target="_blank">Lihat</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">7</th>
-                                    <td>SE MENTERI PANRB NO 02 TAHUN 2023 - TENTANG LHKAN</td>
-                                    <td>SURAT EDARAN</td>
-                                    <td>
-                                        <a class="btn btn-secondary btn-sm" href="<?php echo base_url(); ?>/dokumen/SE Menteri PANRB No 02 Tahun 2023 - Tentang LHKAN.pdf" target="_blank">Lihat</a>
-                                    </td>
-                                </tr>
+                                <?php if (!empty($dokumen)) : ?>
+                                    <?php foreach ($dokumen as $item) : ?>
+                                        <tr>
+                                            <td><?= $item['id'] ?></td>
+                                            <td><?= $item['judul'] ?></td>
+                                            <td><?= $item['kategori'] ?></td>
+                                            <td>
+                                                <a href="<?= base_url($item['file']) ?>" target="_blank" class="btn btn-info">Lihat/Unduh</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else : ?>
+                                    <tr>
+                                        <td colspan="5" class="text-center">Tidak ada data</td>
+                                    </tr>
+                                <?php endif; ?>
                             </tbody>
                         </table>
                     </div>

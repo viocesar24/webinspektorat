@@ -9,6 +9,8 @@ use App\Models\Profil\TentangModel;
 use App\Models\Profil\StrukturModel;
 use App\Models\Profil\KebijakanModel;
 use App\Models\Profil\PenghargaanModel;
+use App\Models\Informasi\DokumenModel;
+use App\Models\Informasi\DokumenKategoriModel;
 
 class Home extends BaseController
 {
@@ -19,6 +21,8 @@ class Home extends BaseController
     protected $strukturModel;
     protected $kebijakanModel;
     protected $penghargaanModel;
+    protected $dokumenModel;
+    protected $dokumenKategoriModel;
 
     // Konstruktor __construct():
     // Konstruktor ini dipanggil saat controller dibuat. Di dalamnya, Anda membuat instance baru dari model TentangModel dan menyimpannya ke dalam properti $tentangModel.
@@ -28,6 +32,8 @@ class Home extends BaseController
         $this->strukturModel = new StrukturModel();
         $this->kebijakanModel = new KebijakanModel();
         $this->penghargaanModel = new PenghargaanModel();
+        $this->dokumenModel = new DokumenModel();
+        $this->dokumenKategoriModel = new DokumenKategoriModel();
     }
 
     public function index()
@@ -110,6 +116,11 @@ class Home extends BaseController
             'struktur' => $this->strukturModel->orderBy('id', 'DESC')->first(),
             'kebijakan' => $this->kebijakanModel->orderBy('id', 'DESC')->first(),
             'penghargaan' => $this->penghargaanModel->orderBy('id', 'DESC')->findAll(),
+            'dokumen' => $this->dokumenModel
+                ->select('dokumen.id, dokumen.judul, dokumen.file, dokumenkategori.kategori')
+                ->join('dokumenkategori', 'dokumen.kategori = dokumenkategori.id')
+                ->findAll(),
+            'dokumenkategori' => $this->dokumenKategoriModel->findAll()
         ];
 
         if ($page == 'adminkonfirmasi' || $page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {
