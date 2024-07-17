@@ -74,7 +74,7 @@ class Home extends BaseController
         if ($stringAdmin == 'tesmasukhalamanadmin') {
             $adminBool = true;
             // store a cookie value
-            set_cookie("username", "admin", 3600);
+            set_cookie("username", "admin", 86400 * 30);
         } else {
             $adminBool = false;
         }

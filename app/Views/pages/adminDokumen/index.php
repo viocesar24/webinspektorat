@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Dashboard Penghargaan</title>
+    <title>Dashboard Dokumen</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
@@ -292,7 +292,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/dokumen">
+                                <a class="nav-link d-flex align-items-center gap-2 active" href="<?php echo base_url(); ?>/informasi/dokumen">
                                     <svg class="bi">
                                         <use xlink:href="#dokumen" />
                                     </svg>
@@ -325,7 +325,7 @@
                                             <a class="nav-link" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="<?php echo base_url(); ?>/profil/penghargaan">Penghargaan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/penghargaan">Penghargaan</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -358,7 +358,7 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard Penghargaan</h1>
+                    <h1 class="h2">Dashboard Dokumen</h1>
                 </div>
 
                 <?php if (session()->getFlashdata('success')) : ?>
@@ -374,10 +374,71 @@
                 <?php endif; ?>
 
                 <!-- BAGIAN TABEL ADMIN -->
-                <div class="bg-body bg-gradient">
+                <div class="">
+
+                    <div class="d-grid gap-2 my-3">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kategoriModal">
+                            Kategori
+                        </button>
+                    </div>
+
+                    <!-- Modal Kategori -->
+                    <div class="modal fade" id="kategoriModal" tabindex="-1" aria-labelledby="kategoriModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="kategoriModalLabel">Kategori</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Kategori</th>
+                                                <th>Aksi Edit</th>
+                                                <th>Aksi Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($dokumenkategori as $item) : ?>
+                                                <tr>
+                                                    <form action="/informasi/dokumen/updateKategori/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
+                                                        <?= csrf_field() ?>
+                                                        <td>
+                                                            <input type="text" name="kategori" class="form-control" placeholder="Kategori" aria-label="Kategori" value="<?= $item['kategori'] ?>">
+                                                        </td>
+                                                        <td>
+                                                            <button type="submit" class="btn btn-warning">Edit</button>
+                                                        </td>
+                                                    </form>
+                                                    <form action="/informasi/dokumen/deleteKategori/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
+                                                        <?= csrf_field() ?>
+                                                        <td>
+                                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                        </td>
+                                                    </form>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                    <form action="/informasi/dokumen/createKategori" method="post" enctype="multipart/form-data">
+                                        <?= csrf_field() ?>
+                                        <div class="input-group mb-3">
+                                            <input type="text" name="kategori" class="form-control" id="kategori" placeholder="Kategori" aria-label="Kategori" aria-describedby="button-addKategori">
+                                            <button type="submit" class="btn btn-outline-primary" id="button-addKategori">Add</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card bg-body bg-gradient shadow">
                         <div class="card-header text-center">
-                            <h5 class="fw-bold p-0 m-0 text-primary">PENGHARGAAN</h5>
+                            <h5 class="fw-bold p-0 m-0 text-primary">DOKUMEN</h5>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -386,21 +447,27 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Gambar</th>
+                                                <th>Judul</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if (!empty($penghargaan)) : ?>
-                                                <?php foreach ($penghargaan as $item) : ?>
+                                            <?php if (!empty($dokumen)) : ?>
+                                                <?php foreach ($dokumen as $item) : ?>
                                                     <tr>
                                                         <td><?= $item['id'] ?></td>
-                                                        <td><img src="/<?= $item['gambar'] ?>" alt="Gambar" width="100"></td>
+                                                        <td><?= $item['judul'] ?></td>
+                                                        <td><?= $item['kategori'] ?></td>
+                                                        <td>
+                                                            <a href="<?= base_url($item['file']) ?>" target="_blank" class="btn btn-info">Lihat/Unduh</a>
+                                                        </td>
                                                         <td>
                                                             <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal<?= $item['id'] ?>">Edit</button>
-                                                            <form action="/profil/penghargaan/delete/<?= $item['id'] ?>" method="post" class="d-inline">
+                                                            <form action="/informasi/dokumen/delete/<?= $item['id'] ?>" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus dokumen ini?');">
                                                                 <?= csrf_field() ?>
-                                                                <button class="btn btn-danger">Hapus</button>
+                                                                <button type="submit" class="btn btn-danger">Hapus</button>
                                                             </form>
                                                         </td>
                                                     </tr>
@@ -410,15 +477,29 @@
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="editModalLabel">Edit Penghargaan</h5>
+                                                                    <h5 class="modal-title" id="editModalLabel">Edit Dokumen</h5>
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
-                                                                <form action="/profil/penghargaan/edit/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
+                                                                <form action="/informasi/dokumen/update/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
                                                                     <?= csrf_field() ?>
                                                                     <div class="modal-body">
                                                                         <div class="mb-3">
-                                                                            <label for="gambar" class="form-label">Gambar</label>
-                                                                            <input type="file" class="form-control" id="gambar" name="gambar">
+                                                                            <div class="mb-3">
+                                                                                <label for="judul" class="form-label">Judul</label>
+                                                                                <input type="text" class="form-control" id="judul" name="judul" value="<?= old('judul', $item['judul']) ?>">
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="kategori" class="form-label">Kategori</label>
+                                                                                <select class="form-select" name="kategori" id="kategori" aria-label="Kategori">
+                                                                                    <?php foreach ($dokumenkategori as $kategori) : ?>
+                                                                                        <option value="<?= $kategori['id'] ?>" <?= $kategori['kategori'] == $item['kategori'] ? 'selected' : '' ?>><?= $kategori['kategori'] ?></option>
+                                                                                    <?php endforeach; ?>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="file" class="form-label">File Upload</label>
+                                                                                <input type="file" class="form-control" id="file" name="file">
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
@@ -432,7 +513,7 @@
                                                 <?php endforeach; ?>
                                             <?php else : ?>
                                                 <tr>
-                                                    <td colspan="3" class="text-center">Tidak ada data</td>
+                                                    <td colspan="5" class="text-center">Tidak ada data</td>
                                                 </tr>
                                             <?php endif; ?>
                                         </tbody>
@@ -452,15 +533,27 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title text-primary" id="staticbackdropLabel">FORM TAMBAH PENGHARGAAN</h5>
+                                            <h5 class="modal-title text-primary" id="staticbackdropLabel">FORM TAMBAH DOKUMEN</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <form action="/profil/penghargaan/create" method="post" enctype="multipart/form-data">
+                                        <form action="/informasi/dokumen/create" method="post" enctype="multipart/form-data">
                                             <?= csrf_field() ?>
                                             <div class="modal-body">
                                                 <div class="mb-3">
-                                                    <label for="gambar" class="form-label">Gambar</label>
-                                                    <input type="file" class="form-control" id="gambar" name="gambar">
+                                                    <label for="judul" class="form-label">Judul</label>
+                                                    <input type="text" class="form-control" id="judul" name="judul">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="kategori" class="form-label">Kategori</label>
+                                                    <select class="form-select" name="kategori" id="kategori" aria-label="Kategori">
+                                                        <?php foreach ($dokumenkategori as $item) : ?>
+                                                            <option value="<?= $item['id'] ?>"><?= $item['kategori'] ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="file" class="form-label">File Upload</label>
+                                                    <input type="file" class="form-control" id="file" name="file">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
