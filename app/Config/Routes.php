@@ -54,6 +54,19 @@ $routes->group('profil', ['namespace' => 'App\Controllers\Profil'], function ($r
     $routes->post('penghargaan/delete/(:num)', 'Penghargaan::delete/$1');
     $routes->get('penghargaan/getImage/(:num)', 'Penghargaan::getImage/$1');
 });
+$routes->group('informasi', ['namespace' => 'App\Controllers\Informasi'], function ($routes) {
+    $routes->get('dokumen', 'Dokumen::index');
+    $routes->post('dokumen/create', 'Dokumen::create');
+    $routes->post('dokumen/update/(:num)', 'Dokumen::update/$1');
+    $routes->post('dokumen/delete/(:num)', 'Dokumen::delete/$1');
+    $routes->post('dokumen/createKategori', 'Dokumen::createKategori');
+    $routes->post('dokumen/updateKategori/(:num)', 'Dokumen::updateKategori/$1');
+    $routes->post('dokumen/deleteKategori/(:num)', 'Dokumen::deleteKategori/$1');
+    $routes->get('berita', 'Berita::index');
+    $routes->post('berita/create', 'Berita::create');
+    $routes->post('berita/update/(:num)', 'Berita::update/$1');
+    $routes->post('berita/delete/(:num)', 'Berita::delete/$1');
+});
 
 /*
  * --------------------------------------------------------------------

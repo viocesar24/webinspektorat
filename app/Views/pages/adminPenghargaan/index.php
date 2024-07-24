@@ -276,7 +276,7 @@
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="<?php echo base_url(); ?>/home/view/adminberita">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/berita">
                                     <svg class="bi">
                                         <use xlink:href="#berita" />
                                     </svg>
@@ -284,7 +284,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/home/view/adminkegiatan">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/kegiatan">
                                     <svg class="bi">
                                         <use xlink:href="#kegiatan" />
                                     </svg>
@@ -325,7 +325,7 @@
                                             <a class="nav-link" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="<?php echo base_url(); ?>/profil/penghargaan">Penghargaan</a>
+                                            <a class="nav-link active" aria-current="page" href="<?php echo base_url(); ?>/profil/penghargaan">Penghargaan</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -344,7 +344,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('informasi/berita/logout'); ?>">
                                     <svg class="bi">
                                         <use xlink:href="#door-closed" />
                                     </svg>

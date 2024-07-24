@@ -17,18 +17,13 @@ class Kebijakan extends BaseController
 
     public function index()
     {
-        helper("cookie");
-        if (get_cookie("username") == "admin") {
-            $data['kebijakan'] = $this->kebijakanModel->first();
+        $data['kebijakan'] = $this->kebijakanModel->first();
 
-            if (!$data['kebijakan']) {
-                $data['kebijakan'] = ['kebijakan' => ''];
-            }
-
-            return view('pages/adminKebijakan/index', $data);
-        } else {
-            return redirect()->to('/home/view/admin');
+        if (!$data['kebijakan']) {
+            $data['kebijakan'] = ['kebijakan' => ''];
         }
+
+        return view('pages/adminKebijakan/index', $data);
     }
 
     public function create()

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Dashboard Pejabat Struktural</title>
+    <title>Dashboard Berita</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
@@ -109,6 +109,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
+
+    <!-- Quill JS / Rich Text Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -214,6 +217,10 @@
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
         </symbol>
+        <symbol id="minus-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
+        </symbol>
         <symbol id="puzzle" viewBox="0 0 16 16">
             <path d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.459.459 0 0 0-.115.118.113.113 0 0 0-.012.025L6.5 4.5v.003l.003.01c.004.01.014.028.036.053a.86.86 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.86.86 0 0 0 .271-.194.213.213 0 0 0 .039-.063v-.009a.112.112 0 0 0-.012-.025.459.459 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.459.459 0 0 0 .115-.118.113.113 0 0 0 .012-.025L9.5 11.5v-.003a.214.214 0 0 0-.039-.064.859.859 0 0 0-.27-.193C8.91 11.1 8.49 11 8 11c-.491 0-.912.1-1.19.24a.859.859 0 0 0-.271.194.214.214 0 0 0-.039.063v.003l.001.006a.113.113 0 0 0 .012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238l-.244-2.855zM4.605 3a.5.5 0 0 0-.498.55l.001.007.29 3.4A.5.5 0 0 1 3.9 7.5h-.782c-.696 0-1.182-.497-1.469-.872a.459.459 0 0 0-.118-.115.112.112 0 0 0-.025-.012L1.5 6.5h-.003a.213.213 0 0 0-.064.039.86.86 0 0 0-.193.27C1.1 7.09 1 7.51 1 8c0 .491.1.912.24 1.19.07.14.14.225.194.271a.213.213 0 0 0 .063.039H1.5l.006-.001a.112.112 0 0 0 .025-.012.459.459 0 0 0 .118-.115c.287-.375.773-.872 1.469-.872H3.9a.5.5 0 0 1 .498.542l-.29 3.408a.5.5 0 0 0 .497.55h1.878c-.048-.166-.195-.352-.463-.557-.274-.21-.52-.528-.52-.943 0-.568.447-.947.862-1.154C6.807 10.123 7.387 10 8 10s1.193.123 1.638.346c.415.207.862.586.862 1.154 0 .415-.246.733-.52.943-.268.205-.415.39-.463.557h1.878a.5.5 0 0 0 .498-.55l-.001-.007-.29-3.4A.5.5 0 0 1 12.1 8.5h.782c.696 0 1.182.497 1.469.872.05.065.091.099.118.115.013.008.021.01.025.012a.02.02 0 0 0 .006.001h.003a.214.214 0 0 0 .064-.039.86.86 0 0 0 .193-.27c.14-.28.24-.7.24-1.191 0-.492-.1-.912-.24-1.19a.86.86 0 0 0-.194-.271.215.215 0 0 0-.063-.039H14.5l-.006.001a.113.113 0 0 0-.025.012.459.459 0 0 0-.118.115c-.287.375-.773.872-1.469.872H12.1a.5.5 0 0 1-.498-.543l.29-3.407a.5.5 0 0 0-.497-.55H9.517c.048.166.195.352.463.557.274.21.52.528.52.943 0 .568-.447.947-.862 1.154C9.193 5.877 8.613 6 8 6s-1.193-.123-1.638-.346C5.947 5.447 5.5 5.068 5.5 4.5c0-.415.246-.733.52-.943.268-.205.415-.39.463-.557H4.605z" />
         </symbol>
@@ -276,7 +283,7 @@
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/berita">
+                                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="<?php echo base_url(); ?>/informasi/berita">
                                     <svg class="bi">
                                         <use xlink:href="#berita" />
                                     </svg>
@@ -319,7 +326,7 @@
                                             <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
@@ -358,7 +365,7 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard Pejabat Struktural</h1>
+                    <h1 class="h2">Dashboard Berita</h1>
                 </div>
 
                 <?php if (session()->getFlashdata('success')) : ?>
@@ -377,129 +384,182 @@
                 <div class="bg-body bg-gradient">
                     <div class="card bg-body bg-gradient shadow">
                         <div class="card-header text-center">
-                            <h5 class="fw-bold p-0 m-0 text-primary">PEJABAT STRUKTURAL</h5>
+                            <h5 class="fw-bold p-0 m-0 text-primary">BERITA</h5>
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="table-responsive-xxl">
-                                    <table class="table table-bordered table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>NIP</th>
-                                                <th>NAMA</th>
-                                                <th>JABATAN</th>
-                                                <th>AKSI</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php if (!empty($pejabat)) : ?>
-                                                <?php foreach ($pejabat as $item) : ?>
-                                                    <tr>
-                                                        <td><?= $item['id'] ?></td>
-                                                        <td><?= $item['nip'] ?></td>
-                                                        <td><?= $item['nama'] ?></td>
-                                                        <td><?= $item['jabatan'] ?></td>
-                                                        <td>
-                                                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal<?= $item['id'] ?>">Edit</button>
-                                                            <form action="/profil/pejabat/delete/<?= $item['id'] ?>" method="post" class="d-inline">
-                                                                <?= csrf_field() ?>
-                                                                <button class="btn btn-danger">Hapus</button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- Edit Modal -->
-                                                    <div class="modal fade" id="editModal<?= $item['id'] ?>" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="editModalLabel">Edit Pejabat Struktural</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <form action="/profil/pejabat/update/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
-                                                                    <?= csrf_field() ?>
-                                                                    <div class="modal-body">
-                                                                        <div class="mb-3">
-                                                                            <div class="mb-3">
-                                                                                <label for="nip" class="form-label">NIP</label>
-                                                                                <input type="text" class="form-control" id="nip" name="nip" value="<?= $item['nip'] ?>">
-                                                                            </div>
-                                                                            <div class="mb-3">
-                                                                                <label for="nama" class="form-label">NAMA</label>
-                                                                                <input type="text" class="form-control" id="nama" name="nama" value="<?= $item['nama'] ?>">
-                                                                            </div>
-                                                                            <div class="mb-3">
-                                                                                <label for="jabatan" class="form-label">JABATAN</label>
-                                                                                <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?= $item['jabatan'] ?>">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                                        <button type="submit" class="btn btn-primary">Simpan</button>
-                                                                    </div>
-                                                                </form>
+                                <div class="d-grid gap-2">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#tambahModal">
+                                        TAMBAH
+                                    </button>
+                                    <!-- Modal Tambah -->
+                                    <div class="modal fade modal-xl" id="tambahModal" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <?= session()->getFlashdata('error') ?>
+                                                <?= service('validation')->listErrors() ?>
+                                                <form id="tambahForm" action="<?php echo base_url(); ?>/informasi/berita/create" method="post" enctype="multipart/form-data">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM TAMBAH BERITA</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <?= csrf_field() ?>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" id="judul" name="judul" class="form-control my-1" placeholder="Judul" value="<?= old('judul') ?>" required>
+                                                            <label for="judul">Judul</label>
+                                                        </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="hidden" id="inputTambahTersembunyi" name="badan">
+                                                            <div id="editorTambah"></div>
+                                                        </div>
+                                                        <div id="modalBodyTambah">
+                                                            <div class="input-group mb-3">
+                                                                <input type="file" class="form-control" id="gambar_1" name="gambar_1">
+                                                                <label class="input-group-text" for="gambar_1">Upload Gambar 1</label>
+                                                                <a class="btn btn-primary" id="add-gambar">
+                                                                    <svg class="bi">
+                                                                        <use xlink:href="#plus-circle" />
+                                                                    </svg>
+                                                                </a>
+                                                                <a class="btn btn-danger disabled" id="remove-gambar" aria-disabled="true">
+                                                                    <svg class="bi">
+                                                                        <use xlink:href="#minus-circle" />
+                                                                    </svg>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                <?php endforeach; ?>
-                                            <?php else : ?>
-                                                <tr>
-                                                    <td colspan="3" class="text-center">Tidak ada data</td>
-                                                </tr>
-                                            <?php endif; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="d-grid gap-2">
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary btn-sm my-1" data-bs-toggle="modal" data-bs-target="#tambahModal">
-                                    TAMBAH
-                                </button>
-                            </div>
-                            <!-- Modal Tambah -->
-                            <div class="modal fade modal-xl" id="tambahModal" tabindex="-1" aria-labelledby="staticbackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-primary" id="staticbackdropLabel">FORM TAMBAH PEJABAT STRUKTURAL</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <div class="d-grid gap-2">
+                                                            <button type="submit" class="btn btn-primary">TAMBAH</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
-                                        <form action="/profil/pejabat/create" method="post" enctype="multipart/form-data">
-                                            <?= csrf_field() ?>
-                                            <div class="modal-body">
-                                                <div class="mb-3">
-                                                    <div class="mb-3">
-                                                        <label for="nip" class="form-label">NIP</label>
-                                                        <input type="text" class="form-control" id="nip" name="nip">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="nama" class="form-label">NAMA</label>
-                                                        <input type="text" class="form-control" id="nama" name="nama">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="jabatan" class="form-label">JABATAN</label>
-                                                        <input type="text" class="form-control" id="jabatan" name="jabatan">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                <div class="d-grid gap-2">
-                                                    <button type="submit" class="btn btn-primary">Simpan</button>
-                                                </div>
-                                            </div>
-                                        </form>
                                     </div>
                                 </div>
+                                <?php foreach ($berita as $item) : ?>
+                                    <div>
+                                        <div class="card bg-body bg-gradient shadow my-3">
+                                            <div class="card-header text-center">
+                                                <h5 class="fw-bold p-0 m-0 text-primary">
+                                                    <p>ID:
+                                                        <?= esc($item['id']) ?>
+                                                    </p>
+                                                </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive-xxl">
+                                                    <table class="table table-bordered table-striped table-hover">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">JUDUL</th>
+                                                                <td>
+                                                                    <?= esc($item['judul']) ?>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">SLUG</th>
+                                                                <td>
+                                                                    <?= esc($item['slug']) ?>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">BADAN</th>
+                                                                <td>
+                                                                    <div contenteditable="false"><?= $item['badan'] ?></div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">WAKTU</th>
+                                                                <td>
+                                                                    <?= esc($item['waktu']) ?>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">GAMBAR</th>
+                                                                <td>
+                                                                    <?php for ($i = 1; $i <= 15; $i++) : ?>
+                                                                        <?php if ($item['gambar_' . $i]) : ?>
+                                                                            <img src="/uploads/berita/<?= $item['gambar_' . $i] ?>" alt="Gambar <?= $i ?>" height="90">
+                                                                        <?php endif; ?>
+                                                                    <?php endfor; ?>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="d-grid gap-2">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn btn-warning btn-sm my-1" data-bs-toggle="modal" data-bs-target="#ubahModal_<?= esc($item['id']) ?>">
+                                                        UBAH
+                                                    </button>
+                                                    <a href="/informasi/berita/delete/<?= esc($item['id']) ?>" class="btn btn-danger btn-sm my-1" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">HAPUS</a>
+                                                </div>
+                                                <!-- Modal Ubah -->
+                                                <div class="modal fade modal-xl" id="ubahModal_<?= esc($item['id']) ?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <?= session()->getFlashdata('error') ?>
+                                                            <?= service('validation')->listErrors() ?>
+                                                            <form id="ubahForm" action="<?= base_url('/informasi/berita/update/' . $item['id']) ?>" method="post" enctype="multipart/form-data">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM UBAH BERITA</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <?= csrf_field() ?>
+                                                                    <div class="form-floating mb-3">
+                                                                        <input type="text" id="judulEdit" name="judul" class="form-control my-1" placeholder="Judul" value="<?= old('judul', $item['judul']) ?>" required>
+                                                                        <label for="judulEdit">Judul</label>
+                                                                    </div>
+                                                                    <div class="form-floating mb-3">
+                                                                        <input type="hidden" id="inputUbahTersembunyi" name="badan">
+                                                                        <div id="editorUbah"><?= old('badan', $item['badan']) ?></div>
+                                                                    </div>
+                                                                    <div id="modalBodyEdit">
+                                                                        <div class="input-group mb-3">
+                                                                            <input type="file" class="form-control" id="gambarEdit_1" name="gambar_1">
+                                                                            <label class="input-group-text" for="gambarEdit_1">Upload Gambar 1</label>
+                                                                            <a class="btn btn-primary" id="add-gambarEdit">
+                                                                                <svg class="bi">
+                                                                                    <use xlink:href="#plus-circle" />
+                                                                                </svg>
+                                                                            </a>
+                                                                            <a class="btn btn-danger disabled" id="remove-gambarEdit" aria-disabled="true">
+                                                                                <svg class="bi">
+                                                                                    <use xlink:href="#minus-circle" />
+                                                                                </svg>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <div class="d-grid gap-2">
+                                                                        <button type="submit" class="btn btn-primary">Ubah</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endforeach ?>
                             </div>
+                            <?= $pagerBeritaAdmin->links('group1', 'kustom_paginasi') ?>
                         </div>
                     </div>
                 </div>
+
             </main>
         </div>
     </div>
@@ -507,6 +567,144 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script>
     <script src="<?= base_url('assets/js/color-modes.js'); ?>"></script>
+
+    <!-- Tombol Tambah Input Unggah -->
+    <script>
+        const addGambarButton = document.getElementById('add-gambar');
+        const addGambarButtonEdit = document.getElementById('add-gambarEdit');
+        const removeGambarButton = document.getElementById('remove-gambar');
+        const removeGambarButtonEdit = document.getElementById('remove-gambarEdit');
+        const gambarFields = document.getElementById('modalBodyTambah');
+        const gambarFieldsEdit = document.getElementById('modalBodyEdit');
+        let gambarCount = 1;
+        let gambarCountEdit = 1;
+
+        addGambarButton.addEventListener('click', () => {
+            gambarCount++;
+            const newGambarContainer = document.createElement('div');
+            newGambarContainer.classList.add('input-group', 'mb-3');
+
+            const newGambarInput = document.createElement('input');
+            newGambarInput.type = 'file';
+            newGambarInput.name = `gambar_${gambarCount}`;
+            newGambarInput.classList.add('form-control');
+
+            const newGambarLabel = document.createElement('label');
+            newGambarLabel.classList.add('input-group-text');
+            newGambarLabel.for = `gambar_${gambarCount}`;
+            newGambarLabel.textContent = `Upload Gambar ${gambarCount} (Opsional)`;
+
+            newGambarContainer.appendChild(newGambarInput);
+            newGambarContainer.appendChild(newGambarLabel);
+            gambarFields.appendChild(newGambarContainer);
+
+            // Aktifkan tombol hapus setelah menambah elemen
+            removeGambarButton.classList.remove('disabled');
+            removeGambarButton.ariaDisabled = 'false';
+
+            if (gambarCount >= 15) {
+                addGambarButton.classList.add('disabled');
+                addGambarButton.ariaDisabled = 'true';
+            }
+        });
+
+        removeGambarButton.addEventListener('click', () => {
+            if (gambarCount > 1) {
+                const lastGambarContainer = gambarFields.lastChild;
+                gambarFields.removeChild(lastGambarContainer);
+                gambarCount--;
+
+                if (gambarCount < 15) {
+                    addGambarButton.classList.remove('disabled');
+                    addGambarButton.ariaDisabled = 'false';
+                }
+            }
+
+            if (gambarCount === 1) {
+                removeGambarButton.classList.add('disabled');
+                removeGambarButton.ariaDisabled = 'true';
+            }
+        });
+
+        addGambarButtonEdit.addEventListener('click', () => {
+            gambarCountEdit++;
+            const newGambarContainerEdit = document.createElement('div');
+            newGambarContainerEdit.classList.add('input-group', 'mb-3');
+
+            const newGambarInputEdit = document.createElement('input');
+            newGambarInputEdit.type = 'file';
+            newGambarInputEdit.name = `gambar_${gambarCountEdit}`;
+            newGambarInputEdit.classList.add('form-control');
+
+            const newGambarLabelEdit = document.createElement('label');
+            newGambarLabelEdit.classList.add('input-group-text');
+            newGambarLabelEdit.for = `gambar_${gambarCountEdit}`;
+            newGambarLabelEdit.textContent = `Upload Gambar ${gambarCountEdit} (Opsional)`;
+
+            newGambarContainerEdit.appendChild(newGambarInputEdit);
+            newGambarContainerEdit.appendChild(newGambarLabelEdit);
+            gambarFieldsEdit.appendChild(newGambarContainerEdit);
+
+            // Aktifkan tombol hapus setelah menambah elemen
+            removeGambarButtonEdit.classList.remove('disabled');
+            removeGambarButtonEdit.ariaDisabled = 'false';
+
+            if (gambarCountEdit >= 15) {
+                addGambarButtonEdit.classList.add('disabled');
+                addGambarButtonEdit.ariaDisabled = 'true';
+            }
+        });
+
+        removeGambarButtonEdit.addEventListener('click', () => {
+            if (gambarCountEdit > 1) {
+                const lastGambarContainerEdit = gambarFieldsEdit.lastChild;
+                gambarFieldsEdit.removeChild(lastGambarContainerEdit);
+                gambarCountEdit--;
+
+                if (gambarCountEdit < 15) {
+                    addGambarButtonEdit.classList.remove('disabled');
+                    addGambarButtonEdit.ariaDisabled = 'false';
+                }
+            }
+
+            if (gambarCountEdit === 1) {
+                removeGambarButtonEdit.classList.add('disabled');
+                removeGambarButtonEdit.ariaDisabled = 'true';
+            }
+        });
+    </script>
+
+    <!-- Quill JS / Rich Text Editor -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Quill JS untuk Modal Ubah
+            const formUbah = document.getElementById('ubahForm');
+            const quillUbah = new Quill('#editorUbah', {
+                placeholder: 'Tulis isi berita ...',
+                theme: 'snow',
+            });
+            const inputUbahTersembunyi = document.getElementById('inputUbahTersembunyi'); // Tambahkan elemen ini
+
+            formUbah.addEventListener('submit', function(event) {
+                const html = quillUbah.root.innerHTML;
+                inputUbahTersembunyi.value = html;
+            });
+
+            // Quill JS untuk Modal Tambah
+            const formTambah = document.getElementById('tambahForm');
+            const quillTambah = new Quill('#editorTambah', {
+                placeholder: 'Tulis isi berita ...',
+                theme: 'snow',
+            });
+            const inputTambahTersembunyi = document.getElementById('inputTambahTersembunyi'); // Tambahkan elemen ini
+
+            formTambah.addEventListener('submit', function(event) {
+                const html = quillTambah.root.innerHTML;
+                inputTambahTersembunyi.value = html;
+            });
+        });
+    </script>
 </body>
 
 </html>

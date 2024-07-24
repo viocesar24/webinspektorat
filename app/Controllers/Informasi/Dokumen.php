@@ -20,19 +20,14 @@ class Dokumen extends BaseController
 
     public function index()
     {
-        helper("cookie");
-        if (get_cookie("username") == "admin") {
-            $data = [
-                'dokumen' => $this->dokumenModel
-                    ->select('dokumen.id, dokumen.judul, dokumen.file, dokumenkategori.kategori')
-                    ->join('dokumenkategori', 'dokumen.kategori = dokumenkategori.id')
-                    ->findAll() ?: [],
-                'dokumenkategori' => $this->dokumenKategoriModel->findAll() ?: []
-            ];
-            return view('pages/adminDokumen/index', $data);
-        } else {
-            return redirect()->to('/home/view/admin');
-        }
+        $data = [
+            'dokumen' => $this->dokumenModel
+                ->select('dokumen.id, dokumen.judul, dokumen.file, dokumenkategori.kategori')
+                ->join('dokumenkategori', 'dokumen.kategori = dokumenkategori.id')
+                ->findAll() ?: [],
+            'dokumenkategori' => $this->dokumenKategoriModel->findAll() ?: []
+        ];
+        return view('pages/adminDokumen/index', $data);
     }
 
     public function create()

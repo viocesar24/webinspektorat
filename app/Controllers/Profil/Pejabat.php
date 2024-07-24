@@ -26,17 +26,12 @@ class Pejabat extends BaseController
     // Fungsi ini kemudian menampilkan view pages/adminPejabat/index dengan data $data.
     public function index()
     {
-        helper("cookie");
-        if (get_cookie("username") == "admin") {
-            $data['pejabat'] = $this->pejabatModel->findAll(); // Ambil semua data
-            if (!$data['pejabat']) {
-                // Jika tidak ada data, buat array kosong untuk mencegah error
-                $data['pejabat'] = []; // Atau berikan nilai default lainnya
-            }
-            return view('pages/adminPejabat/index', $data); // Sesuaikan path view
-        } else {
-            return redirect()->to('/home/view/admin');
+        $data['pejabat'] = $this->pejabatModel->findAll(); // Ambil semua data
+        if (!$data['pejabat']) {
+            // Jika tidak ada data, buat array kosong untuk mencegah error
+            $data['pejabat'] = []; // Atau berikan nilai default lainnya
         }
+        return view('pages/adminPejabat/index', $data); // Sesuaikan path view
     }
 
     // Fungsi create():

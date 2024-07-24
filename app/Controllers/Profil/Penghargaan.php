@@ -17,13 +17,8 @@ class Penghargaan extends BaseController
 
     public function index()
     {
-        helper("cookie");
-        if (get_cookie("username") == "admin") {
-            $data['penghargaan'] = $this->penghargaanModel->findAll() ?: [];
-            return view('pages/adminPenghargaan/index', $data);
-        } else {
-            return redirect()->to('/home/view/admin');
-        }
+        $data['penghargaan'] = $this->penghargaanModel->findAll() ?: [];
+        return view('pages/adminPenghargaan/index', $data);
     }
 
     public function create()

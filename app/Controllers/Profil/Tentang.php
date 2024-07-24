@@ -31,20 +31,14 @@ class Tentang extends BaseController
     // Fungsi ini kemudian menampilkan view pages/adminTentang/index dengan data $data.
     public function index()
     {
-        helper("cookie");
-        if (get_cookie("username") == "admin") {
+        $data['tentang'] = $this->tentangModel->first(); // Ambil data pertama
 
-            $data['tentang'] = $this->tentangModel->first(); // Ambil data pertama
-
-            if (!$data['tentang']) {
-                // Jika tidak ada data, buat array kosong untuk mencegah error
-                $data['tentang'] = ['teks' => '']; // Atau berikan nilai default lainnya
-            }
-
-            return view('pages/adminTentang/index', $data); // Sesuaikan path view
-        } else {
-            return redirect()->to('/home/view/admin');
+        if (!$data['tentang']) {
+            // Jika tidak ada data, buat array kosong untuk mencegah error
+            $data['tentang'] = ['teks' => '']; // Atau berikan nilai default lainnya
         }
+
+        return view('pages/adminTentang/index', $data); // Sesuaikan path view
     }
 
     // Fungsi store():
