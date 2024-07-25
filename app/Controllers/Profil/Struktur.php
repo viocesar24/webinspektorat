@@ -31,7 +31,8 @@ class Struktur extends BaseController
                 $filePath = 'uploads/' . $newName;
                 $this->strukturModel->save(['gambar' => $filePath]);
             }
-            return redirect()->to('/profil/struktur');
+            session()->setFlashdata('success', 'Data berhasil ditambahkan.');
+            return redirect()->to('/admin-profil/struktur');
         }
     }
 
@@ -50,7 +51,8 @@ class Struktur extends BaseController
                 $filePath = 'uploads/' . $newName;
                 $this->strukturModel->update($id, ['gambar' => $filePath]);
             }
-            return redirect()->to('/profil/struktur');
+            session()->setFlashdata('success', 'Data berhasil diperbarui.');
+            return redirect()->to('/admin-profil/struktur');
         }
     }
 
@@ -62,7 +64,8 @@ class Struktur extends BaseController
                 unlink($struktur['gambar']); // Hapus file dari server
             }
             $this->strukturModel->delete($id);
-            return redirect()->to('/profil/struktur');
+            session()->setFlashdata('success', 'Data berhasil dihapus.');
+            return redirect()->to('/admin-profil/struktur');
         }
     }
 

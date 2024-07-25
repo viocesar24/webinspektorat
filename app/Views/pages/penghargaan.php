@@ -55,7 +55,7 @@
                             <?php $i = 0;
                             foreach ($penghargaan as $item) : $i++; ?>
                                 <div class="carousel-item <?php if ($i == 1) echo 'active'; ?>">
-                                    <img src="/<?= $item['gambar'] ?>" class="d-block w-100" alt="...">
+                                    <img src="/<?= $item['gambar'] ?>" class="img-fluid rounded mx-auto d-block" alt="...">
                                 </div>
                             <?php endforeach ?>
                         </div>

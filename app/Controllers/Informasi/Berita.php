@@ -78,17 +78,17 @@ class Berita extends BaseController
 
             // Menyimpan data berita ke database
             $this->beritaModel->insert($data);
-            return redirect()->to('/informasi/berita')->with('success', 'Berita berhasil ditambahkan.');
+            return redirect()->to('/admin-informasi/berita')->with('success', 'Berita berhasil ditambahkan.');
         }
 
-        return redirect()->to('/informasi/berita')->with('error', 'Berita gagal ditambahkan.');
+        return redirect()->to('/admin-informasi/berita')->with('error', 'Berita gagal ditambahkan.');
     }
 
     public function update($id)
     {
         // Pastikan $id valid (misalnya, periksa apakah berita dengan ID tersebut ada)
         if (!$this->beritaModel->find($id)) {
-            return redirect()->to('/informasi/berita')->with('error', 'Berita tidak ditemukan.');
+            return redirect()->to('/admin-informasi/berita')->with('error', 'Berita tidak ditemukan.');
         }
 
         if ($this->request->getMethod() === 'post') {
@@ -133,10 +133,10 @@ class Berita extends BaseController
             }
 
             $this->beritaModel->update($id, $data);
-            return redirect()->to('/informasi/berita')->with('success', 'Berita berhasil diperbarui.');
+            return redirect()->to('/admin-informasi/berita')->with('success', 'Berita berhasil diperbarui.');
         }
 
-        return redirect()->to('/informasi/berita')->with('error', 'Berita gagal diperbarui.');
+        return redirect()->to('/admin-informasi/berita')->with('error', 'Berita gagal diperbarui.');
     }
 
     public function delete($id)
@@ -147,7 +147,7 @@ class Berita extends BaseController
 
             // 2. Jika berita tidak ditemukan, arahkan kembali dengan pesan error
             if (!$berita) {
-                return redirect()->to('/informasi/berita')->with('error', 'Berita tidak ditemukan.');
+                return redirect()->to('/admin-informasi/berita')->with('error', 'Berita tidak ditemukan.');
             }
 
             // 3. Hapus gambar-gambar terkait berita
@@ -169,11 +169,11 @@ class Berita extends BaseController
             }
 
             // 5. Arahkan kembali dengan pesan sukses
-            return redirect()->to('/informasi/berita')->with('success', 'Berita berhasil dihapus.');
+            return redirect()->to('/admin-informasi/berita')->with('success', 'Berita berhasil dihapus.');
         } catch (\Exception $e) {
             // Tangani error yang terjadi
             log_message('error', $e->getMessage()); // Log pesan error (opsional)
-            return redirect()->to('/informasi/berita')->with('error', 'Terjadi kesalahan saat menghapus berita.');
+            return redirect()->to('/admin-informasi/berita')->with('error', 'Terjadi kesalahan saat menghapus berita.');
         }
     }
 }

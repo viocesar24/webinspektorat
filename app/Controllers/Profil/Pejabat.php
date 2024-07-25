@@ -20,7 +20,7 @@ class Pejabat extends BaseController
     }
 
     // Fungsi index():
-    // Fungsi ini dipanggil saat Anda mengakses URL /profil/pejabat.
+    // Fungsi ini dipanggil saat Anda mengakses URL /admin-profil/pejabat.
     // Fungsi ini mengambil semua data dari tabel "pejabat" menggunakan $this->pejabatModel->findAll().
     // Jika tidak ada data yang ditemukan, fungsi ini membuat array $data['pejabat'] dengan nilai default untuk mencegah error.
     // Fungsi ini kemudian menampilkan view pages/adminPejabat/index dengan data $data.
@@ -37,7 +37,7 @@ class Pejabat extends BaseController
     // Fungsi create():
     // Fungsi ini dipanggil saat Anda mengirimkan formulir "Pejabat" di modal.
     // Fungsi ini menyimpan data baru ke tabel "pejabat" menggunakan $this->pejabatModel->save().
-    // Kemudian, fungsi ini mengarahkan kembali ke URL /profil/pejabat dengan pesan sukses.
+    // Kemudian, fungsi ini mengarahkan kembali ke URL /admin-profil/pejabat dengan pesan sukses.
     public function create()
     {
         // Menyimpan data baru dari formulir "Pejabat" yang terdiri dari nip, nama, dan jabatan
@@ -49,15 +49,15 @@ class Pejabat extends BaseController
 
         // Set pesan sukses dan redirect ke halaman adminPejabat
         session()->setFlashdata('success', 'Data berhasil ditambahkan.');
-        return redirect()->to('/profil/pejabat');
+        return redirect()->to('/admin-profil/pejabat');
     }
 
     // Fungsi update():
     // Fungsi ini dipanggil saat Anda mengirimkan formulir "Ubah" di modal.
     // Fungsi ini melakukan validasi input.
-    // Jika validasi gagal, fungsi ini mengarahkan kembali ke URL /profil/pejabat dengan pesan error dan input yang telah diisi sebelumnya.
+    // Jika validasi gagal, fungsi ini mengarahkan kembali ke URL /admin-profil/pejabat dengan pesan error dan input yang telah diisi sebelumnya.
     // Jika validasi sukses, fungsi ini memperbarui data di tabel "pejabat" dengan ID terpilih menggunakan $this->pejabatModel->update().
-    // Kemudian, fungsi ini mengarahkan kembali ke URL /profil/pejabat dengan pesan sukses.
+    // Kemudian, fungsi ini mengarahkan kembali ke URL /admin-profil/pejabat dengan pesan sukses.
     public function update($id)
     {
         // Memperbarui data di tabel "pejabat" dengan ID sesuai dengan ID parameter
@@ -69,13 +69,13 @@ class Pejabat extends BaseController
 
         // Set pesan sukses dan redirect ke halaman adminPejabat
         session()->setFlashdata('success', 'Data berhasil diperbarui.');
-        return redirect()->to('/profil/pejabat');
+        return redirect()->to('/admin-profil/pejabat');
     }
 
     // Fungsi delete():
     // Fungsi ini dipanggil saat Anda mengirimkan tombol "Hapus" di modal.
     // Fungsi ini memperbarui data di tabel "pejabat" dengan ID terpilih menggunakan $this->pejabatModel->delete().
-    // Kemudian, fungsi ini mengarahkan kembali ke URL /profil/pejabat dengan pesan sukses.
+    // Kemudian, fungsi ini mengarahkan kembali ke URL /admin-profil/pejabat dengan pesan sukses.
     public function delete($id)
     {
         // Memperbarui data di tabel "pejabat" dengan ID terpilih
@@ -83,6 +83,6 @@ class Pejabat extends BaseController
 
         // Set pesan sukses dan redirect ke halaman adminPejabat
         session()->setFlashdata('success', 'Data berhasil dihapus.');
-        return redirect()->to('/profil/pejabat');
+        return redirect()->to('/admin-profil/pejabat');
     }
 }

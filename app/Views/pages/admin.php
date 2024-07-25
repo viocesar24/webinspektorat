@@ -68,8 +68,8 @@
                         <h5 class="fw-bold p-0 m-0">PILIH HALAMAN</h5>
                     </div>
                     <div class="card-body">
-                        <a class="btn btn-primary" href="<?php echo base_url(); ?>/informasi/berita" role="button">BERITA</a>
-                        <a class="btn btn-primary" href="<?php echo base_url(); ?>/informasi/kegiatan" role="button">KEGIATAN</a>
+                        <a class="btn btn-primary" href="<?php echo base_url(); ?>/admin-informasi/berita" role="button">BERITA</a>
+                        <a class="btn btn-primary" href="<?php echo base_url(); ?>/admin-informasi/kegiatan" role="button">KEGIATAN</a>
                     </div>
                 </div>
             </div>

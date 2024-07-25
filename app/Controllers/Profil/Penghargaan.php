@@ -31,7 +31,8 @@ class Penghargaan extends BaseController
                 $filePath = 'uploads/penghargaan/' . $newName;
                 $this->penghargaanModel->save(['gambar' => $filePath]);
             }
-            return redirect()->to('/profil/penghargaan');
+            session()->setFlashdata('success', 'Data berhasil ditambahkan.');
+            return redirect()->to('/admin-profil/penghargaan');
         }
     }
 
@@ -50,7 +51,8 @@ class Penghargaan extends BaseController
                 $filePath = 'uploads/penghargaan/' . $newName;
                 $this->penghargaanModel->update($id, ['gambar' => $filePath]);
             }
-            return redirect()->to('/profil/penghargaan');
+            session()->setFlashdata('success', 'Data berhasil diperbarui.');
+            return redirect()->to('/admin-profil/penghargaan');
         }
     }
 
@@ -61,7 +63,8 @@ class Penghargaan extends BaseController
             unlink($penghargaan['gambar']); // Hapus file
         }
         $this->penghargaanModel->delete($id);
-        return redirect()->to('/profil/penghargaan');
+        session()->setFlashdata('success', 'Data berhasil dihapus.');
+        return redirect()->to('/admin-profil/penghargaan');
     }
 
     public function getImage($id)

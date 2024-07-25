@@ -63,17 +63,17 @@ class Kegiatan extends BaseController
             }
 
             $this->kegiatanModel->insert($data);
-            return redirect()->to('/informasi/kegiatan')->with('success', 'Kegiatan berhasil ditambahkan.');
+            return redirect()->to('/admin-informasi/kegiatan')->with('success', 'Kegiatan berhasil ditambahkan.');
         }
 
-        return redirect()->to('/informasi/kegiatan')->with('error', 'Kegiatan gagal ditambahkan.');
+        return redirect()->to('/admin-informasi/kegiatan')->with('error', 'Kegiatan gagal ditambahkan.');
     }
 
     public function update($id)
     {
         // Pastikan $id valid (misalnya, periksa apakah kegiatan dengan ID tersebut ada)
         if (!$this->kegiatanModel->find($id)) {
-            return redirect()->to('/informasi/kegiatan')->with('error', 'Kegiatan tidak ditemukan.');
+            return redirect()->to('/admin-informasi/kegiatan')->with('error', 'Kegiatan tidak ditemukan.');
         }
 
         if ($this->request->getMethod() === 'post') {
@@ -118,10 +118,10 @@ class Kegiatan extends BaseController
             }
 
             $this->kegiatanModel->update($id, $data);
-            return redirect()->to('/informasi/kegiatan')->with('success', 'Kegiatan berhasil diperbarui.');
+            return redirect()->to('/admin-informasi/kegiatan')->with('success', 'Kegiatan berhasil diperbarui.');
         }
 
-        return redirect()->to('/informasi/kegiatan')->with('error', 'Kegiatan gagal diperbarui.');
+        return redirect()->to('/admin-informasi/kegiatan')->with('error', 'Kegiatan gagal diperbarui.');
     }
 
     public function delete($id)
@@ -132,7 +132,7 @@ class Kegiatan extends BaseController
 
             // 2. Jika kegiatan tidak ditemukan, arahkan kembali dengan pesan error
             if (!$kegiatan) {
-                return redirect()->to('/informasi/kegiatan')->with('error', 'Kegiatan tidak ditemukan.');
+                return redirect()->to('/admin-informasi/kegiatan')->with('error', 'Kegiatan tidak ditemukan.');
             }
 
             // 3. Hapus gambar-gambar terkait kegiatan
@@ -154,11 +154,11 @@ class Kegiatan extends BaseController
             }
 
             // 5. Arahkan kembali dengan pesan sukses
-            return redirect()->to('/informasi/kegiatan')->with('success', 'Kegiatan berhasil dihapus.');
+            return redirect()->to('/admin-informasi/kegiatan')->with('success', 'Kegiatan berhasil dihapus.');
         } catch (\Exception $e) {
             // Tangani error yang terjadi
             log_message('error', $e->getMessage()); // Log pesan error (opsional)
-            return redirect()->to('/informasi/kegiatan')->with('error', 'Terjadi kesalahan saat menghapus kegiatan.');
+            return redirect()->to('/admin-informasi/kegiatan')->with('error', 'Terjadi kesalahan saat menghapus kegiatan.');
         }
     }
 }

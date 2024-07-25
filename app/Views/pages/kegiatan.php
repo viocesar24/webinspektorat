@@ -51,8 +51,12 @@
                                     <div class="card h-100 shadow">
                                         <div id="<?= esc($kegiatan_item['slug']) ?>" class="carousel slide" data-bs-ride="carousel">
                                             <div class="carousel-indicators">
-                                                <button type="button" data-bs-target="#<?= esc($kegiatan_item['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                                <button type="button" data-bs-target="#<?= esc($kegiatan_item['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <?php if ($kegiatan_item['gambar_1'] != '' || $kegiatan_item['gambar_1'] != null) { ?>
+                                                    <button type="button" data-bs-target="#<?= esc($kegiatan_item['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                <?php } ?>
+                                                <?php if ($kegiatan_item['gambar_2'] != '' || $kegiatan_item['gambar_2'] != null) { ?>
+                                                    <button type="button" data-bs-target="#<?= esc($kegiatan_item['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <?php } ?>
                                                 <?php if ($kegiatan_item['gambar_3'] != '' || $kegiatan_item['gambar_3'] != null) { ?>
                                                     <button type="button" data-bs-target="#<?= esc($kegiatan_item['slug']) ?>" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                                 <?php } ?>
@@ -94,12 +98,16 @@
                                                 <?php } ?>
                                             </div>
                                             <div class="carousel-inner ratio ratio-21x9">
-                                                <div class="carousel-item active">
-                                                    <img src="/uploads/kegiatan/<?= $kegiatan_item['gambar_1'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="/uploads/kegiatan/<?= $kegiatan_item['gambar_2'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                </div>
+                                                <?php if ($kegiatan_item['gambar_1'] != '' || $kegiatan_item['gambar_1'] != null) { ?>
+                                                    <div class="carousel-item active">
+                                                        <img src="/uploads/kegiatan/<?= $kegiatan_item['gambar_1'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                    </div>
+                                                <?php } ?>
+                                                <?php if ($kegiatan_item['gambar_2'] != '' || $kegiatan_item['gambar_2'] != null) { ?>
+                                                    <div class="carousel-item">
+                                                        <img src="/uploads/kegiatan/<?= $kegiatan_item['gambar_2'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                    </div>
+                                                <?php } ?>
                                                 <?php if ($kegiatan_item['gambar_3'] != '' || $kegiatan_item['gambar_3'] != null) { ?>
                                                     <div class="carousel-item">
                                                         <img src="/uploads/kegiatan/<?= $kegiatan_item['gambar_3'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
@@ -179,9 +187,9 @@
                                             <h5 class="card-title">
                                                 <?= esc($kegiatan_item['judul']) ?>
                                             </h5>
-                                            <p class="card-text">
-                                                <?= esc($kegiatan_item['badan']) ?>
-                                            </p>
+                                            <div class="card-text" contenteditable="false">
+                                                <?= substr($kegiatan_item['badan'], 0, 200) ?><?php if (strlen($kegiatan_item['badan']) > 200) echo '...'; ?>
+                                            </div>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">

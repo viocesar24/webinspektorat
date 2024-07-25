@@ -25,7 +25,7 @@ class Tentang extends BaseController
     }
 
     // Fungsi index():
-    // Fungsi ini dipanggil saat Anda mengakses URL /profil/tentang.
+    // Fungsi ini dipanggil saat Anda mengakses URL /admin-profil/tentang.
     // Fungsi ini mengambil data pertama dari tabel "tentang" menggunakan $this->tentangModel->first().
     // Jika tidak ada data yang ditemukan, fungsi ini membuat array $data['tentang'] dengan nilai default untuk mencegah error.
     // Fungsi ini kemudian menampilkan view pages/adminTentang/index dengan data $data.
@@ -44,7 +44,7 @@ class Tentang extends BaseController
     // Fungsi store():
     // Fungsi ini dipanggil saat Anda mengirimkan formulir "Tambah" di modal.
     // Fungsi ini menyimpan data baru ke tabel "tentang" menggunakan $this->tentangModel->save().
-    // Kemudian, fungsi ini mengarahkan kembali ke URL /profil/tentang dengan pesan sukses.
+    // Kemudian, fungsi ini mengarahkan kembali ke URL /admin-profil/tentang dengan pesan sukses.
     public function store()
     {
         // Menyimpan data baru dari formulir "Tambah"
@@ -54,15 +54,15 @@ class Tentang extends BaseController
 
         // Set pesan sukses dan redirect ke halaman adminTentang
         session()->setFlashdata('success', 'Data berhasil ditambahkan.');
-        return redirect()->to('/profil/tentang');
+        return redirect()->to('/admin-profil/tentang');
     }
 
     // Fungsi update():
     // Fungsi ini dipanggil saat Anda mengirimkan formulir "Ubah" di modal.
     // Fungsi ini melakukan validasi input menggunakan $this->validate().
     // Jika validasi berhasil, fungsi ini memperbarui data di tabel "tentang" dengan ID 1 menggunakan $this->tentangModel->update().
-    // Kemudian, fungsi ini mengarahkan kembali ke URL /profil/tentang dengan pesan sukses.
-    // Jika validasi gagal, fungsi ini mengarahkan kembali ke URL /profil/tentang dengan pesan error dan input yang telah diisi sebelumnya.
+    // Kemudian, fungsi ini mengarahkan kembali ke URL /admin-profil/tentang dengan pesan sukses.
+    // Jika validasi gagal, fungsi ini mengarahkan kembali ke URL /admin-profil/tentang dengan pesan error dan input yang telah diisi sebelumnya.
     public function update()
     {
         $id = 1;
@@ -76,11 +76,11 @@ class Tentang extends BaseController
             ]);
 
             session()->setFlashdata('success', 'Data berhasil diperbarui.');
-            return redirect()->to('/profil/tentang');
+            return redirect()->to('/admin-profil/tentang');
         } else {
             // Jika validasi gagal, tampilkan pesan error di modal
             session()->setFlashdata('error', $this->validator->listErrors());
-            return redirect()->to('/profil/tentang')->withInput();
+            return redirect()->to('/admin-profil/tentang')->withInput();
         }
     }
 }

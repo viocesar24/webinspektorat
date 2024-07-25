@@ -283,7 +283,7 @@
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="<?php echo base_url(); ?>/informasi/berita">
+                                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="<?php echo base_url(); ?>/admin-informasi/berita">
                                     <svg class="bi">
                                         <use xlink:href="#berita" />
                                     </svg>
@@ -291,7 +291,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/kegiatan">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/admin-informasi/kegiatan">
                                     <svg class="bi">
                                         <use xlink:href="#kegiatan" />
                                     </svg>
@@ -299,7 +299,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/dokumen">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/admin-informasi/dokumen">
                                     <svg class="bi">
                                         <use xlink:href="#dokumen" />
                                     </svg>
@@ -320,19 +320,19 @@
                                 <div class="collapse" id="profilSubMenu">
                                     <ul class="nav flex-column ms-3">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/tentang">Tentang</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/tentang">Tentang</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/struktur">Struktur Organisasi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/pejabat">Pejabat Struktural</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/kebijakan">Kebijakan</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/penghargaan">Penghargaan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/penghargaan">Penghargaan</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -351,7 +351,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('informasi/berita/logout'); ?>">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('admin-informasi/berita/logout'); ?>">
                                     <svg class="bi">
                                         <use xlink:href="#door-closed" />
                                     </svg>
@@ -399,7 +399,7 @@
                                             <div class="modal-content">
                                                 <?= session()->getFlashdata('error') ?>
                                                 <?= service('validation')->listErrors() ?>
-                                                <form id="tambahForm" action="<?php echo base_url(); ?>/informasi/berita/create" method="post" enctype="multipart/form-data">
+                                                <form id="tambahForm" action="<?php echo base_url(); ?>/admin-informasi/berita/create" method="post" enctype="multipart/form-data">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM TAMBAH BERITA</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -500,7 +500,10 @@
                                                     <button type="button" class="btn btn-warning btn-sm my-1" data-bs-toggle="modal" data-bs-target="#ubahModal_<?= esc($item['id']) ?>">
                                                         UBAH
                                                     </button>
-                                                    <a href="/informasi/berita/delete/<?= esc($item['id']) ?>" class="btn btn-danger btn-sm my-1" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">HAPUS</a>
+                                                    <form action="/admin-informasi/berita/delete/<?= $item['id'] ?>" method="post" class="d-grid d-inline">
+                                                        <?= csrf_field() ?>
+                                                        <button class="btn btn-danger btn-sm my-1" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">HAPUS</button>
+                                                    </form>
                                                 </div>
                                                 <!-- Modal Ubah -->
                                                 <div class="modal fade modal-xl" id="ubahModal_<?= esc($item['id']) ?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -508,7 +511,7 @@
                                                         <div class="modal-content">
                                                             <?= session()->getFlashdata('error') ?>
                                                             <?= service('validation')->listErrors() ?>
-                                                            <form id="ubahForm" action="<?= base_url('/informasi/berita/update/' . $item['id']) ?>" method="post" enctype="multipart/form-data">
+                                                            <form id="ubahForm" action="<?= base_url('/admin-informasi/berita/update/' . $item['id']) ?>" method="post" enctype="multipart/form-data">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM UBAH BERITA</h5>
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

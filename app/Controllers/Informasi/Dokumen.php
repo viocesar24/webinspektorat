@@ -54,12 +54,12 @@ class Dokumen extends BaseController
                     ];
 
                     $this->dokumenModel->save($data);
-                    return redirect()->to('/informasi/dokumen')->with('success', 'Dokumen berhasil ditambahkan');
+                    return redirect()->to('/admin-informasi/dokumen')->with('success', 'Dokumen berhasil ditambahkan');
                 } else {
-                    return redirect()->back()->withInput()->with('error', 'Error during file upload');
+                    return redirect()->back()->withInput()->with('error', 'Error during file upload' . implode('<br>', $this->validator->getErrors()));
                 }
             } else {
-                return redirect()->back()->withInput()->with('validation', $this->validator);
+                return redirect()->back()->withInput()->with('error', implode('<br>', $this->validator->getErrors()));
             }
         }
 
@@ -71,7 +71,7 @@ class Dokumen extends BaseController
         $dokumen = $this->dokumenModel->find($id);
 
         if (!$dokumen) {
-            return redirect()->to('/informasi/dokumen')->with('error', 'Dokumen tidak ditemukan');
+            return redirect()->to('/admin-informasi/dokumen')->with('error', 'Dokumen tidak ditemukan' . implode('<br>', $this->validator->getErrors()));
         }
 
         if ($this->request->getMethod() === 'post') {
@@ -109,9 +109,9 @@ class Dokumen extends BaseController
                 }
 
                 $this->dokumenModel->save($data);
-                return redirect()->to('/informasi/dokumen')->with('success', 'Dokumen berhasil diperbarui');
+                return redirect()->to('/admin-informasi/dokumen')->with('success', 'Dokumen berhasil diperbarui');
             } else {
-                return redirect()->back()->withInput()->with('validation', $this->validator);
+                return redirect()->back()->withInput()->with('error', implode('<br>', $this->validator->getErrors()));
             }
         }
 
@@ -123,7 +123,7 @@ class Dokumen extends BaseController
         $dokumen = $this->dokumenModel->find($id);
 
         if (!$dokumen) {
-            return redirect()->to('/informasi/dokumen')->with('error', 'Dokumen tidak ditemukan');
+            return redirect()->to('/admin-informasi/dokumen')->with('error', 'Dokumen tidak ditemukan' . implode('<br>', $this->validator->getErrors()));
         }
 
         // Hapus file terkait jika ada
@@ -133,7 +133,7 @@ class Dokumen extends BaseController
 
         // Hapus data dokumen dari database
         $this->dokumenModel->delete($id);
-        return redirect()->to('/informasi/dokumen')->with('success', 'Dokumen berhasil dihapus');
+        return redirect()->to('/admin-informasi/dokumen')->with('success', 'Dokumen berhasil dihapus');
     }
 
     public function getDokumen($id)
@@ -152,8 +152,7 @@ class Dokumen extends BaseController
             $this->dokumenKategoriModel->insert([
                 'kategori' => $this->request->getVar('kategori'),
             ]);
-            session()->setFlashdata('success', 'Kategori berhasil ditambahkan.');
-            return redirect()->to('/informasi/dokumen');
+            return redirect()->to('/admin-informasi/dokumen')->with('success', 'Kategori berhasil ditambahkan.');
         } else {
             $errors = $this->validator->getErrors();
             $stringError = '';
@@ -161,8 +160,7 @@ class Dokumen extends BaseController
                 $stringError .= $error . ', ';
             }
             $stringError = substr($stringError, 0, -2);
-            session()->setFlashdata('error', 'Kategori gagal ditambahkan. ' . $stringError);
-            return redirect()->to('/informasi/dokumen');
+            return redirect()->to('/admin-informasi/dokumen')->with('error', 'Kategori gagal ditambahkan. ' . $stringError);
         }
     }
 
@@ -184,24 +182,23 @@ class Dokumen extends BaseController
 
             // Update data
             if ($this->dokumenKategoriModel->update($id, $data)) {
-                return redirect()->to('/informasi/dokumen')->with('success', 'Data kategori berhasil diupdate.');
+                return redirect()->to('/admin-informasi/dokumen')->with('success', 'Data kategori berhasil diupdate.');
             } else {
-                return redirect()->back()->withInput()->with('error', 'Gagal mengupdate data.');
+                return redirect()->back()->withInput()->with('error', 'Gagal mengupdate data.' . implode('<br>', $this->validator->getErrors()));
             }
         } else {
             // Ambil data lama untuk ditampilkan di form
             $data['item'] = $this->dokumenKategoriModel->find($id);
             if (!$data['item']) {
-                session()->setFlashdata('Data kategori tidak ditemukan');
+                session()->setFlashdata('error', 'Data kategori tidak ditemukan');
             }
-            return redirect()->to('/informasi/dokumen');
+            return redirect()->to('/admin-informasi/dokumen');
         }
     }
 
     public function deleteKategori($id)
     {
         $this->dokumenKategoriModel->delete($id);
-        session()->setFlashdata('success', 'Kategori berhasil dihapus.');
-        return redirect()->to('/informasi/dokumen');
+        return redirect()->to('/admin-informasi/dokumen')->with('success', 'Kategori berhasil dihapus.');
     }
 }

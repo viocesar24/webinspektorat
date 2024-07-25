@@ -292,7 +292,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/dokumen">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/admin-informasi/dokumen">
                                     <svg class="bi">
                                         <use xlink:href="#dokumen" />
                                     </svg>
@@ -313,19 +313,19 @@
                                 <div class="collapse" id="profilSubMenu">
                                     <ul class="nav flex-column ms-3">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/tentang">Tentang</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/tentang">Tentang</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/struktur">Struktur Organisasi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/pejabat">Pejabat Struktural</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/kebijakan">Kebijakan</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/penghargaan">Penghargaan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/penghargaan">Penghargaan</a>
                                         </li>
                                     </ul>
                                 </div>

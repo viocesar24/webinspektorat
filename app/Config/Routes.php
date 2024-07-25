@@ -32,7 +32,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->group('profil', ['namespace' => 'App\Controllers\Profil'], function ($routes) {
+$routes->group('admin-profil', ['namespace' => 'App\Controllers\Profil'], function ($routes) {
     $routes->get('struktur', 'Struktur::index');
     $routes->post('struktur/create', 'Struktur::create');
     $routes->post('struktur/edit/(:num)', 'Struktur::edit/$1');
@@ -54,7 +54,7 @@ $routes->group('profil', ['namespace' => 'App\Controllers\Profil'], function ($r
     $routes->post('penghargaan/delete/(:num)', 'Penghargaan::delete/$1');
     $routes->get('penghargaan/getImage/(:num)', 'Penghargaan::getImage/$1');
 });
-$routes->group('informasi', ['namespace' => 'App\Controllers\Informasi'], function ($routes) {
+$routes->group('admin-informasi', ['namespace' => 'App\Controllers\Informasi'], function ($routes) {
     $routes->get('dokumen', 'Dokumen::index');
     $routes->post('dokumen/create', 'Dokumen::create');
     $routes->post('dokumen/update/(:num)', 'Dokumen::update/$1');
@@ -66,6 +66,10 @@ $routes->group('informasi', ['namespace' => 'App\Controllers\Informasi'], functi
     $routes->post('berita/create', 'Berita::create');
     $routes->post('berita/update/(:num)', 'Berita::update/$1');
     $routes->post('berita/delete/(:num)', 'Berita::delete/$1');
+    $routes->get('kegiatan', 'Kegiatan::index');
+    $routes->post('kegiatan/create', 'Kegiatan::create');
+    $routes->post('kegiatan/update/(:num)', 'Kegiatan::update/$1');
+    $routes->post('kegiatan/delete/(:num)', 'Kegiatan::delete/$1');
 });
 
 /*

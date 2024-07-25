@@ -276,7 +276,7 @@
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/berita">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/admin-informasi/berita">
                                     <svg class="bi">
                                         <use xlink:href="#berita" />
                                     </svg>
@@ -284,7 +284,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/kegiatan">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/admin-informasi/kegiatan">
                                     <svg class="bi">
                                         <use xlink:href="#kegiatan" />
                                     </svg>
@@ -292,7 +292,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="<?php echo base_url(); ?>/informasi/dokumen">
+                                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="<?php echo base_url(); ?>/admin-informasi/dokumen">
                                     <svg class="bi">
                                         <use xlink:href="#dokumen" />
                                     </svg>
@@ -313,19 +313,19 @@
                                 <div class="collapse" id="profilSubMenu">
                                     <ul class="nav flex-column ms-3">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/tentang">Tentang</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/tentang">Tentang</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/struktur">Struktur Organisasi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/pejabat">Pejabat Struktural</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/kebijakan">Kebijakan</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/penghargaan">Penghargaan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/penghargaan">Penghargaan</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -344,7 +344,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('informasi/berita/logout'); ?>">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('admin-informasi/berita/logout'); ?>">
                                     <svg class="bi">
                                         <use xlink:href="#door-closed" />
                                     </svg>
@@ -402,7 +402,7 @@
                                         <tbody>
                                             <?php foreach ($dokumenkategori as $item) : ?>
                                                 <tr>
-                                                    <form action="/informasi/dokumen/updateKategori/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
+                                                    <form action="/admin-informasi/dokumen/updateKategori/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
                                                         <?= csrf_field() ?>
                                                         <td>
                                                             <input type="text" name="kategori" class="form-control" placeholder="Kategori" aria-label="Kategori" value="<?= $item['kategori'] ?>">
@@ -411,7 +411,7 @@
                                                             <button type="submit" class="btn btn-warning">Edit</button>
                                                         </td>
                                                     </form>
-                                                    <form action="/informasi/dokumen/deleteKategori/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
+                                                    <form action="/admin-informasi/dokumen/deleteKategori/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
                                                         <?= csrf_field() ?>
                                                         <td>
                                                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -421,7 +421,7 @@
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
-                                    <form action="/informasi/dokumen/createKategori" method="post" enctype="multipart/form-data">
+                                    <form action="/admin-informasi/dokumen/createKategori" method="post" enctype="multipart/form-data">
                                         <?= csrf_field() ?>
                                         <div class="input-group mb-3">
                                             <input type="text" name="kategori" class="form-control" id="kategori" placeholder="Kategori" aria-label="Kategori" aria-describedby="button-addKategori">
@@ -465,7 +465,7 @@
                                                         </td>
                                                         <td>
                                                             <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal<?= $item['id'] ?>">Edit</button>
-                                                            <form action="/informasi/dokumen/delete/<?= $item['id'] ?>" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus dokumen ini?');">
+                                                            <form action="/admin-informasi/dokumen/delete/<?= $item['id'] ?>" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus dokumen ini?');">
                                                                 <?= csrf_field() ?>
                                                                 <button type="submit" class="btn btn-danger">Hapus</button>
                                                             </form>
@@ -480,7 +480,7 @@
                                                                     <h5 class="modal-title" id="editModalLabel">Edit Dokumen</h5>
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
-                                                                <form action="/informasi/dokumen/update/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
+                                                                <form action="/admin-informasi/dokumen/update/<?= $item['id'] ?>" method="post" enctype="multipart/form-data">
                                                                     <?= csrf_field() ?>
                                                                     <div class="modal-body">
                                                                         <div class="mb-3">
@@ -536,7 +536,7 @@
                                             <h5 class="modal-title text-primary" id="staticbackdropLabel">FORM TAMBAH DOKUMEN</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <form action="/informasi/dokumen/create" method="post" enctype="multipart/form-data">
+                                        <form action="/admin-informasi/dokumen/create" method="post" enctype="multipart/form-data">
                                             <?= csrf_field() ?>
                                             <div class="modal-body">
                                                 <div class="mb-3">

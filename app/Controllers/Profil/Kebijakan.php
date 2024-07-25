@@ -33,7 +33,7 @@ class Kebijakan extends BaseController
         ]);
 
         session()->setFlashdata('success', 'Data berhasil ditambahkan.');
-        return redirect()->to('/profil/kebijakan');
+        return redirect()->to('/admin-profil/kebijakan');
     }
 
     public function update()
@@ -45,7 +45,7 @@ class Kebijakan extends BaseController
         ]);
 
         session()->setFlashdata('success', 'Data berhasil diperbarui.');
-        return redirect()->to('/profil/kebijakan');
+        return redirect()->to('/admin-profil/kebijakan');
     }
 
     public function delete($id = 1)
@@ -55,6 +55,6 @@ class Kebijakan extends BaseController
         } else {
             session()->setFlashdata('error', 'Data gagal dihapus. ' . implode('<br>', $this->kebijakanModel->errors()));
         }
-        return redirect()->to('/profil/kebijakan');
+        return redirect()->to('/admin-profil/kebijakan');
     }
 }

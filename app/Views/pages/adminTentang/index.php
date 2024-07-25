@@ -279,7 +279,7 @@
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/berita">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/admin-informasi/berita">
                                     <svg class="bi">
                                         <use xlink:href="#berita" />
                                     </svg>
@@ -287,7 +287,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/kegiatan">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/admin-informasi/kegiatan">
                                     <svg class="bi">
                                         <use xlink:href="#kegiatan" />
                                     </svg>
@@ -295,7 +295,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/informasi/dokumen">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/admin-informasi/dokumen">
                                     <svg class="bi">
                                         <use xlink:href="#dokumen" />
                                     </svg>
@@ -316,19 +316,19 @@
                                 <div class="collapse" id="profilSubMenu">
                                     <ul class="nav flex-column ms-3">
                                         <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="<?php echo base_url(); ?>/profil/tentang">Tentang</a>
+                                            <a class="nav-link active" aria-current="page" href="<?php echo base_url(); ?>/admin-profil/tentang">Tentang</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/struktur">Struktur Organisasi</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/struktur">Struktur Organisasi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/pejabat">Pejabat Struktural</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/pejabat">Pejabat Struktural</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/kebijakan">Kebijakan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/kebijakan">Kebijakan</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>/profil/penghargaan">Penghargaan</a>
+                                            <a class="nav-link" href="<?php echo base_url(); ?>/admin-profil/penghargaan">Penghargaan</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -347,7 +347,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('informasi/berita/logout'); ?>">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('admin-informasi/berita/logout'); ?>">
                                     <svg class="bi">
                                         <use xlink:href="#door-closed" />
                                     </svg>
@@ -363,6 +363,19 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Dashboard Tentang</h1>
                 </div>
+
+                <?php if (session()->getFlashdata('success')) : ?>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (session()->getFlashdata('error')) : ?>
+                    <div class="alert alert-danger">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
+
                 <!-- BAGIAN TABEL ADMIN -->
                 <div class="bg-body bg-gradient">
                     <div class="card bg-body bg-gradient shadow">
@@ -413,7 +426,7 @@
                                     <div class="modal-content">
                                         <?= session()->getFlashdata('error') ?>
                                         <?= service('validation')->listErrors() ?>
-                                        <form id="tambahForm" action="<?= base_url('profil/tentang/store'); ?>" method="post">
+                                        <form id="tambahForm" action="<?= base_url('admin-profil/tentang/store'); ?>" method="post">
                                             <div class="modal-header">
                                                 <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM TAMBAH TENTANG</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -441,7 +454,7 @@
                                     <div class="modal-content">
                                         <?= session()->getFlashdata('error') ?>
                                         <?= service('validation')->listErrors() ?>
-                                        <form id="ubahForm" action="<?= base_url('profil/tentang/update'); ?>" method="post">
+                                        <form id="ubahForm" action="<?= base_url('admin-profil/tentang/update'); ?>" method="post">
                                             <div class="modal-header">
                                                 <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM UBAH TENTANG</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
