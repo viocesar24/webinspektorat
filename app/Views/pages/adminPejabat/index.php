@@ -344,7 +344,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('admin-informasi/berita/logout'); ?>">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('admin/logout'); ?>">
                                     <svg class="bi">
                                         <use xlink:href="#door-closed" />
                                     </svg>

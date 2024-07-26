@@ -21,7 +21,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -32,7 +32,26 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->group('admin-profil', ['namespace' => 'App\Controllers\Profil'], function ($routes) {
+$routes->group('home', ['namespace' => 'App\Controllers'], function ($routes) {
+    $routes->get('/', 'Home::index');
+    $routes->get('view/tentang', 'Home::view/tentang');
+    $routes->get('view/struktur', 'Home::view/struktur');
+    $routes->get('view/pejabat', 'Home::view/pejabat');
+    $routes->get('view/kebijakan', 'Home::view/kebijakan');
+    $routes->get('view/penghargaan', 'Home::view/penghargaan');
+    $routes->get('view/layanan', 'Home::view/layanan');
+    $routes->get('view/berita', 'Home::view/berita');
+    $routes->get('view/berkas', 'Home::view/berkas');
+    $routes->get('view/kegiatan', 'Home::view/kegiatan');
+    $routes->get('view/detail/(:any)', 'Home::view/detail/$1');
+    $routes->get('view/kontak', 'Home::view/kontak');
+});
+$routes->group('admin', ['namespace' => 'App\Controllers'], function ($routes) {
+    $routes->get('login', 'AdminAuth::login');
+    $routes->post('auth', 'AdminAuth::auth');
+    $routes->get('logout', 'AdminAuth::logout');
+});
+$routes->group('admin-profil', ['namespace' => 'App\Controllers\Profil', 'filter' => 'admin'], function ($routes) {
     $routes->get('struktur', 'Struktur::index');
     $routes->post('struktur/create', 'Struktur::create');
     $routes->post('struktur/edit/(:num)', 'Struktur::edit/$1');
@@ -54,7 +73,7 @@ $routes->group('admin-profil', ['namespace' => 'App\Controllers\Profil'], functi
     $routes->post('penghargaan/delete/(:num)', 'Penghargaan::delete/$1');
     $routes->get('penghargaan/getImage/(:num)', 'Penghargaan::getImage/$1');
 });
-$routes->group('admin-informasi', ['namespace' => 'App\Controllers\Informasi'], function ($routes) {
+$routes->group('admin-informasi', ['namespace' => 'App\Controllers\Informasi', 'filter' => 'admin'], function ($routes) {
     $routes->get('dokumen', 'Dokumen::index');
     $routes->post('dokumen/create', 'Dokumen::create');
     $routes->post('dokumen/update/(:num)', 'Dokumen::update/$1');
