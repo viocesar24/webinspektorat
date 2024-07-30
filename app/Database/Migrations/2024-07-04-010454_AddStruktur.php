@@ -22,11 +22,11 @@ class AddStruktur extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('struktur');
+        $this->forge->createTable('struktur', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()
     {
-        $this->forge->dropTable('struktur');
+        $this->forge->dropTable('struktur', true);
     }
 }

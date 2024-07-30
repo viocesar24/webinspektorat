@@ -18,35 +18,37 @@
         </div>
         <div class="card-body">
             <div class="row g-3">
-                <div class="col-md-12 align-items-center">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.809626103854!2d112.03896101412019!3d-7.809967479705176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78575bf7ce68db%3A0x2b5ccc4210fc25d6!2sKantor%20Bupati%20Kediri!5e0!3m2!1sen!2sid!4v1641864206886!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <?php if (!empty($kontak) && is_array($kontak)) { ?>
+                    <div class="col-md-12 align-items-center">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="<?= $kontak['googlemaps'] ?>" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h5>
-                        <i class="bi bi-pin-map-fill"></i>
-                        ALAMAT
-                        <i class="bi bi-pin-map-fill"></i>
-                    </h5>
-                    <p>Jl. Soekarno-Hatta No.1 Kabupaten Kediri, Provinsi Jawa Timur 64182</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h5>
-                        <i class="bi bi-telephone-fill"></i>
-                        TELEPON
-                        <i class="bi bi-telephone-fill"></i>
-                    </h5>
-                    <p>(0354) 687038</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h5>
-                        <i class="bi bi-envelope-fill"></i>
-                        EMAIL
-                        <i class="bi bi-envelope-fill"></i>
-                    </h5>
-                    <p>inspektorat@kedirikab.go.id</p>
-                </div>
+                    <div class="col-md-4 text-center">
+                        <h5>
+                            <i class="bi bi-pin-map-fill"></i>
+                            ALAMAT
+                            <i class="bi bi-pin-map-fill"></i>
+                        </h5>
+                        <p><?= $kontak['alamat'] ?></p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h5>
+                            <i class="bi bi-telephone-fill"></i>
+                            TELEPON
+                            <i class="bi bi-telephone-fill"></i>
+                        </h5>
+                        <p><?= $kontak['telepon'] ?></p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h5>
+                            <i class="bi bi-envelope-fill"></i>
+                            EMAIL
+                            <i class="bi bi-envelope-fill"></i>
+                        </h5>
+                        <p><?= $kontak['email'] ?></p>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>

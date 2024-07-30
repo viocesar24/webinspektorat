@@ -21,11 +21,11 @@ class AddTentang extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('tentang');
+        $this->forge->createTable('tentang', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()
     {
-        $this->forge->dropTable('tentang');
+        $this->forge->dropTable('tentang', true);
     }
 }

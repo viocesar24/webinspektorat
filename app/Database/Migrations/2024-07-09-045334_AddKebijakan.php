@@ -27,12 +27,12 @@ class AddKebijakan extends Migration
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('kebijakan');
+        $this->forge->createTable('kebijakan', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()
     {
         // Drop the table 'kebijakan' from the database 'inspektoratkabkediri'
-        $this->forge->dropTable('kebijakan');
+        $this->forge->dropTable('kebijakan', true);
     }
 }

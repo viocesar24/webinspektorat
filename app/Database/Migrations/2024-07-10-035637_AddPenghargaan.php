@@ -24,12 +24,12 @@ class AddPenghargaan extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('penghargaan');
+        $this->forge->createTable('penghargaan', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()
     {
         // Drop tabel penghargaan
-        $this->forge->dropTable('penghargaan');
+        $this->forge->dropTable('penghargaan', true);
     }
 }

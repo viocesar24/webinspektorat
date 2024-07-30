@@ -90,6 +90,16 @@ $routes->group('admin-informasi', ['namespace' => 'App\Controllers\Informasi', '
     $routes->post('kegiatan/update/(:num)', 'Kegiatan::update/$1');
     $routes->post('kegiatan/delete/(:num)', 'Kegiatan::delete/$1');
 });
+$routes->group('admin-lainnya', ['namespace' => 'App\Controllers', 'filter' => 'admin'], function ($routes) {
+    $routes->get('layanan', 'Layanan::index');
+    $routes->post('layanan/create', 'Layanan::create');
+    $routes->post('layanan/update/(:num)', 'Layanan::update/$1');
+    $routes->post('layanan/delete/(:num)', 'Layanan::delete/$1');
+    $routes->get('kontak', 'Kontak::index');
+    $routes->post('kontak/create', 'Kontak::create');
+    $routes->post('kontak/update/(:num)', 'Kontak::update/$1');
+    $routes->post('kontak/delete/(:num)', 'Kontak::delete/$1');
+});
 
 /*
  * --------------------------------------------------------------------
