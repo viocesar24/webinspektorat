@@ -5,17 +5,20 @@ namespace App\Controllers\Informasi;
 use App\Controllers\BaseController;
 use App\Models\Informasi\DokumenModel;
 use App\Models\Informasi\DokumenKategoriModel;
+use App\Models\KontakModel;
 
 class Dokumen extends BaseController
 {
 
     protected $dokumenModel;
     protected $dokumenKategoriModel;
+    protected $kontakModel;
 
     public function __construct()
     {
         $this->dokumenModel = new DokumenModel();
         $this->dokumenKategoriModel = new DokumenKategoriModel();
+        $this->kontakModel = new KontakModel();
     }
 
     public function index()
@@ -38,6 +41,7 @@ class Dokumen extends BaseController
                 ->join('dokumenkategori', 'dokumen.kategori = dokumenkategori.id')
                 ->findAll(),
             'dokumenkategori' => $this->dokumenKategoriModel->findAll(),
+            'kontak' => $this->kontakModel->first(),
         ];
 
         echo view('templates/header', $data);

@@ -4,15 +4,18 @@ namespace App\Controllers\Informasi;
 
 use App\Controllers\BaseController;
 use App\Models\Informasi\KegiatanModel;
+use App\Models\KontakModel;
 
 class Kegiatan extends BaseController
 {
 
     protected $kegiatanModel;
+    protected $kontakModel;
 
     public function __construct()
     {
         $this->kegiatanModel = new KegiatanModel();
+        $this->kontakModel = new KontakModel();
     }
 
     public function index()
@@ -30,6 +33,7 @@ class Kegiatan extends BaseController
             'kegiatan' => $this->kegiatanModel->getKegiatan(),
             'kegiatanHalaman' => $this->kegiatanModel->orderBy('waktu', 'DESC')->paginate(5, 'group1'),
             'pagerKegiatan' => $this->kegiatanModel->pager,
+            'kontak' => $this->kontakModel->first(),
         ];
 
         echo view('templates/header', $data);

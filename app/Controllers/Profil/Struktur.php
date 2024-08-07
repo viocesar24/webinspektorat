@@ -4,15 +4,18 @@ namespace App\Controllers\Profil;
 
 use App\Controllers\BaseController;
 use App\Models\Profil\StrukturModel;
+use App\Models\KontakModel;
 
 class Struktur extends BaseController
 {
 
     protected $strukturModel;
+    protected $kontakModel;
 
     public function __construct()
     {
         $this->strukturModel = new StrukturModel();
+        $this->kontakModel = new KontakModel();
     }
 
     public function index()
@@ -25,6 +28,7 @@ class Struktur extends BaseController
     {
         // Ambil data struktur paling akhir
         $data['struktur'] = $this->strukturModel->orderBy('id', 'DESC')->first() ?: null;
+        $data['kontak'] = $this->kontakModel->first() ?: null;
 
         echo view('templates/header', $data);
         echo view('pages/' . $page, $data);

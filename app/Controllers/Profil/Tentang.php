@@ -9,6 +9,7 @@ namespace App\Controllers\Profil;
 
 use App\Controllers\BaseController;
 use App\Models\Profil\TentangModel;
+use App\Models\KontakModel;
 
 class Tentang extends BaseController
 {
@@ -16,12 +17,14 @@ class Tentang extends BaseController
     // Properti $tentangModel:
     // Properti ini digunakan untuk menyimpan instance dari model TentangModel, yang akan digunakan di dalam fungsi-fungsi controller.
     protected $tentangModel;
+    protected $kontakModel;
 
     // Konstruktor __construct():
     // Konstruktor ini dipanggil saat controller dibuat. Di dalamnya, Anda membuat instance baru dari model TentangModel dan menyimpannya ke dalam properti $tentangModel.
     public function __construct()
     {
         $this->tentangModel = new TentangModel();
+        $this->kontakModel = new KontakModel();
     }
 
     // Fungsi index():
@@ -45,6 +48,7 @@ class Tentang extends BaseController
     {
         $data = [
             'tentang' => $this->tentangModel->orderBy('id', 'DESC')->first(),
+            'kontak' => $this->kontakModel->first(),
         ];
 
         echo view('templates/header', $data);

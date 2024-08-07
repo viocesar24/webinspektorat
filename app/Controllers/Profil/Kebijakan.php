@@ -4,15 +4,18 @@ namespace App\Controllers\Profil;
 
 use App\Controllers\BaseController;
 use App\Models\Profil\KebijakanModel;
+use App\Models\KontakModel;
 
 class Kebijakan extends BaseController
 {
 
     protected $kebijakanModel;
+    protected $kontakModel;
 
     public function __construct()
     {
         $this->kebijakanModel = new KebijakanModel();
+        $this->kontakModel = new KontakModel();
     }
 
     public function index()
@@ -30,6 +33,7 @@ class Kebijakan extends BaseController
     {
         $data = [
             'kebijakan' => $this->kebijakanModel->orderBy('id', 'DESC')->first(),
+            'kontak' => $this->kontakModel->first(),
         ];
 
         echo view('templates/header', $data);

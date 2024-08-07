@@ -7,6 +7,8 @@ namespace App\Controllers\Informasi;
 use App\Controllers\BaseController;
 // Menggunakan model BeritaModel untuk berinteraksi dengan database
 use App\Models\Informasi\BeritaModel;
+// Menggunakan model KontakModel untuk berinteraksi dengan database
+use App\Models\KontakModel;
 
 class Berita extends BaseController
 {
@@ -14,11 +16,13 @@ class Berita extends BaseController
     // Properti untuk menyimpan instance BeritaModel
     protected $beritaModel;
     protected $newsModel;
+    protected $kontakModel;
 
     // Constructor untuk inisialisasi BeritaModel
     public function __construct()
     {
         $this->beritaModel = new BeritaModel();
+        $this->kontakModel = new KontakModel();
     }
 
     // Menampilkan daftar berita di halaman admin
@@ -60,6 +64,7 @@ class Berita extends BaseController
             'cariBerita' => $this->beritaModel->orderBy('waktu', 'DESC')->paginate(100, 'group1'),
             'beritaHalaman' => $this->beritaModel->orderBy('waktu', 'DESC')->paginate(5, 'group1'),
             'pager' => $this->beritaModel->pager,
+            'kontak' => $this->kontakModel->first(),
         ];
 
         echo view('templates/header', $data);

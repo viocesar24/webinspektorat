@@ -4,6 +4,7 @@ namespace App\Controllers\Profil;
 
 use App\Controllers\BaseController;
 use App\Models\Profil\PejabatModel;
+use App\Models\KontakModel;
 
 class Pejabat extends BaseController
 {
@@ -11,12 +12,14 @@ class Pejabat extends BaseController
     // Properti $pejabatModel:
     // Properti ini digunakan untuk menyimpan instance dari model PejabatModel, yang akan digunakan di dalam fungsi-fungsi controller.
     protected $pejabatModel;
+    protected $kontakModel;
 
     // Konstruktor __construct():
     // Konstruktor ini dipanggil saat controller dibuat. Di dalamnya, Anda membuat instance baru dari model PejabatModel dan menyimpannya ke dalam properti $pejabatModel.
     public function __construct()
     {
         $this->pejabatModel = new PejabatModel();
+        $this->kontakModel = new KontakModel();
     }
 
     // Fungsi index():
@@ -36,11 +39,10 @@ class Pejabat extends BaseController
 
     public function view($page)
     {
-        $data['pejabat'] = $this->pejabatModel->findAll(); // Ambil semua data
-        if (!$data['pejabat']) {
-            // Jika tidak ada data, buat array kosong untuk mencegah error
-            $data['pejabat'] = []; // Atau berikan nilai default lainnya
-        }
+        $data = [
+            'pejabat' => $this->pejabatModel->findAll(),
+            'kontak' => $this->kontakModel->first(),
+        ];
 
         echo view('templates/header', $data);
         echo view('pages/' . $page, $data);

@@ -4,15 +4,18 @@ namespace App\Controllers\Profil;
 
 use App\Controllers\BaseController;
 use App\Models\Profil\PenghargaanModel;
+use App\Models\KontakModel;
 
 class Penghargaan extends BaseController
 {
 
     protected $penghargaanModel;
+    protected $kontakModel;
 
     public function __construct()
     {
         $this->penghargaanModel = new PenghargaanModel();
+        $this->kontakModel = new KontakModel();
     }
 
     public function index()
@@ -25,6 +28,7 @@ class Penghargaan extends BaseController
     {
         $data = [
             'penghargaan' => $this->penghargaanModel->orderBy('id', 'DESC')->findAll(),
+            'kontak' => $this->kontakModel->first(),
         ];
 
         echo view('templates/header', $data);

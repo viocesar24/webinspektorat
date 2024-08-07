@@ -21,7 +21,7 @@ class AddDokumen extends Migration
             ],
         ]);
         $this->forge->addPrimaryKey('id');
-        $this->forge->createTable('dokumenKategori', true, ['ENGINE' => 'InnoDB']);
+        $this->forge->createTable('dokumenkategori', true, ['ENGINE' => 'InnoDB']);
 
         $this->forge->addField([
             'id' => [
@@ -43,11 +43,11 @@ class AddDokumen extends Migration
                 'constraint' => 5,
                 'unsigned' => true,
                 'foreign_key' => [
-                    'table' => 'dokumenKategori',
+                    'table' => 'dokumenkategori',
                     'field' => 'id',
                 ],
             ],
-            'CONSTRAINT fk_dokumen FOREIGN KEY (kategori) REFERENCES dokumenKategori(id)',
+            'CONSTRAINT fk_dokumen FOREIGN KEY (kategori) REFERENCES dokumenkategori(id)',
         ]);
         $this->forge->addPrimaryKey('id');
         $this->forge->createTable('dokumen', true, ['ENGINE' => 'InnoDB']);
@@ -55,7 +55,7 @@ class AddDokumen extends Migration
 
     public function down()
     {
-        $this->forge->dropTable('dokumenKategori', true);
+        $this->forge->dropTable('dokumenkategori', true);
         $this->forge->dropTable('dokumen', true);
     }
 }

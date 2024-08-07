@@ -4,15 +4,18 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\LayananModel;
+use App\Models\KontakModel;
 
 class Layanan extends BaseController
 {
 
     protected $layananModel;
+    protected $kontakModel;
 
     public function __construct()
     {
         $this->layananModel = new LayananModel();
+        $this->kontakModel = new KontakModel();
     }
 
     public function index()
@@ -26,6 +29,7 @@ class Layanan extends BaseController
     {
         $data = [
             'layanan' => $this->layananModel->findAll(),
+            'kontak' => $this->kontakModel->first(),
         ];
 
         echo view('templates/header', $data);
