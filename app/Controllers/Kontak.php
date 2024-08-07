@@ -43,6 +43,11 @@ class Kontak extends BaseController
                 'googlemaps' => 'required',
                 'telepon' => 'required',
                 'email' => 'required',
+                'instagram' => 'permit_empty',
+                'facebook' => 'permit_empty',
+                'twitter' => 'permit_empty',
+                'tiktok' => 'permit_empty',
+                'youtube' => 'permit_empty',
             ];
 
             // Validasi input
@@ -56,6 +61,11 @@ class Kontak extends BaseController
                 'googlemaps' => $this->request->getPost('googlemaps'),
                 'telepon' => $this->request->getPost('telepon'),
                 'email' => $this->request->getPost('email'),
+                'instagram' => $this->request->getPost('instagram'),
+                'facebook' => $this->request->getPost('facebook'),
+                'twitter' => $this->request->getPost('twitter'),
+                'tiktok' => $this->request->getPost('tiktok'),
+                'youtube' => $this->request->getPost('youtube'),
             ];
 
             // Menyimpan data kontak ke database
@@ -90,6 +100,11 @@ class Kontak extends BaseController
                 'googlemaps' => $this->request->getPost('googlemaps'),
                 'telepon' => $this->request->getPost('telepon'),
                 'email' => $this->request->getPost('email'),
+                'instagram' => $this->request->getPost('instagram'),
+                'facebook' => $this->request->getPost('facebook'),
+                'twitter' => $this->request->getPost('twitter'),
+                'tiktok' => $this->request->getPost('tiktok'),
+                'youtube' => $this->request->getPost('youtube'),
             ];
 
             $this->kontakModel->update($id, $data);

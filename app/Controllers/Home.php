@@ -6,6 +6,7 @@ use App\Models\Informasi\BeritaModel;
 use App\Models\Informasi\KegiatanModel;
 use App\Models\LayananModel;
 use App\Models\KontakModel;
+use App\Models\BannerBerandaModel;
 
 class Home extends BaseController
 {
@@ -16,6 +17,7 @@ class Home extends BaseController
     protected $kegiatanModel;
     protected $layananModel;
     protected $kontakModel;
+    protected $bannerBerandaModel;
 
     // Konstruktor __construct():
     // Konstruktor ini dipanggil saat controller dibuat. Di dalamnya, Anda membuat instance baru dari model TentangModel dan menyimpannya ke dalam properti $tentangModel.
@@ -25,6 +27,7 @@ class Home extends BaseController
         $this->kegiatanModel = new KegiatanModel();
         $this->layananModel = new LayananModel();
         $this->kontakModel = new KontakModel();
+        $this->bannerBerandaModel = new BannerBerandaModel();
     }
 
     public function view($page)
@@ -34,6 +37,7 @@ class Home extends BaseController
             'kegiatan' => $this->kegiatanModel->getKegiatan(),
             'layanan' => $this->layananModel->findAll(),
             'kontak' => $this->kontakModel->first(),
+            'bannerBeranda' => $this->bannerBerandaModel->findAll(),
         ];
 
         echo view('templates/header', $data);

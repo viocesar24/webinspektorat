@@ -1,46 +1,44 @@
 <div id="carouselHomeAtas" class="carousel slide carousel-fade bg-secondary bg-gradient bg-opacity-10" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner ratio ratio-21x9">
-        <div class="carousel-item active">
-            <img src="<?php echo base_url(); ?>/img/24-03-25.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Pertama" />
-            <div class="carousel-caption d-none d-md-block">
-                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <!-- <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4> -->
-                    <!-- <a href="https://heylink.me/InspektoratKediriKab" target="_blank">Klik Saya</a> -->
+    <?php if (!empty($bannerBeranda)) : ?>
+        <div class="carousel-indicators">
+            <?php foreach ($bannerBeranda as $index => $banner) : ?>
+                <button type="button" data-bs-target="#carouselHomeAtas" data-bs-slide-to="<?= $index; ?>" class="<?= $index === 0 ? 'active' : ''; ?>" aria-current="<?= $index === 0 ? 'true' : 'false'; ?>" aria-label="Slide <?= $index + 1; ?>"></button>
+            <?php endforeach; ?>
+        </div>
+        <div class="carousel-inner ratio ratio-21x9">
+            <?php foreach ($bannerBeranda as $index => $banner) : ?>
+                <div class="carousel-item <?= $index === 0 ? 'active' : ''; ?>">
+                    <img src="<?= base_url($banner['gambar']); ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight <?= $index + 1; ?>" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
+                            <?php if (!empty($banner['judul'])) : ?>
+                                <h4><?= $banner['judul']; ?></h4>
+                            <?php endif; ?>
+                            <?php if (!empty($banner['link'])) : ?>
+                                <a href="<?= $banner['link']; ?>" target="_blank">Klik Saya</a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomeAtas" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Sebelumnya</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselHomeAtas" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Berikutnya</span>
+        </button>
+    <?php else : ?>
+        <div class="carousel-inner ratio ratio-21x9">
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center align-items-center" style="height: 100%; width: 100%;">
+                    <h4 class="text-dark">Tidak Ada Banner</h4>
                 </div>
             </div>
         </div>
-        <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/2.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Ketiga" />
-            <div class="carousel-caption d-none d-md-block">
-                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <!-- <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4>
-                    <a href="https://heylink.me/InspektoratKediriKab" target="_blank">Klik Saya</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="<?php echo base_url(); ?>/img/1.webp" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="Highlight Keempat" />
-            <div class="carousel-caption d-none d-md-block">
-                <div class="bg-white bg-opacity-50 text-wrap text-dark fw-bold">
-                    <h4>PORTAL INSPEKTORAT KABUPATEN KEDIRI</h4>
-                    <a href="https://heylink.me/InspektoratKediriKab" target="_blank">Klik Saya</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomeAtas" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Sebelumnya</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselHomeAtas" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Berikutnya</span>
-    </button>
+    <?php endif; ?>
 </div>
 <?php if (!empty($berita) && is_array($berita)) : ?>
     <div class="container-fluid bg-light bg-gradient p-5">

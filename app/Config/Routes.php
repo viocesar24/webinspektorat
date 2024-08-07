@@ -99,6 +99,10 @@ $routes->group('admin-lainnya', ['namespace' => 'App\Controllers', 'filter' => '
     $routes->post('kontak/create', 'Kontak::create');
     $routes->post('kontak/update/(:num)', 'Kontak::update/$1');
     $routes->post('kontak/delete/(:num)', 'Kontak::delete/$1');
+    $routes->get('banner-beranda', 'BannerBeranda::index');
+    $routes->post('banner-beranda/create', 'BannerBeranda::create');
+    $routes->post('banner-beranda/update/(:num)', 'BannerBeranda::update/$1');
+    $routes->post('banner-beranda/delete/(:num)', 'BannerBeranda::delete/$1');
 });
 
 /*

@@ -248,6 +248,10 @@
         <symbol id="kontak" viewBox="0 0 16 16">
             <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
         </symbol>
+        <symbol id="banner" viewBox="0 0 16 16">
+            <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+            <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1z" />
+        </symbol>
     </svg>
 
     <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
@@ -300,6 +304,14 @@
                                         <use xlink:href="#dokumen" />
                                     </svg>
                                     Dokumen
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?php echo base_url(); ?>/admin-lainnya/banner-beranda">
+                                    <svg class="bi">
+                                        <use xlink:href="#banner" />
+                                    </svg>
+                                    Banner Beranda
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -436,6 +448,26 @@
                                                             <input type="text" id="email" name="email" class="form-control my-1" placeholder="Email" value="<?= old('email') ?>" required>
                                                             <label for="email">EMAIL</label>
                                                         </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" id="instagram" name="instagram" class="form-control my-1" placeholder="Instagram" value="<?= old('instagram') ?>">
+                                                            <label for="instagram">LINK INSTAGRAM</label>
+                                                        </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" id="facebook" name="facebook" class="form-control my-1" placeholder="Facebook" value="<?= old('facebook') ?>">
+                                                            <label for="facebook">LINK FACEBOOK</label>
+                                                        </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" id="twitter" name="twitter" class="form-control my-1" placeholder="Twitter" value="<?= old('twitter') ?>">
+                                                            <label for="twitter">LINK TWITTER</label>
+                                                        </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" id="tiktok" name="tiktok" class="form-control my-1" placeholder="Tiktok" value="<?= old('tiktok') ?>">
+                                                            <label for="tiktok">LINK TIKTOK</label>
+                                                        </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" id="youtube" name="youtube" class="form-control my-1" placeholder="Youtube" value="<?= old('youtube') ?>">
+                                                            <label for="youtube">LINK YOUTUBE</label>
+                                                        </div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -478,6 +510,26 @@
                                                                 <tr>
                                                                     <th scope="row">EMAIL</th>
                                                                     <td><?= esc($item['email']) ?></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">LINK INSTAGRAM</th>
+                                                                    <td><?= esc($item['instagram']) ?></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">LINK FACEBOOK</th>
+                                                                    <td><?= esc($item['facebook']) ?></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">LINK TWITTER</th>
+                                                                    <td><?= esc($item['twitter']) ?></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">LINK TIKTOK</th>
+                                                                    <td><?= esc($item['tiktok']) ?></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">LINK YOUTUBE</th>
+                                                                    <td><?= esc($item['youtube']) ?></td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -522,6 +574,26 @@
                                                                         <div class="form-floating mb-3">
                                                                             <input type="text" id="emailEdit" name="email" class="form-control my-1" placeholder="Email" value="<?= old('email', $item['email']) ?>" required>
                                                                             <label for="emailEdit">EMAIL</label>
+                                                                        </div>
+                                                                        <div class="form-floating mb-3">
+                                                                            <input type="text" id="instagramEdit" name="instagram" class="form-control my-1" placeholder="Instagram" value="<?= old('instagram', $item['instagram']) ?>">
+                                                                            <label for="instagramEdit">LINK INSTAGRAM</label>
+                                                                        </div>
+                                                                        <div class="form-floating mb-3">
+                                                                            <input type="text" id="facebookEdit" name="facebook" class="form-control my-1" placeholder="Facebook" value="<?= old('facebook', $item['facebook']) ?>">
+                                                                            <label for="facebookEdit">LINK FACEBOOK</label>
+                                                                        </div>
+                                                                        <div class="form-floating mb-3">
+                                                                            <input type="text" id="twitterEdit" name="twitter" class="form-control my-1" placeholder="Twitter" value="<?= old('twitter', $item['twitter']) ?>">
+                                                                            <label for="twitterEdit">LINK TWITTER</label>
+                                                                        </div>
+                                                                        <div class="form-floating mb-3">
+                                                                            <input type="text" id="tiktokEdit" name="tiktok" class="form-control my-1" placeholder="Tiktok" value="<?= old('tiktok', $item['tiktok']) ?>">
+                                                                            <label for="tiktokEdit">LINK TIKTOK</label>
+                                                                        </div>
+                                                                        <div class="form-floating mb-3">
+                                                                            <input type="text" id="youtubeEdit" name="youtube" class="form-control my-1" placeholder="Youtube" value="<?= old('youtube', $item['youtube']) ?>">
+                                                                            <label for="youtubeEdit">LINK YOUTUBE</label>
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">

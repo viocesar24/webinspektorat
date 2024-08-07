@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KontakModel extends Model
+class BannerBerandaModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'kontak';
+    protected $table            = 'banner_beranda';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['alamat', 'googlemaps', 'telepon', 'email', 'instagram', 'facebook', 'twitter', 'tiktok', 'youtube'];
+    protected $allowedFields    = ['judul', 'link', 'gambar'];
 
     // Dates
     protected $useTimestamps = true;

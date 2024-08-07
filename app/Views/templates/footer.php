@@ -32,21 +32,31 @@
                     </ul>
                     <hr>
                     <li>
-                        <a href="https://www.instagram.com/inspektoratkabkediri/" class="text-dark text-decoration-none me-1">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/inspektoratkabkediri" class="text-dark text-decoration-none me-1">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="#" class="text-dark text-decoration-none me-1">
-                            <i class="bi bi-twitter-x"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@inspektoratkabkediri" class="text-dark text-decoration-none me-1">
-                            <i class="bi bi-tiktok"></i>
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCJzYXZeX1vCoFSOzNgIQ8OA" class="text-dark text-decoration-none">
-                            <i class="bi bi-youtube"></i>
-                        </a>
+                        <?php if (!empty($kontak['instagram'])) { ?>
+                            <a href="<?= $kontak['instagram'] ?>" class="text-dark text-decoration-none me-1" target="_blank">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        <?php } ?>
+                        <?php if (!empty($kontak['facebook'])) { ?>
+                            <a href="<?= $kontak['facebook'] ?>" class="text-dark text-decoration-none me-1" target="_blank">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        <?php } ?>
+                        <?php if (!empty($kontak['twitter'])) { ?>
+                            <a href="<?= $kontak['twitter'] ?>" class="text-dark text-decoration-none me-1" target="_blank">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                        <?php } ?>
+                        <?php if (!empty($kontak['tiktok'])) { ?>
+                            <a href="<?= $kontak['tiktok'] ?>" class="text-dark text-decoration-none me-1" target="_blank">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                        <?php } ?>
+                        <?php if (!empty($kontak['youtube'])) { ?>
+                            <a href="<?= $kontak['youtube'] ?>" class="text-dark text-decoration-none" target="_blank">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                        <?php } ?>
                     </li>
                 </ul>
             <?php } ?>
