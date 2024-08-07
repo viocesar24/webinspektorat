@@ -31,20 +31,20 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::view/home');
 $routes->group('home', ['namespace' => 'App\Controllers'], function ($routes) {
-    $routes->get('/', 'Home::index');
-    $routes->get('view/tentang', 'Home::view/tentang');
-    $routes->get('view/struktur', 'Home::view/struktur');
-    $routes->get('view/pejabat', 'Home::view/pejabat');
-    $routes->get('view/kebijakan', 'Home::view/kebijakan');
-    $routes->get('view/penghargaan', 'Home::view/penghargaan');
-    $routes->get('view/layanan', 'Home::view/layanan');
-    $routes->get('view/berita', 'Home::view/berita');
-    $routes->get('view/berkas', 'Home::view/berkas');
-    $routes->get('view/kegiatan', 'Home::view/kegiatan');
-    $routes->get('view/detail/(:any)', 'Home::view/detail/$1');
-    $routes->get('view/kontak', 'Home::view/kontak');
+    $routes->get('/', 'Home::view/home');
+    $routes->get('view/tentang', 'Profil\Tentang::view/tentang');
+    $routes->get('view/struktur', 'Profil\Struktur::view/struktur');
+    $routes->get('view/pejabat', 'Profil\Pejabat::view/pejabat');
+    $routes->get('view/kebijakan', 'Profil\Kebijakan::view/kebijakan');
+    $routes->get('view/penghargaan', 'Profil\Penghargaan::view/penghargaan');
+    $routes->get('view/layanan', 'Layanan::view/layanan');
+    $routes->get('view/berita', 'Informasi\Berita::view/berita');
+    $routes->get('view/berkas', 'Informasi\Dokumen::view/berkas');
+    $routes->get('view/kegiatan', 'Informasi\Kegiatan::view/kegiatan');
+    $routes->get('view/detail/(:any)', 'Informasi\Berita::view/detail/$1');
+    $routes->get('view/kontak', 'Kontak::view/kontak');
 });
 $routes->group('admin', ['namespace' => 'App\Controllers'], function ($routes) {
     $routes->get('login', 'AdminAuth::login');

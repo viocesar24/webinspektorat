@@ -14,38 +14,42 @@
         </div>
         <div class="col-md-4 mb-3">
             <h6 class="fw-bold">HUBUNGI KAMI</h6>
-            <ul class="list-unstyled">
-                <li>Alamat Kantor:</li>
+            <?php if (!empty($kontak) && is_array($kontak)) { ?>
                 <ul class="list-unstyled">
-                    <li>Jl. Soekarno-Hatta No.1 Kabupaten Kediri, Provinsi Jawa Timur 64182</li>
+                    <li>Alamat Kantor:</li>
+                    <ul class="list-unstyled">
+                        <li><?= $kontak['alamat'] ?></li>
+                    </ul>
+                    <hr>
+                    <li>Telepon</li>
+                    <ul class="list-unstyled">
+                        <li><?= $kontak['telepon'] ?></li>
+                    </ul>
+                    <hr>
+                    <li>Email</li>
+                    <ul class="list-unstyled">
+                        <li><?= $kontak['email'] ?></li>
+                    </ul>
+                    <hr>
+                    <li>
+                        <a href="https://www.instagram.com/inspektoratkabkediri/" class="text-dark text-decoration-none me-1">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/inspektoratkabkediri" class="text-dark text-decoration-none me-1">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="text-dark text-decoration-none me-1">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@inspektoratkabkediri" class="text-dark text-decoration-none me-1">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCJzYXZeX1vCoFSOzNgIQ8OA" class="text-dark text-decoration-none">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </li>
                 </ul>
-                <hr>
-                <li>Telepon</li>
-                <ul class="list-unstyled">
-                    <li>(0354) 687038</li>
-                </ul>
-                <hr>
-                <li>Email</li>
-                <ul class="list-unstyled">
-                    <li>inspektorat@kedirikab.go.id</li>
-                    <li>inspektoratkedirikab@gmail.com</li>
-                </ul>
-                <hr>
-                <li>
-                    <a href="https://www.facebook.com/inspektoratkabkediri" class="text-dark text-decoration-none me-1">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="#" class="text-dark text-decoration-none me-1">
-                        <i class="bi bi-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com/inspektoratkabkediri/" class="text-dark text-decoration-none me-1">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCJzYXZeX1vCoFSOzNgIQ8OA" class="text-dark text-decoration-none">
-                        <i class="bi bi-youtube"></i>
-                    </a>
-                </li>
-            </ul>
+            <?php } ?>
         </div>
     </div>
 </div>

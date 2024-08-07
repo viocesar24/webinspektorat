@@ -13,6 +13,7 @@ class Berita extends BaseController
 
     // Properti untuk menyimpan instance BeritaModel
     protected $beritaModel;
+    protected $newsModel;
 
     // Constructor untuk inisialisasi BeritaModel
     public function __construct()
@@ -31,6 +32,39 @@ class Berita extends BaseController
         ];
         // Menampilkan view dengan data berita
         return view('pages/adminBerita/index', $data);
+    }
+
+    public function view($page, $slug = false)
+    {
+        $request = \Config\Services::request();
+        $kunci = $request->getVar('cari');
+
+        if ($kunci) {
+            $kunciBool = true;
+        } else {
+            $kunciBool = false;
+        }
+
+        if ($slug != '') {
+            $slugBool = true;
+        } else {
+            $slugBool = false;
+        }
+
+        $data = [
+            'kunci' => $kunciBool,
+            'slug' => $slugBool,
+            'berita' => $this->beritaModel->getNews(),
+            'beritaDetail' => $this->beritaModel->getNews($slug),
+            'cariBerita' => $this->beritaModel->cariBerita($kunci),
+            'cariBerita' => $this->beritaModel->orderBy('waktu', 'DESC')->paginate(100, 'group1'),
+            'beritaHalaman' => $this->beritaModel->orderBy('waktu', 'DESC')->paginate(5, 'group1'),
+            'pager' => $this->beritaModel->pager,
+        ];
+
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
     }
 
     // Menangani pembuatan berita baru
@@ -68,7 +102,14 @@ class Berita extends BaseController
                 if ($gambar && $gambar->isValid() && !$gambar->hasMoved()) {
                     // File gambar valid dan belum dipindahkan, proses seperti biasa
                     $newName = $gambar->getRandomName();
-                    $gambar->move(ROOTPATH . 'public/uploads/berita', $newName);
+                    $uploadPath = ROOTPATH . 'public/uploads/berita';
+
+                    // Pastikan nama file yang dihasilkan benar-benar unik
+                    while (file_exists($uploadPath . '/' . $newName)) {
+                        $newName = $gambar->getRandomName();
+                    }
+
+                    $gambar->move($uploadPath, $newName);
                     $data['gambar_' . $i] = $newName;
                 } else {
                     // Tidak ada file gambar yang diunggah, set nilai menjadi null atau string kosong
@@ -122,13 +163,24 @@ class Berita extends BaseController
                 $data['gambar_' . $i] = null;
             }
 
-            // Penanganan upload gambar baru (sama seperti sebelumnya)
+            // Penanganan upload gambar
             for ($i = 1; $i <= 15; $i++) {
                 $gambar = $this->request->getFile('gambar_' . $i);
                 if ($gambar && $gambar->isValid() && !$gambar->hasMoved()) {
+                    // File gambar valid dan belum dipindahkan, proses seperti biasa
                     $newName = $gambar->getRandomName();
-                    $gambar->move(ROOTPATH . 'public/uploads/berita', $newName);
+                    $uploadPath = ROOTPATH . 'public/uploads/berita';
+
+                    // Pastikan nama file yang dihasilkan benar-benar unik
+                    while (file_exists($uploadPath . '/' . $newName)) {
+                        $newName = $gambar->getRandomName();
+                    }
+
+                    $gambar->move($uploadPath, $newName);
                     $data['gambar_' . $i] = $newName;
+                } else {
+                    // Tidak ada file gambar yang diunggah, set nilai menjadi null atau string kosong
+                    $data['gambar_' . $i] = null; // Atau '' (string kosong)
                 }
             }
 

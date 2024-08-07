@@ -38,7 +38,11 @@ class AdminAuth extends BaseController
 
     public function login()
     {
-        return view('pages/admin/login');
+        if (session()->get('admin_logged_in')) {
+            return redirect()->to('/admin-informasi/berita');
+        } else {
+            return view('pages/admin/login');
+        }
     }
 
     public function auth()

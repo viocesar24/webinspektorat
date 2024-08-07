@@ -528,33 +528,23 @@
         </div>
         <div class="col-md-7">
             <div class="container-fluid">
-                <h1>PROGRAM</h1>
-                <div id="carouselHomeBawah" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselHomeBawah" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselHomeBawah" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselHomeBawah" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner ratio ratio-21x9">
-                        <div class="carousel-item active">
-                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                <h1>LAYANAN DAN PROGRAM</h1>
+                <?php if (!empty($layanan) && is_array($layanan)) : ?>
+                    <div class="card shadow">
+                        <div class="card-header text-center">
+                            <h5 class="fw-bold p-0 m-0">Link</h5>
                         </div>
-                        <div class="carousel-item">
-                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?php echo base_url(); ?>/img/coming-soon.png" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                        <div class="card-body overflow-auto text-center">
+                            <?php foreach ($layanan as $item) : ?>
+                                <div id="list-item-<?= $item['id'] ?>" class="m-3">
+                                    <h4><?= $item['judul'] ?></h4>
+                                    <div><?= $item['badan'] ?></div>
+                                </div>
+                                <hr>
+                            <?php endforeach; ?>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomeBawah" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselHomeBawah" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
+                <?php endif ?>
             </div>
         </div>
     </div>

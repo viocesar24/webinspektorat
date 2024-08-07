@@ -21,14 +21,32 @@ class Penghargaan extends BaseController
         return view('pages/adminPenghargaan/index', $data);
     }
 
+    public function view($page)
+    {
+        $data = [
+            'penghargaan' => $this->penghargaanModel->orderBy('id', 'DESC')->findAll(),
+        ];
+
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
+    }
+
     public function create()
     {
         if ($this->request->getMethod() === 'post') {
             $file = $this->request->getFile('gambar');
             if ($file->isValid() && !$file->hasMoved()) {
                 $newName = $file->getRandomName();
-                $file->move('uploads/penghargaan', $newName);
-                $filePath = 'uploads/penghargaan/' . $newName;
+                $uploadPath = 'uploads/penghargaan';
+
+                // Pastikan nama file yang dihasilkan benar-benar unik
+                while (file_exists($uploadPath . '/' . $newName)) {
+                    $newName = $file->getRandomName();
+                }
+
+                $file->move($uploadPath, $newName);
+                $filePath = $uploadPath . '/' . $newName;
                 $this->penghargaanModel->save(['gambar' => $filePath]);
             }
             session()->setFlashdata('success', 'Data berhasil ditambahkan.');
@@ -47,8 +65,15 @@ class Penghargaan extends BaseController
                 }
 
                 $newName = $file->getRandomName();
-                $file->move('uploads/penghargaan', $newName);
-                $filePath = 'uploads/penghargaan/' . $newName;
+                $uploadPath = 'uploads/penghargaan';
+
+                // Pastikan nama file yang dihasilkan benar-benar unik
+                while (file_exists($uploadPath . '/' . $newName)) {
+                    $newName = $file->getRandomName();
+                }
+
+                $file->move($uploadPath, $newName);
+                $filePath = $uploadPath . '/' . $newName;
                 $this->penghargaanModel->update($id, ['gambar' => $filePath]);
             }
             session()->setFlashdata('success', 'Data berhasil diperbarui.');

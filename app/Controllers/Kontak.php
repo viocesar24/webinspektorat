@@ -22,6 +22,17 @@ class Kontak extends BaseController
         return view('pages/adminKontak/index', $data); // Sesuaikan path view
     }
 
+    public function view($page)
+    {
+        $data = [
+            'kontak' => $this->kontakModel->first(),
+        ];
+
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
+    }
+
     public function create()
     {
         // Memeriksa apakah request method adalah POST

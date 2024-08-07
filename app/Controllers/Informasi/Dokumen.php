@@ -30,6 +30,21 @@ class Dokumen extends BaseController
         return view('pages/adminDokumen/index', $data);
     }
 
+    public function view($page)
+    {
+        $data = [
+            'dokumen' => $this->dokumenModel
+                ->select('dokumen.id, dokumen.judul, dokumen.file, dokumenkategori.kategori')
+                ->join('dokumenkategori', 'dokumen.kategori = dokumenkategori.id')
+                ->findAll(),
+            'dokumenkategori' => $this->dokumenKategoriModel->findAll(),
+        ];
+
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
+    }
+
     public function create()
     {
         if ($this->request->getMethod() === 'post') {
@@ -44,7 +59,14 @@ class Dokumen extends BaseController
 
                 if ($file->isValid() && !$file->hasMoved()) {
                     $newName = $file->getRandomName();
-                    $file->move(FCPATH . 'uploads/dokumen', $newName);  // Save file to 'public/uploads/dokumen'
+                    $uploadPath = FCPATH . 'uploads/dokumen';
+
+                    // Pastikan nama file yang dihasilkan benar-benar unik
+                    while (file_exists($uploadPath . '/' . $newName)) {
+                        $newName = $file->getRandomName();
+                    }
+
+                    $file->move($uploadPath, $newName);  // Save file to 'public/uploads/dokumen'
                     $filePath = 'uploads/dokumen/' . $newName;  // Save the relative path to the database
 
                     $data = [
@@ -81,7 +103,8 @@ class Dokumen extends BaseController
             ];
 
             // Jika ada file baru yang diupload, tambahkan aturan validasi untuk file
-            if ($this->request->getFile('file')->isValid()) {
+            $file = $this->request->getFile('file');
+            if ($file && $file->isValid()) {
                 $rules['file'] = 'uploaded[file]|max_size[file,10240]|ext_in[file,pdf,doc,docx]';
             }
 
@@ -93,10 +116,16 @@ class Dokumen extends BaseController
                 ];
 
                 // Jika ada file baru yang diupload
-                if ($this->request->getFile('file')->isValid() && !$this->request->getFile('file')->hasMoved()) {
-                    $file = $this->request->getFile('file');
+                if ($file && $file->isValid() && !$file->hasMoved()) {
                     $newName = $file->getRandomName();
-                    $file->move(FCPATH . 'uploads/dokumen', $newName);
+                    $uploadPath = FCPATH . 'uploads/dokumen';
+
+                    // Pastikan nama file yang dihasilkan benar-benar unik
+                    while (file_exists($uploadPath . '/' . $newName)) {
+                        $newName = $file->getRandomName();
+                    }
+
+                    $file->move($uploadPath, $newName);
                     $filePath = 'uploads/dokumen/' . $newName;
 
                     // Hapus file lama jika ada

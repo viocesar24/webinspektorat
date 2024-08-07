@@ -24,6 +24,19 @@ class Kegiatan extends BaseController
         return view('pages/adminKegiatan/index', $data);
     }
 
+    public function view($page)
+    {
+        $data = [
+            'kegiatan' => $this->kegiatanModel->getKegiatan(),
+            'kegiatanHalaman' => $this->kegiatanModel->orderBy('waktu', 'DESC')->paginate(5, 'group1'),
+            'pagerKegiatan' => $this->kegiatanModel->pager,
+        ];
+
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
+    }
+
     public function create()
     {
         if ($this->request->getMethod() === 'post') {
@@ -54,11 +67,18 @@ class Kegiatan extends BaseController
                 if ($gambar && $gambar->isValid() && !$gambar->hasMoved()) {
                     // File gambar valid dan belum dipindahkan, proses seperti biasa
                     $newName = $gambar->getRandomName();
-                    $gambar->move(ROOTPATH . 'public/uploads/kegiatan', $newName);
+                    $uploadPath = ROOTPATH . 'public/uploads/kegiatan';
+
+                    // Pastikan nama file yang dihasilkan benar-benar unik
+                    while (file_exists($uploadPath . '/' . $newName)) {
+                        $newName = $gambar->getRandomName();
+                    }
+
+                    $gambar->move($uploadPath, $newName);
                     $data['gambar_' . $i] = $newName;
                 } else {
                     // Tidak ada file gambar yang diunggah, set nilai menjadi null atau string kosong
-                    $data['gambar_' . $i] = null;
+                    $data['gambar_' . $i] = null; // Atau '' (string kosong)
                 }
             }
 
@@ -107,13 +127,24 @@ class Kegiatan extends BaseController
                 $data['gambar_' . $i] = null;
             }
 
-            // Penanganan upload gambar baru (sama seperti sebelumnya)
+            // Penanganan upload gambar
             for ($i = 1; $i <= 15; $i++) {
                 $gambar = $this->request->getFile('gambar_' . $i);
                 if ($gambar && $gambar->isValid() && !$gambar->hasMoved()) {
+                    // File gambar valid dan belum dipindahkan, proses seperti biasa
                     $newName = $gambar->getRandomName();
-                    $gambar->move(ROOTPATH . 'public/uploads/kegiatan', $newName);
+                    $uploadPath = ROOTPATH . 'public/uploads/kegiatan';
+
+                    // Pastikan nama file yang dihasilkan benar-benar unik
+                    while (file_exists($uploadPath . '/' . $newName)) {
+                        $newName = $gambar->getRandomName();
+                    }
+
+                    $gambar->move($uploadPath, $newName);
                     $data['gambar_' . $i] = $newName;
+                } else {
+                    // Tidak ada file gambar yang diunggah, set nilai menjadi null atau string kosong
+                    $data['gambar_' . $i] = null; // Atau '' (string kosong)
                 }
             }
 

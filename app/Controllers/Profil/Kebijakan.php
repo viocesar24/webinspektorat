@@ -26,6 +26,17 @@ class Kebijakan extends BaseController
         return view('pages/adminKebijakan/index', $data);
     }
 
+    public function view($page)
+    {
+        $data = [
+            'kebijakan' => $this->kebijakanModel->orderBy('id', 'DESC')->first(),
+        ];
+
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
+    }
+
     public function create()
     {
         $this->kebijakanModel->save([

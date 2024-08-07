@@ -51,8 +51,12 @@
                                     <div class="card h-100 shadow">
                                         <div id="<?= esc($news_item['slug']) ?>" class="carousel slide" data-bs-ride="carousel">
                                             <div class="carousel-indicators">
-                                                <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                                <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <?php if ($news_item['gambar_1'] != '' || $news_item['gambar_1'] != null) { ?>
+                                                    <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                <?php } ?>
+                                                <?php if ($news_item['gambar_2'] != '' || $news_item['gambar_2'] != null) { ?>
+                                                    <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <?php } ?>
                                                 <?php if ($news_item['gambar_3'] != '' || $news_item['gambar_3'] != null) { ?>
                                                     <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                                 <?php } ?>
@@ -94,12 +98,16 @@
                                                 <?php } ?>
                                             </div>
                                             <div class="carousel-inner ratio ratio-21x9">
-                                                <div class="carousel-item active">
-                                                    <img src="/uploads/berita/<?= $news_item['gambar_1'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="/uploads/berita/<?= $news_item['gambar_2'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                </div>
+                                                <?php if ($news_item['gambar_1'] != '' || $news_item['gambar_1'] != null) { ?>
+                                                    <div class="carousel-item active">
+                                                        <img src="/uploads/berita/<?= $news_item['gambar_1'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                    </div>
+                                                <?php } ?>
+                                                <?php if ($news_item['gambar_2'] != '' || $news_item['gambar_2'] != null) { ?>
+                                                    <div class="carousel-item">
+                                                        <img src="/uploads/berita/<?= $news_item['gambar_2'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                    </div>
+                                                <?php } ?>
                                                 <?php if ($news_item['gambar_3'] != '' || $news_item['gambar_3'] != null) { ?>
                                                     <div class="carousel-item">
                                                         <img src="/uploads/berita/<?= $news_item['gambar_3'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
@@ -211,8 +219,12 @@
                                     <div class="card h-100 shadow">
                                         <div id="<?= esc($news_item['slug']) ?>" class="carousel slide" data-bs-ride="carousel">
                                             <div class="carousel-indicators">
-                                                <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                                <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <?php if ($news_item['gambar_1'] != '' || $news_item['gambar_1'] != null) { ?>
+                                                    <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                <?php } ?>
+                                                <?php if ($news_item['gambar_2'] != '' || $news_item['gambar_2'] != null) { ?>
+                                                    <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <?php } ?>
                                                 <?php if ($news_item['gambar_3'] != '' || $news_item['gambar_3'] != null) { ?>
                                                     <button type="button" data-bs-target="#<?= esc($news_item['slug']) ?>" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                                 <?php } ?>
@@ -254,12 +266,16 @@
                                                 <?php } ?>
                                             </div>
                                             <div class="carousel-inner ratio ratio-21x9">
-                                                <div class="carousel-item active">
-                                                    <img src="/uploads/berita/<?= $news_item['gambar_1'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="/uploads/berita/<?= $news_item['gambar_2'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                </div>
+                                                <?php if ($news_item['gambar_1'] != '' || $news_item['gambar_1'] != null) { ?>
+                                                    <div class="carousel-item active">
+                                                        <img src="/uploads/berita/<?= $news_item['gambar_1'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                    </div>
+                                                <?php } ?>
+                                                <?php if ($news_item['gambar_2'] != '' || $news_item['gambar_2'] != null) { ?>
+                                                    <div class="carousel-item">
+                                                        <img src="/uploads/berita/<?= $news_item['gambar_2'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                    </div>
+                                                <?php } ?>
                                                 <?php if ($news_item['gambar_3'] != '' || $news_item['gambar_3'] != null) { ?>
                                                     <div class="carousel-item">
                                                         <img src="/uploads/berita/<?= $news_item['gambar_3'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />

@@ -34,6 +34,19 @@ class Pejabat extends BaseController
         return view('pages/adminPejabat/index', $data); // Sesuaikan path view
     }
 
+    public function view($page)
+    {
+        $data['pejabat'] = $this->pejabatModel->findAll(); // Ambil semua data
+        if (!$data['pejabat']) {
+            // Jika tidak ada data, buat array kosong untuk mencegah error
+            $data['pejabat'] = []; // Atau berikan nilai default lainnya
+        }
+
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
+    }
+
     // Fungsi create():
     // Fungsi ini dipanggil saat Anda mengirimkan formulir "Pejabat" di modal.
     // Fungsi ini menyimpan data baru ke tabel "pejabat" menggunakan $this->pejabatModel->save().

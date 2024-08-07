@@ -35,6 +35,31 @@ class AddKontak extends Migration
                 'constraint' => 500,
                 'null'       => false,
             ],
+            'instagram' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 500,
+                'null'       => true,
+            ],
+            'facebook' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 500,
+                'null'       => true,
+            ],
+            'twitter' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 500,
+                'null'       => true,
+            ],
+            'tiktok' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 500,
+                'null'       => true,
+            ],
+            'youtube' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 500,
+                'null'       => true,
+            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,

@@ -21,14 +21,31 @@ class Struktur extends BaseController
         return view('pages/adminStruktur/index', $data);
     }
 
+    public function view($page)
+    {
+        // Ambil data struktur paling akhir
+        $data['struktur'] = $this->strukturModel->orderBy('id', 'DESC')->first() ?: null;
+
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
+    }
+
     public function create()
     {
         if ($this->request->getMethod() === 'post') {
             $file = $this->request->getFile('gambar');
             if ($file->isValid() && !$file->hasMoved()) {
                 $newName = $file->getRandomName();
-                $file->move('uploads', $newName);
-                $filePath = 'uploads/' . $newName;
+                $uploadPath = 'uploads';
+
+                // Pastikan nama file yang dihasilkan benar-benar unik
+                while (file_exists($uploadPath . '/' . $newName)) {
+                    $newName = $file->getRandomName();
+                }
+
+                $file->move($uploadPath, $newName);
+                $filePath = $uploadPath . '/' . $newName;
                 $this->strukturModel->save(['gambar' => $filePath]);
             }
             session()->setFlashdata('success', 'Data berhasil ditambahkan.');
@@ -47,8 +64,15 @@ class Struktur extends BaseController
                 }
 
                 $newName = $file->getRandomName();
-                $file->move('uploads', $newName);
-                $filePath = 'uploads/' . $newName;
+                $uploadPath = 'uploads';
+
+                // Pastikan nama file yang dihasilkan benar-benar unik
+                while (file_exists($uploadPath . '/' . $newName)) {
+                    $newName = $file->getRandomName();
+                }
+
+                $file->move($uploadPath, $newName);
+                $filePath = $uploadPath . '/' . $newName;
                 $this->strukturModel->update($id, ['gambar' => $filePath]);
             }
             session()->setFlashdata('success', 'Data berhasil diperbarui.');

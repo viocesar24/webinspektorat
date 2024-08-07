@@ -51,7 +51,7 @@
                                 <button type="button" data-bs-target="#carouselPenghargaan" data-bs-slide-to="<?= $i - 1 ?>" <?php if ($i == 1) echo 'class="active" aria-current="true"'; ?> aria-label="Slide <?= $i ?>"></button>
                             <?php endforeach ?>
                         </div>
-                        <div class="carousel-inner ratio ratio-16x9">
+                        <div class="carousel-inner">
                             <?php $i = 0;
                             foreach ($penghargaan as $item) : $i++; ?>
                                 <div class="carousel-item <?php if ($i == 1) echo 'active'; ?>">

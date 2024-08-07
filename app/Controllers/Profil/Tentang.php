@@ -41,6 +41,17 @@ class Tentang extends BaseController
         return view('pages/adminTentang/index', $data); // Sesuaikan path view
     }
 
+    public function view($page)
+    {
+        $data = [
+            'tentang' => $this->tentangModel->orderBy('id', 'DESC')->first(),
+        ];
+
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
+    }
+
     // Fungsi store():
     // Fungsi ini dipanggil saat Anda mengirimkan formulir "Tambah" di modal.
     // Fungsi ini menyimpan data baru ke tabel "tentang" menggunakan $this->tentangModel->save().

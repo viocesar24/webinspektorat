@@ -38,12 +38,12 @@
                 </div>
             </div>
         </div>
-        <?php if (!empty($pejabatHalaman) && is_array($pejabatHalaman)) : ?>
+        <?php if (!empty($pejabat) && is_array($pejabat)) : ?>
             <div class="col-md-9">
                 <div class="card shadow">
                     <div class="card-body">
                         <div class="row g-0">
-                            <?php foreach ($pejabatHalaman as $pejabat_item) : ?>
+                            <?php foreach ($pejabat as $pejabat_item) : ?>
                                 <div class="col-md-5 card mb-3 mx-1">
                                     <div class="row g-0">
                                         <div class="col-md-4">
@@ -59,7 +59,6 @@
                                 </div>
                             <?php endforeach ?>
                         </div>
-                        <?= $pagerPejabat->links('group1', 'kustom_paginasi') ?>
                     </div>
                 </div>
             </div>

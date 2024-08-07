@@ -22,6 +22,17 @@ class Layanan extends BaseController
         return view('pages/adminLayanan/index', $data); // Sesuaikan path view
     }
 
+    public function view($page)
+    {
+        $data = [
+            'layanan' => $this->layananModel->findAll(),
+        ];
+
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
+    }
+
     public function create()
     {
         // Memeriksa apakah request method adalah POST

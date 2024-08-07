@@ -2,15 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Models\NewsModel;
-use App\Models\KegiatanModel;
-use App\Models\PejabatModel;
-use App\Models\Profil\TentangModel;
-use App\Models\Profil\StrukturModel;
-use App\Models\Profil\KebijakanModel;
-use App\Models\Profil\PenghargaanModel;
-use App\Models\Informasi\DokumenModel;
-use App\Models\Informasi\DokumenKategoriModel;
+use App\Models\Informasi\BeritaModel;
+use App\Models\Informasi\KegiatanModel;
 use App\Models\LayananModel;
 use App\Models\KontakModel;
 
@@ -19,12 +12,8 @@ class Home extends BaseController
 
     // Properti $tentangModel:
     // Properti ini digunakan untuk menyimpan instance dari model TentangModel, yang akan digunakan di dalam fungsi-fungsi controller.
-    protected $tentangModel;
-    protected $strukturModel;
-    protected $kebijakanModel;
-    protected $penghargaanModel;
-    protected $dokumenModel;
-    protected $dokumenKategoriModel;
+    protected $beritaModel;
+    protected $kegiatanModel;
     protected $layananModel;
     protected $kontakModel;
 
@@ -32,372 +21,23 @@ class Home extends BaseController
     // Konstruktor ini dipanggil saat controller dibuat. Di dalamnya, Anda membuat instance baru dari model TentangModel dan menyimpannya ke dalam properti $tentangModel.
     public function __construct()
     {
-        $this->tentangModel = new TentangModel();
-        $this->strukturModel = new StrukturModel();
-        $this->kebijakanModel = new KebijakanModel();
-        $this->penghargaanModel = new PenghargaanModel();
-        $this->dokumenModel = new DokumenModel();
-        $this->dokumenKategoriModel = new DokumenKategoriModel();
+        $this->beritaModel = new BeritaModel();
+        $this->kegiatanModel = new KegiatanModel();
         $this->layananModel = new LayananModel();
         $this->kontakModel = new KontakModel();
     }
 
-    public function index()
+    public function view($page)
     {
-        return $this->view();
-    }
-
-    public function view($page = 'home', $slug = false)
-    {
-        helper("cookie");
-
-        // // get cookie value
-        // get_cookie("username");
-
-        // // remove cookie value
-        // delete_cookie("username");
-
-        $model = model(NewsModel::class);
-        $modelKegiatan = model(KegiatanModel::class);
-        $modelPejabat = model(PejabatModel::class);
-        $request = \Config\Services::request();
-        $kunci = $request->getVar('cari');
-        $admin = $request->getPost();
-        $stringAdmin = implode("", $admin);
-
-        if (!is_file(APPPATH . 'Views/pages/' . $page . '.php')) {
-            //Oh..., tidak ada halaman yang dimaksud
-            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
-        }
-
-        if ($kunci) {
-            $kunciBool = true;
-        } else {
-            $kunciBool = false;
-        }
-
-        if ($slug != '') {
-            $slugBool = true;
-        } else {
-            $slugBool = false;
-        }
-
-        // Password masuk ke dalam Halaman Admin
-        if ($stringAdmin == 'tesmasukhalamanadmin') {
-            $adminBool = true;
-            // store a cookie value
-            set_cookie("username", "admin", 86400 * 30);
-        } else {
-            $adminBool = false;
-        }
-
-        // MENGUMPULKAN OBJEK-OBJEK YANG DIBUTUHKAN KE DALAM OBJEK $data
-        // 'berita' MERUPAKAN OBJEK YANG DIGUNAKAN UNTUK MENGAMBIL DATA BERITA DARI METHOD getNews() CLASS NewsModel
-        // 'title' MERUPAKAN OBJEK YANG DIGUNAKAN UNTUK MEMUAT HURUF PERTAMA DARI OBJEK $page
-        // 'beritaHalaman' MERUPAKAN OBJEK YANG DIGUNAKAN UNTUK MEMUAT DATA BERITA YANG DIURUTKAN BERDASARKAN WAKTU TERBARU DAN DIPISAH MENJADI 3 HALAMAN DALAM GRUP 1
-        // 'pager' MERUPAKAN OBJEK YANG DIGUNAKAN UNTUK MENAMPILKAN FUNGSI PAGINASI
-        // UNTUK MEMAKAI pager, SEBELUMNYA BUAT KUSTOM LINK UNTUK PAGINASI SESUAI TEMA WEBSITE, CONTOHNYA ADA PADA FOLDER TEMPLATES paginasi.php
         $data = [
-            'admin' => $adminBool,
-            'kunci' => $kunciBool,
-            'slug' => $slugBool,
-            'berita' => $model->getNews(),
-            'beritaDetail' => $model->getNews($slug),
-            'cariBerita' => $model->cariBerita($kunci),
-            'cariBerita' => $model->orderBy('waktu', 'DESC')->paginate(100, 'group1'),
-            'kegiatan' => $modelKegiatan->getKegiatan(),
-            'pejabat' => $modelPejabat->getPejabat(),
-            'title' => ucfirst($page),
-            'beritaHalaman' => $model->orderBy('waktu', 'DESC')->paginate(5, 'group1'),
-            'kegiatanHalaman' => $modelKegiatan->orderBy('waktu', 'DESC')->paginate(5, 'group1'),
-            'pejabatHalaman' => $modelPejabat->paginate(10, 'group1'),
-            'pager' => $model->pager,
-            'pagerKegiatan' => $modelKegiatan->pager,
-            'pagerPejabat' => $modelPejabat->pager,
-            'beritaHalamanAdmin' => $model->orderBy('waktu', 'DESC')->paginate(1, 'group1'),
-            'kegiatanHalamanAdmin' => $modelKegiatan->orderBy('waktu', 'DESC')->paginate(1, 'group1'),
-            'pagerBeritaAdmin' => $model->pager,
-            'pagerKegiatanAdmin' => $modelKegiatan->pager,
-            'tentang' => $this->tentangModel->orderBy('id', 'DESC')->first(),
-            'struktur' => $this->strukturModel->orderBy('id', 'DESC')->first(),
-            'kebijakan' => $this->kebijakanModel->orderBy('id', 'DESC')->first(),
-            'penghargaan' => $this->penghargaanModel->orderBy('id', 'DESC')->findAll(),
-            'dokumen' => $this->dokumenModel
-                ->select('dokumen.id, dokumen.judul, dokumen.file, dokumenkategori.kategori')
-                ->join('dokumenkategori', 'dokumen.kategori = dokumenkategori.id')
-                ->findAll(),
-            'dokumenkategori' => $this->dokumenKategoriModel->findAll(),
+            'berita' => $this->beritaModel->getNews(),
+            'kegiatan' => $this->kegiatanModel->getKegiatan(),
             'layanan' => $this->layananModel->findAll(),
             'kontak' => $this->kontakModel->first(),
         ];
 
-        if ($page == 'adminkonfirmasi' || $page == 'admin' || $page == 'adminberita' || $page == 'adminkegiatan') {
-            if (get_cookie("username") == "admin") {
-                # code...
-                // echo view('templates/headeradmin', $data);
-                echo view('pages/' . $page, $data);
-                // echo view('templates/footeradmin', $data);
-            } else {
-                # code...
-                // echo view('templates/headeradmin', $data);
-                echo view('pages/' . 'admin', $data);
-                // echo view('templates/footeradmin', $data);
-            }
-        } else {
-            # code...
-            delete_cookie("username");
-            echo view('templates/header', $data);
-            echo view('pages/' . $page, $data);
-            echo view('templates/footer', $data);
-        }
-    }
-
-    // Ketika tambah berita, diperlukan mengisi gambar 1 dan gambar 2, gambar tersebut diisi dengan link gambar dari server, untuk upload gambar sementara manual, lewat server.
-    public function tambahberita()
-    {
-        $modelBerita = model(NewsModel::class);
-        if ($this->request->getMethod() === 'post' && $this->validate([
-            'id_number' => 'min_length[0]',
-            'judul_berita' => 'required|min_length[3]|max_length[500]',
-            'slug_berita' => 'required',
-            'badan_berita'  => 'required',
-            'waktu_berita'  => 'required',
-            'gambar1_berita'  => 'required',
-            'gambar2_berita'  => 'required',
-            'gambar3_berita'  => 'permit_empty',
-            'gambar4_berita'  => 'permit_empty',
-            'gambar5_berita'  => 'permit_empty',
-            'gambar6_berita'  => 'permit_empty',
-            'gambar7_berita'  => 'permit_empty',
-            'gambar8_berita'  => 'permit_empty',
-            'gambar9_berita'  => 'permit_empty',
-            'gambar10_berita'  => 'permit_empty',
-            'gambar11_berita'  => 'permit_empty',
-            'gambar12_berita'  => 'permit_empty',
-            'gambar13_berita'  => 'permit_empty',
-            'gambar14_berita'  => 'permit_empty',
-            'gambar15_berita'  => 'permit_empty',
-        ])) {
-            $modelBerita->save([
-                'id' => $this->request->getPost('id_number'),
-                'judul'  => $this->request->getPost('judul_berita'),
-                'slug'  => $this->request->getPost('slug_berita'),
-                'badan'  => $this->request->getPost('badan_berita'),
-                'waktu'  => $this->request->getPost('waktu_berita'),
-                'gambar_1'  => $this->request->getPost('gambar1_berita'),
-                'gambar_2'  => $this->request->getPost('gambar2_berita'),
-                'gambar_3'  => $this->request->getPost('gambar3_berita'),
-                'gambar_4'  => $this->request->getPost('gambar4_berita'),
-                'gambar_5'  => $this->request->getPost('gambar5_berita'),
-                'gambar_6'  => $this->request->getPost('gambar6_berita'),
-                'gambar_7'  => $this->request->getPost('gambar7_berita'),
-                'gambar_8'  => $this->request->getPost('gambar8_berita'),
-                'gambar_9'  => $this->request->getPost('gambar9_berita'),
-                'gambar_10'  => $this->request->getPost('gambar10_berita'),
-                'gambar_11'  => $this->request->getPost('gambar11_berita'),
-                'gambar_12'  => $this->request->getPost('gambar12_berita'),
-                'gambar_13'  => $this->request->getPost('gambar13_berita'),
-                'gambar_14'  => $this->request->getPost('gambar14_berita'),
-                'gambar_15'  => $this->request->getPost('gambar15_berita'),
-            ]);
-
-            return redirect()->to(base_url() . '/home/view/adminberita');
-        } else {
-            return redirect()->to(base_url() . '/home/view/admin');
-        }
-    }
-
-    public function pembaruanberita()
-    {
-        $modelBerita = model(NewsModel::class);
-        if ($this->request->getMethod() === 'post' && $this->validate([
-            'id_number' => 'min_length[0]',
-            'judul_berita' => 'required|min_length[3]|max_length[500]',
-            'slug_berita' => 'required',
-            'badan_berita'  => 'required',
-            'waktu_berita'  => 'required',
-            'gambar1_berita'  => 'required',
-            'gambar2_berita'  => 'required',
-            'gambar3_berita'  => 'permit_empty',
-            'gambar4_berita'  => 'permit_empty',
-            'gambar5_berita'  => 'permit_empty',
-            'gambar6_berita'  => 'permit_empty',
-            'gambar7_berita'  => 'permit_empty',
-            'gambar8_berita'  => 'permit_empty',
-            'gambar9_berita'  => 'permit_empty',
-            'gambar10_berita'  => 'permit_empty',
-            'gambar11_berita'  => 'permit_empty',
-            'gambar12_berita'  => 'permit_empty',
-            'gambar13_berita'  => 'permit_empty',
-            'gambar14_berita'  => 'permit_empty',
-            'gambar15_berita'  => 'permit_empty',
-        ])) {
-            $modelBerita->replace([
-                'id' => $this->request->getPost('id_number'),
-                'judul'  => $this->request->getPost('judul_berita'),
-                'slug'  => $this->request->getPost('slug_berita'),
-                'badan'  => $this->request->getPost('badan_berita'),
-                'waktu'  => $this->request->getPost('waktu_berita'),
-                'gambar_1'  => $this->request->getPost('gambar1_berita'),
-                'gambar_2'  => $this->request->getPost('gambar2_berita'),
-                'gambar_3'  => $this->request->getPost('gambar3_berita'),
-                'gambar_4'  => $this->request->getPost('gambar4_berita'),
-                'gambar_5'  => $this->request->getPost('gambar5_berita'),
-                'gambar_6'  => $this->request->getPost('gambar6_berita'),
-                'gambar_7'  => $this->request->getPost('gambar7_berita'),
-                'gambar_8'  => $this->request->getPost('gambar8_berita'),
-                'gambar_9'  => $this->request->getPost('gambar9_berita'),
-                'gambar_10'  => $this->request->getPost('gambar10_berita'),
-                'gambar_11'  => $this->request->getPost('gambar11_berita'),
-                'gambar_12'  => $this->request->getPost('gambar12_berita'),
-                'gambar_13'  => $this->request->getPost('gambar13_berita'),
-                'gambar_14'  => $this->request->getPost('gambar14_berita'),
-                'gambar_15'  => $this->request->getPost('gambar15_berita'),
-            ]);
-
-            return redirect()->to(base_url() . '/home/view/adminberita');
-        } else {
-            return redirect()->to(base_url() . '/home/view/admin');
-        }
-    }
-
-    public function hapusberita()
-    {
-        $modelBerita = model(NewsModel::class);
-        if ($this->request->getMethod() === 'post' && $this->validate([
-            'id_number' => 'min_length[0]',
-        ])) {
-            $modelBerita->delete([
-                'id' => $this->request->getPost('id_number'),
-            ]);
-
-            return redirect()->to(base_url() . '/home/view/adminberita');
-        } else {
-            return redirect()->to(base_url() . '/home/view/admin');
-        }
-    }
-
-    public function tambahkegiatan()
-    {
-        $modelKegiatan = model(KegiatanModel::class);
-        if ($this->request->getMethod() === 'post' && $this->validate([
-            'id_number' => 'min_length[0]',
-            'judul_kegiatan' => 'required|min_length[3]|max_length[500]',
-            'slug_kegiatan' => 'required',
-            'badan_kegiatan'  => 'required',
-            'waktu_kegiatan'  => 'required',
-            'gambar1_kegiatan'  => 'required',
-            'gambar2_kegiatan'  => 'required',
-            'gambar3_kegiatan'  => 'permit_empty',
-            'gambar4_kegiatan'  => 'permit_empty',
-            'gambar5_kegiatan'  => 'permit_empty',
-            'gambar6_kegiatan'  => 'permit_empty',
-            'gambar7_kegiatan'  => 'permit_empty',
-            'gambar8_kegiatan'  => 'permit_empty',
-            'gambar9_kegiatan'  => 'permit_empty',
-            'gambar10_kegiatan'  => 'permit_empty',
-            'gambar11_kegiatan'  => 'permit_empty',
-            'gambar12_kegiatan'  => 'permit_empty',
-            'gambar13_kegiatan'  => 'permit_empty',
-            'gambar14_kegiatan'  => 'permit_empty',
-            'gambar15_kegiatan'  => 'permit_empty',
-        ])) {
-            $modelKegiatan->save([
-                'id' => $this->request->getPost('id_number'),
-                'judul'  => $this->request->getPost('judul_kegiatan'),
-                'slug'  => $this->request->getPost('slug_kegiatan'),
-                'badan'  => $this->request->getPost('badan_kegiatan'),
-                'waktu'  => $this->request->getPost('waktu_kegiatan'),
-                'gambar_1'  => $this->request->getPost('gambar1_kegiatan'),
-                'gambar_2'  => $this->request->getPost('gambar2_kegiatan'),
-                'gambar_3'  => $this->request->getPost('gambar3_kegiatan'),
-                'gambar_4'  => $this->request->getPost('gambar4_kegiatan'),
-                'gambar_5'  => $this->request->getPost('gambar5_kegiatan'),
-                'gambar_6'  => $this->request->getPost('gambar6_kegiatan'),
-                'gambar_7'  => $this->request->getPost('gambar7_kegiatan'),
-                'gambar_8'  => $this->request->getPost('gambar8_kegiatan'),
-                'gambar_9'  => $this->request->getPost('gambar9_kegiatan'),
-                'gambar_10'  => $this->request->getPost('gambar10_kegiatan'),
-                'gambar_11'  => $this->request->getPost('gambar11_kegiatan'),
-                'gambar_12'  => $this->request->getPost('gambar12_kegiatan'),
-                'gambar_13'  => $this->request->getPost('gambar13_kegiatan'),
-                'gambar_14'  => $this->request->getPost('gambar14_kegiatan'),
-                'gambar_15'  => $this->request->getPost('gambar15_kegiatan'),
-            ]);
-
-            return redirect()->to(base_url() . '/home/view/adminkegiatan');
-        } else {
-            return redirect()->to(base_url() . '/home/view/admin');
-        }
-    }
-
-    public function pembaruankegiatan()
-    {
-        $modelKegiatan = model(KegiatanModel::class);
-        if ($this->request->getMethod() === 'post' && $this->validate([
-            'id_number' => 'min_length[0]',
-            'judul_kegiatan' => 'required|min_length[3]|max_length[500]',
-            'slug_kegiatan' => 'required',
-            'badan_kegiatan'  => 'required',
-            'waktu_kegiatan'  => 'required',
-            'gambar1_kegiatan'  => 'required',
-            'gambar2_kegiatan'  => 'required',
-            'gambar3_kegiatan'  => 'permit_empty',
-            'gambar4_kegiatan'  => 'permit_empty',
-            'gambar5_kegiatan'  => 'permit_empty',
-            'gambar6_kegiatan'  => 'permit_empty',
-            'gambar7_kegiatan'  => 'permit_empty',
-            'gambar8_kegiatan'  => 'permit_empty',
-            'gambar9_kegiatan'  => 'permit_empty',
-            'gambar10_kegiatan'  => 'permit_empty',
-            'gambar11_kegiatan'  => 'permit_empty',
-            'gambar12_kegiatan'  => 'permit_empty',
-            'gambar13_kegiatan'  => 'permit_empty',
-            'gambar14_kegiatan'  => 'permit_empty',
-            'gambar15_kegiatan'  => 'permit_empty',
-        ])) {
-            $modelKegiatan->replace([
-                'id' => $this->request->getPost('id_number'),
-                'judul'  => $this->request->getPost('judul_kegiatan'),
-                'slug'  => $this->request->getPost('slug_kegiatan'),
-                'badan'  => $this->request->getPost('badan_kegiatan'),
-                'waktu'  => $this->request->getPost('waktu_kegiatan'),
-                'gambar_1'  => $this->request->getPost('gambar1_kegiatan'),
-                'gambar_2'  => $this->request->getPost('gambar2_kegiatan'),
-                'gambar_3'  => $this->request->getPost('gambar3_kegiatan'),
-                'gambar_4'  => $this->request->getPost('gambar4_kegiatan'),
-                'gambar_5'  => $this->request->getPost('gambar5_kegiatan'),
-                'gambar_6'  => $this->request->getPost('gambar6_kegiatan'),
-                'gambar_7'  => $this->request->getPost('gambar7_kegiatan'),
-                'gambar_8'  => $this->request->getPost('gambar8_kegiatan'),
-                'gambar_9'  => $this->request->getPost('gambar9_kegiatan'),
-                'gambar_10'  => $this->request->getPost('gambar10_kegiatan'),
-                'gambar_11'  => $this->request->getPost('gambar11_kegiatan'),
-                'gambar_12'  => $this->request->getPost('gambar12_kegiatan'),
-                'gambar_13'  => $this->request->getPost('gambar13_kegiatan'),
-                'gambar_14'  => $this->request->getPost('gambar14_kegiatan'),
-                'gambar_15'  => $this->request->getPost('gambar15_kegiatan'),
-            ]);
-
-            return redirect()->to(base_url() . '/home/view/adminkegiatan');
-        } else {
-            return redirect()->to(base_url() . '/home/view/admin');
-        }
-    }
-
-    public function hapuskegiatan()
-    {
-        $modelKegiatan = model(KegiatanModel::class);
-        if ($this->request->getMethod() === 'post' && $this->validate([
-            'id_number' => 'min_length[0]',
-        ])) {
-            $modelKegiatan->delete([
-                'id' => $this->request->getPost('id_number'),
-            ]);
-
-            return redirect()->to(base_url() . '/home/view/adminkegiatan');
-        } else {
-            return redirect()->to(base_url() . '/home/view/admin');
-        }
+        echo view('templates/header', $data);
+        echo view('pages/' . $page, $data);
+        echo view('templates/footer', $data);
     }
 }
