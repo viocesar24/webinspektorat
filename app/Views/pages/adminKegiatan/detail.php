@@ -653,61 +653,10 @@
 
     <!-- Tombol Tambah Input Unggah -->
     <script>
-        const addGambarButton = document.getElementById('add-gambar');
         const addGambarButtonEdit = document.getElementById('add-gambarEdit');
-        const removeGambarButton = document.getElementById('remove-gambar');
         const removeGambarButtonEdit = document.getElementById('remove-gambarEdit');
-        const gambarFields = document.getElementById('modalBodyTambah');
         const gambarFieldsEdit = document.getElementById('modalBodyEdit');
-        let gambarCount = 1;
         let gambarCountEdit = 1;
-
-        addGambarButton.addEventListener('click', () => {
-            gambarCount++;
-            const newGambarContainer = document.createElement('div');
-            newGambarContainer.classList.add('input-group', 'mb-3');
-
-            const newGambarInput = document.createElement('input');
-            newGambarInput.type = 'file';
-            newGambarInput.name = `gambar_${gambarCount}`;
-            newGambarInput.classList.add('form-control');
-
-            const newGambarLabel = document.createElement('label');
-            newGambarLabel.classList.add('input-group-text');
-            newGambarLabel.for = `gambar_${gambarCount}`;
-            newGambarLabel.textContent = `Upload Gambar ${gambarCount} (Opsional)`;
-
-            newGambarContainer.appendChild(newGambarInput);
-            newGambarContainer.appendChild(newGambarLabel);
-            gambarFields.appendChild(newGambarContainer);
-
-            // Aktifkan tombol hapus setelah menambah elemen
-            removeGambarButton.classList.remove('disabled');
-            removeGambarButton.ariaDisabled = 'false';
-
-            if (gambarCount >= 15) {
-                addGambarButton.classList.add('disabled');
-                addGambarButton.ariaDisabled = 'true';
-            }
-        });
-
-        removeGambarButton.addEventListener('click', () => {
-            if (gambarCount > 1) {
-                const lastGambarContainer = gambarFields.lastChild;
-                gambarFields.removeChild(lastGambarContainer);
-                gambarCount--;
-
-                if (gambarCount < 15) {
-                    addGambarButton.classList.remove('disabled');
-                    addGambarButton.ariaDisabled = 'false';
-                }
-            }
-
-            if (gambarCount === 1) {
-                removeGambarButton.classList.add('disabled');
-                removeGambarButton.ariaDisabled = 'true';
-            }
-        });
 
         addGambarButtonEdit.addEventListener('click', () => {
             gambarCountEdit++;
@@ -772,19 +721,6 @@
             formUbah.addEventListener('submit', function(event) {
                 const html = quillUbah.root.innerHTML;
                 inputUbahTersembunyi.value = html;
-            });
-
-            // Quill JS untuk Modal Tambah
-            const formTambah = document.getElementById('tambahForm');
-            const quillTambah = new Quill('#editorTambah', {
-                placeholder: 'Tulis isi kegiatan ...',
-                theme: 'snow',
-            });
-            const inputTambahTersembunyi = document.getElementById('inputTambahTersembunyi'); // Tambahkan elemen ini
-
-            formTambah.addEventListener('submit', function(event) {
-                const html = quillTambah.root.innerHTML;
-                inputTambahTersembunyi.value = html;
             });
         });
     </script>
