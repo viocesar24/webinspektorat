@@ -434,7 +434,7 @@
                                                         <td><?= $item['id'] ?></td>
                                                         <td><?= $item['judul'] ?></td>
                                                         <td>
-                                                            <a href="<?= base_url('admin-informasi/kegiatan/detail/' . $item['id']); ?>" class="btn btn-warning">Edit</a>
+                                                            <a href="<?= base_url('admin-informasi/kegiatan/detail/' . $item['id']); ?>" class="btn btn-primary">Detail</a>
                                                             <form action="/admin-informasi/kegiatan/delete/<?= $item['id'] ?>" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus kegiatan ini?');">
                                                                 <?= csrf_field() ?>
                                                                 <button type="submit" class="btn btn-danger">Hapus</button>

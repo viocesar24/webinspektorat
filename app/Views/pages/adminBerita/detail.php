@@ -423,290 +423,221 @@
                         <div class="card-header text-center">
                             <h5 class="fw-bold p-0 m-0 text-primary">BERITA</h5>
                         </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="d-grid gap-2">
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#tambahModal">
-                                        TAMBAH
-                                    </button>
-                                    <!-- Modal Tambah -->
-                                    <div class="modal fade modal-xl" id="tambahModal" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <form id="tambahForm" action="<?php echo base_url(); ?>/admin-informasi/berita/create" method="post" enctype="multipart/form-data">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM TAMBAH BERITA</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <?= csrf_field() ?>
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" id="judul" name="judul" class="form-control my-1" placeholder="Judul" value="<?= old('judul') ?>" required>
-                                                            <label for="judul">Judul</label>
-                                                        </div>
-                                                        <div class="form-floating mb-3">
-                                                            <input type="hidden" id="inputTambahTersembunyi" name="badan">
-                                                            <div id="editorTambah"></div>
-                                                        </div>
-                                                        <div id="modalBodyTambah">
-                                                            <div class="input-group mb-3">
-                                                                <input type="file" class="form-control" id="gambar_1" name="gambar_1">
-                                                                <label class="input-group-text" for="gambar_1">Upload Gambar 1</label>
-                                                                <a class="btn btn-primary" id="add-gambar">
-                                                                    <svg class="bi">
-                                                                        <use xlink:href="#plus-circle" />
-                                                                    </svg>
-                                                                </a>
-                                                                <a class="btn btn-danger disabled" id="remove-gambar" aria-disabled="true">
-                                                                    <svg class="bi">
-                                                                        <use xlink:href="#minus-circle" />
-                                                                    </svg>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <div class="d-grid gap-2">
-                                                            <button type="submit" class="btn btn-primary">TAMBAH</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
+                        <div class="card-body p-3">
+                            <?php if (!empty($berita)) : ?>
+                                <div class="card shadow">
+                                    <div id="<?= esc($berita['slug']) ?>" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <?php if ($berita['gambar_1'] != '' || $berita['gambar_1'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_2'] != '' || $berita['gambar_2'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_3'] != '' || $berita['gambar_3'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_4'] != '' || $berita['gambar_4'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_5'] != '' || $berita['gambar_5'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_6'] != '' || $berita['gambar_6'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_7'] != '' || $berita['gambar_7'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_8'] != '' || $berita['gambar_8'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_9'] != '' || $berita['gambar_9'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_10'] != '' || $berita['gambar_10'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_11'] != '' || $berita['gambar_11'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_12'] != '' || $berita['gambar_12'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_13'] != '' || $berita['gambar_13'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_14'] != '' || $berita['gambar_14'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="13" aria-label="Slide 14"></button>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_15'] != '' || $berita['gambar_15'] != null) { ?>
+                                                <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="14" aria-label="Slide 15"></button>
+                                            <?php } ?>
+                                        </div>
+                                        <div class="carousel-inner ratio ratio-21x9">
+                                            <?php if ($berita['gambar_1'] != '' || $berita['gambar_1'] != null) { ?>
+                                                <div class="carousel-item active">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_1'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_2'] != '' || $berita['gambar_2'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_2'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_3'] != '' || $berita['gambar_3'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_3'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_4'] != '' || $berita['gambar_4'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_4'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_5'] != '' || $berita['gambar_5'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_5'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_6'] != '' || $berita['gambar_6'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_6'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_7'] != '' || $berita['gambar_7'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_7'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_8'] != '' || $berita['gambar_8'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_8'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_9'] != '' || $berita['gambar_9'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_9'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_10'] != '' || $berita['gambar_10'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_10'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_11'] != '' || $berita['gambar_11'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_11'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_12'] != '' || $berita['gambar_12'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_12'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_13'] != '' || $berita['gambar_13'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_13'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_14'] != '' || $berita['gambar_14'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_14'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($berita['gambar_15'] != '' || $berita['gambar_15'] != null) { ?>
+                                                <div class="carousel-item">
+                                                    <img src="/uploads/berita/<?= $berita['gambar_15'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <h2 class="text-center fw-bold">
+                                            <?= esc($berita['judul']) ?>
+                                        </h2>
+                                        <p class="fw-light">
+                                            <i class="bi bi-clock"></i><?= esc($berita['waktu']) ?>
+                                        </p>
+                                        <div contenteditable="false">
+                                            <?= $berita['badan'] ?>
                                         </div>
                                     </div>
                                 </div>
-                                <?php if (!empty($berita)) : ?>
-                                    <div>
-                                        <div class="card bg-body bg-gradient shadow my-3">
-                                            <div class="card-header text-center">
-                                                <h5 class="fw-bold p-0 m-0 text-primary">
-                                                    <p>ID:
-                                                        <?= esc($berita['id']) ?>
-                                                    </p>
-                                                </h5>
+                            <?php else : ?>
+                                <div class="p-3">
+                                    <div class="card shadow">
+                                        <div class="card-body">
+                                            <h1 class="text-center fw-bold">BERITA TAK DITEMUKAN</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif ?>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-grid gap-2">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-warning btn-sm my-1" data-bs-toggle="modal" data-bs-target="#ubahModal_<?= esc($berita['id']) ?>">
+                                    UBAH
+                                </button>
+                                <form action="/admin-informasi/berita/delete/<?= $berita['id'] ?>" method="post" class="d-grid d-inline">
+                                    <?= csrf_field() ?>
+                                    <button class="btn btn-danger btn-sm my-1" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">HAPUS</button>
+                                </form>
+                            </div>
+                            <!-- Modal Ubah -->
+                            <div class="modal fade modal-xl" id="ubahModal_<?= esc($berita['id']) ?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form id="ubahForm" action="<?= base_url('/admin-informasi/berita/update/' . $berita['id']) ?>" method="post" enctype="multipart/form-data">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM UBAH BERITA</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="card-body">
-                                                <div class="p-3">
-                                                    <div class="card shadow">
-                                                        <div id="<?= esc($berita['slug']) ?>" class="carousel slide" data-bs-ride="carousel">
-                                                            <div class="carousel-indicators">
-                                                                <?php if ($berita['gambar_1'] != '' || $berita['gambar_1'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_2'] != '' || $berita['gambar_2'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_3'] != '' || $berita['gambar_3'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_4'] != '' || $berita['gambar_4'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_5'] != '' || $berita['gambar_5'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_6'] != '' || $berita['gambar_6'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_7'] != '' || $berita['gambar_7'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_8'] != '' || $berita['gambar_8'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="7" aria-label="Slide 8"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_9'] != '' || $berita['gambar_9'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="8" aria-label="Slide 9"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_10'] != '' || $berita['gambar_10'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="9" aria-label="Slide 10"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_11'] != '' || $berita['gambar_11'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="10" aria-label="Slide 11"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_12'] != '' || $berita['gambar_12'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="11" aria-label="Slide 12"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_13'] != '' || $berita['gambar_13'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="12" aria-label="Slide 13"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_14'] != '' || $berita['gambar_14'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="13" aria-label="Slide 14"></button>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_15'] != '' || $berita['gambar_15'] != null) { ?>
-                                                                    <button type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide-to="14" aria-label="Slide 15"></button>
-                                                                <?php } ?>
-                                                            </div>
-                                                            <div class="carousel-inner ratio ratio-21x9">
-                                                                <?php if ($berita['gambar_1'] != '' || $berita['gambar_1'] != null) { ?>
-                                                                    <div class="carousel-item active">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_1'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_2'] != '' || $berita['gambar_2'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_2'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_3'] != '' || $berita['gambar_3'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_3'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_4'] != '' || $berita['gambar_4'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_4'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_5'] != '' || $berita['gambar_5'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_5'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_6'] != '' || $berita['gambar_6'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_6'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_7'] != '' || $berita['gambar_7'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_7'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_8'] != '' || $berita['gambar_8'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_8'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_9'] != '' || $berita['gambar_9'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_9'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_10'] != '' || $berita['gambar_10'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_10'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_11'] != '' || $berita['gambar_11'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_11'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_12'] != '' || $berita['gambar_12'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_12'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_13'] != '' || $berita['gambar_13'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_13'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_14'] != '' || $berita['gambar_14'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_14'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                                <?php if ($berita['gambar_15'] != '' || $berita['gambar_15'] != null) { ?>
-                                                                    <div class="carousel-item">
-                                                                        <img src="/uploads/berita/<?= $berita['gambar_15'] ?>" class="mx-auto d-block" style="height: 100%; width: 100%; object-fit: contain" alt="..." />
-                                                                    </div>
-                                                                <?php } ?>
-                                                            </div>
-                                                            <button class="carousel-control-prev" type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide="prev">
-                                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                                <span class="visually-hidden">Previous</span>
-                                                            </button>
-                                                            <button class="carousel-control-next" type="button" data-bs-target="#<?= esc($berita['slug']) ?>" data-bs-slide="next">
-                                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                                <span class="visually-hidden">Next</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <h2 class="text-center fw-bold">
-                                                                <?= esc($berita['judul']) ?>
-                                                            </h2>
-                                                            <p class="fw-light">
-                                                                <i class="bi bi-clock"></i><?= esc($berita['waktu']) ?>
-                                                            </p>
-                                                            <div contenteditable="false">
-                                                                <?= $berita['badan'] ?>
-                                                            </div>
-                                                        </div>
+                                            <div class="modal-body">
+                                                <?= csrf_field() ?>
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" id="judulEdit" name="judul" class="form-control my-1" placeholder="Judul" value="<?= old('judul', $berita['judul']) ?>" required>
+                                                    <label for="judulEdit">Judul</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="hidden" id="inputUbahTersembunyi" name="badan">
+                                                    <div id="editorUbah"><?= old('badan', $berita['badan']) ?></div>
+                                                </div>
+                                                <div id="modalBodyEdit">
+                                                    <div class="input-group mb-3">
+                                                        <input type="file" class="form-control" id="gambarEdit_1" name="gambar_1">
+                                                        <label class="input-group-text" for="gambarEdit_1">Upload Gambar 1</label>
+                                                        <a class="btn btn-primary" id="add-gambarEdit">
+                                                            <svg class="bi">
+                                                                <use xlink:href="#plus-circle" />
+                                                            </svg>
+                                                        </a>
+                                                        <a class="btn btn-danger disabled" id="remove-gambarEdit" aria-disabled="true">
+                                                            <svg class="bi">
+                                                                <use xlink:href="#minus-circle" />
+                                                            </svg>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="card-footer">
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                 <div class="d-grid gap-2">
-                                                    <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-warning btn-sm my-1" data-bs-toggle="modal" data-bs-target="#ubahModal_<?= esc($berita['id']) ?>">
-                                                        UBAH
-                                                    </button>
-                                                    <form action="/admin-informasi/berita/delete/<?= $berita['id'] ?>" method="post" class="d-grid d-inline">
-                                                        <?= csrf_field() ?>
-                                                        <button class="btn btn-danger btn-sm my-1" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">HAPUS</button>
-                                                    </form>
-                                                </div>
-                                                <!-- Modal Ubah -->
-                                                <div class="modal fade modal-xl" id="ubahModal_<?= esc($berita['id']) ?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <form id="ubahForm" action="<?= base_url('/admin-informasi/berita/update/' . $berita['id']) ?>" method="post" enctype="multipart/form-data">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title text-primary" id="staticBackdropLabel">FORM UBAH BERITA</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <?= csrf_field() ?>
-                                                                    <div class="form-floating mb-3">
-                                                                        <input type="text" id="judulEdit" name="judul" class="form-control my-1" placeholder="Judul" value="<?= old('judul', $berita['judul']) ?>" required>
-                                                                        <label for="judulEdit">Judul</label>
-                                                                    </div>
-                                                                    <div class="form-floating mb-3">
-                                                                        <input type="hidden" id="inputUbahTersembunyi" name="badan">
-                                                                        <div id="editorUbah"><?= old('badan', $berita['badan']) ?></div>
-                                                                    </div>
-                                                                    <div id="modalBodyEdit">
-                                                                        <div class="input-group mb-3">
-                                                                            <input type="file" class="form-control" id="gambarEdit_1" name="gambar_1">
-                                                                            <label class="input-group-text" for="gambarEdit_1">Upload Gambar 1</label>
-                                                                            <a class="btn btn-primary" id="add-gambarEdit">
-                                                                                <svg class="bi">
-                                                                                    <use xlink:href="#plus-circle" />
-                                                                                </svg>
-                                                                            </a>
-                                                                            <a class="btn btn-danger disabled" id="remove-gambarEdit" aria-disabled="true">
-                                                                                <svg class="bi">
-                                                                                    <use xlink:href="#minus-circle" />
-                                                                                </svg>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                    <div class="d-grid gap-2">
-                                                                        <button type="submit" class="btn btn-primary">Ubah</button>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Ubah</button>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
-                                <?php else : ?>
-                                    <div class="p-3">
-                                        <div class="card shadow">
-                                            <div class="card-body">
-                                                <h1 class="text-center fw-bold">BERITA TAK DITEMUKAN</h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endif ?>
+                                </div>
                             </div>
                         </div>
                     </div>
