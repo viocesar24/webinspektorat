@@ -14,14 +14,14 @@ class KegiatanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['judul', 'slug', 'badan', 'waktu', 'gambar_1', 'gambar_2', 'gambar_3', 'gambar_4', 'gambar_5', 'gambar_6', 'gambar_7', 'gambar_8', 'gambar_9', 'gambar_10', 'gambar_11', 'gambar_12', 'gambar_13', 'gambar_14', 'gambar_15'];
+    protected $allowedFields    = ['judul', 'slug', 'badan', 'waktu', 'gambar_1', 'gambar_2', 'gambar_3', 'gambar_4', 'gambar_5', 'gambar_6', 'gambar_7', 'gambar_8', 'gambar_9', 'gambar_10', 'gambar_11', 'gambar_12', 'gambar_13', 'gambar_14', 'gambar_15', 'active'];
 
     // Dates
     protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'waktu';
-    protected $updatedField  = '';
-    protected $deletedField  = '';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 
     // Validation
     protected $validationRules      = [];
@@ -52,12 +52,11 @@ class KegiatanModel extends Model
         // KODE DI BAWAH DIGUNAKAN UNTUK MENGAMBIL SEMUA DATA KEGIATAN DARI DATABASE
         if ($slug === false) {
             // DATA KEGIATAN YANG DIAMBIL DIURUTKAN BERDASARKAN WAKTU
-            $this->orderBy('waktu', 'DESC');
             // RETURN SEMUA DATA KEGIATAN YANG SUDAH DIURUTKAN DENGAN METHOD CODEIGNITER findAll()
-            return $this->findAll();
+            return $this->where('active', '1')->orderBy('waktu', 'DESC')->findAll();
         }
 
         // KODE DI BAWAH DIGUNAKAN UNTUK MENGAMBIL DATA KEGIATAN DENGAN SLUG TERTENTU
-        return $this->where(['slug' => $slug])->first();
+        return $this->where(['slug' => $slug, 'active' => '1'])->first();
     }
 }

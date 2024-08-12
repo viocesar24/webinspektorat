@@ -56,11 +56,10 @@ class Berita extends BaseController
         $data = [
             'kunci' => $kunciBool,
             'slug' => $slugBool,
-            'berita' => $this->beritaModel->getNews(),
             'beritaDetail' => $this->beritaModel->getNews($slug),
             'cariBerita' => $this->beritaModel->cariBerita($kunci),
             'cariBerita' => $this->beritaModel->orderBy('waktu', 'DESC')->paginate(100, 'group1'),
-            'beritaHalaman' => $this->beritaModel->orderBy('waktu', 'DESC')->paginate(5, 'group1'),
+            'beritaHalaman' => $this->beritaModel->where('active', '1')->orderBy('waktu', 'DESC')->paginate(5, 'group1'),
             'pager' => $this->beritaModel->pager,
             'kontak' => $this->kontakModel->first(),
         ];
@@ -238,6 +237,32 @@ class Berita extends BaseController
             // Tangani error yang terjadi
             log_message('error', $e->getMessage()); // Log pesan error (opsional)
             return redirect()->to('/admin-informasi/berita')->with('error', 'Terjadi kesalahan saat menghapus berita.');
+        }
+    }
+
+    public function active($id)
+    {
+        // Pastikan $id valid (misalnya, periksa apakah berita dengan ID tersebut ada)
+        $berita = $this->beritaModel->find($id);
+        if (!$berita) {
+            return redirect()->to('/admin-informasi/berita')->with('error', 'Berita tidak ditemukan.');
+        }
+
+        try {
+            // Balikkan status aktif
+            $newStatus = !$berita['active'];
+
+            // Update status aktif di database
+            $this->beritaModel->update($id, ['active' => $newStatus]);
+
+            // Tentukan pesan sukses berdasarkan status baru
+            $message = $newStatus ? 'Berita berhasil diaktifkan.' : 'Berita berhasil dinonaktifkan.';
+
+            return redirect()->to('/admin-informasi/berita')->with('success', $message);
+        } catch (\Exception $e) {
+            // Tangani error yang terjadi
+            log_message('error', $e->getMessage()); // Log pesan error (opsional)
+            return redirect()->to('/admin-informasi/berita')->with('error', 'Terjadi kesalahan saat mengubah status berita.');
         }
     }
 }

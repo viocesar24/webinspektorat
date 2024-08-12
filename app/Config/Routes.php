@@ -86,11 +86,13 @@ $routes->group('admin-informasi', ['namespace' => 'App\Controllers\Informasi', '
     $routes->post('berita/create', 'Berita::create');
     $routes->post('berita/update/(:num)', 'Berita::update/$1');
     $routes->post('berita/delete/(:num)', 'Berita::delete/$1');
+    $routes->post('berita/active/(:num)', 'Berita::active/$1');
     $routes->get('kegiatan', 'Kegiatan::index');
     $routes->get('kegiatan/detail/(:num)', 'Kegiatan::detail/$1');
     $routes->post('kegiatan/create', 'Kegiatan::create');
     $routes->post('kegiatan/update/(:num)', 'Kegiatan::update/$1');
     $routes->post('kegiatan/delete/(:num)', 'Kegiatan::delete/$1');
+    $routes->post('kegiatan/active/(:num)', 'Kegiatan::active/$1');
 });
 $routes->group('admin-lainnya', ['namespace' => 'App\Controllers', 'filter' => 'admin'], function ($routes) {
     $routes->get('layanan', 'Layanan::index');

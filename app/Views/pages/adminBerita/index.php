@@ -425,6 +425,7 @@
                                                 <th>ID</th>
                                                 <th>Judul</th>
                                                 <th>Aksi</th>
+                                                <th>Status Aktif</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -433,18 +434,28 @@
                                                     <tr>
                                                         <td><?= $item['id'] ?></td>
                                                         <td><?= $item['judul'] ?></td>
-                                                        <td>
-                                                            <a href="<?= base_url('admin-informasi/berita/detail/' . $item['id']); ?>" class="btn btn-primary">Detail</a>
-                                                            <form action="/admin-informasi/berita/delete/<?= $item['id'] ?>" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus berita ini?');">
+                                                        <td class="text-center">
+                                                            <div class="d-flex">
+                                                                <a href="<?= base_url('admin-informasi/berita/detail/' . $item['id']); ?>" class="btn btn-primary me-2">Detail</a>
+                                                                <form action="/admin-informasi/berita/delete/<?= $item['id'] ?>" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus berita ini?');">
+                                                                    <?= csrf_field() ?>
+                                                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                                                </form>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <form id="form-switch-<?= $item['id'] ?>" action="/admin-informasi/berita/active/<?= $item['id'] ?>" method="post">
                                                                 <?= csrf_field() ?>
-                                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                                                <div class="form-check form-switch d-flex justify-content-center">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked<?= $item['id'] ?>" name="active" <?= $item['active'] ? 'checked' : '' ?>>
+                                                                </div>
                                                             </form>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             <?php else : ?>
                                                 <tr>
-                                                    <td colspan="3" class="text-center">Tidak ada data</td>
+                                                    <td colspan="4" class="text-center">Tidak ada data</td>
                                                 </tr>
                                             <?php endif; ?>
                                         </tbody>
@@ -456,7 +467,7 @@
                             <div class="d-grid gap-2">
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary btn-sm my-1" data-bs-toggle="modal" data-bs-target="#tambahModal">
-                                    TAMBAH
+                                    Tambah
                                 </button>
                             </div>
                             <!-- Modal Tambah -->
@@ -603,6 +614,25 @@
                 "order": [
                     [0, "desc"]
                 ] // Urutkan berdasarkan kolom ID (kolom ke-0) secara descending
+            });
+        });
+    </script>
+
+    <!-- Switch Check Active/Inactive -->
+    <script>
+        document.querySelectorAll('.form-check-input').forEach(function(switchElement) {
+            switchElement.addEventListener('change', function() {
+                var isChecked = switchElement.checked;
+                var confirmationMessage = isChecked ?
+                    'Apakah Anda yakin ingin mengaktifkan berita ini?' :
+                    'Apakah Anda yakin ingin menonaktifkan berita ini?';
+
+                if (confirm(confirmationMessage)) {
+                    document.getElementById('form-switch-' + switchElement.id.replace('flexSwitchCheckChecked', '')).submit();
+                } else {
+                    // Membalikkan status checkbox jika user membatalkan aksi
+                    switchElement.checked = !isChecked;
+                }
             });
         });
     </script>

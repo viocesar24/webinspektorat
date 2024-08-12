@@ -29,8 +29,7 @@ class Kegiatan extends BaseController
     public function view($page)
     {
         $data = [
-            'kegiatan' => $this->kegiatanModel->getKegiatan(),
-            'kegiatanHalaman' => $this->kegiatanModel->orderBy('waktu', 'DESC')->paginate(5, 'group1'),
+            'kegiatanHalaman' => $this->kegiatanModel->where('active', '1')->orderBy('waktu', 'DESC')->paginate(5, 'group1'),
             'pagerKegiatan' => $this->kegiatanModel->pager,
             'kontak' => $this->kontakModel->first(),
         ];
@@ -42,7 +41,7 @@ class Kegiatan extends BaseController
 
     public function detail($id)
     {
-        // Mengambil data berita berdasarkan ID dengan menggunakan query builder
+        // Mengambil data kegiatan berdasarkan ID dengan menggunakan query builder
         $data = [
             'kegiatan' => $this->kegiatanModel->where('id', $id)->first(),
         ];
@@ -202,6 +201,32 @@ class Kegiatan extends BaseController
             // Tangani error yang terjadi
             log_message('error', $e->getMessage()); // Log pesan error (opsional)
             return redirect()->to('/admin-informasi/kegiatan')->with('error', 'Terjadi kesalahan saat menghapus kegiatan.');
+        }
+    }
+
+    public function active($id)
+    {
+        // Pastikan $id valid (misalnya, periksa apakah kegiatan dengan ID tersebut ada)
+        $kegiatan = $this->kegiatanModel->find($id);
+        if (!$kegiatan) {
+            return redirect()->to('/admin-informasi/kegiatan')->with('error', 'Kegiatan tidak ditemukan.');
+        }
+
+        try {
+            // Balikkan status aktif
+            $newStatus = !$kegiatan['active'];
+
+            // Update status aktif di database
+            $this->kegiatanModel->update($id, ['active' => $newStatus]);
+
+            // Tentukan pesan sukses berdasarkan status baru
+            $message = $newStatus ? 'Kegiatan berhasil diaktifkan.' : 'Kegiatan berhasil dinonaktifkan.';
+
+            return redirect()->to('/admin-informasi/kegiatan')->with('success', $message);
+        } catch (\Exception $e) {
+            // Tangani error yang terjadi
+            log_message('error', $e->getMessage()); // Log pesan error (opsional)
+            return redirect()->to('/admin-informasi/kegiatan')->with('error', 'Terjadi kesalahan saat mengubah status kegiatan.');
         }
     }
 }

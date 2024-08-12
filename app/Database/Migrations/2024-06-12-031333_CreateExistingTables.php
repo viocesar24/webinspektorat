@@ -49,6 +49,20 @@ class CreateExistingTables extends Migration
             'gambar_13' => ['type' => 'TEXT', 'null' => true],
             'gambar_14' => ['type' => 'TEXT', 'null' => true],
             'gambar_15' => ['type' => 'TEXT', 'null' => true],
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'active' => [
+                'type' => 'TINYINT',
+                'constraint' => 1,
+                'null' => false,
+                'default' => 0,
+            ],
         ]);
         $this->forge->addKey('id', true); // Primary key
         $this->forge->addKey('slug');
@@ -95,6 +109,20 @@ class CreateExistingTables extends Migration
             'gambar_13' => ['type' => 'TEXT', 'null' => true],
             'gambar_14' => ['type' => 'TEXT', 'null' => true],
             'gambar_15' => ['type' => 'TEXT', 'null' => true],
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'active' => [
+                'type' => 'TINYINT',
+                'constraint' => 1,
+                'null' => false,
+                'default' => 0,
+            ],
         ]);
         $this->forge->addKey('id', true);
         $this->forge->addKey('slug');
