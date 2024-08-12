@@ -21,8 +21,7 @@ class Kegiatan extends BaseController
     public function index()
     {
         $data = [
-            'kegiatan' => $this->kegiatanModel->orderBy('id', 'DESC')->paginate(1, 'group1'),
-            'pagerKegiatanAdmin' => $this->kegiatanModel->pager,
+            'kegiatan' => $this->kegiatanModel->orderBy('id', 'DESC')->findAll(),
         ];
         return view('pages/adminKegiatan/index', $data);
     }
@@ -39,6 +38,15 @@ class Kegiatan extends BaseController
         echo view('templates/header', $data);
         echo view('pages/' . $page, $data);
         echo view('templates/footer', $data);
+    }
+
+    public function detail($id)
+    {
+        // Mengambil data berita berdasarkan ID dengan menggunakan query builder
+        $data = [
+            'kegiatan' => $this->kegiatanModel->where('id', $id)->first(),
+        ];
+        return view('pages/adminKegiatan/detail', $data);
     }
 
     public function create()

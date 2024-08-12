@@ -28,11 +28,9 @@ class Berita extends BaseController
     // Menampilkan daftar berita di halaman admin
     public function index()
     {
-        // Mengambil data berita dengan paginasi
-        // Menyimpan informasi paginasi
+        // Mengambil semua data berita dengan urutan terbaru
         $data = [
-            'berita' => $this->beritaModel->orderBy('id', 'DESC')->paginate(1, 'group1'),
-            'pagerBeritaAdmin' => $this->beritaModel->pager,
+            'berita' => $this->beritaModel->orderBy('id', 'DESC')->findAll(),
         ];
         // Menampilkan view dengan data berita
         return view('pages/adminBerita/index', $data);
@@ -70,6 +68,15 @@ class Berita extends BaseController
         echo view('templates/header', $data);
         echo view('pages/' . $page, $data);
         echo view('templates/footer', $data);
+    }
+
+    public function detail($id)
+    {
+        // Mengambil data berita berdasarkan ID dengan menggunakan query builder
+        $data = [
+            'berita' => $this->beritaModel->where('id', $id)->first(),
+        ];
+        return view('pages/adminBerita/detail', $data);
     }
 
     // Menangani pembuatan berita baru
