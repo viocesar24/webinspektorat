@@ -188,7 +188,7 @@
                                                 <?= esc($news_item['judul']) ?>
                                             </h5>
                                             <div class="card-text" contenteditable="false">
-                                                <?= substr($news_item['badan'], 0, 200) ?><?php if (strlen($news_item['badan']) > 200) echo '...'; ?>
+                                                <?= substr($news_item['badan'], 0, 50) ?><?php if (strlen($news_item['badan']) > 50) echo '...'; ?>
                                             </div>
                                             <a href="/home/view/detail/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-dark">Selengkapnya...</a>
                                         </div>
@@ -356,7 +356,7 @@
                                                 <?= esc($news_item['judul']) ?>
                                             </h5>
                                             <div class="card-text" contenteditable="false">
-                                                <?= substr($news_item['badan'], 0, 200) ?><?php if (strlen($news_item['badan']) > 200) echo '...'; ?>
+                                                <?= substr($news_item['badan'], 0, 50) ?><?php if (strlen($news_item['badan']) > 50) echo '...'; ?>
                                             </div>
                                             <a href="/home/view/detail/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-dark">Selengkapnya...</a>
                                         </div>
