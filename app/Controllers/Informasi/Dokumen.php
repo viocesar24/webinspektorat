@@ -55,7 +55,7 @@ class Dokumen extends BaseController
             $rules = [
                 'judul'    => 'required|max_length[255]',
                 'kategori' => 'required|integer',
-                'file'     => 'uploaded[file]|max_size[file,10240]|ext_in[file,pdf,doc,docx]'
+                'file'     => 'uploaded[file]|max_size[file,1048576]|ext_in[file,pdf,doc,docx]'
             ];
 
             if ($this->validate($rules)) {
