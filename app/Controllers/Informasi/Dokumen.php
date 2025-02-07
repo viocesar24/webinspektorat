@@ -109,7 +109,7 @@ class Dokumen extends BaseController
             // Jika ada file baru yang diupload, tambahkan aturan validasi untuk file
             $file = $this->request->getFile('file');
             if ($file && $file->isValid()) {
-                $rules['file'] = 'uploaded[file]|max_size[file,10240]|ext_in[file,pdf,doc,docx]';
+                $rules['file'] = 'uploaded[file]|max_size[file,1048576]|ext_in[file,pdf,doc,docx]';
             }
 
             if ($this->validate($rules)) {
