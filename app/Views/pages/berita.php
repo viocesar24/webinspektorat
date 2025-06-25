@@ -187,7 +187,7 @@
                                             <h5 class="card-title">
                                                 <?= esc($news_item['judul']) ?>
                                             </h5>
-                                            <div class="card-text" contenteditable="false">
+                                            <div class="card-text hilangkanMarginPaddingPDariQuill" contenteditable="false">
                                                 <?= substr($news_item['badan'], 0, 100) ?><?php if (strlen($news_item['badan']) > 100) echo '...'; ?>
                                             </div>
                                             <a href="/home/view/detail/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-dark">Selengkapnya...</a>
@@ -355,7 +355,7 @@
                                             <h5 class="card-title">
                                                 <?= esc($news_item['judul']) ?>
                                             </h5>
-                                            <div class="card-text" contenteditable="false">
+                                            <div class="card-text hilangkanMarginPaddingPDariQuill" contenteditable="false">
                                                 <?= substr($news_item['badan'], 0, 100) ?><?php if (strlen($news_item['badan']) > 100) echo '...'; ?>
                                             </div>
                                             <a href="/home/view/detail/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-dark">Selengkapnya...</a>

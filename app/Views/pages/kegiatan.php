@@ -187,7 +187,7 @@
                                             <h5 class="card-title">
                                                 <?= esc($kegiatan_item['judul']) ?>
                                             </h5>
-                                            <div class="card-text" contenteditable="false">
+                                            <div class="card-text hilangkanMarginPaddingPDariQuill" contenteditable="false">
                                                 <?= substr($kegiatan_item['badan'], 0, 200) ?><?php if (strlen($kegiatan_item['badan']) > 200) echo '...'; ?>
                                             </div>
                                         </div>

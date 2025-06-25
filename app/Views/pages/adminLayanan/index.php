@@ -13,6 +13,15 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
+
+    <!-- Quill JS / Rich Text Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -102,16 +111,12 @@
             transform: rotate(-180deg);
             /* Memutar chevron saat collapse */
         }
+
+        .hilangkanMarginPaddingPDariQuill p {
+            margin: 0;
+            padding: 0;
+        }
     </style>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
-
-    <!-- Quill JS / Rich Text Editor -->
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -477,7 +482,7 @@
                                                                 <tr>
                                                                     <th scope="row">BADAN</th>
                                                                     <td>
-                                                                        <div contenteditable="false"><?= $item['badan'] ?></div>
+                                                                        <div class="hilangkanMarginPaddingPDariQuill" contenteditable="false"><?= $item['badan'] ?></div>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -559,6 +564,15 @@
                     quillTambah = new Quill('#editorTambah', {
                         placeholder: 'Tulis isi layanan, dapat berupa Embed dari Google Form, atau lainnya ...',
                         theme: 'snow',
+                        modules: {
+                            toolbar: [
+                                ['bold', 'italic', 'underline'],        // toggles dasar
+                                [{ 'list': 'ordered' }, { 'list': 'bullet' }], // numbering & bullets
+                                ['link', 'image'],                      // link & image
+                                [{ 'header': [1, 2, 3, false] }],       // heading
+                                ['clean']                               // remove formatting
+                            ]
+                        }
                     });
                     const formTambah = document.getElementById('tambahForm');
                     const inputTambahTersembunyi = document.getElementById('inputTambahTersembunyi');
@@ -577,6 +591,15 @@
                         const quillUbah = new Quill(editorUbah, {
                             placeholder: 'Tulis isi layanan, dapat berupa Embed dari Google Form, atau lainnya ...',
                             theme: 'snow',
+                            modules: {
+                                toolbar: [
+                                    ['bold', 'italic', 'underline'],        // toggles dasar
+                                    [{ 'list': 'ordered' }, { 'list': 'bullet' }], // numbering & bullets
+                                    ['link', 'image'],                      // link & image
+                                    [{ 'header': [1, 2, 3, false] }],       // heading
+                                    ['clean']                               // remove formatting
+                                ]
+                            }
                         });
                         quillUbahInstances[editorUbah.id] = quillUbah;
                         const formUbah = modal.querySelector('#ubahForm');

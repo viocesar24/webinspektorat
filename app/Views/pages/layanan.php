@@ -34,7 +34,7 @@
                     <?php foreach ($layanan as $item) : ?>
                         <div id="list-item-<?= $item['id'] ?>" class="m-3">
                             <h4><?= $item['judul'] ?></h4>
-                            <div><?= $item['badan'] ?></div>
+                            <div class="hilangkanMarginPaddingPDariQuill"><?= $item['badan'] ?></div>
                         </div>
                         <hr>
                     <?php endforeach; ?>

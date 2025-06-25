@@ -160,7 +160,7 @@
                 <p class="fw-light">
                     <i class="bi bi-clock"></i><?= esc($beritaDetail['waktu']) ?>
                 </p>
-                <div contenteditable="false">
+                <div class="hilangkanMarginPaddingPDariQuill" contenteditable="false">
                     <?= $beritaDetail['badan'] ?>
                 </div>
             </div>

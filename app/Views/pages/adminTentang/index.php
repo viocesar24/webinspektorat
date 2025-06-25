@@ -13,6 +13,15 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
+
+    <!-- Quill JS / Rich Text Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -102,16 +111,12 @@
             transform: rotate(-180deg);
             /* Memutar chevron saat collapse */
         }
+
+        .hilangkanMarginPaddingPDariQuill p {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
     </style>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
-
-    <!-- Quill JS / Rich Text Editor -->
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -422,7 +427,7 @@
                                             <?php if ($tentang['teks']) : ?>
                                                 <tr>
                                                     <td>
-                                                        <div><?= $tentang['teks'] ?></div>
+                                                        <div class="hilangkanMarginPaddingPDariQuill"><?= $tentang['teks'] ?></div>
                                                     </td>
                                                 </tr>
                                             <?php else : ?>
@@ -521,7 +526,17 @@
             // Quill JS untuk Modal Ubah
             const formUbah = document.getElementById('ubahForm');
             const quillUbah = new Quill('#editorUbah', {
-                theme: 'snow'
+                theme: 'snow',
+                placeholder: 'Tulis isi tentang ...',
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline'],        // toggles dasar
+                        [{ 'list': 'ordered' }, { 'list': 'bullet' }], // numbering & bullets
+                        ['link', 'image'],                      // link & image
+                        [{ 'header': [1, 2, 3, false] }],       // heading
+                        ['clean']                               // remove formatting
+                    ]
+                }
             });
             const inputUbahTersembunyi = document.getElementById('inputUbahTersembunyi'); // Tambahkan elemen ini
 
@@ -533,7 +548,17 @@
             // Quill JS untuk Modal Tambah
             const formTambah = document.getElementById('tambahForm');
             const quillTambah = new Quill('#editorTambah', {
-                theme: 'snow'
+                theme: 'snow',
+                placeholder: 'Tulis isi tentang ...',
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline'],        // toggles dasar
+                        [{ 'list': 'ordered' }, { 'list': 'bullet' }], // numbering & bullets
+                        ['link', 'image'],                      // link & image
+                        [{ 'header': [1, 2, 3, false] }],       // heading
+                        ['clean']                               // remove formatting
+                    ]
+                }
             });
             const inputTambahTersembunyi = document.getElementById('inputTambahTersembunyi'); // Tambahkan elemen ini
 

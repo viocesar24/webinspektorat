@@ -41,7 +41,7 @@
         <div class="col-md-9">
             <div class="card shadow">
                 <div class="card-body">
-                    <div><?= $kebijakan['kebijakan'] ?></div>
+                    <div class="hilangkanMarginPaddingPDariQuill"><?= $kebijakan['kebijakan'] ?></div>
                     <!-- <h5 class="card-title fw-bold">KEBIJAKAN INSPEKTORAT</h5>
                     <h6 class="card-subtitle text-muted fw-bold mt-3">KEBIJAKAN PUBLIK</h6>
                     <ol class="list-group list-group-flush">

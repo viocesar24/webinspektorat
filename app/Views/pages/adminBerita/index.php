@@ -13,6 +13,18 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
+
+    <!-- Quill JS / Rich Text Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.dataTables.css" />
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -103,18 +115,6 @@
             /* Memutar chevron saat collapse */
         }
     </style>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
-
-    <!-- Quill JS / Rich Text Editor -->
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
-
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.dataTables.css" />
 </head>
 
 <body>
@@ -589,8 +589,17 @@
             // Quill JS untuk Modal Tambah
             const formTambah = document.getElementById('tambahForm');
             const quillTambah = new Quill('#editorTambah', {
-                placeholder: 'Tulis isi berita ...',
                 theme: 'snow',
+                placeholder: 'Tulis isi berita ...',
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline'],        // toggles dasar
+                        [{ 'list': 'ordered' }, { 'list': 'bullet' }], // numbering & bullets
+                        ['link', 'image'],                      // link & image
+                        [{ 'header': [1, 2, 3, false] }],       // heading
+                        ['clean']                               // remove formatting
+                    ]
+                }
             });
             const inputTambahTersembunyi = document.getElementById('inputTambahTersembunyi'); // Tambahkan elemen ini
 
