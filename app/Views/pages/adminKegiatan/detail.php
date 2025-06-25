@@ -112,9 +112,13 @@
             /* Memutar chevron saat collapse */
         }
 
-        .hilangkanMarginPaddingPDariQuill p {
-            margin: 0 !important;
-            padding: 0 !important;
+        .hilangkanMarginPaddingPDariQuill * {
+            margin-top:    0 !important;
+            margin-bottom: 0 !important;
+
+            /* (opsional) */
+            padding-top:    0 !important;
+            padding-bottom: 0 !important;
         }
     </style>
 </head>
